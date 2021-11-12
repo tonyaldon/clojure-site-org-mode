@@ -95,3 +95,41 @@ We prefer:
 ~clojure-site~ content contains around 20000 lines of ~asciidoc~ reparted
 in 248 files.  This something that can be handle by Emacs and Org mode
 in a unique "big" Org file.  So we do.
+
+* "scripts"
+
+First we convert from ~asciidoc~ to ~docbook~.
+
+#+BEGIN_SRC bash :dir ./clojure-site/content/ :results output
+fd --no-ignore .adoc -x asciidoctor -b docbook {}
+fd -a --no-ignore .xml
+#+END_SRC
+
+We copy files into ~./tmp/~ directory.
+
+Then convert from ~docbook~ to ~org~.
+
+#+BEGIN_SRC bash :dir ./tmp/ :results output
+for f in *; do pandoc -f docbook -t org -o ${f/%xml/org} $f; done
+#+END_SRC
+
+Now we add a ~*~ to every headlines of the ~org~ files in ~./tmp/~.
+
+#+BEGIN_SRC bash :dir ./tmp/ :results output
+for f in *.org; do sed -i -r 's/^[*]+ /*&/g' $f; done
+#+END_SRC
+
+Now we add a new top headline with the name of each file and an ~org~
+properties to all ~org~ files in ~./tmp/~.
+
+#+BEGIN_SRC bash :dir ./tmp/ :results output
+for f in *.org; do sed -i -r "1s/^/* $f\n:PROPERTIES:\n:CLOJURE_SITE_FILE: CLJ_FILE_$f\n:END:\n\n/g" $f; done
+#+END_SRC
+
+Now we concatenate all the ~org~ files in ~./tmp/~ to the file
+~clojure-site.org~.
+
+#+BEGIN_SRC bash :dir ./tmp/ :results output
+for f in *.org; do cat $f >> ../clojure-site.org; done
+#+END_SRC
+
