@@ -1,0 +1,97 @@
+#+TITLE: Clojure website in org-mode
+#+AUTHOR: Tony aldon
+#+DATE: <2021-11-12 Fri>
+
+* Goal
+
+Read https://clojure.org/ inside Emacs in an Org buffer, the whole
+site represented as an Org tree.
+
+The development of https://clojure.org/ happens in the Github
+repository https://github.com/clojure/clojure-site.
+
+* Why?
+
+Whoever enjoys Emacs UI knows why.
+
+* Observations
+
+The content of ~clojure-site~ is written in ~asciidoc~ format (see
+[[https://asciidoc-py.github.io/index.html][Asciidoc home page]] and [[https://docs.asciidoctor.org/home/][assiidoctor documentation]]).
+
+As of the commit ~4a084a8~ ([2021-11-11 Thu]), the directory ~content~ of
+~clojure-site~ contains 248 ~asciidoc~ files with a total of 21128 lines
+as we can see running the following commands:
+
+#+BEGIN_SRC bash :dir ./clojure-site/content/ :results output
+printf "commit: 4a084a8\n\n"
+cloc 4a084a8
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+commit: 4a084a8
+
+     100 files     200 files     250 text files.
+classified 250 filesDuplicate file check 250 files (242 known unique)Unique:      100 files                                          Unique:      200 files                                               250 unique files.
+Counting:  100Counting:  200       1 file ignored.
+
+github.com/AlDanial/cloc v 1.88  T=0.21 s (1192.3 files/s, 162347.7 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+AsciiDoc                       248           6749              2          21128
+HTML                             1            381              0           5646
+-------------------------------------------------------------------------------
+SUM:                           249           7130              2          26774
+-------------------------------------------------------------------------------
+#+end_example
+
+If I spend 15 mins for each of the 248 files I'll spend 62 hours on
+the whole content.  This is just a raw computation to get some numbers
+in mind, not what I expect to do.
+
+As of the commit ~4a084a8~ ([2021-11-11 Thu]) , ~clojure-site~ has
+~2249~ commits.
+
+#+BEGIN_SRC bash :dir ./clojure-site/content/ :results output
+git log 4a084a8 --oneline | wc -l
+#+END_SRC
+
+#+RESULTS:
+: 2249
+
+The big part of ~clojure-site~ content has been added on the first
+commit (~5911272~, [2015-11-09 Mon]).
+
+The only recurrent change on ~clojure-site~ seems to be the *Clojure
+Deref* news.  This is a weekly link/news roundup for the Clojure
+ecosystem.
+
+* Hypothese
+
+Clojure is a stable language with an *accretion* model that try to avoid
+/breaking changes/ and the commit logs of ~clojure-site~ shows this is
+true.
+
+Hypothese: ~clojure-site~ won't change much in the future.
+
+* Design
+** No general solution, prefer quick little scripts
+
+Following our hypothese that ~clojure-site~ won't change much, it is
+absolutely not necessary to try to build a general solution capable to
+convert ~clojure-site~ content from ~asciidoc~ to ~org~ content each time a
+change is made in ~clojure-site~ repository.
+
+We prefer:
+1) to write quick little scripts to convert once ~clojure-site~ content
+   from ~asciidoc~ to ~org~ the better we can.
+2) then proofread those generated ~org~ documents, and,
+3) to manually add new changes when they appears in ~clojure-site~.
+
+** One "big" org file
+
+~clojure-site~ content contains around 20000 lines of ~asciidoc~ reparted
+in 248 files.  This something that can be handle by Emacs and Org mode
+in a unique "big" Org file.  So we do.
