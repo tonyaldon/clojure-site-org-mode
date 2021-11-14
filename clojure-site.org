@@ -103,25 +103,25 @@ iterations of incrementing every Ref /(tasks)/. This creates extreme
 contention, but yields the correct result. No locks!
 
 #+BEGIN_SRC clojure
-    (import '(java.util.concurrent Executors))
+(import '(java.util.concurrent Executors))
 
-    (defn test-stm [nitems nthreads niters]
-      (let [refs  (map ref (repeat nitems 0))
-            pool  (Executors/newFixedThreadPool nthreads)
-            tasks (map (fn [t]
-                          (fn []
-                            (dotimes [n niters]
-                              (dosync
-                                (doseq [r refs]
-                                  (alter r + 1 t))))))
-                       (range nthreads))]
-        (doseq [future (.invokeAll pool tasks)]
-          (.get future))
-        (.shutdown pool)
-        (map deref refs)))
+(defn test-stm [nitems nthreads niters]
+  (let [refs  (map ref (repeat nitems 0))
+        pool  (Executors/newFixedThreadPool nthreads)
+        tasks (map (fn [t]
+                      (fn []
+                        (dotimes [n niters]
+                          (dosync
+                            (doseq [r refs]
+                              (alter r + 1 t))))))
+                   (range nthreads))]
+    (doseq [future (.invokeAll pool tasks)]
+      (.get future))
+    (.shutdown pool)
+    (map deref refs)))
 
-    (test-stm 10 10 10000)
-    -> (550000 550000 550000 550000 550000 550000 550000 550000 550000 550000)
+(test-stm 10 10 10000)
+-> (550000 550000 550000 550000 550000 550000 550000 550000 550000 550000)
 #+END_SRC
 
 In typical use refs can refer to Clojure collections, which, being
@@ -144,26 +144,26 @@ binding block. Nested bindings obey a stack protocol and unwind as
 control exits the binding block.
 
 #+BEGIN_SRC clojure
-    (def ^:dynamic *v*)
+(def ^:dynamic *v*)
 
-    (defn incv [n] (set! *v* (+ *v* n)))
+(defn incv [n] (set! *v* (+ *v* n)))
 
-    (defn test-vars [nthreads niters]
-      (let [pool (Executors/newFixedThreadPool nthreads)
-            tasks (map (fn [t]
-                         #(binding [*v* 0]
-                            (dotimes [n niters]
-                              (incv t))
-                            *v*))
-                       (range nthreads))]
-          (let [ret (.invokeAll pool tasks)]
-            (.shutdown pool)
-            (map #(.get %) ret))))
+(defn test-vars [nthreads niters]
+  (let [pool (Executors/newFixedThreadPool nthreads)
+        tasks (map (fn [t]
+                     #(binding [*v* 0]
+                        (dotimes [n niters]
+                          (incv t))
+                        ,*v*))
+                   (range nthreads))]
+      (let [ret (.invokeAll pool tasks)]
+        (.shutdown pool)
+        (map #(.get %) ret))))
 
-    (test-vars 10 1000000)
-    -> (0 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000)
-    (set! *v* 4)
-    -> java.lang.IllegalStateException: Can't change/establish root binding of: *v* with set
+(test-vars 10 1000000)
+-> (0 1000000 2000000 3000000 4000000 5000000 6000000 7000000 8000000 9000000)
+(set! *v* 4)
+-> java.lang.IllegalStateException: Can't change/establish root binding of: *v* with set
 #+END_SRC
 
 Dynamic vars provide a way to communicate between different points on
@@ -174,25 +174,25 @@ context-oriented programming. Because fns defined with
 are stored in vars, they too can be dynamically rebound:
 
 #+BEGIN_SRC clojure
-    (defn ^:dynamic say [& args]
-      (apply str args))
+(defn ^:dynamic say [& args]
+  (apply str args))
 
-    (defn loves [x y]
-      (say x " loves " y))
+(defn loves [x y]
+  (say x " loves " y))
 
-    (defn test-rebind []
-      (println (loves "ricky" "lucy"))
-      (let [say-orig say]
-        (binding [say (fn [& args]
-                          (println "Logging say")
-                          (apply say-orig args))]
-          (println (loves "fred" "ethel")))))
+(defn test-rebind []
+  (println (loves "ricky" "lucy"))
+  (let [say-orig say]
+    (binding [say (fn [& args]
+                      (println "Logging say")
+                      (apply say-orig args))]
+      (println (loves "fred" "ethel")))))
 
-    (test-rebind)
+(test-rebind)
 
-    ricky loves lucy
-    Logging say
-    fred loves ethel
+ricky loves lucy
+Logging say
+fred loves ethel
 #+END_SRC
 * about--dynamic.org
 :PROPERTIES:
