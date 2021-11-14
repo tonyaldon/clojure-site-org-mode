@@ -8602,9 +8602,6 @@ process (written in ClojureScript).
 [[https://www.works-hub.com/images/homepage/walkthrough02.svg]]
 
 **** Who is involved
-:LOGBOOK:
-CLOCK: [2021-11-14 Sun 17:25]
-:END:
 
 The event is free of charge and run by unpaid volunteers from the
 Clojure community. While the workshop is primarily for trans/cis women &
@@ -8979,11 +8976,6 @@ can also pop along to our [[https://discord.com/invite/m4DaGW6N][Discord
 server]] to speak to any of the organisers and fellow Clojurians.
 
 We look forward to seeing you there!
-* events-feed.org
-:PROPERTIES:
-:CLOJURE_SITE_FILE: [[./clojure-site/content/events-feed.adoc]]
-:CUSTOM_ID: events-feed
-:END:
 * Guides
 ** Comparators Guide
 :PROPERTIES:
@@ -37126,11 +37118,6 @@ and Builds]].
    [[https://github.com/clojure/tools.deps.alpha/blob/master/CHANGELOG.md][tools.deps.alpha]]
    0.8.677
 
-* search.org
-:PROPERTIES:
-:CLOJURE_SITE_FILE: [[./clojure-site/content/search.adoc]]
-:CUSTOM_ID: search
-:END:
 * Stories
 ** AnyChart
 :PROPERTIES:
