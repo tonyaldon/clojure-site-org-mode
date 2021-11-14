@@ -10,7 +10,7 @@
 # properties.
 
 * About
-** about--clojureclr.org
+** Clojure CLR
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojureclr.adoc]]
 :CUSTOM_ID: about/clojureclr
@@ -27,8 +27,7 @@ Microsoft's Dynamic Language Runtime (DLR).
 - [[https://github.com/clojure/clojure-clr/wiki/Getting-binaries][Downloading
    Binaries]]
 
-
-** about--clojurescript.org
+** ClojureScript
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojurescript.adoc]]
 :CUSTOM_ID: about/clojurescript
@@ -42,8 +41,7 @@ compiler.
 
 - [[https://github.com/clojure/clojurescript][ClojureScript Home]]
 
-
-** about--concurrent_programming.org
+** Concurrent Programming
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/concurrent_programming.adoc]]
 :CUSTOM_ID: about/concurrent_programming
@@ -195,7 +193,7 @@ ricky loves lucy
 Logging say
 fred loves ethel
 #+END_SRC
-** about--dynamic.org
+** Dynamic Development
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/dynamic.adoc]]
 :CUSTOM_ID: about/dynamic
@@ -270,7 +268,7 @@ Clojure is a compiled language, so one might wonder when you have to run
 the compiler. You don't. Anything you enter into the REPL or load using
 load-file is automatically compiled to JVM bytecode on the fly.
 Compiling ahead-of-time is also possible, but not required.
-** about--features.org
+** Features
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/features.adoc]]
 :CUSTOM_ID: about/features
@@ -290,8 +288,7 @@ for more details.
 - [[file:concurrent_programming.xml][Concurrent Programming]]
 - [[file:jvm_hosted.xml][Hosted on the JVM]]
 
-
-** about--functional_programming.org
+** Functional Programming
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/functional_programming.adoc]]
 :CUSTOM_ID: about/functional_programming
@@ -504,7 +501,7 @@ For situations where mutual recursion is called for, recur can't be
 used. Instead,
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/trampoline][trampoline]]
 may be a good option.
-** about--history.org
+** History
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/history.adoc]]
 :CUSTOM_ID: about/history
@@ -536,7 +533,7 @@ From HOPL IV in June 2021:
 
 #+CAPTION: HOPL IV conference talk and Q&A
 [[/images/content/about/hopl-video.png]]
-** about--jvm_hosted.org
+** Hosted on the JVM
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/jvm_hosted.adoc]]
 :CUSTOM_ID: about/jvm_hosted
@@ -602,7 +599,7 @@ Here's a small Swing app as a more involved example:
 #+END_SRC
 
 [[/images/content/about/celsius.png]]
-** about--lisp.org
+** Clojure as a Dialect of Lisp
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/lisp.adoc]]
 :CUSTOM_ID: about/lisp
@@ -644,7 +641,7 @@ define. Here's /*and*/:
 
 Note the use of syntax-quote (`), which makes it easy to define macros
 whose forms mimic the forms they generate.
-** about--rationale.org
+** Rationale
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/rationale.adoc]]
 :CUSTOM_ID: about/rationale
@@ -800,7 +797,7 @@ for the JVM with strong concurrency support. Check out some of the
 [[file:features.xml][features]] or
 [[file:xref/../../guides/getting_started.xml][get started with
 Clojure]].
-** about--runtime_polymorphism.org
+** Runtime Polymorphism
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/runtime_polymorphism.adoc]]
 :CUSTOM_ID: about/runtime_polymorphism
@@ -874,7 +871,7 @@ for new types. Protocols are limited just to dispatch on class type to
 take advantage of the native Java performance of polymorphic method
 calls. For more details, see the
 [[file:xref/../../reference/protocols.xml][protocols]] page.
-** about--spec.org
+** clojure.spec - Rationale and Overview
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/spec.adoc]]
 :CUSTOM_ID: about/spec
@@ -1402,8 +1399,7 @@ Rich Hickey
 - [[https://github.com/clojure/spec.alpha][Project]]
 - [[file:xref/../../../community/resources.xml#spec][spec Resources]]
 
-
-** about--state.org
+** Values and Change
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/state.adoc]]
 :CUSTOM_ID: about/state
@@ -1643,7 +1639,7 @@ functionally with
 [[file:xref/../../reference/special_forms.xml#recur][recur]] or
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduce][reduce]].
 * Api
-** api--api.org
+** API Documentation
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/api/api.adoc]]
 :CUSTOM_ID: api/api
@@ -1678,7 +1674,7 @@ Documentation for Clojure
 - [[https://clojure.github.io/clojure-contrib/][Clojure Contrib API]]
 
 * Community
-** community--ask.org
+** Clojure Forum
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/ask.adoc]]
 :CUSTOM_ID: community/ask
@@ -1722,7 +1718,7 @@ needed, create a corresponding jira for development.
 Users may vote on both questions and answers. Votes will be used to
 inform decisions about future releases of Clojure, ClojureScript,
 libraries, etc.
-** community--books.org
+** Books
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/books.adoc]]
 :CUSTOM_ID: community/books
@@ -1852,7 +1848,7 @@ Please support these fine books about Clojure.
 | Practical Clojure                                                            | [[https://a.co/fWbYqs5][Practical Clojure]]\\                                                                     |
 |                                                                              | by Luke VanderHart, Stuart Sierra\\                                                                               |
 |                                                                              | Jun 1, 2010                                                                                                       |
-** community--community_stories.org
+** Community Stories
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/community_stories.adoc]]
 :CUSTOM_ID: community/community_stories
@@ -1861,7 +1857,7 @@ Please support these fine books about Clojure.
 If you'd like to share your Clojure story, please
 [[https://docs.google.com/forms/d/e/1FAIpQLSf0Wx6sOVxPeeob45VqJXqRYKM9K_-Mzir-DYFbnXZ1lR_BGg/viewform][complete
 this form]].
-** community--companies.org
+** Companies
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/companies.adoc]]
 :CUSTOM_ID: community/companies
@@ -2378,8 +2374,7 @@ Stories]] and [[file:community_stories.xml][Community Stories]] pages!
 - Zen Finance
 - Zoona
 
-
-** community--contributing.org
+** Contributing
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/contributing.adoc]]
 :CUSTOM_ID: community/contributing
@@ -2452,7 +2447,7 @@ for more information on Clojure development.
 If you would like to provide a patch on a specific ticket in the jira
 tracker, please follow the [[file:xref/../../dev/dev.xml][process]] to
 become a contributor.
-** community--contributing_site.org
+** Contributing to This Site
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/contributing_site.adoc]]
 :CUSTOM_ID: community/contributing_site
@@ -2674,7 +2669,7 @@ Copyright © 2019 Rich Hickey and contributors
 All documentation contained in this repository is licensed by Rich
 Hickey under the [[http://www.eclipse.org/legal/epl-v10.html][Eclipse
 Public License v1.0]] unless otherwise noted.
-** community--editing.org
+** Editing
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/editing.adoc]]
 :CUSTOM_ID: community/editing
@@ -2902,7 +2897,7 @@ answer more advanced questions.
 -  [[http://powerman.name/doc/asciidoc][Asciidoc cheat sheet]]
 -  [[http://asciidoctor.org/docs/user-manual][Asciidoctor user manual]]
 
-** community--etiquette.org
+** Etiquette
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/etiquette.adoc]]
 :CUSTOM_ID: community/etiquette
@@ -2951,14 +2946,13 @@ who make things, which you should care about if you intend to be one.
 /Adapted from Rich's
 [[https://groups.google.com/forum/#!msg/clojure/t0pGIuoyB7I/RQtuuAOhes8J][post]]
 to the Clojure mailing list./
-** community--events.org
+** Upcoming Clojure Events
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/events.adoc]]
 :CUSTOM_ID: community/events
 :END:
 
-
-** community--libraries.org
+** Clojure Libraries
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/libraries.adoc]]
 :CUSTOM_ID: community/libraries
@@ -2988,8 +2982,7 @@ infrastructure, people, or goals:
 - [[https://clj-commons.org/][clj-commons]]
 - [[http://clojurewerkz.org/][ClojureWerkz]]
 
-
-** community--license.org
+** License
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/license.adoc]]
 :CUSTOM_ID: community/license
@@ -3001,7 +2994,7 @@ The use and distribution terms for this software are covered by the
 distribution. By using this software in any fashion, you are agreeing to
 be bound by the terms of this license. You must not remove this notice,
 or any other, from this software.
-** community--resources.org
+** Community Resources
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/resources.adoc]]
 :CUSTOM_ID: community/resources
@@ -3182,8 +3175,7 @@ Video training (commercial):
 - [[https://clojure-south.com/][Clojure/South]] - A Clojure conference
    in Sao Paulo, Brazil
 
-
-** community--start_group.org
+** Start Group
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/start_group.adoc]]
 :CUSTOM_ID: community/start_group
@@ -3290,7 +3282,7 @@ can broaden the scope to find others that might like to talk about
 Clojure some of the time. Are there people interested in a functional
 programming group? A programming languages group? A JVM-based languages
 group? A programmer's club?
-** community--success_stories.org
+** Success Stories
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/success_stories.adoc]]
 :CUSTOM_ID: community/success_stories
@@ -3719,7 +3711,7 @@ it allows us to quickly react to feature requests.
 Bastien Guerry
 Free Software Officer at the French digital administration
 #+END_QUOTE
-** community--swag.org
+** Swag
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/swag.adoc]]
 :CUSTOM_ID: community/swag
@@ -3755,7 +3747,7 @@ Clojure T, Large Logo
 
 [[https://rlv.zcache.com/clojure_t_small_logo_t_shirt-rda2f449605144baf8631399aa19d8c63_joa8u_324.jpg]]
 Clojure T, Small Logo
-** community--tools.org
+** Clojure Tools
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/tools.adoc]]
 :CUSTOM_ID: community/tools
@@ -3830,8 +3822,7 @@ the most commonly used tools include:
 - [[http://www.clojure-toolbox.com/][Clojure Toolbox]] - a categorized
    index of Clojure libraries
 
-
-** community--training.org
+** Training
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/training.adoc]]
 :CUSTOM_ID: community/training
@@ -3897,7 +3888,7 @@ For conferences and upcoming events, check the upcoming
 
 If you would like to be added or removed from this list, please contact
 /clojure@cognitect.com/ or submit a pull request.
-** community--user_groups.org
+** Clojure user groups
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/user_groups.adoc]]
 :CUSTOM_ID: community/user_groups
@@ -4110,7 +4101,7 @@ repo.
    Group]]
 
 * Dev
-** dev--contrib_history.org
+** Contrib History
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contrib_history.adoc]]
 :CUSTOM_ID: dev/contrib_history
@@ -4358,8 +4349,7 @@ purposes.
    - A JVM bytecode generator, using tools.analyzer.jvm as frontend -
       lead Nicola Mometto
 
-
-** dev--contrib_howto.org
+** Contrib How-To
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contrib_howto.adoc]]
 :CUSTOM_ID: dev/contrib_howto
@@ -4640,8 +4630,7 @@ The Standards:
          be there (by design), and people without sufficient
          understanding/skills might fill the void with broken ideas."
 
-
-** dev--contrib_libs.org
+** Contrib Libraries
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contrib_libs.adoc]]
 :CUSTOM_ID: dev/contrib_libs
@@ -4798,7 +4787,7 @@ history of the contrib split.
 
 Some older content on participating or contributing to contrib can be
 found at [[file:contrib_howto.xml][Contrib How-To]].
-** dev--contributor_agreement.org
+** Contributor Agreement
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contributor_agreement.adoc]]
 :CUSTOM_ID: dev/contributor_agreement
@@ -5010,7 +4999,7 @@ signed the Clojure Contributor Agreement.
 - Zhuang XiaoDan
 
 /*Many thanks for your contributions to Clojure!*/
-** dev--contributors.org
+** Contributors
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contributors.adoc]]
 :CUSTOM_ID: dev/contributors
@@ -6779,7 +6768,7 @@ Below is a list of all signers of the Clojure
 | Rob Zumwalt                                 | rzoom                                                           |
 | Greg Zuro                                   | gregzuro                                                        |
 | Piotr Zygielo                               | pzygielo                                                        |
-** dev--creating_tickets.org
+** Creating Tickets
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/creating_tickets.adoc]]
 :CUSTOM_ID: dev/creating_tickets
@@ -6917,8 +6906,7 @@ DO NOT use these tags:
 - patch - already covered by the patch field
 - test - already covered by the patch field
 
-
-** dev--developing_patches.org
+** Developing Patches
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/developing_patches.adoc]]
 :CUSTOM_ID: dev/developing_patches
@@ -7279,7 +7267,7 @@ Then use your preferred method of building Clojure from source, e.g.:
 #+BEGIN_EXAMPLE
 $ mvn -Dmaven.test.skip=true clean install
 #+END_EXAMPLE
-** dev--dev.org
+** Development
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/dev.adoc]]
 :CUSTOM_ID: dev/dev
@@ -7375,7 +7363,7 @@ Additionally, the core team may be doing work in dependent projects or
 tools, rather than the language itself, such as spec, core.specs,
 tools.deps, clj, etc. This is still considered part of the broader
 "release" train.
-** dev--screening_tickets.org
+** Screening Tickets
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/screening_tickets.adoc]]
 :CUSTOM_ID: dev/screening_tickets
@@ -7535,8 +7523,7 @@ If you aren't sure
 - Get a second opinion, and note this in the comments
 - Set the waiting-on to Rich or Stu, if appropriate
 
-
-** dev--workflow.org
+** Workflow
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/workflow.adoc]]
 :CUSTOM_ID: dev/workflow
@@ -7858,7 +7845,8 @@ an activity. Activities are described in more detail below the diagram.
       CLJS-only]]
 
 * Events
-** events--2015--clojurex.org
+** 2015
+*** Clojure eXchange
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2015/clojurex.adoc]]
 :CUSTOM_ID: events/2015/clojurex
@@ -7872,7 +7860,8 @@ Clojure's rise to prominence and it's increasing popularity as 'weapon
 of choice' for tackling complex software problems got us thinking;
 wouldn't it be great to get the world's greatest Clojure experts in
 London with hundreds of fellow Clojurians? Well, we thought so too.
-** events--2016--clojurebridge_austin.org
+** 2016
+*** ClojureBridge Austin
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_austin.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_austin
@@ -7886,7 +7875,7 @@ Clojure to build a simple web app, learning as we go.
 
 Experience Needed: You should be familiar with basic coding and have a
 laptop able to run Java 1.8.
-** events--2016--clojurebridge_berlin_2.org
+*** ClojureBridge Berlin Germany
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_berlin_2.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_berlin_2
@@ -7902,7 +7891,7 @@ genders.
 We'll meet up Friday late afternoon to install all of the software you
 need, and then spend Saturday learning and writing code. You will learn
 and practice in small groups of 2 to 4 attendees each.
-** events--2016--clojurebridge_berlin.org
+*** ClojureBridge Berlin
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_berlin.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_berlin
@@ -7916,7 +7905,7 @@ Clojure.
 Total programming novices, system administrators, developers in other
 languages, and folks who attended our previous workshops are all
 welcome. We'll have different classes separated by experience level.
-** events--2016--clojurebridge_boston.org
+*** ClojureBridge Boston
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_boston.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_boston
@@ -7942,14 +7931,14 @@ with a fairly recent operating system (Mac, Linux or Windows). If you
 have questions about your hardware or you don't have a laptop, don't
 hesitate to send an email to the organizers before the event.
 
-*** Who can attend?
+**** Who can attend?
 
 The workshop is open to all women, trans*, and gender nonconforming
 people. Men are welcome if they are an invited guest of a student who
 qualifies by the above definition. Attendees inviting a guest should
 select quantity 2 when signing up for tickets, and fill out their
 guest's information in the 2nd ticket.
-** events--2016--clojurebridge_krakow.org
+*** ClojureBridge Kraków, Poland
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_krakow.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_krakow
@@ -7961,7 +7950,7 @@ be learning.
 
 We'll meet on Friday evening to install Clojure and all of the software
 we need. On Saturday, we will learn to code Clojure.
-** events--2016--clojurebridge_london_2.org
+*** ClojureBridge London - Fall
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_london_2.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_london_2
@@ -7976,7 +7965,7 @@ Males may register as a guest of one of these participants.
 The workshop material supports those with little or no programming
 experience and introduces them to programming concepts. We organise
 attendees into small groups with at least one teacher and one assistant.
-** events--2016--clojurebridge_london_3.org
+*** ClojureBridge London - November
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_london_3.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_london_3
@@ -7995,7 +7984,7 @@ started with the workshop.
 
 Food and drinks will be provided throughout the event, so please let us
 know if you have any special requirements when you register.
-** events--2016--clojurebridge_london.org
+*** ClojureBridge London
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_london.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_london
@@ -8008,7 +7997,7 @@ may register as a guest of one of these participants.
 
 This workshop is intended for those with none/some programming
 experience.
-** events--2016--clojurebridge_minneapolis.org
+*** ClojureBridge Minnesota
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_minneapolis.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_minneapolis
@@ -8024,8 +8013,7 @@ your laptop, and then spend Saturday learning and writing code:
 - Track1: simple application
 - Track2: basic syntax, data structure and more
 
-
-** events--2016--clojurebridge_nyc.org
+*** ClojureBridge NYC
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_nyc.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_nyc
@@ -8038,7 +8026,7 @@ beginner-friendly Clojure programming workshops for women.
 In this workshop, we'll introduce you to the fundamentals of the Clojure
 programming language. We'll meet up Friday night to install all of the
 software you need, and then spend Saturday learning and writing code.
-** events--2016--clojurebridge_pittsburgh.org
+*** ClojureBridge Pittsburgh
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_pittsburgh.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_pittsburgh
@@ -8051,7 +8039,7 @@ beginner-friendly Clojure programming workshops for women.
 In this workshop, we'll introduce you to the fundamentals of the Clojure
 programming language. We'll meet up Friday night to install all of the
 software you need, and then spend Saturday learning and writing code.
-** events--2016--clojurebridge_sanfrancisco.org
+*** ClojureBridge San Francisco
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_sanfrancisco.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_sanfrancisco
@@ -8068,7 +8056,7 @@ Clojure, a modern functional programming language.
 The workshop will introduce you to fundamental programming concepts and
 approaches. Participants can choose between two tracks, based on their
 programming experience.
-** events--2016--clojurebridge_seattle.org
+*** ClojureBridge Seattle
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_seattle.adoc]]
 :CUSTOM_ID: events/2016/clojurebridge_seattle
@@ -8081,7 +8069,7 @@ software you need, and then spend Saturday learning and writing code.
 This event is intentionally timed to be the weekend before the big west
 coast Clojure conference (Clojure/West), which is also being held here
 in Seattle.
-** events--2016--clojureconj.org
+*** Clojure/conj
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojureconj.adoc]]
 :CUSTOM_ID: events/2016/clojureconj
@@ -8100,7 +8088,7 @@ three-day event.
 This year's event will be held in Austin, TX from December 1-3. The Conj
 offers a great mix of experienced Clojurists and new adopters and
 everyone can find something to suit their need.
-** events--2016--clojured.org
+*** ec:clojureD
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojured.adoc]]
 :CUSTOM_ID: events/2016/clojured
@@ -8115,7 +8103,7 @@ be an opportunity to meet the German & European Clojure community and
 share a good time together.
 
 The conference will be held in English.
-** events--2016--clojureexchange.org
+*** Clojure eXchange
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojureexchange.adoc]]
 :CUSTOM_ID: events/2016/clojureexchange
@@ -8126,7 +8114,7 @@ Programming and network with like-minded people, then the Clojure
 eXchange 2016 is the conference you simply can't miss! Meet with the
 world's leading experts, learn how to use Clojure in your team and
 discuss war stories with your peers.
-** events--2016--clojureremote.org
+*** Clojure Remote
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojureremote.adoc]]
 :CUSTOM_ID: events/2016/clojureremote
@@ -8139,7 +8127,7 @@ office, or the coffee shop.
 Over two days, you'll join hundreds of other Clojurists online via
 crowdcast.io to enjoy up to two tracks of beginner to intermediate
 Clojure talks.
-** events--2016--clojurewest.org
+*** Clojure/west
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurewest.adoc]]
 :CUSTOM_ID: events/2016/clojurewest
@@ -8150,7 +8138,7 @@ States. Founded in 2012, the conference is a great place to meet Clojure
 developers and learn about what is happening in the language, in the
 community, and in companies using Clojure. Clojure/west features two
 tracks of sessions.
-** events--2016--clojutre.org
+*** clojuTRE
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojutre.adoc]]
 :CUSTOM_ID: events/2016/clojutre
@@ -8161,7 +8149,7 @@ clojuTRE is a free Clojure conference organized by
 start, short talks (20 minutes and 5 minutes Q&A) and a funky after
 party for networking, discussions and draft beer. We welcome both
 newbies and seasoned Clojurists.
-** events--2016--dutch_clojure_days.org
+*** Dutch Clojure Days
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/dutch_clojure_days.adoc]]
 :CUSTOM_ID: events/2016/dutch_clojure_days
@@ -8169,7 +8157,7 @@ newbies and seasoned Clojurists.
 
 The Annual Gathering of Clojure Enthusiasts and Practitioners in the
 Netherlands!
-** events--2016--euroclojure.org
+*** EuroClojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/euroclojure.adoc]]
 :CUSTOM_ID: events/2016/euroclojure
@@ -8184,7 +8172,7 @@ Clojurists and new adopters and everyone can find something to suit
 their needs.
 
 EuroClojure is a Cognitect event.
-** events--2016--inclojure.org
+*** InClojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/inclojure.adoc]]
 :CUSTOM_ID: events/2016/inclojure
@@ -8198,7 +8186,7 @@ Our goal with this conference is to nurture the small but growing
 community of Clojure programmers in India. We expect to have between 100
 to 150 attendees from India and abroad, with a mix of experienced
 Clojure programmers and enthusiasts.
-** events--2016--thing-sept.org
+*** Clojure and thi.ng for 3D Printing
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/thing-sept.adoc]]
 :CUSTOM_ID: events/2016/thing-sept
@@ -8214,7 +8202,8 @@ procedural generation can bring to the field of digital fabrication.
 And, you'll not only be able to take home your own 3D printed object,
 but too learn about important skills and pitfalls to watch out for in
 your future practice with these technologies.
-** events--2017--clojurebridge-ba.org
+** 2017
+*** ClojureBridge Buenos Aires
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-ba.adoc]]
 :CUSTOM_ID: events/2017/clojurebridge-ba
@@ -8222,7 +8211,7 @@ your future practice with these technologies.
 
 The first workshop of ClojureBridge Buenos Aires (and first in South
 America)!
-** events--2017--clojurebridge-boston.org
+*** ClojureBridge Boston
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-boston.adoc]]
 :CUSTOM_ID: events/2017/clojurebridge-boston
@@ -8235,7 +8224,7 @@ late afternoon March 17, 2017. The workshop helps explore programming
 using Clojure, a modern functional programming language, and is intended
 both for those new to programming and those with some programming
 experience.
-** events--2017--clojurebridge-sanfrancisco.org
+*** ClojureBridge San Francisco
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-sanfrancisco.adoc]]
 :CUSTOM_ID: events/2017/clojurebridge-sanfrancisco
@@ -8250,7 +8239,7 @@ language.
 
 The workshop will introduce participants to fundamental programming
 concepts and approaches.
-** events--2017--clojurebridge-seoul.org
+*** ClojureBridge Seoul
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-seoul.adoc]]
 :CUSTOM_ID: events/2017/clojurebridge-seoul
@@ -8263,7 +8252,7 @@ Friday March 17th, 2017 in the evening. The workshop is intended both
 for those new to programming, as well as those with some programming
 experience who would like to explore programming using Clojure, a modern
 functional programming language.
-** events--2017--clojurebridge-tampere.org
+*** ClojureBridge Tampere
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-tampere.adoc]]
 :CUSTOM_ID: events/2017/clojurebridge-tampere
@@ -8286,7 +8275,7 @@ Vaatimuksena on, että osallistujalla on oma kannettava tietokone, jossa
 wifi sekä johon on oikeus asentaa ohjelmia (eli ns. adminoikeudet).
 Mikäli käytät windows-konetta, on käyttöjärjestelmän oltava vähintään
 windows 7.
-** events--2017--clojurebridge-toronto.org
+*** ClojureBridge Toronto
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-toronto.adoc]]
 :CUSTOM_ID: events/2017/clojurebridge-toronto
@@ -8299,7 +8288,7 @@ on Friday February 24th, 2017 in the evening. The workshop is intended
 both for those new to programming, as well as those with some
 programming experience who would like to explore programming using
 Clojure, a modern functional programming language.
-** events--2017--clojureconj.org
+*** Clojure/conj
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojureconj.adoc]]
 :CUSTOM_ID: events/2017/clojureconj
@@ -8319,7 +8308,7 @@ This year's event will be held in Baltimore, MD from October 12-14. The
 Conj offers a great mix of experienced Clojurists and new adopters and
 everyone can find something to suit their need. This will be a special
 year for the Conj as Clojure will celebrate it's 10th birthday!
-** events--2017--clojured.org
+*** ec:clojureD
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojured.adoc]]
 :CUSTOM_ID: events/2017/clojured
@@ -8334,7 +8323,7 @@ be an opportunity to meet the German & European Clojure community and
 share a good time together.
 
 The conference will be held in English.
-** events--2017--clojureremote.org
+*** Clojure Remote
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojureremote.adoc]]
 :CUSTOM_ID: events/2017/clojureremote
@@ -8365,7 +8354,7 @@ Ryan Neufeld at Clojure Remote\\
 [[https://twitter.com/clojureremote]]
 
 [[https://raw.githubusercontent.com/clojureremote/cr17/master/logos/Expanded-1000px.png]]
-** events--2017--clojurewest.org
+*** Clojure/west
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurewest.adoc]]
 :CUSTOM_ID: events/2017/clojurewest
@@ -8376,7 +8365,7 @@ States. Founded in 2012, the conference is a great place to meet Clojure
 developers and learn about what is happening in the language, in the
 community, and in companies using Clojure. Clojure/west features two
 tracks of sessions.
-** events--2017--clojurex.org
+*** ClojureX
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurex.adoc]]
 :CUSTOM_ID: events/2017/clojurex
@@ -8403,7 +8392,7 @@ London Clojurians\\
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-text-highlight-lambda-jr0cket.png]]
-** events--2017--clojutre.org
+*** clojuTRE
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojutre.adoc]]
 :CUSTOM_ID: events/2017/clojutre
@@ -8414,7 +8403,7 @@ clojuTRE is a Clojure conference organized by
 start, short talks (20 minutes and 5 minutes Q&A) and a funky after
 party for networking, discussions and draft beer. We welcome both
 newbies and seasoned Clojurists.
-** events--2017--dutchclojureday.org
+*** Dutch Clojure Day
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/dutchclojureday.adoc]]
 :CUSTOM_ID: events/2017/dutchclojureday
@@ -8422,7 +8411,7 @@ newbies and seasoned Clojurists.
 
 The Annual Gathering of Clojure Enthusiasts and Practitioners in the
 Netherlands!
-** events--2017--euroclojure.org
+*** EuroClojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/euroclojure.adoc]]
 :CUSTOM_ID: events/2017/euroclojure
@@ -8436,7 +8425,8 @@ July 20-21. EuroClojure offers a great mix of experienced Clojurists and
 new adopters and everyone can find something to suit their needs.
 
 EuroClojure is a Cognitect event.
-** events--2018--clojureconj.org
+** 2018
+*** Clojure/conj
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojureconj.adoc]]
 :CUSTOM_ID: events/2018/clojureconj
@@ -8455,7 +8445,7 @@ three-day event.
 This year's event will be held in Durham, NC from Nov 29-Dec 1st. The
 Conj offers a great mix of experienced Clojurists and new adopters and
 everyone can find something to suit their need.
-** events--2018--clojured.org
+*** ec:clojureD
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojured.adoc]]
 :CUSTOM_ID: events/2018/clojured
@@ -8473,7 +8463,7 @@ Sale started 1. October.
 
 We hope to see you in Berlin for another great an inspiring :clojureD
 conference!
-** events--2018--clojure-sync.org
+*** Clojure SYNC
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojure-sync.adoc]]
 :CUSTOM_ID: events/2018/clojure-sync
@@ -8492,7 +8482,7 @@ the history of technology. If you like the PurelyFunctional.tv
 Newsletter, you'll love the talks at Clojure SYNC. An explicit goal of
 the conference is to broaden our perspectives on the history of
 computing and how it fits into the history of humanity.
-** events--2018--clojurex.org
+*** ClojureX
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojurex.adoc]]
 :CUSTOM_ID: events/2018/clojurex
@@ -8520,7 +8510,7 @@ London Clojurians\\
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png]]
-** events--2018--clojutre.org
+*** ClojuTRE
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojutre.adoc]]
 :CUSTOM_ID: events/2018/clojutre
@@ -8531,7 +8521,7 @@ ClojuTRE is a Clojure conference organized by
 start, short talks (20 minutes and 5 minutes Q&A) and a funky after
 party for networking, discussions and craft beer. We welcome both
 newbies and seasoned Clojurists.
-** events--2018--dutchclojureday.org
+*** Dutch Clojure Day
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/dutchclojureday.adoc]]
 :CUSTOM_ID: events/2018/dutchclojureday
@@ -8544,8 +8534,7 @@ Netherlands!
 - Register:
    [[https://www.eventbrite.com/e/dutch-clojure-day-2018-tickets-41749338395]]
 
-
-** events--2018--inclojure.org
+*** IN/Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/inclojure.adoc]]
 :CUSTOM_ID: events/2018/inclojure
@@ -8555,7 +8544,8 @@ IN/Clojure 2018 is the second edition of Asia's first Clojure
 conference. Our goal with this conference is to nurture the growing
 community of Clojure programmers in India. We expect to have a mix of
 experienced Clojure programmers and enthusiasts.
-** events--2019--clojurebridge-london-may-2019.org
+*** 2019
+*** ClojureBridge London
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojurebridge-london-may-2019.adoc]]
 :CUSTOM_ID: events/2019/clojurebridge-london-may-2019
@@ -8567,7 +8557,7 @@ non-binary people into software development. The workshop is suitable
 for people just starting to code, or people on their first language who
 are Clojure curious.
 
-*** Event overview
+**** Event overview
 
 Friday evening we have members of the community sharing their
 development experiences and demonstrating what you can do with Clojure.
@@ -8577,13 +8567,13 @@ Saturday we coach you through a day of small practical exercises,
 building responsive websites or creating simple games. We aim for 1-2-1
 coaching so we can support you each step of the way.
 
-*** Requirements
+**** Requirements
 
 Each participant requires their own laptop with either MacOSX, Linux or
 Windows operating system. We help you set up your laptop for Clojure
 during the Friday evening (optional if you are just starting to code).
 
-*** Why learn Clojure?
+**** Why learn Clojure?
 
 Clojure is a small language with a simple design that can be used to
 build apps for the web, mobile apps, and even desktop apps. Clojure is a
@@ -8598,7 +8588,7 @@ its host platforms, JavaScript/Node.js, Java or Microsoft .Net, too.
 For more information, please take a look at the
 [[https://clojurebridgelondon.github.io/][ClojureBridge London website]]
 
-*** Our Sponsor
+**** Our Sponsor
 
 Thank you to our sponsor [[https://functional.works-hub.com/][Functional
 Works]] for providing the venue and all the food and refreshments for
@@ -8611,7 +8601,10 @@ process (written in ClojureScript).
 
 [[https://www.works-hub.com/images/homepage/walkthrough02.svg]]
 
-*** Who is involved
+**** Who is involved
+:LOGBOOK:
+CLOCK: [2021-11-14 Sun 17:25]
+:END:
 
 The event is free of charge and run by unpaid volunteers from the
 Clojure community. While the workshop is primarily for trans/cis women &
@@ -8622,7 +8615,7 @@ volunteering as a coach, take a look at the workshop content and if you
 understand the basic Clojure we cover then you can coach. Coach training
 is provided around a week before the event
 
-**** Volunteer Details
+***** Volunteer Details
 
 Be sure to work through the exercises in the ClojureBridge London
 workshop before the coach training event.
@@ -8633,7 +8626,7 @@ If you are interested in coaching students with some coding experience,
 also take a look at the projects in the workshop and have one of the
 recommended editors/IDE's installed.
 
-**** Student Details
+***** Student Details
 
 All students need to bring their own laptop and power adaptor
 
@@ -8647,7 +8640,7 @@ London Clojurians\\
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png]]
-** events--2019--clojureconj.org
+*** Clojure/conj
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojureconj.adoc]]
 :CUSTOM_ID: events/2019/clojureconj
@@ -8666,7 +8659,7 @@ three-day event.
 This year's event will be held in Durham, NC from Nov 21-Nov 23. The
 Conj offers a great mix of experienced Clojurists and new adopters and
 everyone can find something to suit their need.
-** events--2019--clojured.org
+*** ec:clojureD
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojured.adoc]]
 :CUSTOM_ID: events/2019/clojured
@@ -8681,7 +8674,7 @@ community and share a good time together.
 
 We hope to see you in Berlin for another great an inspiring :clojureD
 conference!
-** events--2019--clojureeua.org
+*** Clojure Day Ukraine
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojureeua.adoc]]
 :CUSTOM_ID: events/2019/clojureeua
@@ -8689,7 +8682,7 @@ conference!
 
 Two-day community driven event for everyone interested in Clojure and
 functional programming.
-** events--2019--clojurenorth.org
+*** Clojure/north
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojurenorth.adoc]]
 :CUSTOM_ID: events/2019/clojurenorth
@@ -8711,8 +8704,7 @@ We hope to see you there!
 - CFP: [[https://clojurenorth.typeform.com/to/YuveUZ]]
 - Tickets: [[https://ti.to/clojure-north/clojure-north-2019]]
 
-
-** events--2019--clojuresouth.org
+*** Clojure/South
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojuresouth.adoc]]
 :CUSTOM_ID: events/2019/clojuresouth
@@ -8727,7 +8719,7 @@ Stuart Halloway and David Chelimsky will be the keynote speakers for the
 event. A Call for Presentations is open from June 15-July 21 - see
 [[https://www.papercall.io/clojure-south][CFP]]. Talks will be 40
 minutes and there will be two session rooms.
-** events--2019--clojurex.org
+*** ClojureX is cancelled
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojurex.adoc]]
 :CUSTOM_ID: events/2019/clojurex
@@ -8758,7 +8750,7 @@ London Clojurians\\
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png]]
-** events--2019--clojuru.org
+*** Cloju.ru
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojuru.adoc]]
 :CUSTOM_ID: events/2019/clojuru
@@ -8770,7 +8762,7 @@ are welcome.
 
 Call for presentations is open at
 [[mailto:orgs@cloju.ru][orgs@cloju.ru]].
-** events--2019--clojutre.org
+*** ClojuTRE
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojutre.adoc]]
 :CUSTOM_ID: events/2019/clojutre
@@ -8786,8 +8778,7 @@ enthusiasts. Next edition of the event will be held in Helsinki Thursday
 - Tickets:
    [[https://www.eventbrite.com/e/clojutre2019-tickets-53048236704]]
 
-
-** events--2019--dutchclojureday.org
+*** Dutch Clojure Day
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/dutchclojureday.adoc]]
 :CUSTOM_ID: events/2019/dutchclojureday
@@ -8798,8 +8789,7 @@ Netherlands!
 
 - CFP: [[https://www.papercall.io/dcd19]]
 
-
-** events--2019--heartofclojure.org
+*** Heart of Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/heartofclojure.adoc]]
 :CUSTOM_ID: events/2019/heartofclojure
@@ -8808,7 +8798,7 @@ Netherlands!
 A brand new Clojure conference in the heart of Europe. On August 2nd the
 European community comes together for two days of talks, activities, and
 summer fun.
-** events--2019--inclojure.org
+*** IN/Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/inclojure.adoc]]
 :CUSTOM_ID: events/2019/inclojure
@@ -8818,7 +8808,7 @@ IN/Clojure 2019 is the third edition of Asia's first Clojure conference.
 Our goal with this conference is to nurture the growing community of
 Clojure programmers in India. We expect to have a mix of experienced
 Clojure programmers and enthusiasts.
-** events--2019--reclojure.org
+*** re:Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/reclojure.adoc]]
 :CUSTOM_ID: events/2019/reclojure
@@ -8834,7 +8824,8 @@ there!
 
 Please reserve your seat at [[https://reclojure.org]] and join
 #reclojure on Clojurians for more info.
-** events--2020--clojurebridge.org
+** 2020
+*** ClojureBridge London
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojurebridge.adoc]]
 :CUSTOM_ID: events/2020/clojurebridge
@@ -8868,7 +8859,7 @@ London Clojurians
 [[https://twitter.com/ldnclj][Twitter]]
 
 [[https://raw.githubusercontent.com/ClojureBridgeLondon/clojurebridge-logo-modern/master/clojurebridge-logo-modern-london.png]]
-** events--2020--clojured.org
+*** ec:clojureD
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojured.adoc]]
 :CUSTOM_ID: events/2020/clojured
@@ -8883,7 +8874,7 @@ community and share a good time together.
 
 We hope to see you in Berlin for another great an inspiring :clojureD
 conference!
-** events--2020--clojurenorth.org
+*** Clojure/north
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojurenorth.adoc]]
 :CUSTOM_ID: events/2020/clojurenorth
@@ -8905,8 +8896,7 @@ We hope to see you there!
 - Call for Proposals and ticket sales coming soon
 - Follow us for updates! [[https://twitter.com/clojurenorth]]
 
-
-** events--2020--clojutre.org
+*** ClojuTRE
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojutre.adoc]]
 :CUSTOM_ID: events/2020/clojutre
@@ -8921,8 +8911,7 @@ enthusiasts. Next edition of the event will be held in Tampere Thursday
 
 - Tickets: [[https://www.eventbrite.fi/e/84875662391]]
 
-
-** events--2020--dutchclojureday.org
+*** Dutch Clojure Day
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/dutchclojureday.adoc]]
 :CUSTOM_ID: events/2020/dutchclojureday
@@ -8933,8 +8922,7 @@ Netherlands!
 
 - CFP: [[https://www.papercall.io/dcd20]]
 
-
-** events--2020--inclojure.org
+*** IN/Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/inclojure.adoc]]
 :CUSTOM_ID: events/2020/inclojure
@@ -8970,8 +8958,7 @@ And we hope to see you there!
    [[https://hasgeek.com/inclojure/2020/proposals#call-for-proposal]]
 - Follow us for the latest-greatest: [[https://twitter.com/in_clojure]]
 
-
-** events--2021--reclojure.org
+*** re:Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2021/reclojure.adoc]]
 :CUSTOM_ID: events/2021/reclojure
@@ -8997,9 +8984,8 @@ We look forward to seeing you there!
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events-feed.adoc]]
 :CUSTOM_ID: events-feed
 :END:
-
 * Guides
-** guides--comparators.org
+** Comparators Guide
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/comparators.adoc]]
 :CUSTOM_ID: guides/comparators
@@ -9762,7 +9748,7 @@ user> (pprint (sort cc-cmp [true false nil Double/MAX_VALUE 10
  [1, 2, 3, 4])
 nil
 #+END_SRC
-** guides--core_async_go.org
+** Go Block Best Practices
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/core_async_go.adoc]]
 :CUSTOM_ID: guides/core_async_go
@@ -9880,7 +9866,7 @@ via translating all code in the entire JVM. This is something we'd like
 to avoid in core.async, as it complicates things and causes the logic of
 one library to infect the code of an entire JVM. So we're left with the
 practical compromise, translation stops when it sees a =(fn [] …​)=.
-** guides--deps_and_cli.org
+** Deps and CLI Guide
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/deps_and_cli.adoc]]
 :CUSTOM_ID: guides/deps_and_cli
@@ -10426,7 +10412,7 @@ user=> (+ 1 1)
 #+END_EXAMPLE
 
 Use Ctrl-D to exit the repl and Ctrl-C to exit the server.
-** guides--destructuring.org
+** Destructuring in Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/destructuring.adoc]]
 :CUSTOM_ID: guides/destructuring
@@ -11076,7 +11062,7 @@ and return a form:
 The result was formatted here to give it a little more clarity. This
 example should also give you some insight into how destructuring works
 under the hood.
-** guides--dev_startup_time.org
+** Improving Development Startup Time
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/dev_startup_time.adoc]]
 :CUSTOM_ID: guides/dev_startup_time
@@ -11175,7 +11161,7 @@ $ clj -A:dev
 Clojure 1.10.1
 user=> (binding [*compile-files* true] (require 'user :reload-all))
 #+END_EXAMPLE
-** guides--equality.org
+** Equality
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/equality.adoc]]
 :CUSTOM_ID: guides/equality
@@ -11949,7 +11935,7 @@ user=> (= p1 p3)
 false             ; Baker's EGAL would return true here.  Clojure
                   ; = returns false because p1 and p3 are not identical?
 #+END_SRC
-** guides--faq.org
+** Frequently Asked Questions
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/faq.adoc]]
 :CUSTOM_ID: guides/faq
@@ -12643,7 +12629,7 @@ portable, and with significantly less functionality (as the Clojure
 library relies heavily on the JDK). The Clojure core team has no plans
 to work on this but it would be an amazing learning project for anyone
 and we encourage you to go for it!
-** guides--getting_started.org
+** Getting Started
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/getting_started.adoc]]
 :CUSTOM_ID: guides/getting_started
@@ -12778,8 +12764,7 @@ Clojure repl for interactive exploration.
    communities and resources]]
 - [[https://ask.clojure.org][Ask questions about Clojure]]
 
-
-** guides--guides.org
+** Guides
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/guides.adoc]]
 :CUSTOM_ID: guides/guides
@@ -12810,8 +12795,7 @@ Clojure repl for interactive exploration.
 
 - [[file:core_async_go.xml][Go Block Best Practices]]
 
-
-** guides--higher_order_functions.org
+** Higher Order Functions
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/higher_order_functions.adoc]]
 :CUSTOM_ID: guides/higher_order_functions
@@ -21480,13 +21464,11 @@ compiler.
 - [[http://groups.google.com/group/clojure][Clojure Mailing List]]
 - \#clojure IRC on [[http://freenode.net/][Freenode]]
 
-
-** news--2012--02--17--clojure-governance.org
+** [2012-02-17] Clojure Governance and How It Got That Way
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2012/02/17/clojure-governance.adoc]]
 :CUSTOM_ID: news/2012/02/17/clojure-governance
 :END:
-
 *** Enter Rich, with Parentheses
 
 In the beginning, there was a guy with an idea. That guy was Rich
@@ -21747,7 +21729,7 @@ might just be that no one has time to think about it. Recall keyword
 arguments: more than two years from inception to completion. We're in
 this for the long haul. Join us, be patient, and let's see where we can
 go.
-** news--2012--05--08--reducers.org
+** [2012-05-08] Reducers - A Library and Model for Collection Processing
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2012/05/08/reducers.adoc]]
 :CUSTOM_ID: news/2012/05/08/reducers
@@ -22030,7 +22012,7 @@ details about what constitutes a reducer, as well as some background
 about the library.
 
 Rich
-** news--2012--05--15--anatomy-of-reducer.org
+** [2012-05-15] Anatomy of a Reducer
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2012/05/15/anatomy-of-reducer.adoc]]
 :CUSTOM_ID: news/2012/05/15/anatomy-of-reducer
@@ -22305,7 +22287,7 @@ and /serial execution/ promises of foldl/r.
 I hope this makes reducers easier to understand, use and define.
 
 Rich
-** news--2013--06--28--clojure-clore-async-channels.org
+** [2013-06-28] Clojure core.async Channels
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2013/06/28/clojure-clore-async-channels.adoc]]
 :CUSTOM_ID: news/2013/06/28/clojure-clore-async-channels
@@ -22560,7 +22542,7 @@ I hope that these async channels will help you build simpler and more
 robust programs.
 
 Rich
-** news--2014--08--06--transducers-are-coming.org
+** [2014-08-06] Transducers are Coming
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2014/08/06/transducers-are-coming.adoc]]
 :CUSTOM_ID: news/2014/08/06/transducers-are-coming
@@ -22715,7 +22697,7 @@ I'm excited about transducers and the power they bring, and I hope you
 are too!
 
 Rich
-** news--2015--06--30--clojure-17.org
+** [2015-06-30] Clojure 1.7 is now available
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2015/06/30/clojure-17.adoc]]
 :CUSTOM_ID: news/2015/06/30/clojure-17
@@ -22816,7 +22798,7 @@ Thanks to all of those who contributed patches to Clojure 1.7:
 
 Also, continued thanks to the total list of contributors from all
 releases.
-** news--2016--01--14--clojure-org-live.org
+** [2016-01-14] Welcome to the new clojure.org!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/01/14/clojure-org-live.adoc]]
 :CUSTOM_ID: news/2016/01/14/clojure-org-live
@@ -22847,7 +22829,7 @@ you are interested in adding or changing content, please check out the
 page on [[file:xref/../../../../../community/contributing_site.xml][site
 contributions]] and the current
 [[https://github.com/clojure/clojure-site/issues][issues]] list.
-** news--2016--01--19--clojure18.org
+** [2016-01-19] Clojure 1.8 is now available
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/01/19/clojure18.adoc]]
 :CUSTOM_ID: news/2016/01/19/clojure18
@@ -22915,8 +22897,7 @@ contributors in bold):
 - *Tsutomu Yano*
 - *Yanxiang Lou*
 
-
-** news--2016--01--28--state-of-clojure-2015.org
+** [2016-01-28] State of Clojure 2015 survey results
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/01/28/state-of-clojure-2015.adoc]]
 :CUSTOM_ID: news/2016/01/28/state-of-clojure-2015
@@ -22928,7 +22909,7 @@ Check out the State of Clojure 2015 survey results here:
 
 Thanks for responding - it's great to see the community growing and
 doing great things!
-** news--2016--05--23--introducing-clojure-spec.org
+** [2016-05-23] Introducing clojure.spec
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/05/23/introducing-clojure-spec.adoc]]
 :CUSTOM_ID: news/2016/05/23/introducing-clojure-spec
@@ -22988,7 +22969,7 @@ so.
 I hope you find *spec* useful and powerful.
 
 Rich
-** news--2017--01--31--state-of-clojure-2016.org
+** [2017-01-31] State of Clojure 2016 Results
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2017/01/31/state-of-clojure-2016.adoc]]
 :CUSTOM_ID: news/2017/01/31/state-of-clojure-2016
@@ -23371,7 +23352,7 @@ complete set of data from this and former years here:
 
 Thanks again for providing your responses to help form this picture of
 our growing community!
-** news--2017--12--08--clojure19.org
+** [2017-12-08] Clojure 1.9 is now available
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2017/12/08/clojure19.adoc]]
 :CUSTOM_ID: news/2017/12/08/clojure19
@@ -23453,8 +23434,7 @@ Thanks to all of the community members who contributed to Clojure 1.9
 - *Yegor Timoshenko*
 - *Zhuang XiaoDan*
 
-
-** news--2018--01--05--git-deps.org
+** [2018-01-05] Git Deps for Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2018/01/05/git-deps.adoc]]
 :CUSTOM_ID: news/2018/01/05/git-deps
@@ -23531,8 +23511,7 @@ For more information see:
 - [[https://www.youtube.com/watch?v=oyLBGkS5ICk][Spec-ulation]] keynote
    - on growth versus breakage
 
-
-** news--2018--03--19--state-of-clojure-2018.org
+** [2018-03-19] State of Clojure 2018 Results
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2018/03/19/state-of-clojure-2018.adoc]]
 :CUSTOM_ID: news/2018/03/19/state-of-clojure-2018
@@ -23682,7 +23661,7 @@ set of data from this and former years here:
 survey occurred in late 2016 rather than 2017./
 
 Thanks again for being part of the community!
-** news--2018--12--17--clojure110.org
+** [2018-12-17] Clojure 1.10 release
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2018/12/17/clojure110.adoc]]
 :CUSTOM_ID: news/2018/12/17/clojure110
@@ -23734,8 +23713,7 @@ Clojure 1.10 (first time contributors in bold):
 - Shogo Ohta
 - Stuart Sierra
 
-
-** news--2019--01--07--clojure-2019-survey.org
+** [2019-01-07] State of Clojure 2019 Survey
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/01/07/clojure-2019-survey.adoc]]
 :CUSTOM_ID: news/2019/01/07/clojure-2019-survey
@@ -23760,7 +23738,7 @@ The survey contains four pages:
 
 The survey will close January 22nd, after which all of the data will be
 released with some analysis. We greatly appreciate your input!
-** news--2019--02--04--state-of-clojure-2019.org
+** [2019-02-04] State of Clojure 2019 Results
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/02/04/state-of-clojure-2019.adoc]]
 :CUSTOM_ID: news/2019/02/04/state-of-clojure-2019
@@ -23920,7 +23898,7 @@ set of data from this and former years here:
 
 Thanks again for using Clojure and ClojureScript and participating in
 the survey!
-** news--2019--05--16--jira-migration.org
+** [2019-05-16] JIRA Migration
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/05/16/jira-migration.adoc]]
 :CUSTOM_ID: news/2019/05/16/jira-migration
@@ -23974,7 +23952,7 @@ urls to point to the new Confluence archive and new JIRA system so that
 old links will continue to work.
 
 Please be patient as we make the transition. Thanks!
-** news--2019--06--06--clojure1-10-1.org
+** [2019-06-06] Clojure 1.10.1 release
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/06/06/clojure1-10-1.adoc]]
 :CUSTOM_ID: news/2019/06/06/clojure1-10-1
@@ -24016,7 +23994,7 @@ docs]] for configuration details.
 See the
 [[https://github.com/clojure/clojure/blob/master/changes.md#changes-to-clojure-in-version-1101][change
 log]] for a complete list of all changes in Clojure 1.10.1.
-** news--2019--07--25--clojure-forum.org
+** [2019-07-25] Clojure Forum
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/07/25/clojure-forum.adoc]]
 :CUSTOM_ID: news/2019/07/25/clojure-forum
@@ -24055,7 +24033,7 @@ problem reporting.
 
 For more information see the
 [[file:xref/../../../../../community/ask.xml][forum usage details]].
-** news--2020--01--07--clojure-2020-survey.org
+** [2020-01-07] State of Clojure 2020 Survey
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/01/07/clojure-2020-survey.adoc]]
 :CUSTOM_ID: news/2020/01/07/clojure-2020-survey
@@ -24082,7 +24060,7 @@ The survey contains five pages:
 
 The survey will close January 23rd, after which all of the data will be
 released with some analysis. We greatly appreciate your input!
-** news--2020--02--20--state-of-clojure-2020.org
+** [2020-02-20] State of Clojure 2020 Results
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/02/20/state-of-clojure-2020.adoc]]
 :CUSTOM_ID: news/2020/02/20/state-of-clojure-2020
@@ -24312,7 +24290,7 @@ set of data from this and former years here:
 
 Thanks again for using Clojure and ClojureScript and participating in
 the survey!
-** news--2020--02--28--clojure-tap.org
+** [2020-02-28] Clojure Homebrew Tap
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/02/28/clojure-tap.adoc]]
 :CUSTOM_ID: news/2020/02/28/clojure-tap
@@ -24388,7 +24366,7 @@ You should now consider that unofficial and likely to lag behind the
 Clojure tap, which should be preferred. Anyone can update it, or we may
 periodically bump it for big releases, but we will not be actively
 updating it as of now.
-** news--2020--07--23--cognitect-joins-nubank.org
+** [2020-07-23] Cognitect Joins Nubank!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/07/23/cognitect-joins-nubank.adoc]]
 :CUSTOM_ID: news/2020/07/23/cognitect-joins-nubank
@@ -24400,7 +24378,7 @@ new opportunities for Clojure worldwide. Please read the full story over
 on the
 [[https://cognitect.com/blog/2020/07/23/Cognitect-Joins-Nubank][Cognitect
 blog]].
-** news--2021--01--14--clojure-2021-survey.org
+** [2021-01-14] State of Clojure 2021 Survey
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/01/14/clojure-2021-survey.adoc]]
 :CUSTOM_ID: news/2021/01/14/clojure-2021-survey
@@ -24430,7 +24408,7 @@ that are not applicable.
 
 The survey will close January 29th, after which all of the data will be
 released with some analysis. We greatly appreciate your input!
-** news--2021--01--26--clojure1-10-2.org
+** [2021-01-26] Clojure 1.10.2 release
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/01/26/clojure1-10-2.adoc]]
 :CUSTOM_ID: news/2021/01/26/clojure1-10-2
@@ -24463,7 +24441,7 @@ Other important Clojure fixes:
 See the
 [[https://github.com/clojure/clojure/blob/master/changes.md#changes-to-clojure-in-version-1102][change
 log]] for a complete list of all changes in Clojure 1.10.2.
-** news--2021--03--04--clojure1-10-3.org
+** [2021-03-04] Clojure 1.10.3 release
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/03/04/clojure1-10-3.adoc]]
 :CUSTOM_ID: news/2021/03/04/clojure1-10-3
@@ -24480,7 +24458,7 @@ Clojure 1.10.3 is a small release with the following changes:
 See the
 [[https://github.com/clojure/clojure/blob/master/changes.md#changes-to-clojure-in-version-1103][change
 log]] for a complete list of all changes in Clojure 1.10.3.
-** news--2021--03--18--apis-serving-people-and-programs.org
+** [2021-03-18] Keyword argument functions now also accept maps
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/03/18/apis-serving-people-and-programs.adoc]]
 :CUSTOM_ID: news/2021/03/18/apis-serving-people-and-programs
@@ -24515,7 +24493,7 @@ and/or a lone (or trailing) map benefitting both programmer and program.
 
 This enhancement is available now in
 =org.clojure/clojure "1.11.0-alpha1"=.
-** news--2021--04--06--state-of-clojure-2021.org
+** [2021-04-06] State of Clojure 2021 Results
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/04/06/state-of-clojure-2021.adoc]]
 :CUSTOM_ID: news/2021/04/06/state-of-clojure-2021
@@ -24705,7 +24683,7 @@ set of data from this and former years here:
 
 Thanks again for using Clojure and ClojureScript and participating in
 the survey!
-** news--2021--06--04--deref.org
+** [2021-06-04] Clojure Deref (June 4, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/04/deref.adoc]]
 :CUSTOM_ID: news/2021/06/04/deref
@@ -24800,7 +24778,7 @@ You can find future episodes on the [[https://clojure.org/feed.xml][RSS
 feed]] for this blog. Should it be an email newsletter too?
 
 Let us know!
-** news--2021--06--11--deref.org
+** [2021-06-11] Clojure Deref (June 11, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/11/deref.adoc]]
 :CUSTOM_ID: news/2021/06/11/deref
@@ -24906,7 +24884,7 @@ to a favorite talk of yore. This week, we're featuring:
 
 Is it about woodworking? Is it about Clojure? Is it about how to work?
 Yes.
-** news--2021--06--18--deref.org
+** [2021-06-18] Clojure Deref (June 18, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/18/deref.adoc]]
 :CUSTOM_ID: news/2021/06/18/deref
@@ -25033,7 +25011,7 @@ to a favorite talk of yore. This week, we're featuring:
 
 In this lovely story from 2012, Carin Meier talks about monads through
 the lens of Clojure and Alice in Wonderland.
-** news--2021--06--25--deref.org
+** [2021-06-25] Clojure Deref (June 25, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/25/deref.adoc]]
 :CUSTOM_ID: news/2021/06/25/deref
@@ -25164,8 +25142,7 @@ yore. This week, we're featuring:
    Clojure. write code in your editor, eval small exprs to your REPL,
    building iteratively up to a final solution
 
-
-** news--2021--07--02--deref.org
+** [2021-07-02] Clojure Deref (July 2, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/02/deref.adoc]]
 :CUSTOM_ID: news/2021/07/02/deref
@@ -25265,8 +25242,7 @@ Some interesting library and tool updates and posts this week:
 - [[https://github.com/BetterThanTomorrow/calva][Calva]] 2.0.202 -
    Clojure & ClojureScript in Visual Studio Code
 
-
-** news--2021--07--09--deref.org
+** [2021-07-09] Clojure Deref (July 9, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/09/deref.adoc]]
 :CUSTOM_ID: news/2021/07/09/deref
@@ -25385,7 +25361,7 @@ Some interesting library and tool updates and posts this week:
 If you like Minecraft and Clojure, check out
 [[https://www.youtube.com/watch?v=qgQwhc_DDSY][Witchcraft]] to do your
 crafting from a REPL!
-** news--2021--07--09--source-libs-builds.org
+** [2021-07-09] Source Libs and Builds
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/09/source-libs-builds.adoc]]
 :CUSTOM_ID: news/2021/07/09/source-libs-builds
@@ -25594,7 +25570,7 @@ about this release at clojureD.
 
 Issues and bugs can be reported on [[https://ask.clojure.org]] or in
 Clojurians Slack in #tools-deps.
-** news--2021--07--16--deref.org
+** [2021-07-16] Clojure Deref (July 16, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/16/deref.adoc]]
 :CUSTOM_ID: news/2021/07/16/deref
@@ -25685,7 +25661,7 @@ If you haven't seen it, the classic
 [[https://www.youtube.com/watch?v=jlPaby7suOc][Every Clojure Talk Ever]]
 by Alex Engelberg and Derek Slager does a pretty good job of lovingly
 capturing the foibles and curiosities of the Clojure community. Enjoy!
-** news--2021--07--23--deref.org
+** [2021-07-23] Clojure Deref (July 23, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/23/deref.adoc]]
 :CUSTOM_ID: news/2021/07/23/deref
@@ -25756,7 +25732,7 @@ Rich Hickey's 2016 Clojure/conj keynote entitled
 [[https://www.youtube.com/watch?v=oyLBGkS5ICk][Spec-ulation]] is a deep
 discussion on growth versus breakage in software and well worth another
 look.
-** news--2021--07--30--deref.org
+** [2021-07-30] Clojure Deref (July 30, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/30/deref.adoc]]
 :CUSTOM_ID: news/2021/07/30/deref
@@ -25830,7 +25806,7 @@ Turner]] (SASL, KRC, Miranda, Haskell) gave a talk titled
 /[[https://www.youtube.com/watch?v=QVwm9jlBTik][Some History of
 Functional Programming Languages]]/ from his fascinating and unique
 perspective.
-** news--2021--08--13--deref.org
+** [2021-08-13] Clojure Deref (Aug 13, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/08/13/deref.adoc]]
 :CUSTOM_ID: news/2021/08/13/deref
@@ -25988,8 +25964,7 @@ Lots of great media in the last couple week:
    mirroring Twitter/Tumblr accounts and RSS feeds on Mastodon,
    reimplementing on clojure/jvm
 
-
-** news--2021--08--20--deref.org
+** [2021-08-20] Clojure Deref (Aug 20, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/08/20/deref.adoc]]
 :CUSTOM_ID: news/2021/08/20/deref
@@ -26117,7 +26092,7 @@ out her upcoming book (available in large part in early release now)
 [[https://www.manning.com/books/the-programmers-brain][The Programmer's
 Brain]] based on her research. It's a great read and I think every
 programmer will learn some interesting things from it.
-** news--2021--08--27--deref.org
+** [2021-08-27] Clojure Deref (Aug 27, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/08/27/deref.adoc]]
 :CUSTOM_ID: news/2021/08/27/deref
@@ -26234,7 +26209,7 @@ I think now is a good time for an update, both on the threats and the
 state of Clojure with respect to them. If you're pitching things to a
 Clojure conference in the next year, I think this would be a great
 topic!
-** news--2021--09--03--deref.org
+** [2021-09-03] Clojure Deref (Sept 3, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/03/deref.adoc]]
 :CUSTOM_ID: news/2021/09/03/deref
@@ -26379,7 +26354,7 @@ years ago. To make this edit, I used the original HD video and Rich's
 original slides with all the bullet/slide transitions and animations, so
 this is as close as you'll get to how it was originally given in the
 room. Enjoy this classic!
-** news--2021--09--10--deref.org
+** [2021-09-10] Clojure Deref (Sept 10, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/10/deref.adoc]]
 :CUSTOM_ID: news/2021/09/10/deref
@@ -26469,7 +26444,7 @@ And second I wanted to highlight the latest essay,
 Rise of Long-Form Generative Art"]] by Tyler Hobbs. It is not about
 Clojure, but Tyler uses Clojure a lot and always has interesting
 thoughts in this area.
-** news--2021--09--17--deref.org
+** [2021-09-17] Clojure Deref (Sept 17, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/17/deref.adoc]]
 :CUSTOM_ID: news/2021/09/17/deref
@@ -26704,8 +26679,7 @@ New releases and tools this week:
    standalone nREPL/prepl client written in Go and heavily inspired by
    Grenchman
 
-
-** news--2021--09--24--deref.org
+** [2021-09-24] Clojure Deref (Sept 24, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/24/deref.adoc]]
 :CUSTOM_ID: news/2021/09/24/deref
@@ -26795,8 +26769,7 @@ go by on Twitter this week:
 - [[https://twitter.com/generateme_blog/status/1440578677574569986][@generateme\_blog]]
 - [[https://twitter.com/RustyVermeer/status/1441182689957085184][@RustyVermeer]]
 
-
-** news--2021--10--08--deref.org
+** [2021-10-08] Clojure Deref (Oct 8, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/08/deref.adoc]]
 :CUSTOM_ID: news/2021/10/08/deref
@@ -26946,8 +26919,7 @@ New releases and tools this week:
 - [[https://github.com/seancorfield/honeysql][honeysql]] 2.1.818 - Turn
    Clojure data structures into SQL
 
-
-** news--2021--10--14--deref.org
+** [2021-10-14] Clojure Deref (Oct 14, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/14/deref.adoc]]
 :CUSTOM_ID: news/2021/10/14/deref
@@ -27032,7 +27004,7 @@ and [[https://twitter.com/jackrusher/status/1447879286262743040][this
 tweet]] credits [[https://thi.ng][Karsten Schmidt's]] excellent thi.ng
 geom libraries! We are fortunate to have such great tools to work with
 in Clojure.
-** news--2021--10--22--deref.org
+** [2021-10-22] Clojure Deref (Oct 22, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/22/deref.adoc]]
 :CUSTOM_ID: news/2021/10/22/deref
@@ -27157,8 +27129,7 @@ New releases and tools this week:
 - [[https://github.com/ingesolvoll/glimt][glimt]] 0.2.1 - HTTP FSM for
    re-frame
 
-
-** news--2021--10--29--deref.org
+** [2021-10-29] Clojure Deref (Oct 29, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/29/deref.adoc]]
 :CUSTOM_ID: news/2021/10/29/deref
@@ -27288,8 +27259,7 @@ New releases and tools this week:
 - [[https://github.com/IGJoshua/coffi][coffi]] 0.2.277 - A Foreign
    Function Interface in Clojure for JDK 17
 
-
-** news--2021--11--5--deref.org
+** [2021-11-05] Clojure Deref (Nov 5, 2021)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/11/5/deref.adoc]]
 :CUSTOM_ID: news/2021/11/5/deref
@@ -27391,12 +27361,11 @@ New releases and tools this week:
 - [[https://github.com/clj-commons/byte-streams][byte-streams]] 0.2.10
    - A Rosetta stone for JVM byte representations
 
-* privacy.org
+* Privacy
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/privacy.adoc]]
 :CUSTOM_ID: privacy
 :END:
-
 ** PRIVACY POLICY
 
 Cognitect, Inc. ("*Cognitect,*" "*we,*" or "*us*") provides the website
@@ -27693,7 +27662,7 @@ Durham, NC 27701
 
 USA
 * Reference
-** reference--agents.org
+** Agents and Asynchronous Actions
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/agents.adoc]]
 :CUSTOM_ID: reference/agents
@@ -27845,7 +27814,7 @@ Agent error management:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler][error-handler]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode!][set-error-mode!]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode][error-mode]]
-** reference--atoms.org
+** Atoms
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/atoms.adoc]]
 :CUSTOM_ID: reference/atoms
@@ -27907,7 +27876,7 @@ user=> "Elapsed time: 941.445 msecs"
 
 user=> "Elapsed time: 0.044 msecs"
 #+END_SRC
-** reference--compilation.org
+** Ahead-of-time Compilation and Class Generation
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/compilation.adoc]]
 :CUSTOM_ID: reference/compilation
@@ -28221,7 +28190,7 @@ f
 class clojure.examples.impl
 I am an IBar
 #+END_SRC
-** reference--data_structures.org
+** Data Structures
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/data_structures.adoc]]
 :CUSTOM_ID: reference/data_structures
@@ -28759,12 +28728,11 @@ are simply sets of maps -
 [[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/rename][rename]]
 /
 [[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/join][join]].
-** reference--datatypes.org
+** Datatypes
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/datatypes.adoc]]
 :CUSTOM_ID: reference/datatypes
 :END:
-
 *** Motivation
 
 Clojure is written in terms of abstractions. There are abstractions for
@@ -29000,7 +28968,7 @@ Example:
 (seq (.getAnnotations (.getField Bar "b")))
 (seq (.getAnnotations (.getMethod Bar "foo" nil)))
 #+END_SRC
-** reference--dep_expansion.org
+** Dep Expansion
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/dep_expansion.adoc]]
 :CUSTOM_ID: reference/dep_expansion
@@ -29196,13 +29164,11 @@ suppressed). The current set of reason codes (subject to change) are:
 - =:parent-omitted= - excluded, parent node deselected
 - =:superseded= - excluded, this version was deselected
 
-
-** reference--deps_and_cli.org
+** Deps and CLI Reference
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/deps_and_cli.adoc]]
 :CUSTOM_ID: reference/deps_and_cli
 :END:
-
 *** Rationale
 
 Clojure "endeavors to be a general-purpose language suitable in those
@@ -30666,12 +30632,11 @@ See the project's wiki for a
 [[https://github.com/clojure/tools.deps.alpha/wiki/Tools][list of tools
 that use or work with tools.deps.alpha (or the clojure tools)]] - tools
 for project creation, packaging, and much more.
-** reference--documentation.org
+** Documentation
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/documentation.adoc]]
 :CUSTOM_ID: reference/documentation
 :END:
-
 *** Reference Documentation
 
 - [[file:reader.xml][The Reader]]
@@ -30704,8 +30669,7 @@ for project creation, packaging, and much more.
 
 - [[file:xref/../../api/api.xml][Clojure API documentation]]
 
-
-** reference--evaluation.org
+** Evaluation
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/evaluation.adoc]]
 :CUSTOM_ID: reference/evaluation
@@ -30832,12 +30796,11 @@ Evaluates the form /data structure/ (not text!) and returns the result.
 (eval (list + 1 2 3))
 -> 6
 #+END_SRC
-** reference--java_interop.org
+** Java Interop
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/java_interop.adoc]]
 :CUSTOM_ID: reference/java_interop
 :END:
-
 *** Class access
 
 *Classname*\\
@@ -31498,7 +31461,7 @@ IFn printLength = Clojure.var("clojure.core", "*print-length*");
 IFn deref = Clojure.var("clojure.core", "deref");
 deref.invoke(printLength);
 #+END_SRC
-** reference--lazy.org
+** Making Clojure Lazier
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/lazy.adoc]]
 :CUSTOM_ID: reference/lazy
@@ -31745,7 +31708,7 @@ the results, and thus know the closure will be invoked only once. Thus
 the lazy branch has no problems with the filter expression above, and
 you can use similar techniques to control memory usage in your own lazy
 functions.
-** reference--libs.org
+** Using Libs
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/libs.adoc]]
 :CUSTOM_ID: reference/libs
@@ -31845,7 +31808,7 @@ The second rule allows a library author to ship both a portable common
 definition of a lib while also shipping platform-specific libs that
 override the portable version to do something that leverages the host
 platform.
-** reference--lisps.org
+** Differences with other Lisps
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/lisps.adoc]]
 :CUSTOM_ID: reference/lisps
@@ -31928,7 +31891,7 @@ or Scheme.
 | Host null:                                                          | nil                                                                | NA                                | NA           | NA                                                               |    |
 | Host true:                                                          | true (boxed)                                                       | NA                                | NA           | NA                                                               |    |
 | Host false:                                                         | false (boxed)                                                      | NA                                | NA           | NA                                                               |    |
-** reference--macros.org
+** Macros
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/macros.adoc]]
 :CUSTOM_ID: reference/macros
@@ -32043,7 +32006,7 @@ Transactions:
 
 A few [[file:special_forms.xml][special forms]] are actually implemented
 as macros, primarily to provide destructuring: fn let loop
-** reference--metadata.org
+** Metadata
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/metadata.adoc]]
 :CUSTOM_ID: reference/metadata
@@ -32149,7 +32112,7 @@ agents, etc. Some important exceptions that *don't* support metadata are
 strings, numbers, booleans, Java objects, keywords (these are cached and
 can be shared within the runtime), and deftypes (unless they explicitly
 implement clojure.lang.IMeta).
-** reference--multimethods.org
+** Multimethods and Hierarchies
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/multimethods.adoc]]
 :CUSTOM_ID: reference/multimethods
@@ -32388,7 +32351,7 @@ function, as keywords are functions of maps, as described in the
 (area {})
 -> :oops
 #+END_SRC
-** reference--namespaces.org
+** Namespaces
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/namespaces.adoc]]
 :CUSTOM_ID: reference/namespaces
@@ -32469,8 +32432,7 @@ Also see:
    Namespaces]]
 - [[file:vars.xml][Reference - vars]]
 
-
-** reference--other_functions.org
+** Other Useful Functions and Macros
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_functions.adoc]]
 :CUSTOM_ID: reference/other_functions
@@ -32578,12 +32540,11 @@ user=> (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matches][re-matches]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-groups][re-groups]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-seq][re-seq]]
-** reference--other_libraries.org
+** Other Included Libraries
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_libraries.adoc]]
 :CUSTOM_ID: reference/other_libraries
 :END:
-
 *** Other included Libraries
 
 *** Java Utilities (clojure.java.*)
@@ -32751,12 +32712,11 @@ function does a depth-first walk, making for easy to understand loops:
 Zipper constructors are provided for nested seqs, nested vectors, and
 the xml elements generated by /*xml/parse*/. All it takes is a 4-5 line
 function to support other data structures.
-** reference--protocols.org
+** Protocols
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/protocols.adoc]]
 :CUSTOM_ID: reference/protocols
 :END:
-
 *** Motivation
 
 Clojure is written in terms of abstractions. There are abstractions for
@@ -32977,7 +32937,7 @@ extend-protocol).
 (start component)
 ;;=> "started"
 #+END_SRC
-** reference--reader.org
+** The Reader
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/reader.adoc]]
 :CUSTOM_ID: reference/reader
@@ -33489,7 +33449,7 @@ for these types:\\
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional][reader-conditional]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal%3F][tagged-literal?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal][tagged-literal]]
-** reference--reducers.org
+** Reducers
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/reducers.adoc]]
 :CUSTOM_ID: reference/reducers
@@ -33640,8 +33600,7 @@ Use =fold= when:
 - Work to be performed is computation (not I/O or blocking)
 - Number of data items or work to be done is "large"
 
-
-** reference--refs.org
+** Refs and Transactions
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/refs.adoc]]
 :CUSTOM_ID: reference/refs
@@ -33793,12 +33752,11 @@ Allowed only in a transaction:
 Ref validators:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator][get-validator]]
-** reference--repl_and_main.org
+** The REPL and main entry points
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/repl_and_main.adoc]]
 :CUSTOM_ID: reference/repl_and_main
 :END:
-
 *** The clojure.main namespace
 
 The =clojure.main= namespace provides functions that allow Clojure
@@ -34076,7 +34034,7 @@ Socket server control: =clojure.core.server/start-server=
 =clojure.core.server/stop-server= =clojure.core.server/stop-servers=
 
 Socket repl: =clojure.core.server/repl=
-** reference--sequences.org
+** Sequences
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/sequences.adoc]]
 :CUSTOM_ID: reference/sequences
@@ -34280,7 +34238,7 @@ Lazy seq from other objects:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/xml-seq][xml-seq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/iterator-seq][iterator-seq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/enumeration-seq][enumeration-seq]]
-** reference--special_forms.org
+** Special Forms
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/special_forms.adoc]]
 :CUSTOM_ID: reference/special_forms
@@ -34796,7 +34754,7 @@ can pull apart just about anything:
 
 -> [12 15 16 22 23 (24 25) [22 23 24 25]]
 #+END_SRC
-** reference--transducers.org
+** Transducers
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/transducers.adoc]]
 :CUSTOM_ID: reference/transducers
@@ -35093,13 +35051,11 @@ general rules to be aware of:
    returned by invoking a transducer - these may be stateful and unsafe
    for use across threads.
 
-
-** reference--transients.org
+** Transient Data Structures
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/transients.adoc]]
 :CUSTOM_ID: reference/transients
 :END:
-
 *** Rationale
 
 /If a tree falls in the woods, does it make a sound?/\\
@@ -35241,7 +35197,7 @@ and provides critical safety guarantees.
 
 Transient persistent vectors, hash-maps, and hash-sets were added in
 Clojure 1.1.
-** reference--vars.org
+** Vars and the Global Environment
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/vars.adoc]]
 :CUSTOM_ID: reference/vars
@@ -35462,7 +35418,7 @@ Using Var metadata:
 [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc][find-doc]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/test][test]]
 * Releases
-** releases--devchangelog.org
+** Dev Changelog
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/devchangelog.adoc]]
 :CUSTOM_ID: releases/devchangelog
@@ -36517,7 +36473,7 @@ specs (with gen support): long-in, inst-in, double-in
 
 A usage guide for spec is now available:
 [[https://clojure.org/guides/spec]].
-** releases--download_key.org
+** Clojure Download Key
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/download_key.adoc]]
 :CUSTOM_ID: releases/download_key
@@ -36580,7 +36536,7 @@ by comparing to the official key above.
 To run gpg --verify, you may need to update your version of GPG and
 use a DNS server that can find the MIT key server (pgp.mit.edu).
 #+END_QUOTE
-** releases--downloads_older.org
+** Older Downloads
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/downloads_older.adoc]]
 :CUSTOM_ID: releases/downloads_older
@@ -36637,7 +36593,7 @@ use a DNS server that can find the MIT key server (pgp.mit.edu).
 If you are migrating from a pre-1.3 version of Clojure, please see
 [[file:xref/../../dev/contrib_history.xml][this page]] for migration
 help regarding old contrib libraries.
-** releases--downloads.org
+** Clojure Downloads
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/downloads.adoc]]
 :CUSTOM_ID: releases/downloads
@@ -36788,7 +36744,7 @@ In pom.xml:
 
 See the [[file:download_key.xml][download key]] page for more on
 verifying Maven downloads against the Clojure public key.
-** releases--tools.org
+** Tools Releases
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/tools.adoc]]
 :CUSTOM_ID: releases/tools
@@ -37180,10 +37136,8 @@ and Builds]].
 :CLOJURE_SITE_FILE: [[./clojure-site/content/search.adoc]]
 :CUSTOM_ID: search
 :END:
-
-
 * Stories
-** stories--anychart.org
+** AnyChart
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/anychart.adoc]]
 :CUSTOM_ID: stories/anychart
@@ -37286,7 +37240,7 @@ definitely contributes to the continuing growth of our company and its
 leadership in the segment of cross-platform interactive data
 visualization solutions. And it is a great joy for us to be a part of
 the Clojure community.
-** stories--cloudrepo.org
+** CloudRepo
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/cloudrepo.adoc]]
 :CUSTOM_ID: stories/cloudrepo
@@ -37359,7 +37313,7 @@ through the system and adding new features tends to be just about
 figuring out where best to plug into that flow. Once that's decided, we
 can hook in and not worry about impacting state in other areas of the
 code thanks to immutability.
-** stories--cognician.org
+** Cognician
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/cognician.adoc]]
 :CUSTOM_ID: stories/cognician
@@ -37509,7 +37463,7 @@ of a button.
 We can get new code live in under 15 minutes, sometimes in only 5
 minutes. For situations that require a quicker turnaround, we have a
 remote REPL. :-)
-** stories--collbox.org
+** CollBox
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/collbox.adoc]]
 :CUSTOM_ID: stories/collbox
@@ -37576,7 +37530,7 @@ DynamoDB). Our web framework is custom-built, but makes heavy use of
 [[https://github.com/juxt/bidi][bidi]],
 [[https://github.com/stuartsierra/component][component]], and
 [[https://github.com/cognitect/transit-format][transit]].
-** stories--cstap.org
+** cstap
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/cstap.adoc]]
 :CUSTOM_ID: stories/cstap
@@ -37663,7 +37617,7 @@ the results. That is how we gathered the 3 members of our team (all
 loving Clojure), and we constantly receive 1 or 2 applications every
 month. (FYI: We're hiring in Japan! →
 [[https://cstap.com/jobs/dev-engineer.html]])
-** stories--empear.org
+** Empear
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/empear.adoc]]
 :CUSTOM_ID: stories/empear
@@ -37772,7 +37726,7 @@ The second reason isn't technical at all. One of the main reasons I
 chose Clojure for Empear was because the language looked fun. And fun is
 a much underestimated motivator in the software industry; Fun is
 virtually a guarantee that things get done.
-** stories--freshcode.org
+** Freshcode
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/freshcode.adoc]]
 :CUSTOM_ID: stories/freshcode
@@ -37862,7 +37816,7 @@ paradigm, as Java tries to do; however you can use all JVM facilities.
 It is easier to code, but still is a powerful instrument. Besides,
 macros allow creating custom DSLs, to facilitate project interaction
 with your business partners.
-** stories--kidblog.org
+** Kidblog
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/kidblog.adoc]]
 :CUSTOM_ID: stories/kidblog
@@ -37915,7 +37869,7 @@ and benefit from the maturity of the JVM. The standard library is built
 around simple, powerful, and composable data manipulation functions.
 Overall, Clojure makes our code more enjoyable to write, pleasant to
 read, and easier to review.
-** stories--lendup.org
+** LendUp
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/lendup.adoc]]
 :CUSTOM_ID: stories/lendup
@@ -37980,7 +37934,7 @@ value system. It's made enterprise software development a lot more fun.
 We're able to iterate on changes faster, build composable and focused
 components, leverage massive amount of battle-tested, production-ready
 Java libraries, and we have a much smaller code base to maintain.
-** stories--ona.org
+** Ona
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/ona.adoc]]
 :CUSTOM_ID: stories/ona
@@ -38100,7 +38054,7 @@ our mistakes mean fewer lives saved. Using Clojure and ClojureScript
 simplifies how we process real-time data streams from around the world,
 and helps us minimize our mistakes. If you're interested in working with
 us please [[https://ona.io/contact.html][get in touch]].
-** stories--pisano.org
+** Pisano
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/pisano.adoc]]
 :CUSTOM_ID: stories/pisano
@@ -38185,7 +38139,7 @@ able to add features within a short period (mostly hours).
 Clojure/Script allows us to develop code more quickly via REPL driven
 development. It makes our product better and development process much
 faster. Now enterprise software development a lot more fun with Clojure.
-** stories--reify.org
+** Reify Health
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/reify.adoc]]
 :CUSTOM_ID: stories/reify
@@ -38288,7 +38242,7 @@ better suited to the processing of information.
 
 In summary, Clojure is a language for working programmers, and we've got
 work to do.
-** stories--rts.org
+** Radio Television Suisse
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/rts.adoc]]
 :CUSTOM_ID: stories/rts
@@ -38373,8 +38327,7 @@ seriously considering using it with ClojureScript + Node.
 - time to market
 - fun!
 
-
-** stories--signal.org
+** Signal
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/signal.adoc]]
 :CUSTOM_ID: stories/signal
@@ -38438,7 +38391,7 @@ very terse way. The fact that us running over the JVM is an incredible
 added value; JVM is easy to monitor and it's incredibly resilient. The
 Clojure community is also very strong and it's a great source for
 talented people to join our team!
-** stories--stitch.org
+** Stitch
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/stitch.adoc]]
 :CUSTOM_ID: stories/stitch
@@ -38503,7 +38456,7 @@ our disposal. It allows our developers to debug problems quickly by
 connecting to a running JVM and executing code. And using clojure.test
 combined with the interactivity of an nREPL connection lets us prototype
 quickly with a tight iterative TDD loop.
-** stories--swing.org
+** Swing Education
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/swing.adoc]]
 :CUSTOM_ID: stories/swing
@@ -38634,7 +38587,7 @@ On the client side, we use
 and also have a mobile app implemented in
 [[https://clojurescript.org][ClojureScript]] on top of
 [[https://facebook.github.io/react-native/][React Native]] for iOS.
-** stories--uhn.org
+** University Health Network
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/uhn.adoc]]
 :CUSTOM_ID: stories/uhn
@@ -38785,8 +38738,7 @@ specifically are:
 - [[https://github.com/ring-clojure/][Ring]]
 - [[https://github.com/ptaoussanis/sente][Sente]]
 
-
-** stories--zimpler.org
+** Zimpler
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/zimpler.adoc]]
 :CUSTOM_ID: stories/zimpler
