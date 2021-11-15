@@ -11259,7 +11259,7 @@ values are the same. Thus ~equals~ is false even for Integer 1 and Long
 false for two BigDecimal values that are numerically equal if they have
 different scales, e.g. 1.50M and 1.500M are not equal. This behavior is
 documented for BigDecimal method
-[[https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#equals-java.lang.Object-][=equals=]].
+[[https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#equals-java.lang.Object-][equals]].
 
 Clojure ~=~ is true if the 'category' and numeric values are the same.
 Category is one of:
@@ -11338,7 +11338,7 @@ also won't help if you want exact values of pi or the square root of 2.
 Clojure uses the underlying Java double-size floating point numbers
 (64-bit) with representation and behavior defined by a standard, IEEE
 754. There is a special value
-[[http://en.wikipedia.org/wiki/NaN][=NaN=]] ("Not A Number") that is not
+[[http://en.wikipedia.org/wiki/NaN][NaN]] ("Not A Number") that is not
 even equal to itself. Clojure represents this value as the symbolic
 value ~##NaN~.
 
@@ -11758,12 +11758,12 @@ unless it is in a narrow and controlled scope.
 be read by the reader?]]*
 
 The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword][=keyword=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword][keyword]]
 function can be used to programmatically create keywords based on user
 data or other sources of input. Similarly, the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace][=namespace=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace][namespace]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/name][=name=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/name][name]]
 functions can be used to pull a keyword back apart into components. It
 is common for programs to use this functionality to create keywords to
 be used as identifiers or map keys without ever printing and reading
@@ -12889,7 +12889,7 @@ Did you know:
 - Most libraries are distributed as source and you compile them over
    and over
 - You can compile namespaces explicitly using
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile][=compile=]]
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile][compile]]
 - Namespace compilation is transitive
 - ~compile~ writes these files to disk and ~require~ will use them
 - You can use ~compile~ on the namespace you load when you start
@@ -12898,7 +12898,7 @@ Did you know:
 
 The ~compile~ function takes a namespace symbol and compiles that
 namespace and all the namespaces it requires into
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Acompile-path%2A][=*compile-path*=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Acompile-path%2A][*compile-path*]]
 (which defaults to ~classes~). That directory must exist and be on your
 classpath:
 
@@ -15442,7 +15442,7 @@ syntax quote.
 
 *** ~#{ …​ }~ - Set
 
-See [[file:xref/../weird_characters.xml#dispatch][=#=]] for additional
+See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
 details.
 
 ~#{…​}~ defines a set (a collection of unique values), specifically a
@@ -15470,7 +15470,7 @@ Duplicate key: 1
 
 *** ~#_~ - Discard
 
-See [[file:xref/../weird_characters.xml#dispatch][=#=]] for additional
+See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
 details.
 
 ~#_~ tells the reader to ignore the next form completely.
@@ -15508,7 +15508,7 @@ for multiline comments.
 
 *** ~#"…​"~ - Regular Expression
 
-See [[file:xref/../weird_characters.xml#dispatch][=#=]] for additional
+See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
 details.
 
 ~#"~ indicates the start of a regular expression
@@ -15529,7 +15529,7 @@ in Clojure, Java string escaping is not required
 
 *** ~#(…​)~ - Anonymous function
 
-See [[file:xref/../weird_characters.xml#dispatch][=#=]] for additional
+See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
 details.
 
 ~#(~ begins the short hand syntax for an inline function definition. The
@@ -15573,7 +15573,7 @@ user=> #'nine
 When used it will attempt to return the referenced var. This is useful
 when you want to talk about the reference/declaration instead of the
 value it represents. See the use of ~meta~ in the metadata
-([[file:xref/../weird_characters.xml#metadata][=^=]]) discussion.
+([[file:xref/../weird_characters.xml#metadata][^]]) discussion.
 
 Note that var quote is not available in edn.
 
@@ -15616,7 +15616,7 @@ ClojureScript world an extremely common use of tagged literals is ~#js~
 which can be used to convert ClojureScript data structures into
 JavaScript structures directly. Note that ~#js~ doesn't convert
 recursively, so if you have a nested data-structure, use
-[[https://cljs.github.io/api/cljs.core/js-GTclj][=js->clj=]].
+[[https://cljs.github.io/api/cljs.core/js-GTclj][js->clj]].
 
 Note that while ~#inst~ and ~#uuid~ are available in edn, ~#js~ is not.
 
@@ -16045,8 +16045,8 @@ form that will evaluate the body, print its value, and then return the
 value. Here the syntax quote creates a list, but does not evaluate it.
 That list is actually code.
 
-See [[file:xref/../weird_characters.xml#unquote_splicing][=~@=]] and
-[[file:xref/../weird_characters.xml#unquote][=~=]] for additional syntax
+See [[file:xref/../weird_characters.xml#unquote_splicing][~@]] and
+[[file:xref/../weird_characters.xml#unquote][~]] for additional syntax
 allowed only within syntax quote.
 
 - [[http://www.braveclojure.com/writing-macros/][Clojure for the Brave
@@ -16058,7 +16058,7 @@ allowed only within syntax quote.
 
 *** ~~~ - Unquote
 
-See [[file:xref/../weird_characters.xml#syntax_quote][=`=]] for
+See [[file:xref/../weird_characters.xml#syntax_quote][`]] for
 additional information.
 
 ~~~ is unquote. Syntax quote, like quote, means that evaluation is not
@@ -16089,8 +16089,8 @@ are functions invoked during compilation that take code and return code.
 
 *** ~~@~ - Unquote splicing
 
-See [[file:xref/../weird_characters.xml#syntax_quote][=`=]] and
-[[file:xref/../weird_characters.xml#unquote][=~=]] for additional
+See [[file:xref/../weird_characters.xml#syntax_quote][`]] and
+[[file:xref/../weird_characters.xml#unquote][~]] for additional
 information.
 
 ~~@~ is unquote-splicing. Where unquote
@@ -16221,7 +16221,7 @@ standard in and out streams for Clojure.
 *** ~>!!~, ~<!!~, ~>!~, and ~<!~ - core.async channel macros
 
 These symbols are channel operations in
-[[https://github.com/clojure/core.async][=core.async=]] - a
+[[https://github.com/clojure/core.async][core.async]] - a
 Clojure/ClojureScript library for channel based asynchronous programming
 (specifically
 [[http://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP -
@@ -17322,7 +17322,7 @@ that value.[fn:1] This often happens with values which are obtained via
 Java interop.
 
 As an example, we'll create an InputStream object using the
-[[https://clojuredocs.org/clojure.java.io][=clojure.java.io=]] lib. If
+[[https://clojuredocs.org/clojure.java.io][clojure.java.io]] lib. If
 you don't know what an InputStream is, all the better - the point of
 this section is to teach you how to find your footing in uncharted
 territory:
@@ -18652,7 +18652,7 @@ specs.
 Any existing Clojure function that takes a single argument and returns a
 truthy value is a valid predicate spec. We can check whether a
 particular data value conforms to a spec using
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/conform][=conform=]]:
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/conform][conform]]:
 
 #+BEGIN_SRC clojure
 (s/conform even? 1000)
@@ -18668,7 +18668,7 @@ deviate. If the value does not conform to the spec, the special value
 
 If you don't want to use the conformed value or check for
 ~:clojure.spec.alpha/invalid~, the helper
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/valid?][=valid?=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/valid?][valid?]]
 can be used instead to return a boolean.
 
 #+BEGIN_SRC clojure
@@ -18711,7 +18711,7 @@ namespaces ensures that we can define reusable non-conflicting specs
 across libraries or applications.
 
 Specs are registered using
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/def][=s/def=]].
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/def][s/def]].
 It's up to you to register the specification in a namespace that makes
 sense (typically a namespace you control).
 
@@ -18768,9 +18768,9 @@ Spec
 *** Composing predicates
 
 The simplest way to compose specs is with
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/and][=and=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/and][and]]
 and
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/or][=or=]].
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/or][or]].
 Let's create a spec that combines several predicates into a composite
 spec with ~s/and~:
 
@@ -18810,7 +18810,7 @@ conformed value:
 Many predicates that check an instance's type do not allow ~nil~ as a
 valid value (~string?~, ~number?~, ~keyword?~, etc). To include ~nil~ as
 a valid value, use the provided function
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/nilable][=nilable=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/nilable][nilable]]
 to make a spec:
 
 #+BEGIN_SRC clojure
@@ -18822,7 +18822,7 @@ to make a spec:
 
 *** Explain
 
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain][=explain=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain][explain]]
 is another high-level operation in spec that can be used to report (to
 ~*out*~) why a value does not conform to a spec. Let's see what explain
 says about some non-conforming examples we've seen so far.
@@ -18860,9 +18860,9 @@ the ~:id~ path instead. The actual value is a keyword so neither is a
 match.
 
 In addition to ~explain~, you can use
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-str][=explain-str=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-str][explain-str]]
 to receive the error messages as a string or
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-data][=explain-data=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-data][explain-data]]
 to receive the errors as data.
 
 #+BEGIN_SRC clojure
@@ -18908,7 +18908,7 @@ The keys could then be checked for conformance, creating a system with
 greater opportunities for collaboration and consistency.
 
 Entity maps in spec are defined with
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys][=keys=]]:
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys][keys]]:
 
 #+BEGIN_SRC clojure
 (def email-regex #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$")
@@ -19024,7 +19024,7 @@ One common occurrence in Clojure is the use of "keyword args" where
 keyword keys and values are passed in a sequential data structure as
 options. Spec provides special support for this pattern with the regex
 op
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys*][=keys*=]].
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys*][keys*]].
 ~keys*~ has the same syntax and semantics as ~keys~ but can be embedded
 inside a sequential regex structure.
 
@@ -19077,7 +19077,7 @@ using attributes stored in the registry by namespaced keyword.
 Attributes shared across entity types automatically gain shared
 semantics. However, we also want to be able to specify the required keys
 per entity type and for that spec provides
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/multi-spec][=multi-spec=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/multi-spec][multi-spec]]
 which leverages a multimethod to provide for the specification of an
 open set of entity types based on a type tag.
 
@@ -19161,10 +19161,10 @@ added later by just extending the ~event-type~ multimethod.
 *** Collections
 
 A few helpers are provided for other special collection cases -
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/coll-of][=coll-of=]],
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/tuple][=tuple=]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/coll-of][coll-of]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/tuple][tuple]],
 and
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/map-of][=map-of=]].
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/map-of][map-of]].
 
 For the special case of a homogenous collection of arbitrary size, you
 can use ~coll-of~ to specify a collection of elements satisfying a
@@ -19209,9 +19209,9 @@ errors for different kinds of invalid values:
 
 Both ~coll-of~ and ~map-of~ will conform all of their elements, which
 may make them unsuitable for large collections. In that case, consider
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every][=every=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every][every]]
 or for maps
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every-kv][=every-kv=]].
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every-kv][every-kv]].
 #+END_QUOTE
 
 While ~coll-of~ is good for homogenous collections of any size, another
@@ -19268,15 +19268,15 @@ Sometimes sequential data is used to encode additional structure
 [[https://en.wikipedia.org/wiki/Regular_expression][regular expression]]
 operators to describe the structure of a sequential data value:
 
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/cat][=cat=]]
+- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/cat][cat]]
    - concatenation of predicates/patterns
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/alt][=alt=]]
+- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/alt][alt]]
    - choice among alternative predicates/patterns
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/*][=*=]]
+- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/*][*]]
    - 0 or more of a predicate/pattern
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%2B][=+=]]
+- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%2B][+]]
    - 1 or more of a predicate/pattern
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%3F][=?=]]
+- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%3F][?]]
    - 0 or 1 of a predicate/pattern
 
 Like ~or~, both ~cat~ and ~alt~ tag their "parts" - these tags are then
@@ -19359,7 +19359,7 @@ one. Let's try it on some of the specifications we've already defined:
 #+END_SRC
 
 Spec also defines one additional regex operator,
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/&][=&=]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/&][&]],
 which takes a regex operator and constrains it with one or more
 additional predicates. This can be used to create regular expressions
 with additional constraints that would otherwise require custom
@@ -19377,7 +19377,7 @@ an even number of strings:
 When regex ops are combined, they describe a single sequence. If you
 need to spec a nested sequential collection, you must use an explicit
 call to
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/spec][=spec=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/spec][spec]]
 to start a new nested regex context. For example to describe a sequence
 like ~[:names ["a" "b"] :nums [1 2 3]]~, you need nested regular
 expressions to describe the inner sequential data:
@@ -19498,7 +19498,7 @@ interesting question - how do we define the input and output
 specifications for a function or macro?
 
 Spec has explicit support for this using
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fdef][=fdef=]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fdef][fdef]],
 which defines specifications for a function - the arguments and/or the
 return value spec, and optionally a function that can specify a
 relationship between args and return.
@@ -19557,7 +19557,7 @@ testing.
 *** Higher order functions
 
 Higher order functions are common in Clojure and spec provides
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fspec][=fspec=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fspec][fspec]]
 to support spec'ing them.
 
 For example, consider the ~adder~ function:
@@ -19740,14 +19740,14 @@ namespace:
 **** Sampling Generators
 
 The
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/gen][=gen=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/gen][gen]]
 function can be used to obtain the generator for any spec.
 
 Once you have obtained a generator with ~gen~, there are several ways to
 use it. You can generate a single sample value with
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/generate][=generate=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/generate][generate]]
 or a series of samples with
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/sample][=sample=]].
+[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/sample][sample]].
 Let's see some basic examples:
 
 #+BEGIN_SRC clojure
@@ -19799,7 +19799,7 @@ sample data.
 **** Exercise
 
 For this we have
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise][=exercise=]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise][exercise]],
 which returns pairs of generated and conformed values for a spec.
 ~exercise~ by default produces 10 samples (like ~sample~) but you can
 pass both functions a number indicating the number of samples to
@@ -19823,7 +19823,7 @@ produce.
 #+END_SRC
 
 For spec'ed functions we also have
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise-fn][=exercise-fn=]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise-fn][exercise-fn]],
 which generates sample args, invokes the spec'ed function and returns
 the args and the return value.
 
@@ -19888,7 +19888,7 @@ multiples of 3:
 
 However, it is possible to go too far with refinement and make something
 that fails to produce any values. The test.check
-[[https://clojure.github.io/test.check/clojure.test.check.generators.html#var-such-that][=such-that=]]
+[[https://clojure.github.io/test.check/clojure.test.check.generators.html#var-such-that][such-that]]
 that implements the refinement will throw an error if the refinement
 predicate cannot be resolved within a relatively small number of
 attempts. For example, consider trying to generate strings that happen
@@ -19954,7 +19954,7 @@ predicate spec so we can create one and ask for it's generator:
 #+END_SRC
 
 To redefine our spec using this custom generator, use
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/with-gen][=with-gen=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/with-gen][with-gen]]
 which takes a spec and a replacement generator:
 
 #+BEGIN_SRC clojure
@@ -19990,7 +19990,7 @@ on how all of the clojure.spec.gen.alpha generator functions work.
 In this case we want our keyword to have open names but fixed
 namespaces. There are many ways to accomplish this but one of the
 simplest is to use
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/fmap][=fmap=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/fmap][fmap]]
 to build up a keyword based on generated strings:
 
 #+BEGIN_SRC clojure
@@ -20008,7 +20008,7 @@ often designed to return "simpler" values first and any string-oriented
 generator will often return an empty string which is not a valid
 keyword. We can make a slight adjustment to omit that particular value
 using
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/such-that][=such-that=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/such-that][such-that]]
 which lets us specify a filtering condition:
 
 #+BEGIN_SRC clojure
@@ -20041,7 +20041,7 @@ in a range and spec provides helpers for these cases.
 
 For example, in the case of a range of integer values (for example, a
 bowling roll), use
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/int-in][=int-in=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/int-in][int-in]]
 to spec a range (end is exclusive):
 
 #+BEGIN_SRC clojure
@@ -20051,7 +20051,7 @@ to spec a range (end is exclusive):
 #+END_SRC
 
 spec also includes
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/inst-in][=inst-in=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/inst-in][inst-in]]
 for a range of instants:
 
 #+BEGIN_SRC clojure
@@ -20068,7 +20068,7 @@ Due to the generator implementation, it takes a few samples to get
 "interesting" so I skipped ahead a bit.
 
 Finally,
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/double-in][=double-in=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/double-in][double-in]]
 has support for double ranges and special options for checking special
 double values like ~NaN~ (not a number), ~Infinity~, and ~-Infinity~.
 
@@ -20134,7 +20134,7 @@ involved with checking args specs.
 
 We mentioned earlier that ~clojure.spec.test.alpha~ provides tools for
 automatically testing functions. When functions have specs, we can use
-[[https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/check][=check=]],
+[[https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/check][check]],
 to automatically generate tests that check the function using the specs.
 
 ~check~ will generate arguments based on the ~:args~ spec for a
@@ -20204,7 +20204,7 @@ of the expected range.
 
 To test all of the spec'ed functions in a namespace (or multiple
 namespaces), use
-[[https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/enumerate-namespace][=enumerate-namespace=]]
+[[https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/enumerate-namespace][enumerate-namespace]]
 to generate the set of symbols naming vars in the namespace:
 
 #+BEGIN_SRC clojure
@@ -20755,7 +20755,7 @@ improve code of this type by rewriting it to use the thread-first macro
 #+END_SRC
 
 Taking an initial value as its first argument,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->][=->=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->][->]]
 threads it through one or more expressions.
 
 /Note: The word "thread" in this context (meaning passing a value
@@ -20824,7 +20824,7 @@ Like ~transform~, ~calculate~ is a pipeline of transformations, but
 unlike the former, the threaded value appears in each function call in
 the final position in the argument list. Instead of the thread-first
 macro we need to use the thread-last macro
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->>][=->>=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->>][->>]]
 instead:
 
 #+BEGIN_SRC clojure
@@ -20851,12 +20851,12 @@ functions used, but there are a few rules of thumb:
    ~->>~ macro.
 - Core functions that operate on data structures, on the other hand,
    expect the value they work on as their first argument. These include
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][=assoc=]],
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/update][=update=]],
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc][=dissoc=]],
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][=get=]]
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][assoc]],
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/update][update]],
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc][dissoc]],
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]]
    and their
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc-in][=-in=]]
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc-in][-in]]
    variants. Pipelines that transform maps using these functions often
    require the ~->~ macro.
 - When calling methods through
@@ -20869,14 +20869,14 @@ functions used, but there are a few rules of thumb:
    #+END_SRC
 
    Note also the more specialized interop macros
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/..][=..=]]
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/..][..]]
    and
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto][=doto=]].
+   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto][doto]].
 
 Finally, there are cases where neither ~->~ nor ~->>~ are applicable. A
 pipeline may consist of function calls with varying insertion points. In
 these cases, you'll need to use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/as->][=as->=]],
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/as->][as->]],
 the more flexible alternative. ~as->~ expects two fixed arguments and a
 variable number of expressions. As with ~->~, the first argument is a
 value to be threaded through the following forms. The second argument is
@@ -20896,9 +20896,9 @@ thread into any argument position, not just first or last.
 *** some->, some->> and cond->
 
 Two of Clojure's more specialized threading macros,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->][=some->=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->][some->]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->>][=some->>=]],
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->>][some->>]],
 are used most commonly when interfacing with Java methods. ~some->~
 resembles ~->~ in that it threads a value through a number of
 expressions. However, it also short-circuits execution when an
@@ -20934,7 +20934,7 @@ required:
 #+END_SRC
 
 Like ~->~, the macro
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond->][=cond->=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond->][cond->]]
 takes an initial value, but unlike the former, it interprets its
 argument list as a series of ~test, expr~ pairs. ~cond->~ threads a
 value through the expressions but skips those with failing tests. For
@@ -20942,9 +20942,9 @@ each pair, ~test~ is evaluated. If the result is truthy, the expression
 is evaluated with the threaded value inserted as its first argument;
 otherwise evaluation proceeds with the next ~test, expr~ pair. Note that
 unlike its relatives,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->][=some->=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->][some->]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond][=cond=]],
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond][cond]],
 ~cond->~ never short-circuits evaluation, even if a test evaluates to
 ~false~ or ~nil~:
 
@@ -31891,9 +31891,9 @@ Many core constructs of Clojure are not, in fact, primitives, but are
 normal macros.
 
 Some macros produce simple combinations of primitive forms. For example,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when][=when=]]
-combines [[file:special_forms.xml#if][=if=]] and
-[[file:special_forms.xml#do][=do=]]:
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when][when]]
+combines [[file:special_forms.xml#if][if]] and
+[[file:special_forms.xml#do][do]]:
 
 #+BEGIN_EXAMPLE
 user=> (macroexpand '(when (pos? a) (println "positive") (/ b a)))
@@ -33936,14 +33936,14 @@ informational or diagnostic values to a set of (presumably effectful)
 handler functions. It can be used as a better debug ~prn~, or for
 facilities like logging etc.
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tap%3E][=tap>=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tap%3E][tap>]]
 sends a value to the set of taps. Taps can be added with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-tap][=add-tap=]]
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-tap][add-tap]]
 and will be called with any value sent to tap>. The tap function may
 (briefly) block (e.g. for streams) and will never impede calls to tap>,
 but blocking indefinitely may cause tap values to be dropped. If no taps
 are registered, tap> discards. Remove taps with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-tap][=remove-tap=]].
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-tap][remove-tap]].
 
 *** Launching a Socket Server
 
@@ -34437,7 +34437,7 @@ which expands into something such as the above.
 
 A fn (overload) defines a recursion point at the top of the function,
 with arity equal to the number of /param/s /including the rest param, if
-present/. See [[recur][=recur=]].
+present/. See [[recur][recur]].
 
 fns implement the Java ~Callable~, ~Runnable~ and ~Comparator~
 interfaces.
@@ -34491,14 +34491,14 @@ forms.
 
 ~loop~ is exactly like ~let~, except that it establishes a recursion
 point at the top of the loop, with arity equal to the number of
-bindings. See [[recur][=recur=]].
+bindings. See [[recur][recur]].
 
 *** (~recur~ /expr/*)
 
 Evaluates the expressions /expr/s in order, then, in parallel, rebinds
 the bindings of the recursion point to the values of the /expr/s. If the
 recursion point was a ~fn~ method, then it rebinds the params. If the
-recursion point was a [[loop][=loop=]], then it rebinds the ~loop~
+recursion point was a [[loop][loop]], then it rebinds the ~loop~
 bindings. Execution then jumps back to the recursion point. The ~recur~
 expression must match the arity of the recursion point exactly. In
 particular, if the recursion point was the top of a variadic fn method,
@@ -34578,13 +34578,13 @@ associative structure, etc) bind to ~nil~.
 
 Vector /binding\_form/s sequentially bind values in collections like
 vectors, lists, seqs, strings, arrays, and anything that supports
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][=nth=]].
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][nth]].
 The sequential destructuring form is a vector of /binding-form/s, which
 will be bound to successive elements from the /init-expr/, looked up via
 ~nth~. In addition, and optionally, a /binding-form/ following a ~&~
 will be bound to the remainder of the sequence, i.e. that part not yet
 bound, and looked up via
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext][=nthnext=]].
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext][nthnext]].
 
 Finally, also optionally, ~:as~ followed by a symbol binds that symbol
 to the entire /init-expr/:
@@ -35295,7 +35295,7 @@ Note - /you cannot assign to function params or local bindings. Only
 Java fields, Vars, Refs and Agents are mutable in Clojure/.
 
 Using
-[[http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set!][=set!=]]
+[[http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set!][set!]]
 for Java fields is documented in [[file:java_interop.xml#set][Java
 Interop]].
 
@@ -36872,14 +36872,14 @@ changelog]].
       [[https://github.com/clojure/tools.deps.alpha/blob/master/CHANGELOG.md][tools.deps.alpha]]
       0.12.1003
 - New -X:deps programs:
-   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.api-api.html#clojure.tools.cli.api/find-versions][=find-versions=]]
+   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.api-api.html#clojure.tools.cli.api/find-versions][find-versions]]
       - to find versions of Maven or git libs or tools
-   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.api-api.html#clojure.tools.cli.api/prep][=prep=]]
+   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.api-api.html#clojure.tools.cli.api/prep][prep]]
       - use to [[file:xref/../../reference/deps_and_cli.xml#prep][prep]]
       source libs
-   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.help-api.html#clojure.tools.cli.help/dir][=help/dir=]]
+   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.help-api.html#clojure.tools.cli.help/dir][help/dir]]
       - to list available functions in a tool namespace
-   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.help-api.html#clojure.tools.cli.help/doc][=help/doc=]]
+   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.help-api.html#clojure.tools.cli.help/doc][help/doc]]
       - to list docs for a tool namespace or function
 
 Read more at
