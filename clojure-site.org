@@ -969,9 +969,8 @@ system for specification and testing.
 #+BEGIN_QUOTE
 *Note*
 
-Species - appearance, form, sort, kind, equivalent to spec (ere) to
-look, regard\\
-               + -iēs abstract noun suffix
+Species - appearance, form, sort, kind, equivalent to spec (ere) to look, regard
+        + -iēs abstract noun suffix
 
 Specify - species + -ficus -fic (make)
 #+END_QUOTE
@@ -1730,125 +1729,125 @@ Please support these fine books about Clojure.
 
 /Listed in order of descending release date of newest edition./
 
-| Web Development with Clojure                                                 | [[https://www.amazon.com/dp/168050682X][Web Development with Clojure, 3rd edition]]\\                             |
-|                                                                              | by Dmitri Sotnikov, Scot Brown\\                                                                                  |
+| Web Development with Clojure                                                 | [[https://www.amazon.com/dp/168050682X][Web Development with Clojure, 3rd edition]]                             |
+|                                                                              | by Dmitri Sotnikov, Scot Brown                                                                                  |
 |                                                                              | July 29, 2021                                                                                                     |
-| Numerical Linear Algebra for Programmers: An Interactive Tutorial with GPU   | [[https://aiprobook.com/numerical-linear-algebra-for-programmers/][Numerical Linear Algebra for Programmers]]\\   |
-|                                                                              | by Dragan Djuric\\                                                                                                |
+| Numerical Linear Algebra for Programmers: An Interactive Tutorial with GPU   | [[https://aiprobook.com/numerical-linear-algebra-for-programmers/][Numerical Linear Algebra for Programmers]]   |
+|                                                                              | by Dragan Djuric                                                                                                |
 |                                                                              | Jan 15, 2021                                                                                                      |
-| Deep Learning for Programmers                                                | [[https://aiprobook.com/deep-learning-for-programmers/][Deep Learning for Programmers]]\\                         |
-|                                                                              | by Dragan Djuric\\                                                                                                |
+| Deep Learning for Programmers                                                | [[https://aiprobook.com/deep-learning-for-programmers/][Deep Learning for Programmers]]                         |
+|                                                                              | by Dragan Djuric                                                                                                |
 |                                                                              | Dec 21, 2020                                                                                                      |
-| The Clojure Workshop                                                         | [[https://www.amazon.com/dp/B082FJ9ZLY][The Clojure Workshop]]\\                                                  |
-|                                                                              | by Joseph Fahey, Thomas Haratyk, Scott McCaughie, Yehonathan Sharvit, Konrad Szydlo\\                             |
+| The Clojure Workshop                                                         | [[https://www.amazon.com/dp/B082FJ9ZLY][The Clojure Workshop]]                                                  |
+|                                                                              | by Joseph Fahey, Thomas Haratyk, Scott McCaughie, Yehonathan Sharvit, Konrad Szydlo                             |
 |                                                                              | Jan 29, 2020                                                                                                      |
-| Hands-On Reactive Programming with Clojure                                   | [[https://amzn.com/B07N7525GX][Reactive Programming with Clojure]]\\                                              |
-|                                                                              | by Konrad Szydlo, Leonardo Borges\\                                                                               |
+| Hands-On Reactive Programming with Clojure                                   | [[https://amzn.com/B07N7525GX][Reactive Programming with Clojure]]                                              |
+|                                                                              | by Konrad Szydlo, Leonardo Borges                                                                               |
 |                                                                              | Jan 25, 2019                                                                                                      |
-| Elements of Clojure                                                          | [[https://leanpub.com/elementsofclojure][Elements of Clojure]]\\                                                  |
-|                                                                              | by Zachary Tellman\\                                                                                              |
+| Elements of Clojure                                                          | [[https://leanpub.com/elementsofclojure][Elements of Clojure]]                                                  |
+|                                                                              | by Zachary Tellman                                                                                              |
 |                                                                              | Nov 30, 2018                                                                                                      |
-| Clojure Polymorphism                                                         | [[https://www.packtpub.com/programming/clojure-polymorphism][Clojure Polymorphism]]\\                             |
-|                                                                              | by Paul Stadig\\                                                                                                  |
+| Clojure Polymorphism                                                         | [[https://www.packtpub.com/programming/clojure-polymorphism][Clojure Polymorphism]]                             |
+|                                                                              | by Paul Stadig                                                                                                  |
 |                                                                              | Nov 15, 2019                                                                                                      |
-| Clojure Extended: Java interop                                               | [[https://leanpub.com/clojure-java-interop/][Clojure Extended: Java interop]]\\                                   |
-|                                                                              | by Ivan Grishaev\\                                                                                                |
+| Clojure Extended: Java interop                                               | [[https://leanpub.com/clojure-java-interop/][Clojure Extended: Java interop]]                                   |
+|                                                                              | by Ivan Grishaev                                                                                                |
 |                                                                              | Aug 31, 2018                                                                                                      |
-| Getting Clojure                                                              | [[https://pragprog.com/book/roclojure/getting-clojure][Getting Clojure]]\\                                        |
-|                                                                              | by Russ Olsen\\                                                                                                   |
+| Getting Clojure                                                              | [[https://pragprog.com/book/roclojure/getting-clojure][Getting Clojure]]                                        |
+|                                                                              | by Russ Olsen                                                                                                   |
 |                                                                              | May 19, 2018                                                                                                      |
-| Programming Clojure 3rd edition                                              | [[https://a.co/bSxW6A6][Programming Clojure 3rd edition]]\\                                                       |
-|                                                                              | by Alex Miller, Stuart Halloway, Aaron Bedra\\                                                                    |
+| Programming Clojure 3rd edition                                              | [[https://a.co/bSxW6A6][Programming Clojure 3rd edition]]                                                       |
+|                                                                              | by Alex Miller, Stuart Halloway, Aaron Bedra                                                                    |
 |                                                                              | Feb 21, 2018                                                                                                      |
-| Microservices with Clojure                                                   | [[https://www.packtpub.com/application-development/microservices-clojure][Microservices with Clojure]]\\          |
-|                                                                              | by Anuj Kumar\\                                                                                                   |
+| Microservices with Clojure                                                   | [[https://www.packtpub.com/application-development/microservices-clojure][Microservices with Clojure]]          |
+|                                                                              | by Anuj Kumar                                                                                                   |
 |                                                                              | Jan 25, 2018                                                                                                      |
-| ClojureScript Unraveled                                                      | [[https://a.co/cDfN4n4][Quick Clojure: Effective Functional Programming]]\\                                       |
-|                                                                              | by Mark McDonnell\\                                                                                               |
+| ClojureScript Unraveled                                                      | [[https://a.co/cDfN4n4][Quick Clojure: Effective Functional Programming]]                                       |
+|                                                                              | by Mark McDonnell                                                                                               |
 |                                                                              | Aug 23, 2017                                                                                                      |
-| ClojureScript Unraveled                                                      | [[https://leanpub.com/clojurescript-unraveled][ClojureScript Unraveled]]\\                                        |
-|                                                                              | by Andrey Antukh, Alejandro Gómez\\                                                                               |
+| ClojureScript Unraveled                                                      | [[https://leanpub.com/clojurescript-unraveled][ClojureScript Unraveled]]                                        |
+|                                                                              | by Andrey Antukh, Alejandro Gómez                                                                               |
 |                                                                              | Jul 25, 2016                                                                                                      |
-| Learning ClojureScript                                                       | [[https://a.co/2X3MJn2][Learning ClojureScript]]\\                                                                |
-|                                                                              | by W. David Jarvis, Rafik Naccache, Allen Rohner\\                                                                |
+| Learning ClojureScript                                                       | [[https://a.co/2X3MJn2][Learning ClojureScript]]                                                                |
+|                                                                              | by W. David Jarvis, Rafik Naccache, Allen Rohner                                                                |
 |                                                                              | Jun 30, 2016                                                                                                      |
-| Professional Clojure                                                         | [[https://a.co/bSHZ7X3][Professional Clojure]]\\                                                                  |
-|                                                                              | by Jeremy Anderson, Michael Gaare, Justin Holguín, Nick Bailey, and Timothy Pratley\\                             |
+| Professional Clojure                                                         | [[https://a.co/bSHZ7X3][Professional Clojure]]                                                                  |
+|                                                                              | by Jeremy Anderson, Michael Gaare, Justin Holguín, Nick Bailey, and Timothy Pratley                             |
 |                                                                              | Jun 7, 2016                                                                                                       |
-| Mastering Clojure                                                            | [[https://a.co/bTLhJ2d][Mastering Clojure]]\\                                                                     |
-|                                                                              | by Akhil Wali\\                                                                                                   |
+| Mastering Clojure                                                            | [[https://a.co/bTLhJ2d][Mastering Clojure]]                                                                     |
+|                                                                              | by Akhil Wali                                                                                                   |
 |                                                                              | Mar 28, 2016                                                                                                      |
-| Clojure for Java Developers                                                  | [[https://a.co/029aVrm][Clojure for Java Developers]]\\                                                           |
-|                                                                              | by Eduardo Diaz\\                                                                                                 |
+| Clojure for Java Developers                                                  | [[https://a.co/029aVrm][Clojure for Java Developers]]                                                           |
+|                                                                              | by Eduardo Diaz                                                                                                 |
 |                                                                              | Feb 23, 2016                                                                                                      |
-| Clojure for Finance                                                          | [[https://a.co/fbHnhEM][Clojure for Finance]]\\                                                                   |
-|                                                                              | by Timothy Washington\\                                                                                           |
+| Clojure for Finance                                                          | [[https://a.co/fbHnhEM][Clojure for Finance]]                                                                   |
+|                                                                              | by Timothy Washington                                                                                           |
 |                                                                              | Jan 11, 2016                                                                                                      |
-| Clojure In Action                                                            | [[https://a.co/a4hDbTn][Clojure In Action]]\\                                                                     |
-|                                                                              | by Amit Rathore\\                                                                                                 |
+| Clojure In Action                                                            | [[https://a.co/a4hDbTn][Clojure In Action]]                                                                     |
+|                                                                              | by Amit Rathore                                                                                                 |
 |                                                                              | Jan 1, 2016                                                                                                       |
-| Clojure for the Brave and True                                               | [[https://a.co/bsviqV7][Clojure for the Brave and True]]\\                                                        |
-|                                                                              | by Daniel Higginbotham\\                                                                                          |
+| Clojure for the Brave and True                                               | [[https://a.co/bsviqV7][Clojure for the Brave and True]]                                                        |
+|                                                                              | by Daniel Higginbotham                                                                                          |
 |                                                                              | Oct 23, 2015                                                                                                      |
-| Clojure Recipes                                                              | [[https://a.co/clSHVQi][Clojure Recipes]]\\                                                                       |
-|                                                                              | by Julian Gamble\\                                                                                                |
+| Clojure Recipes                                                              | [[https://a.co/clSHVQi][Clojure Recipes]]                                                                       |
+|                                                                              | by Julian Gamble                                                                                                |
 |                                                                              | Oct 23, 2015                                                                                                      |
-| Clojure Applied                                                              | [[https://a.co/1HL2XPF][Clojure Applied: From Practice to Practitioner]]\\                                        |
-|                                                                              | by Ben Vandgrift, Alex Miller\\                                                                                   |
+| Clojure Applied                                                              | [[https://a.co/1HL2XPF][Clojure Applied: From Practice to Practitioner]]                                        |
+|                                                                              | by Ben Vandgrift, Alex Miller                                                                                   |
 |                                                                              | Sept 6, 2015                                                                                                      |
-| Clojure for Data Science                                                     | [[https://a.co/idtKjhS][Clojure for Data Science]]\\                                                              |
-|                                                                              | by Henry Garner\\                                                                                                 |
+| Clojure for Data Science                                                     | [[https://a.co/idtKjhS][Clojure for Data Science]]                                                              |
+|                                                                              | by Henry Garner                                                                                                 |
 |                                                                              | Sept 3, 2015                                                                                                      |
-| Clojure High Performance Programming                                         | [[https://a.co/7adcmsl][Clojure High Performance Programming]]\\                                                  |
-|                                                                              | by Shantanu Kumar\\                                                                                               |
+| Clojure High Performance Programming                                         | [[https://a.co/7adcmsl][Clojure High Performance Programming]]                                                  |
+|                                                                              | by Shantanu Kumar                                                                                               |
 |                                                                              | Sept 1, 2015                                                                                                      |
-| Clojure Data Structures and Algorithms                                       | [[https://a.co/g7JAFAS][Clojure Data Structures and Algorithms]]\\                                                |
-|                                                                              | by Rafik Naccache\\                                                                                               |
+| Clojure Data Structures and Algorithms                                       | [[https://a.co/g7JAFAS][Clojure Data Structures and Algorithms]]                                                |
+|                                                                              | by Rafik Naccache                                                                                               |
 |                                                                              | Aug 19, 2015                                                                                                      |
-| Living Clojure                                                               | [[https://a.co/1m2Zt4p][Living Clojure]]\\                                                                        |
-|                                                                              | by Carin Meier\\                                                                                                  |
+| Living Clojure                                                               | [[https://a.co/1m2Zt4p][Living Clojure]]                                                                        |
+|                                                                              | by Carin Meier                                                                                                  |
 |                                                                              | Apr 30, 2015                                                                                                      |
-| Clojure Reactive Programming                                                 | [[https://a.co/fhyaFka][Clojure Reactive Programming]]\\                                                          |
-|                                                                              | by Leonardo Borges\\                                                                                              |
+| Clojure Reactive Programming                                                 | [[https://a.co/fhyaFka][Clojure Reactive Programming]]                                                          |
+|                                                                              | by Leonardo Borges                                                                                              |
 |                                                                              | Mar 24, 2015                                                                                                      |
-| Clojure Web Development Essentials                                           | [[https://a.co/2FlRxd5][Clojure Web Development Essentials]]\\                                                    |
-|                                                                              | by Ryan Baldwin\\                                                                                                 |
+| Clojure Web Development Essentials                                           | [[https://a.co/2FlRxd5][Clojure Web Development Essentials]]                                                    |
+|                                                                              | by Ryan Baldwin                                                                                                 |
 |                                                                              | Feb 16, 2015                                                                                                      |
-| Clojure Data Analysis Cookbook                                               | [[https://a.co/gIwPEkt][Clojure Data Analysis Cookbook]]\\                                                        |
-|                                                                              | by Eric Rochester\\                                                                                               |
+| Clojure Data Analysis Cookbook                                               | [[https://a.co/gIwPEkt][Clojure Data Analysis Cookbook]]                                                        |
+|                                                                              | by Eric Rochester                                                                                               |
 |                                                                              | Jan 22, 2015                                                                                                      |
-| Mastering Clojure Macros                                                     | [[https://a.co/4VjjiQJ][Mastering Clojure Macros]]\\                                                              |
-|                                                                              | by Colin Jones\\                                                                                                  |
+| Mastering Clojure Macros                                                     | [[https://a.co/4VjjiQJ][Mastering Clojure Macros]]                                                              |
+|                                                                              | by Colin Jones                                                                                                  |
 |                                                                              | Sept 5, 2014                                                                                                      |
-| The Joy of Clojure                                                           | [[https://a.co/evdNcOs][The Joy of Clojure]]\\                                                                    |
-|                                                                              | by Michael Fogus, Chris Houser\\                                                                                  |
+| The Joy of Clojure                                                           | [[https://a.co/evdNcOs][The Joy of Clojure]]                                                                    |
+|                                                                              | by Michael Fogus, Chris Houser                                                                                  |
 |                                                                              | Jun 13, 2014                                                                                                      |
-| Mastering Clojure Data Analysis                                              | [[https://a.co/bYwhMwH][Mastering Clojure Data Analysis]]\\                                                       |
-|                                                                              | by Eric Rochester\\                                                                                               |
+| Mastering Clojure Data Analysis                                              | [[https://a.co/bYwhMwH][Mastering Clojure Data Analysis]]                                                       |
+|                                                                              | by Eric Rochester                                                                                               |
 |                                                                              | May 26, 2014                                                                                                      |
-| Clojure for Machine Learning                                                 | [[https://a.co/7PRmDOK][Clojure for Machine Learning]]\\                                                          |
-|                                                                              | by Akhil Wali\\                                                                                                   |
+| Clojure for Machine Learning                                                 | [[https://a.co/7PRmDOK][Clojure for Machine Learning]]                                                          |
+|                                                                              | by Akhil Wali                                                                                                   |
 |                                                                              | Apr 24, 2014                                                                                                      |
-| Clojure Cookbook                                                             | [[https://a.co/1K6SZSI][Clojure Cookbook]]\\                                                                      |
-|                                                                              | by Luke VanderHart and Ryan Neufeld\\                                                                             |
+| Clojure Cookbook                                                             | [[https://a.co/1K6SZSI][Clojure Cookbook]]                                                                      |
+|                                                                              | by Luke VanderHart and Ryan Neufeld                                                                             |
 |                                                                              | Mar 24, 2014                                                                                                      |
-| Clojure for Domain-specific Languages                                        | [[https://a.co/3rwXJkx][Clojure for Domain-specific Languages]]\\                                                 |
-|                                                                              | by Ryan Kelker\\                                                                                                  |
+| Clojure for Domain-specific Languages                                        | [[https://a.co/3rwXJkx][Clojure for Domain-specific Languages]]                                                 |
+|                                                                              | by Ryan Kelker                                                                                                  |
 |                                                                              | Dec 18, 2013                                                                                                      |
-| Functional Programming Patterns in Scala and Clojure                         | [[https://a.co/2J3jvLX][Functional Programming Patterns in Scala and Clojure]]\\                                  |
-|                                                                              | by Michael Bevilacqua-Linn\\                                                                                      |
+| Functional Programming Patterns in Scala and Clojure                         | [[https://a.co/2J3jvLX][Functional Programming Patterns in Scala and Clojure]]                                  |
+|                                                                              | by Michael Bevilacqua-Linn                                                                                      |
 |                                                                              | Nov 2, 2013                                                                                                       |
-| ClojureScript: Up and Running                                                | [[https://a.co/74IUDUu][ClojureScript: Up and Running]]\\                                                         |
-|                                                                              | by Stuart Sierra, Luke VanderHart\\                                                                               |
+| ClojureScript: Up and Running                                                | [[https://a.co/74IUDUu][ClojureScript: Up and Running]]                                                         |
+|                                                                              | by Stuart Sierra, Luke VanderHart                                                                               |
 |                                                                              | Nov 10, 2012                                                                                                      |
-| Clojure Programming                                                          | [[https://a.co/jiaX8tX][Clojure Programming]]\\                                                                   |
-|                                                                              | by Chas Emerick, Brian Carper, Christophe Grand\\                                                                 |
+| Clojure Programming                                                          | [[https://a.co/jiaX8tX][Clojure Programming]]                                                                   |
+|                                                                              | by Chas Emerick, Brian Carper, Christophe Grand                                                                 |
 |                                                                              | Apr 22, 2012                                                                                                      |
-| Clojure                                                                      | [[https://www.amazon.de/dp/389864684X][Clojure]]\\                                                                |
-|                                                                              | by Stefan Kamphausen, Tim Oliver Kaiser\\                                                                         |
+| Clojure                                                                      | [[https://www.amazon.de/dp/389864684X][Clojure]]                                                                |
+|                                                                              | by Stefan Kamphausen, Tim Oliver Kaiser                                                                         |
 |                                                                              | Sep 20, 2010                                                                                                      |
-| Practical Clojure                                                            | [[https://a.co/fWbYqs5][Practical Clojure]]\\                                                                     |
-|                                                                              | by Luke VanderHart, Stuart Sierra\\                                                                               |
+| Practical Clojure                                                            | [[https://a.co/fWbYqs5][Practical Clojure]]                                                                     |
+|                                                                              | by Luke VanderHart, Stuart Sierra                                                                               |
 |                                                                              | Jun 1, 2010                                                                                                       |
 
 ** Community Stories
@@ -3744,13 +3743,13 @@ training courses.
 
 | Company               | Location                     | Courses                 | Link                                                       | contact                                                           |
 |-----------------------+------------------------------+-------------------------+------------------------------------------------------------+-------------------------------------------------------------------|
-| Cognitect             | North America                | All levels              | [[https://cognitect.com/services.html]]                    | [[mailto:sales@cognitect.com][sales@cognitect.com]]\\             |
+| Cognitect             | North America                | All levels              | [[https://cognitect.com/services.html]]                    | [[mailto:sales@cognitect.com][sales@cognitect.com]]             |
 |                       |                              |                         |                                                            | +1 919.283.2748                                                   |
 | BraveAndTrue          | North America                | All levels              | [[https://www.braveclojure.com/training]]                  | [[mailto:daniel@braveclojure.com][daniel@braveclojure.com]]       |
-| Nilenso               | India                        | Enterprise Clojure      | [[https://nilenso.com]]                                    | [[mailto:hello@nilenso.com][hello@nilenso.com]]\\                 |
+| Nilenso               | India                        | Enterprise Clojure      | [[https://nilenso.com]]                                    | [[mailto:hello@nilenso.com][hello@nilenso.com]]                 |
 |                       |                              |                         |                                                            | tel:+918040937123                                                 |
-| Starweaver            | Global                       | Clojure in a Nutshell   | [[https://www.starweaver.com]]                             | USA: +1-646-883-1460\\                                            |
-|                       |                              |                         |                                                            | UK: +44 20 3289 3277\\                                            |
+| Starweaver            | Global                       | Clojure in a Nutshell   | [[https://www.starweaver.com]]                             | USA: +1-646-883-1460                                            |
+|                       |                              |                         |                                                            | UK: +44 20 3289 3277                                            |
 |                       |                              |                         |                                                            | [[mailto:helpdesk@starweaver.com][helpdesk@starweaver.com]]       |
 | Peter Taoussanis      | Europe                       | Enterprise Clojure      | [[https://www.taoensso.com]]                               | [[mailto:ptaoussanis@taoensso.com][ptaoussanis@taoensso.com]]     |
 | Adam Bard             | North America                | Clojure Training        | [[http://clojuretraining.ca]]                              | [[mailto:learnclojure@adambard.com][learnclojure@adambard.com]]   |
@@ -8290,8 +8289,10 @@ tickets.
 
 We hope to see you and your team at the conference this year!
 
-Cheers,\\
-Ryan Neufeld at Clojure Remote\\
+Cheers,
+
+Ryan Neufeld at Clojure Remote
+
 [[https://twitter.com/clojureremote]]
 
 [[https://raw.githubusercontent.com/clojureremote/cr17/master/logos/Expanded-1000px.png]]
@@ -8330,8 +8331,10 @@ We hope you will
 us]] and meet hundreds of people from the London Clojurians community
 and many other like-minded people from around the world.
 
-Thank you\\
-London Clojurians\\
+Thank you
+
+London Clojurians
+
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-text-highlight-lambda-jr0cket.png]]
@@ -8455,8 +8458,10 @@ We hope you will
 us]] and meet hundreds of people from the London Clojurians community
 and many other like-minded people from around the world.
 
-Thank you\\
-London Clojurians\\
+Thank you
+
+London Clojurians
+
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png]]
@@ -8585,8 +8590,10 @@ development tools for Clojure. We can help with this on the Friday
 evening (or Saturday if required). Instructions are on our website
 [[https://clojurebridgelondon.github.io/workshop/development-tools/]]
 
-Thank you\\
-London Clojurians\\
+Thank you
+
+London Clojurians
+
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png]]
@@ -8700,8 +8707,10 @@ have questions and we will try our best to advise.
 
 Again, our deepest appologies to all involved in this event.
 
-Thank you\\
-London Clojurians\\
+Thank you
+
+London Clojurians
+
 [[https://twitter.com/ldnclj]]
 
 [[https://raw.githubusercontent.com/jr0cket/london-clojurians-logo/master/london-clojurians-logo.png]]
@@ -12220,19 +12229,20 @@ continue to work.
 There are several potential workarounds:
 
 - Perhaps the best is to provide type hints to the exported types so
-   the call is no longer reflective:\\
+  the call is no longer reflective:
 
-#+BEGIN_EXAMPLE
-(.createXMLStreamReader ^javax.xml.stream.XMLInputFactory fac (java.io.StringReader. ""))
-#+END_EXAMPLE
+  #+BEGIN_EXAMPLE
+  (.createXMLStreamReader ^javax.xml.stream.XMLInputFactory fac (java.io.StringReader. ""))
+  #+END_EXAMPLE
 
 - As of Clojure 1.10, turn off illegal access with
-   ~--illegal-access=deny~. The Java reflection system will then provide
-   the necessary feedback to Clojure to detect that calling through the
-   inaccessible class is not an option. Clojure will find the public
-   invocation path instead and no warning will be issued.
-- Use JVM module system flags (~--add-exports~ etc ) to forcibly export
-   the internal packages to avoid the warning. This is not recommended.
+  ~--illegal-access=deny~. The Java reflection system will then
+  provide the necessary feedback to Clojure to detect that calling
+  through the inaccessible class is not an option. Clojure will find
+  the public invocation path instead and no warning will be issued.
+- Use JVM module system flags (~--add-exports~ etc ) to forcibly
+  export the internal packages to avoid the warning. This is not
+  recommended.
 
 If it is difficult to tell from the warning where the reflection is
 occurring, it may help to add the flag:
@@ -13903,7 +13913,7 @@ first before trying it as a file name. Write a simplified http-get:
 - ~x~, a value
 
 and returns another function which calls ~f~ on ~x~ plus any additional
-arguments.\\
+arguments.
 
 #+BEGIN_SRC clojure
 (defn one-less-arg [f x]
@@ -22616,38 +22626,38 @@ For instance, given the above transducer and some data in a vector, you
 can:
 
 - lazily transform the data (one lazy sequence, not three as with
-   composed sequence functions)\\
+  composed sequence functions):
 
-#+BEGIN_EXAMPLE
-(sequence xform data)
-#+END_EXAMPLE
+  #+BEGIN_EXAMPLE
+  (sequence xform data)
+  #+END_EXAMPLE
 
-- reduce with a transformation (no laziness, just a loop)\\
+- reduce with a transformation (no laziness, just a loop):
 
-#+BEGIN_EXAMPLE
-(transduce xform + 0 data)
-#+END_EXAMPLE
+  #+BEGIN_EXAMPLE
+  (transduce xform + 0 data)
+  #+END_EXAMPLE
 
 - build one collection from a transformation of another, again no
-   laziness\\
+  laziness:
 
-#+BEGIN_EXAMPLE
-(into [] xform data)
-#+END_EXAMPLE
+  #+BEGIN_EXAMPLE
+  (into [] xform data)
+  #+END_EXAMPLE
 
 - create a recipe for a transformation, which can be subsequently
-   sequenced, iterated or reduced\\
+  sequenced, iterated or reduced:
 
-#+BEGIN_EXAMPLE
-(iteration xform data)
-#+END_EXAMPLE
+  #+BEGIN_EXAMPLE
+  (iteration xform data)
+  #+END_EXAMPLE
 
 - or use the same transducer to transform everything that goes through
-   a channel\\
+  a channel
 
-#+BEGIN_EXAMPLE
-(chan 1 xform)
-#+END_EXAMPLE
+  #+BEGIN_EXAMPLE
+  (chan 1 xform)
+  #+END_EXAMPLE
 
 The latter demonstrates the corresponding new capability of core.async
 channels - they can take transducers.
@@ -28256,13 +28266,15 @@ Computation:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/quot][quot]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rem][rem]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/min][min]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/max][max]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/max][max]]
+
 Auto-promoting computation:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2B%27][+']]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2D%27][-']]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2A%27][*']]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/inc%27][inc']]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dec%27][dec']]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dec%27][dec']]
+
 Comparison:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3D%3D][==]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3C][<]]
@@ -28271,17 +28283,20 @@ Comparison:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3E%3D][>=]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zero%3F][zero?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pos%3F][pos?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/neg%3F][neg?]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/neg%3F][neg?]]
+
 Bitwise operations:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-and][bit-and]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-or][bit-or]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-xor][bit-xor]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-not][bit-not]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-shift-right][bit-shift-right]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-shift-left][bit-shift-left]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-shift-left][bit-shift-left]]
+
 Ratios:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/numerator][numerator]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/denominator][denominator]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/denominator][denominator]]
+
 Coercions:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int][int]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigdec][bigdec]]
@@ -28455,10 +28470,12 @@ puts the item at the front of the list.
 
 Create a list:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list][list]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list*][list*]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list*][list*]]
+
 Treat a list like a stack:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek][peek]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop][pop]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop][pop]]
+
 Examine a list:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list?][list?]]
 
@@ -28482,13 +28499,15 @@ order.
 Create a vector:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector][vector]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vec][vec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector-of][vector-of]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector-of][vector-of]]
+
 Examine a vector:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][nth]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek][peek]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq][rseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector?][vector?]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector?][vector?]]
+
 'change' a vector:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][assoc]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop][pop]]
@@ -28526,21 +28545,24 @@ values are ok.
 Create a new map:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-map][hash-map]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map][sorted-map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map-by][sorted-map-by]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map-by][sorted-map-by]]
+
 'change' a map:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][assoc]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc][dissoc]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/select-keys][select-keys]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge][merge]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge-with][merge-with]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap][zipmap]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap][zipmap]]
+
 Examine a map:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/contains?][contains?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find][find]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keys][keys]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vals][vals]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map?][map?]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map?][map?]]
+
 Examine a map entry:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/key][key]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/val][val]]
@@ -28595,7 +28617,8 @@ or
 StructMap setup:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct][create-struct]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/accessor][accessor]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/accessor][accessor]]
+
 Create individual struct:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map][struct-map]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct][struct]]
@@ -30746,10 +30769,10 @@ Forms]].
 
 Any object other than those discussed above will evaluate to itself.
 
-*(/load/ classpath-resource ...​)*\\
-*(/load-file/ filename)*\\
-*(/load-reader/ reader)*\\
-*(/load-string/ string)*
+- ~(load classpath-resource ...​)~
+- ~(load-file filename)~
+- ~(load-reader reader)~
+- ~(load-string string)~
 
 The above describes the evaluation of a single form. The various load
 forms will sequentially read and evaluate the set of forms contained in
@@ -30761,7 +30784,7 @@ a fresh binding. That means that, should any form have an effect on that
 var (e.g. in-namespace), the effect will unwind at the completion of the
 load. load et al return the value produced by the last expression.
 
-*(/eval/ form)*
+- ~(eval form)~
 
 Evaluates the form /data structure/ (not text!) and returns the result.
 
@@ -30777,8 +30800,8 @@ Evaluates the form /data structure/ (not text!) and returns the result.
 :END:
 *** Class access
 
-*Classname*\\
-*Classname$NestedClassName*
+- ~Classname~
+- ~Classname$NestedClassName~
 
 Symbols representing class names are resolved to the Class instance.
 Inner or nested classes are separated from their outer class with a ~$~.
@@ -30797,11 +30820,11 @@ String
 
 *** Member access
 
-*(.instanceMember instance args*)*\\
-*(.instanceMember Classname args*)*\\
-*(.-instanceField instance)*\\
-*(Classname/staticMethod args*)*\\
-*Classname/staticField*
+- ~(.instanceMember instance args*)~
+- ~(.instanceMember Classname args*)~
+- ~(.-instanceField instance)~
+- ~(Classname/staticMethod args*)~
+- ~Classname/staticField~
 
 #+BEGIN_EXAMPLE
 (.toUpperCase "fred")
@@ -30834,17 +30857,15 @@ Classname/staticField ==> (. Classname staticField)
 
 *** The Dot special form
 
-*(/./ instance-expr member-symbol)*\\
-*(/./ Classname-symbol member-symbol)*\\
-*(/./ instance-expr -field-symbol)*\\
-*(/./ instance-expr (method-symbol args*))* or *(/./ instance-expr
-method-symbol args*)*\\
-*(/./ Classname-symbol (method-symbol args*))* or *(/./ Classname-symbol
-method-symbol args*)*
+- ~(. instance-expr member-symbol)~
+- ~(. Classname-symbol member-symbol)~
+- ~(. instance-expr -field-symbol)~
+- ~(. instance-expr (method-symbol args*))~ or ~(. instance-expr method-symbol args*)~
+- ~(. Classname-symbol (method-symbol args*))~ or ~(. Classname-symbol method-symbol args*)~
 
 Special form.
 
-The '.' special form is the basis for access to Java. It can be
+The ~.~ special form is the basis for access to Java. It can be
 considered a member-access operator, and/or read as 'in the scope of'.
 
 If the first operand is a symbol that resolves to a class name, the
@@ -30883,8 +30904,8 @@ they are immediately consumed by a method taking a primitive.
 The member access forms given at the top of this section are preferred
 for use in all cases other than in macros.
 
-*(/../ instance-expr member+)*\\
-*(/../ Classname-symbol member+)*
+- ~(/../ instance-expr member+)~
+- ~(/../ Classname-symbol member+)~
 
 member ⇒ fieldName-symbol or (instanceMethodName-symbol args*)
 
@@ -30903,7 +30924,7 @@ macro which can be used similarly:
 
 ~(-> (System/getProperties) (.get "os.name"))~
 
-*(/doto/ instance-expr (instanceMethodName-symbol args*)*)*
+- ~(doto instance-expr (instanceMethodName-symbol args*)*)~
 
 Macro. Evaluates instance-expr then calls all of the methods/functions
 with the supplied arguments in succession on the resulting object,
@@ -30914,8 +30935,8 @@ returning it.
 -> {a=1, b=2}
 #+END_SRC
 
-*(Classname. args*)*\\
-*(/new/ Classname args*)*
+- ~(Classname. args*)~
+- ~(new Classname args*)~
 
 Special form.
 
@@ -30936,13 +30957,13 @@ can be written
 
 the latter expanding into the former at macro expansion time.
 
-*(/instance?/ Class expr)*
+- ~(/instance?/ Class expr)~
 
 Evaluates expr and tests if it is an instance of the class. Returns true
 or false
 
-*(/set!/ (. instance-expr instanceFieldName-symbol) expr)*\\
-*(/set!/ (. Classname-symbol staticFieldName-symbol) expr)*
+- ~(/set!/ (. instance-expr instanceFieldName-symbol) expr)~
+- ~(/set!/ (. Classname-symbol staticFieldName-symbol) expr)~
 
 Assignment special form.
 
@@ -30955,7 +30976,7 @@ In all cases the value of expr is returned.
 Note - /you cannot assign to function params or local bindings. Only
 Java fields, Vars, Refs and Agents are mutable in Clojure/.
 
-*(/memfn/ method-name arg-names*)*
+- ~(memfn method-name arg-names*)~
 
 Macro. Expands into code that creates a fn that expects to be passed an
 object and any args and calls the named instance method on the object
@@ -30975,7 +30996,7 @@ like:
 -> (\r \h \y)
 #+END_SRC
 
-*(/bean/ obj)*
+- ~(bean obj)~
 
 Takes a Java object and returns a read-only implementation of the map
 abstraction based upon its JavaBean properties.
@@ -31015,11 +31036,13 @@ constructs, see the
 [[file:datatypes.xml#_java_annotation_support][datatypes reference]] for
 an example.
 
-*(/proxy/ [class-and-interfaces] [args] fs+)*
+- ~(proxy [class-and-interfaces] [args] fs+)~
 
-class-and-interfaces - a vector of class names\\
+class-and-interfaces - a vector of class names
+
 args - a (possibly empty) vector of arguments to the superclass
-constructor.\\
+constructor.
+
 f ⇒ (name [params*] body) or (name ([params*] body) ([params+] body)
 ...​)
 
@@ -31064,12 +31087,14 @@ Create array from existing collection:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array][to-array]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d][to-array-2d]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array][into-array]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array][into-array]]
+
 Multi-dimensional array support:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget][aget]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset][aset]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d][to-array-2d]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-array][make-array]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-array][make-array]]
+
 Type-specific array constructors:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean-array][boolean-array]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/byte-array][byte-array]]
@@ -31079,7 +31104,8 @@ Type-specific array constructors:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array][int-array]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long-array][long-array]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/object-array][object-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-array][short-array]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-array][short-array]]
+
 Primitive array casts:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/booleans][booleans]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bytes][bytes]]
@@ -31088,9 +31114,11 @@ Primitive array casts:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/floats][floats]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints][ints]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/longs][longs]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shorts][shorts]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shorts][shorts]]
+
 Mutate an array:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset][aset]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset][aset]]
+
 Process an existing array:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget][aget]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alength][alength]]
@@ -31920,7 +31948,8 @@ Creating macros:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro][defmacro]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline][definline]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand-1][macroexpand-1]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand][macroexpand]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand][macroexpand]]
+
 Branching:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/and][and]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/or][or]]
@@ -31931,12 +31960,14 @@ Branching:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-not][if-not]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-let][if-let]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond][cond]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp][condp]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp][condp]]
+
 Looping (see also [[file:sequences.xml][Sequences]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq][doseq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes][dotimes]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while][while]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while][while]]
+
 Working with vars (see also [[file:vars.xml][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare][declare]]
@@ -31947,11 +31978,13 @@ Working with vars (see also [[file:vars.xml][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti][defmulti]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-][defn-]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce][defonce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]
+
 Arranging code differently:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E][..]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto][doto]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e][->]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e][->]]
+
 Dynamic scopes (see also [[file:vars.xml][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/locking][locking]]
@@ -31960,11 +31993,13 @@ Dynamic scopes (see also [[file:vars.xml][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars][with-local-vars]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open][with-open]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str][with-out-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision][with-precision]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision][with-precision]]
+
 Creating lazy things (see also [[file:sequences.xml][Sequences]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat][lazy-cat]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cons][lazy-cons]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay][delay]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay][delay]]
+
 [[file:java_interop.xml][Java interop]] macros:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E][..]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
@@ -31973,11 +32008,13 @@ Creating lazy things (see also [[file:sequences.xml][Sequences]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface][gen-interface]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy][proxy]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy-super][proxy-super]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/memfn][memfn]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/memfn][memfn]]
+
 Documenting code:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert][assert]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment][comment]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doc][doc]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doc][doc]]
+
 Transactions:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
@@ -32378,16 +32415,19 @@ macro]], both of which create the namespace if it doesn't exist.
 Creating and switching to a namespace:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns][in-ns]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-ns][create-ns]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-ns][create-ns]]
+
 Adding to a namespace:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alias][alias]]
 [[file:special_forms.xml#def][def]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import][import]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern][intern]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer][refer]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer][refer]]
+
 Finding what namespaces exist:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/all-ns][all-ns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-ns][find-ns]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-ns][find-ns]]
+
 Examining a namespace:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-name][ns-name]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-aliases][ns-aliases]]
@@ -32395,11 +32435,13 @@ Examining a namespace:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-interns][ns-interns]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-map][ns-map]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-publics][ns-publics]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-refers][ns-refers]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-refers][ns-refers]]
+
 Getting a namespace from a symbol:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resolve][resolve]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-resolve][ns-resolve]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace][namespace]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace][namespace]]
+
 Removing things:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unalias][ns-unalias]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unmap][ns-unmap]]
@@ -32427,7 +32469,8 @@ Boolean and comparison functions:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not][not]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/true?][true?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/false?][false?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nil?][nil?]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nil?][nil?]]
+
 Miscellaneous:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identity][identity]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes][dotimes]]
@@ -32485,7 +32528,8 @@ Print to ~*out*~:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn][prn]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print][print]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println][println]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline][newline]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline][newline]]
+
 Print to string:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str][pr-str]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str][prn-str]]
@@ -33069,10 +33113,10 @@ Sets are zero or more forms enclosed in braces preceded by ~#~:
 
 - Calls to Java class, deftype, and defrecord constructors can be
    called using their fully qualified class name preceded by # and
-   followed by a vector: ~#my.klass_or_type_or_record[:a :b :c]~\\
+   followed by a vector: ~#my.klass_or_type_or_record[:a :b :c]~
 - The elements in the vector part are passed *unevaluated* to the
    relevant constructor. defrecord instances can also be created with a
-   similar form that takes a map instead: ~#my.record{:a 1, :b 2}~\\
+   similar form that takes a map instead: ~#my.record{:a 1, :b 2}~
 - The keyed values in the map are assigned *unevaluated* to the
    relevant fields in the defrecord. Any defrecord fields without
    corresponding entries in the literal map are assigned nil as their
@@ -33120,21 +33164,24 @@ Vector, Sets, Maps, tagged literals returning an IMeta, and record,
 type, and constructor calls. The metadata reader macro first reads the
 metadata and attaches it to the next form read (see
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta][with-meta]]
-to attach meta to an object):\\
+to attach meta to an object):
+
 ~^{:a 1 :b 2} [1 2 3]~ yields the vector ~[1 2 3]~ with a metadata map
-of ~{:a 1 :b 2}~.\\
+of ~{:a 1 :b 2}~.
 
 A shorthand version allows the metadata to be a simple symbol or string,
 in which case it is treated as a single entry map with a key of :tag and
-a value of the (resolved) symbol or string, e.g.:\\
-~^String x~ is the same as ~^{:tag java.lang.String} x~\\
+a value of the (resolved) symbol or string, e.g.:
 
-Such tags can be used to convey type information to the compiler.\\
+~^String x~ is the same as ~^{:tag java.lang.String} x~
+
+Such tags can be used to convey type information to the compiler.
 
 Another shorthand version allows the metadata to be a keyword, in which
 case it is treated as a single entry map with a key of the keyword and a
-value of true, e.g.:\\
-~^:dynamic x~ is the same as ~^{:dynamic true} x~\\
+value of true, e.g.:
+
+~^:dynamic x~ is the same as ~^{:dynamic true} x~
 
 Metadata can be chained in which case they are merged from right to
 left.
@@ -33410,7 +33457,8 @@ supports keyword retrieval for keys with ~:form~ and ~:tag~ keys.
 #+END_SRC
 
 The following functions can also be used as predicates or constructors
-for these types:\\
+for these types:
+
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional%3F][reader-conditional?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional][reader-conditional]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal%3F][tagged-literal?]]
@@ -33461,8 +33509,8 @@ alternate
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/reduce][r/reduce]]
 function.
 
-*(r/reduce f coll)*\\
-*(r/reduce f init coll)*
+- ~(r/reduce f coll)~
+- ~(r/reduce f init coll)~
 
 The reducers version differs in that:
 
@@ -33478,9 +33526,9 @@ prefer
 which implements parallel reduce and combine. However, it may be useful
 to execute an eager reduce with fewer intermediate results.
 
-*(r/fold reducef coll)*\\
-*(r/fold combinef reducef coll)*\\
-*(r/fold n combinef reducef coll)*
+- ~(r/fold reducef coll)~
+- ~(r/fold combinef reducef coll)~
+- ~(r/fold n combinef reducef coll)~
 
 r/fold takes a reducible collection and partitions it into groups of
 approximately n (default 512) elements. Each group is reduced using the
@@ -34080,7 +34128,8 @@ Shorter seq from a longer seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove][remove]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep][keep]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed][keep-indexed]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed][keep-indexed]]
+
 Longer seq from a shorter seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cons][cons]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/concat][concat]]
@@ -34088,7 +34137,8 @@ Longer seq from a shorter seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat][mapcat]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cycle][cycle]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interleave][interleave]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose][interpose]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose][interpose]]
+
 Seq with head-items missing:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rest][rest]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/next][next]]
@@ -34097,26 +34147,30 @@ Seq with head-items missing:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop][drop]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while][drop-while]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext][nthnext]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
+
 Seq with tail-items missing:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take][take]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth][take-nth]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while][take-while]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/butlast][butlast]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-last][drop-last]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
+
 Rearrangment of a seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/flatten][flatten]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reverse][reverse]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort][sort]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort-by][sort-by]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shuffle][shuffle]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shuffle][shuffle]]
+
 Create nested seqs:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/split-at][split-at]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/split-with][split-with]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition][partition]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all][partition-all]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by][partition-by]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by][partition-by]]
+
 Process each item of a seq to create a new seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map][map]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pmap][pmap]]
@@ -34137,7 +34191,8 @@ Extract a specific-numbered item from a seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][nth]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-first][when-first]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/last][last]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand-nth][rand-nth]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand-nth][rand-nth]]
+
 Construct a collection from a seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap][zipmap]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into][into]]
@@ -34147,9 +34202,11 @@ Construct a collection from a seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array][into-array]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d][to-array-2d]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/frequencies][frequencies]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/group-by][group-by]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/group-by][group-by]]
+
 Pass items of a seq as arguments to a function:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/apply][apply]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/apply][apply]]
+
 Compute a boolean from a seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not-empty][not-empty]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some][some]]
@@ -34158,14 +34215,17 @@ Compute a boolean from a seq:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/every?][every?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not-every?][not-every?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not-any?][not-any?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/empty?][empty?]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/empty?][empty?]]
+
 Search a seq using a predicate:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some][some]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter][filter]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter][filter]]
+
 Force evaluation of lazy seqs:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq][doseq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dorun][dorun]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doall][doall]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doall][doall]]
+
 Check if lazy seqs have been forcibly evaluated:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/realized?][realized?]]
 
@@ -34177,14 +34237,17 @@ Lazy seq from collection:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keys][keys]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq][rseq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subseq][subseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq][rsubseq]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq][rsubseq]]
+
 Lazy seq from producer function:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq][lazy-seq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/repeatedly][repeatedly]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/iterate][iterate]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/iterate][iterate]]
+
 Lazy seq from constant:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/repeat][repeat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/range][range]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/range][range]]
+
 Lazy seq from other objects:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/line-seq][line-seq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resultset-seq][resultset-seq]]
@@ -34360,10 +34423,10 @@ value)/ is returned. The reader macro ~#'x~ expands to ~(var x)~.
 *** (~fn~ /name/? [/params/* ] /expr/*)
 *** (~fn~ /name/? ([/params/* ] /expr/*)+)
 
-/params/ ⇒ /positional-param/* , or /positional-param/* & /rest-param/\\
-/positional-param/ ⇒ /binding-form/\\
-/rest-param/ ⇒ /binding-form/\\
-/name/ ⇒ /symbol/
+- /params/ ⇒ /positional-param/* , or /positional-param/* & /rest-param/
+- /positional-param/ ⇒ /binding-form/
+- /rest-param/ ⇒ /binding-form/
+- /name/ ⇒ /symbol/
 
 Defines a function (fn). Fns are first-class objects that implement the
 [[https://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html][IFn
@@ -34494,8 +34557,8 @@ instance of some derivee of ~Throwable~.
 
 *** (~try~ /expr/* /catch-clause/* /finally-clause/?)
 
-/catch-clause/ → (catch /classname/ /name/ /expr/*)\\
-/finally-clause/ → (finally /expr/*)
+- /catch-clause/ → (catch /classname/ /name/ /expr/*)
+- /finally-clause/ → (finally /expr/*)
 
 The /expr/s are evaluated and, if no exceptions occur, the value of the
 last expression is returned. If an exception occurs and /catch-clause/s
@@ -35013,7 +35076,8 @@ general rules to be aware of:
 :END:
 *** Rationale
 
-/If a tree falls in the woods, does it make a sound?/\\
+/If a tree falls in the woods, does it make a sound?/
+
 /If a pure function mutates some local data in order to produce an
 immutable return value, is that ok?/
 
@@ -35351,13 +35415,15 @@ Variants of ~def~:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod][defmethod]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti][defmulti]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce][defonce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]
+
 Working with interned Vars:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare][declare]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern][intern]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-var][find-var]]
-[[file:special_forms.xml#var][var]]\\
+[[file:special_forms.xml#var][var]]
+
 Working with Var objects:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars][with-local-vars]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var-get][var-get]]
@@ -35365,10 +35431,12 @@ Working with Var objects:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter-var-root][alter-var-root]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var?][var?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs][with-redefs]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn][with-redefs-fn]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn][with-redefs-fn]]
+
 Var validators:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator][get-validator]]\\
+[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator][get-validator]]
+
 Using Var metadata:
 [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc][doc]]
 [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc][find-doc]]
@@ -38433,7 +38501,7 @@ work with. A small subset of the highlights:
    on our system, and then re-use the exact same query but with a
    database filter applied to a breakdown by geographical region or
    scoped by time (requested created within past 7 days, past month,
-   etc).\\
+   etc).
 
    Note that this is somewhat less efficient than writing a separate
    function to do the aggregation on a per-region level during a single
@@ -38443,7 +38511,7 @@ work with. A small subset of the highlights:
    implementation ...
 - Lazy iteration via d/datoms and d/index-range based off of a db
    value! Most of our data processing operates on one small subset of
-   data at a time or merely requires minimial aggregation state.\\
+   data at a time or merely requires minimial aggregation state.
 
    Doing this via a traditional SQL based system is difficult since
    while you can write Clojure functions to generate a lazy sequence of
