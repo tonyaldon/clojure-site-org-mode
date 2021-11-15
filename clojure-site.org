@@ -97,8 +97,8 @@ transactions trying to modify the same reference, one of them will be
 retried. All of this occurs without explicit locking.
 
 In this example a vector of Refs containing integers is created
-/(refs)/, then a set of threads are set up /(pool)/ to run a number of
-iterations of incrementing every Ref /(tasks)/. This creates extreme
+(~refs~), then a set of threads are set up (~pool~) to run a number of
+iterations of incrementing every Ref (~tasks~). This creates extreme
 contention, but yields the correct result. No locks!
 
 #+BEGIN_SRC clojure
@@ -468,7 +468,7 @@ to produce a list of 0 or more items. Here's a simplified
 *** Recursive Looping
 
 In the absence of mutable local variables, looping and iteration must
-take a different form than in languages with built-in /for/ or /while/
+take a different form than in languages with built-in ~for~ or ~while~
 constructs that are controlled by changing state. In functional
 languages looping and iteration are replaced/implemented via recursive
 function calls. Many such languages guarantee that function calls made
@@ -8988,11 +8988,11 @@ most other versions as well./
 
 *** Summary
 
-A comparator is a function that takes two arguments /x/ and /y/ and
-returns a value indicating the relative order in which /x/ and /y/
+A comparator is a function that takes two arguments ~x~ and ~y~ and
+returns a value indicating the relative order in which ~x~ and ~y~
 should be sorted. It can be a 3-way comparator returning an integer, or
 a 2-way comparator returning a boolean. See the DOs below for what the
-return values should be, depending upon the order of /x/ and /y/.
+return values should be, depending upon the order of ~x~ and ~y~.
 
 In Clojure you need comparators for sorting a collection of values, or
 for maintaining a collection of values in a desired sorted order, e.g a
@@ -9022,13 +9022,13 @@ DOs:
    values that can appear in your data set, and determine which value
    should come first (or that they are equal).
 - Write either a 3-way comparator or a boolean comparator:
-   - A 3-way comparator takes 2 values, /x/ and /y/, and returns a Java
-      32-bit /int/ that is negative if /x/ comes before /y/, positive if
-      /x/ comes after /y/, or 0 if they are equal. Use values -1, 0, and
+   - A 3-way comparator takes 2 values, ~x~ and ~y~, and returns a Java
+      32-bit /int/ that is negative if ~x~ comes before ~y~, positive if
+      ~x~ comes after ~y~, or 0 if they are equal. Use values -1, 0, and
       1 if you have no reason to prefer other return values.
-   - A boolean comparator takes 2 values, /x/ and /y/, and returns true
-      if /x/ comes before /y/, or false otherwise (including if /x/ and
-      /y/ are equal). ~<~ and ~>~ are good examples. ~<=~ and ~>=~ are
+   - A boolean comparator takes 2 values, ~x~ and ~y~, and returns true
+      if ~x~ comes before ~y~, or false otherwise (including if ~x~ and
+      ~y~ are equal). ~<~ and ~>~ are good examples. ~<=~ and ~>=~ are
       not. Performance note: your boolean comparator may be called twice
       to distinguish between the "comes after" or "equals" cases.
 - Reverse the sort by reversing the order that you give the arguments
@@ -9076,8 +9076,8 @@ them in one particular way:
 
 - numbers are sorted in increasing numeric order, returning 0 if two
    numbers are numerically equal by ~==~, even if ~=~ returns false.
-   Exception: Even though ~(=~ ##NaN x)= is false for all numbers /x/,
-   even ~##NaN~, ~(compare ##NaN x)~ is 0 for all numbers /x/, including
+   Exception: Even though ~(=~ ##NaN x)= is false for all numbers ~x~,
+   even ~##NaN~, ~(compare ##NaN x)~ is 0 for all numbers ~x~, including
    ~##NaN~.
 - strings are sorted in
    [[http://en.wikipedia.org/wiki/Lexicographical_order][lexicographic
@@ -9221,7 +9221,7 @@ user> (pprint (sort by-salary-name-co people))
 
 Below is the shorter way, by comparing Clojure vectors. It behaves
 exactly the same as above. Note that as above, the field :salary is
-sorted in descending order because /x/ and /y/ are swapped.
+sorted in descending order because ~x~ and ~y~ are swapped.
 
 #+BEGIN_SRC clojure
 (defn by-salary-name-co2 [x y]
@@ -9311,18 +9311,18 @@ largest, where some groups of values can all be equal to each other.
 Every pair of values must be comparable to each other (i.e. no "I do not
 know how to compare them" answers from the comparator).
 
-For example, you can order all fractions written in the form /m/n/ for
+For example, you can order all fractions written in the form ~m/n~ for
 integers m and n from smallest to largest, in the usual way this is done
 in mathematics. Many of the fractions would be equal to each other, e.g.
-/1/2 = 2/4 = 3/6/. A comparator implementing that total order should
+~1/2 = 2/4 = 3/6~. A comparator implementing that total order should
 behave as if they are all the same.
 
 A 3-way comparator ~(cmp a b)~ should return a negative, positive, or 0
-/int/ if /a/ is before, after, or is considered equal to b in the total
+/int/ if ~a~ is before, after, or is considered equal to b in the total
 order, respectively.
 
-A boolean comparator ~(cmp a b)~ should return true if /a/ is before /b/
-in the total order, or false if /a/ is after or considered equal to /b/.
+A boolean comparator ~(cmp a b)~ should return true if ~a~ is before ~b~
+in the total order, or false if ~a~ is after or considered equal to ~b~.
 That is, it should work like ~<~ does for numbers. As explained later,
 it should not behave like ~<=~ for numbers (see section "Comparators for
 sorted sets and maps are easy to get wrong").
@@ -13313,7 +13313,7 @@ x isn't 5 or 10
 
 ***** ~dotimes~
 
-- Evaluate expression /n/ times
+- Evaluate expression ~n~ times
 - Returns ~nil~
 
 #+BEGIN_SRC clojure
@@ -15880,7 +15880,7 @@ default namespace context when keys or symbols in a map where they share
 a common namespace.
 
 The ~#:ns~ syntax specifies a fully-qualified namespace map prefix n
-alias in the namespace map prefix with, where /ns/ is the name of a
+alias in the namespace map prefix with, where ~ns~ is the name of a
 namespace and the prefix precedes the opening brace ~{~ of the map.
 
 For example, the following map literal with namespace syntax:
@@ -21726,10 +21726,10 @@ I'm happy to have
 [[https://github.com/clojure/clojure/commit/89e5dce0fdfec4bc09fa956512af08d8b14004f6][pushed]]
 today the beginnings of a new Clojure library for higher-order
 manipulation of collections, based upon /reduce/ and /fold/. Of course,
-Clojure already has Lisp's /reduce/, which corresponds to the
-traditional /foldl/ of functional programming. /reduce/ is based upon
-sequences, as are many of the core functions of Clojure, like /map/,
-/filter/ etc. So, what could be better? It's a long story, so I'll give
+Clojure already has Lisp's ~reduce~, which corresponds to the
+traditional ~foldl~ of functional programming. ~reduce~ is based upon
+sequences, as are many of the core functions of Clojure, like ~map~,
+~filter~ etc. So, what could be better? It's a long story, so I'll give
 you the ending first:
 
 - There is a new namespace: clojure.core.reducers
@@ -21752,7 +21752,7 @@ you the ending first:
 
 The story starts best at the bottom.
 
-Clojure and other functional languages have a function called /map/ that
+Clojure and other functional languages have a function called ~map~ that
 takes a function and a collection/list.
 
 - What does it mean to map a function on a collection?
@@ -21761,9 +21761,9 @@ takes a function and a collection/list.
    [[http://www.infoq.com/presentations/Simple-Made-Easy][complect]]
    what to do with how to do it?
 
-The classic recursive functional definition of /map/ is to apply /f/ to
-the first thing in the collection, then /cons/ the result onto the
-result of mapping /f/ on the /rest/ of the collection. This definition
+The classic recursive functional definition of ~map~ is to apply ~f~ to
+the first thing in the collection, then ~cons~ the result onto the
+result of mapping ~f~ on the /rest/ of the collection. This definition
 includes plenty of 'how':
 
 - How: mechanism - recursion
@@ -21776,9 +21776,9 @@ map be a function of ~fn * Coll → Coll~ for any type of Coll, removing
 the sequentiality but also losing the laziness, and they still specify a
 concrete collection result.
 
-Semantically, and minimally, /map/ means "apply-to-all" e.g.
+Semantically, and minimally, ~map~ means "apply-to-all" e.g.
 ~(map inc coll)~ means give me a (logical) collection where every item
-is one greater than it was in /coll/. But, /map/ doesn't know how to
+is one greater than it was in ~coll~. But, ~map~ doesn't know how to
 navigate around every collection - the use of
 seqs/lists/iterators/streams etc forces a shared known representation.
 Nor does ~inc~ (or any function) know how to apply itself to every
@@ -21788,28 +21788,28 @@ The only thing that knows how to apply a function to a collection is the
 collection itself.
 
 What is the generic gateway to a collection applying things to itself?
-In Clojure, it is (internal) /reduce/.
+In Clojure, it is (internal) ~reduce~.
 
 We now have a new super-generalized and minimal abstraction for
 collections - a collection is some set of things that, when given a
 function to apply to its contents, can do so and give you the result,
 i.e. /a collection is (at minimum) reducible/. In other words, you can
-call /reduce/ on it.
+call ~reduce~ on it.
 
 Thus, ~core.reducers/map~ is a function of ~fn * reducible → reducible~.
 (Whereas ~core/map~ is a function of ~fn * seqable → seqable~.)
 
 Now, how? If someone is going to ask the result of ~(map inc coll)~ to
-reduce itself with some function /f/, /map/ must ultimately ask /coll/
-to do the job. Rather than pass /coll f/, /map/ passes /coll/ a new,
-transformed, reducing function that takes what /coll/ supplies, calls
-~inc~ on it, and then calls /f/ on that.
+reduce itself with some function ~f~, ~map~ must ultimately ask ~coll~
+to do the job. Rather than pass ~coll f~, ~map~ passes ~coll~ a new,
+transformed, reducing function that takes what ~coll~ supplies, calls
+~inc~ on it, and then calls ~f~ on that.
 
 #+BEGIN_SRC clojure
 (reduce + (r/map inc [1 2 3])) ~=~ (reduce (fn [ret x] (+ ret (inc x))) (+) [1 2 3])
 #+END_SRC
 
-i.e. the core work of /map f/ looks like this:
+i.e. the core work of ~map f~ looks like this:
 
 #+BEGIN_SRC clojure
 (fn [f1]
@@ -21820,11 +21820,11 @@ i.e. the core work of /map f/ looks like this:
 It takes a reducing function f1, and returns a new reducing function
 that calls f1 after applying f to its input.
 
-Thus you can define /map/ as a function of ~fn * reducible → reducible~
+Thus you can define ~map~ as a function of ~fn * reducible → reducible~
 by merely transforming the reducing function. Mapping is semantically a
 function of the function of *one step* of a reduction. This
 transformation is decomplected from both representation and order. We
-call functions such as this /map/, that take a reducible, and in turn
+call functions such as this ~map~, that take a reducible, and in turn
 return something reducible via transformation of the reducing function,
 reducers.
 
@@ -21842,8 +21842,8 @@ and no concrete collection is produced.
 
 The beautiful thing is that this 'transformation of reducing function'
 mechanism also works for many of the traditional seq functions, like
-/filter/, /take/, /flatten/ etc. Note the fact that /filter/ is
-(potentially) contractive, and /flatten/ is (potentially) expansive per
+~filter~, ~take~, ~flatten~ etc. Note the fact that ~filter~ is
+(potentially) contractive, and ~flatten~ is (potentially) expansive per
 step - the mechanism is general and not limited to 1:1 transformations.
 And other reducer definitions are as pretty as map's - none of the
 imperativeness of iterators, or generators with yield.
@@ -21900,7 +21900,7 @@ type:
 Decomplecting the core operations from representation and laziness has
 given us some speed, but what about the elimination of order? It should
 open the door to parallelism, but we are stuck with the semantics of
-/reduce/ being /foldl/, i.e. it uses an accumulator and is
+~reduce~ being ~foldl~, i.e. it uses an accumulator and is
 [[http://vimeo.com/6624203][fundamentally serial]]. We can parallelize
 reduction by using independent sub-reductions and combining their
 results, and the library defines a function that does just that:
@@ -21910,10 +21910,10 @@ The primary signature of fold takes a combining function, a reducing
 function, and a collection and returns the result of combining the
 results of reducing subsegments of the collection, potentially in
 parallel. Obviously if the work is to occur in parallel, the functions
-must be associative, but they need not be commutative - /fold/ preserves
+must be associative, but they need not be commutative - ~fold~ preserves
 order. Note that there is no initial 'seed' or 'accumulator' value, as
 there may be with reduce and foldl. But, since the subsegments are
-themselves reduced (with /reduce/), it raises the question as to what
+themselves reduced (with ~reduce~), it raises the question as to what
 supplies the seed values for those reductions?
 
 The combining function (an associative binary fn) must have some
@@ -21933,15 +21933,15 @@ look like reduces:
 #+END_SRC
 
 But by promising less (i.e. not promising stepwise reduction from left
-or right) /fold/ can do more - run in parallel. It does this when the
+or right) ~fold~ can do more - run in parallel. It does this when the
 collection is amenable to parallel subdivision. Ideal candidates are
 data structures built from trees. Clojure vectors and maps are trees,
-and have parallel implementations of /fold/ based upon the
+and have parallel implementations of ~fold~ based upon the
 [[https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html][ForkJoin
 framework]].
 
 What if the underlying collection is not amenable (e.g. is a sequence)?
-/fold/ just devolves into /reduce/, producing the same semantic, if not
+~fold~ just devolves into ~reduce~, producing the same semantic, if not
 physical, result.
 
 There's a tremendous amount you can accomplish with this reduce+combine
@@ -22015,13 +22015,13 @@ a reducer, as well as some background about the library.
 
 The reducers library is built around transforming reducing functions. A
 reducing function is simply a binary function, akin to the one you might
-pass to /reduce/. While the two arguments might be treated symmetrically
+pass to ~reduce~. While the two arguments might be treated symmetrically
 by the function, there is an implied semantic that distinguishes the
 arguments: the first argument is a result or accumulator that is being
 built up by the reduction, while the second is some new input value from
-the source being reduced. While /reduce/ works from the 'left', that is
+the source being reduced. While ~reduce~ works from the 'left', that is
 neither a property nor promise of the reducing function, but one of
-/reduce/ itself. So we'll say simply that a reducing fn has the shape:
+~reduce~ itself. So we'll say simply that a reducing fn has the shape:
 
 #+BEGIN_SRC clojure
 (f result input) -> new-result
@@ -22040,8 +22040,8 @@ another one:
 #+END_SRC
 
 Many of the core collection operations can be expressed in terms of such
-a transformation. Imagine if we were to define the cores of /map/,
-/filter/ and /mapcat/ in this way:
+a transformation. Imagine if we were to define the cores of ~map~,
+~filter~ and ~mapcat~ in this way:
 
 #+BEGIN_SRC clojure
 (defn mapping [f]
@@ -22085,7 +22085,7 @@ reducing operation rather than the collection:
 We expect map/filter etc to take and return logical collections. The
 premise of the reducers library is that the minimum definition of
 collection is something that is reducible. reduce ends up using a
-protocol (CollReduce) to ask the collection to /reduce/ itself, so we
+protocol (CollReduce) to ask the collection to ~reduce~ itself, so we
 can make reducible things by extending that protocol. Thus, given a
 collection and a reducing function transformer like those above, we can
 make a reducible with a function like this:
@@ -22149,8 +22149,8 @@ simpler semantics than their sequence-based counterparts.
 
 How does one define parallel mapping/filtering/mapcatting etc? /We
 already did!/ As long as the transformation itself doesn't care about
-order (e.g. as /take/ does), then a reducer is as foldable as its
-source. As with /reduce/, /fold/ bottoms out on a protocol (CollFold),
+order (e.g. as ~take~ does), then a reducer is as foldable as its
+source. As with ~reduce~, ~fold~ bottoms out on a protocol (CollFold),
 and our reducer can extend that:
 
 #+BEGIN_SRC clojure
@@ -22166,13 +22166,13 @@ and our reducer can extend that:
 
 Note that:
 
-- /folder/ has the same requirements as /reducer/ - collection +
+- ~folder~ has the same requirements as ~reducer~ - collection +
    reducing function transformer
-- when /fold/ is applied to something that can't fold, it devolves to
-   /reduce/
+- when ~fold~ is applied to something that can't fold, it devolves to
+   ~reduce~
 
-Thus the real definitions of reducers/map et al use /folder/ (while take
-uses /reducer/):
+Thus the real definitions of reducers/map et al use ~folder~ (while take
+uses ~reducer~):
 
 #+BEGIN_SRC clojure
 (defn rmap [f coll]
@@ -22225,7 +22225,7 @@ supply it items, decoupling the iteratee from the data source. But the
 iteratee is still driving in some sense, as it is in charge of signaling
 Done, and, it returns on each step the next iteratee to use, effectively
 dictating a single thread of control. One benefit is that even
-operations like /take/ can be defined functionally, as they can encode
+operations like ~take~ can be defined functionally, as they can encode
 their internal state in the 'next' iteratee returned. OTOH, and unlike
 reducers, the design wraps the result being built up in a new iteratee
 each step, with potential allocation overhead.
@@ -22251,9 +22251,9 @@ reduce+combine. This reflects 2 considerations:
 
 - It is accepted fork/join practice that at some point you stop
    splitting in half and handle the leaves 'sequentially'
-   - if the best way to do that at the top is /reduce/, why not at the
+   - if the best way to do that at the top is ~reduce~, why not at the
       bottom as well?
-- /map/ forces a result per input
+- ~map~ forces a result per input
 
 You can see the awkwardness of the latter in the map/reduce-oriented
 definition of parallel /filter/ in the talk, which must 'listify' items
@@ -28414,7 +28414,7 @@ these specifications in their hashCode() implementations.
 **** Clojure collection hashes
 
 Clojure provides its own hash computations that provide better hash
-properties for collections (and other types), known as the /hasheq/
+properties for collections (and other types), known as the ~hasheq~
 value.
 
 The ~IHashEq~ interface marks collections that provide the ~hasheq()~
@@ -30876,7 +30876,7 @@ to be a field access - the name of the field is the name of the symbol,
 and the value of the expression is the value of the field, /unless/
 there is a no argument public method of the same name, in which case it
 resolves to a call to the method. If the second operand is a symbol
-starting with /-/, the member-symbol will resolve only as field access
+starting with ~-~, the member-symbol will resolve only as field access
 (never as a 0-arity method) and should be preferred when that is the
 intent.
 
@@ -34241,17 +34241,17 @@ and + (1 or more). Non-terminals are denoted by /italics/.
 *** (~def~ /symbol/ /doc-string/? /init/?)
 
 Creates and interns or locates a global
-[[https://clojure.org/reference/vars][var]] with the name of /symbol/
+[[https://clojure.org/reference/vars][var]] with the name of ~symbol~
 and a namespace of the value of the current namespace (~*ns*~). If
-/init/ is supplied, it is evaluated, and the root binding of the var is
-set to the resulting value. If /init/ is not supplied, the root binding
+~init~ is supplied, it is evaluated, and the root binding of the var is
+set to the resulting value. If ~init~ is not supplied, the root binding
 of the var is unaffected. ~def~ always applies to the root binding, even
 if the var is thread-bound at the point where ~def~ is called. ~def~
-yields the var itself (not its value). Throws an exception if /symbol/
+yields the var itself (not its value). Throws an exception if ~symbol~
 is already in the namespace and not mapped to an interned var. Support
-for /doc-string/ was added in Clojure 1.3.
+for ~doc-string~ was added in Clojure 1.3.
 
-Any metadata on the /symbol/ will be evaluated, and become metadata on
+Any metadata on the ~symbol~ will be evaluated, and become metadata on
 the var itself. There are several metadata keys that have special
 interpretation:
 
@@ -34314,7 +34314,7 @@ user=> (meta #'mymax)
 #+END_SRC
 
 Many macros expand into ~def~ (e.g. ~defn~, ~defmacro~), and thus also
-convey metadata for the resulting var from the /symbol/ used as the
+convey metadata for the resulting var from the ~symbol~ used as the
 name.
 
 Using ~def~ to modify the root value of a var at other than the top
@@ -34327,8 +34327,8 @@ transactions or actions for mutation.
 
 *** (~if~ /test/ /then/ /else/?)
 
-Evaluates /test/. If not the singular values ~nil~ or ~false~, evaluates
-and yields /then/, otherwise, evaluates and yields /else/. If /else/ is
+Evaluates ~test~. If not the singular values ~nil~ or ~false~, evaluates
+and yields ~then~, otherwise, evaluates and yields ~else~. If ~else~ is
 not supplied it defaults to ~nil~. All of the other conditionals in
 Clojure are based upon the same logic, that is, ~nil~ and ~false~
 constitute logical falsity, and everything else constitutes logical
@@ -34384,7 +34384,7 @@ is a list of 3 symbols.
 
 *** (~var~ /symbol/)
 
-The /symbol/ must resolve to a var, and the Var object itself /(not its
+The ~symbol~ must resolve to a var, and the Var object itself /(not its
 value)/ is returned. The reader macro ~#'x~ expands to ~(var x)~.
 
 *** (~fn~ /name/? [/params/* ] /expr/*)
@@ -34673,11 +34673,11 @@ Clojure 1.9 adds support for directly destructuring many keys (or
 symbols) that share the same namespace using the following destructuring
 key forms:
 
-- ~:ns/keys~ - /ns/ specifies the default namespace for the key to look
+- ~:ns/keys~ - ~ns~ specifies the default namespace for the key to look
    up in the input
    - keys elements should not specify a namespace
    - keys elements also define new local symbols, as with ~:keys~
-- ~:ns/syms~ - /ns/ specifies the default namespace for the symbol to
+- ~:ns/syms~ - ~ns~ specifies the default namespace for the symbol to
    look up in the input
    - syms elements should not specify a namespace
    - syms elements also define new local symbols, as with ~:syms~
