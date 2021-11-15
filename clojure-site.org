@@ -23149,8 +23149,7 @@ about 1/2 3 years ago):
 Clojure increasingly delivers on the promise of a single unified
 language stack that can be used to cover an entire application.
 
-**** Prior to using Clojure, ClojureScript, or ClojureCLR, what was your
-primary development language?
+**** Prior to using Clojure, ClojureScript, or ClojureCLR, what was your primary development language?
 
 We've changed the way this question is asked and the options provided
 several times so it's difficult to assess trends. However, it's clear
@@ -23161,8 +23160,7 @@ languages like Scala, Common Lisp, Haskell, Erlang, etc.
 
 [[/images/content/news/2017-01-31/prior-lang.jpg]]
 
-**** What is your *primary* Clojure, ClojureScript, or ClojureCLR
-development environment?
+**** What is your *primary* Clojure, ClojureScript, or ClojureCLR development environment?
 
 Due to the general volatility of tools, it's interesting to see how this
 changes year to year. However, this year things were mostly pretty
@@ -23174,8 +23172,7 @@ was a new choice and selected by 6% of respondents.
 
 [[/images/content/news/2017-01-31/editor.jpg]]
 
-**** What Clojure, ClojureScript, or ClojureCLR community forums have you
-used or attended in the last year?
+**** What Clojure, ClojureScript, or ClojureCLR community forums have you used or attended in the last year?
 
 This was a new question this year, trying to get a sense of how people
 are interacting with other members of the community. The Clojurians
@@ -23191,8 +23188,7 @@ meetups or Clojure conferences either in-person or remotely. There are
 many active Clojure meetups and conferences in the world - if you'd like
 to talk to other Clojurists, take a look and see if one is near you!
 
-**** Which versions of Clojure do you currently use in development or
-production?
+**** Which versions of Clojure do you currently use in development or production?
 
 Library maintainers are often interested in how quickly users are
 migrating to newer versions of Clojure as they decide whether they can
@@ -23216,16 +23212,14 @@ eventually that support will be dropped.
 
 [[/images/content/news/2017-01-31/jdk-versions.jpg]]
 
-**** What tools do you use to compile/package/deploy/release your Clojure
-projects?
+**** What tools do you use to compile/package/deploy/release your Clojure projects?
 
 While Leiningen continues to be ubiquitous, boot made significant
 advances this year, moving from 13% usage to 22% usage.
 
 [[/images/content/news/2017-01-31/tools.jpg]]
 
-**** What has been most frustrating or has prevented you from using
-Clojure more than you do now?
+**** What has been most frustrating or has prevented you from using Clojure more than you do now?
 
 Error messages continued to be the top frustration for people and we
 will continue to improve those with the integration of spec in Clojure
@@ -23259,8 +23253,7 @@ uses.
 
 [[/images/content/news/2017-01-31/js-env.jpg]]
 
-**** Which tools do you use to compile/package/deploy/release your
-ClojureScript projects?
+**** Which tools do you use to compile/package/deploy/release your ClojureScript projects?
 
 We saw a small increase in Figwheel this year (after a huge jump after
 its release) with about 2/3 of ClojureScript users now using it. And as
@@ -23292,8 +23285,7 @@ Clojure. This is a great area for future improvements with no real
 consensus and a lot of developers not even doing it at all. Some other
 choices seen in the comments were Devcards, Karma, Phantom, and doo.
 
-**** What has been most frustrating or has prevented you from using
-ClojureScript more than you do now?
+**** What has been most frustrating or has prevented you from using ClojureScript more than you do now?
 
 The top answer here was "Using JavaЅcript libs with ClojureScript /
 Google Closure", which was a new choice we added this year. David Nolen
