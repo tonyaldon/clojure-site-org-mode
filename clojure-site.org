@@ -2515,26 +2515,21 @@ Small changes can be proposed directly in the GitHub web interface:
 
 1. Go to the content repository
    [[https://github.com/clojure/clojure-site]]
-
 2. Navigate to the page you wish to update under content/ - the url
    should match the file base name. For example, this file's content is
    at
    [[https://github.com/clojure/clojure-site/blob/master/content/community/contributing_site.adoc]].
-
 3. Click the edit (pencil) icon.
-
 4. Content is written using the asciidoc format, which is similar to
    Markdown. The [[file:editing.xml][Editing]] page lists examples of
    the most common things you will encounter when editing content on
    this site. Make your changes in the text box. You can preview your
    changes using the "Preview changes" tab. GitHub understands asciidoc
    format and will provide a formatted preview of your changes.
-
 5. Write a concise description of the change in the bottom section of
    the page then click "Propose file change". This will fork the
    original repository into your own version of the repository with the
    change applied.
-
 6. You will then be shown a "Comparing changes" page - all of the
    information should be filled out automatically and a summary of your
    changes will be at the bottom - this is a good time to look them over
@@ -2562,23 +2557,17 @@ To create a local environment for working on a bigger change:
 1. Fork the content repository
    [[https://github.com/clojure/clojure-site]] - this will create a
    version of the site content under your own user id.
-
 2. ~git clone~ the forked repository in your local terminal and
    ~cd clojure-site~.
-
 3. ~git checkout -b <branchname>~ - create a new branch to work on your
    change. You'll use this branch to submit a pull request.
-
 4. Make one or more commits on this branch, modifying or adding one or
    more files. See the section below on how to build and preview changes
    locally. The [[file:editing.xml][Editing]] page lists examples of the
    most common things you will encounter when editing content on this
    site.
-
 5. Use ~git push~ to push your changes to the branch.
-
 6. Go to https://github.com/username/clojure-site/tree/branchname.
-
 7. Click the green button to "Compare, review, and create a pull
    request" and proceed through the prompts to submit the pull request.
 
@@ -2587,7 +2576,6 @@ up-to-date with this repository. To do that:
 
 1. Add this repository to your remote urls:
    ~git remote add upstream https://github.com/clojure/clojure-site.git~.
-
 2. Before every contribution:
    - fetch the content of upstream: ~git fetch upstream~ ;
    - move to your master branch: ~git checkout master~ (in case you
@@ -2607,9 +2595,7 @@ To [[https://jbake.org/docs/2.6.5/#installation][install]] JBake 2.6.5:
 
 1. ~curl -L -O https://dl.bintray.com/jbake/binary/jbake-2.6.5-bin.zip~
    (or download this file with your browser)
-
 2. ~unzip -o jbake-2.6.5-bin.zip~
-
 3. Add jbake-2.6.5-bin/bin to your system PATH
 
 To build the site:
@@ -2618,7 +2604,6 @@ Retrieve the content:
 
 1. ~git clone https://github.com/clojure/clojure-site.git~ (or your own
    fork)
-
 2. ~cd clojure-site~
 
 Retrieve and install the current theme assets (these don't change very
@@ -2626,15 +2611,12 @@ often so you don't need to do this every time):
 
 1. ~curl -O https://clojure.org/clojuretheme.zip~ (or download this file
    with your browser to the clojure-site directory)
-
 2. ~unzip -o clojuretheme.zip~
 
 Generate the pages:
 
 1. ~jbake -b~ - this will create the static site in the output directory
-
 2. To view the static files, open ~output/index~ in your browser
-
 3. To view a live preview, run ~jbake -s~ and go to
    [[http://localhost:8820/index]]
 
@@ -3203,17 +3185,14 @@ A user group needs the following elements:
    ideal option is finding a company that can host a group after-hours.
    If that's not an option, some other choices include libraries,
    churches, or coffee shops.
-
 2. *A meeting time.* It's important to establish a rhythm to keep a
    group going. Pick a night (like the 2nd Tuesday of the month) and try
    as much as possible to have your meeting on that same night every
    month.
-
 3. *A home on the web.* It's important to have an address on the web
    that can be found by a search engine. There are lots of ways to put
    together a web page for free or cheap - see below for some tools you
    can use.
-
 4. *People!* You can't have a meeting without people. Ask around at
    other mailing lists or user groups in your area for people that might
    be interested.
@@ -3302,11 +3281,9 @@ Here are just some of the public success stories from companies using
 Clojure. If you'd like to be added to this list, please
 [[https://goo.gl/forms/eBOzyNESFNf9DxJa2][complete this form]].
 
-Walmart
-used Clojure to create a robust data management system that supports
-over 5,000 stores and integrates online and mobile data.
-Learn how Walmart is running
-Clojure at Scale.
+Walmart used Clojure to create a robust data management system that
+supports over 5,000 stores and integrates online and mobile
+data. Learn how Walmart is running Clojure at Scale.
 
 #+BEGIN_QUOTE
 "Our Clojure system just handled its first Walmart black Friday and
@@ -3315,14 +3292,10 @@ Anthony Marcar
 Senior Architect
 #+END_QUOTE
 
-Chartbeat
-uses Kafka and Clojure to build a contextual site overlay which tracks
-internal traffic at a rate of over one million clicks per minute in real
-time.
-Watch
-Devon discuss
-how they use Clojure to process a stream of activity of tens of millions
-of users.
+Chartbeat uses Kafka and Clojure to build a contextual site overlay
+which tracks internal traffic at a rate of over one million clicks per
+minute in real time. Watch Devon discuss how they use Clojure to
+process a stream of activity of tens of millions of users.
 
 #+BEGIN_QUOTE
 When we needed to extract insights from hundreds of thousands of
@@ -3332,12 +3305,10 @@ Devon Peticolas, Sr.
 Backend Engineer and Team Lead
 #+END_QUOTE
 
-8th Light
-worked with a new-to-Clojure client team to complete their first Clojure
-project in just a month, from design to deployment.
-Read about why they consider
-Clojure a boring technology
-, and why that's a good thing.
+8th Light worked with a new-to-Clojure client team to complete their
+first Clojure project in just a month, from design to deployment. Read
+about why they consider Clojure a boring technology, and why that's a
+good thing.
 
 #+BEGIN_QUOTE
 Clojure's flexibility, interactive development, and tooling have
@@ -3347,20 +3318,15 @@ Colin Jones
 CTO
 #+END_QUOTE
 
-Consumer Reports
-chose Clojure and Datomic to bring together all their underlying backend
-systems and databases. Their new enterprise-wide container service
-enables developers to create applications providing the data consumers
-are searching for quickly with decreased risk and effort.
-Watch Paul deGrandis discuss
-Unlocking Data-driven Systems.
-Cicayda
-used Clojure, Datomic, and ClojureScript to build a robust, multi-tenant
-cloud hosted SaaS that allows clients to manage diverse data and load
-profiles.
-Learn how they
-used the familiar principles of Clojure
-to build this legal data service.
+Consumer Reports chose Clojure and Datomic to bring together all their
+underlying backend systems and databases. Their new enterprise-wide
+container service enables developers to create applications providing
+the data consumers are searching for quickly with decreased risk and
+effort. Watch Paul deGrandis discuss Unlocking Data-driven
+Systems. Cicayda used Clojure, Datomic, and ClojureScript to build a
+robust, multi-tenant cloud hosted SaaS that allows clients to manage
+diverse data and load profiles. Learn how they used the familiar
+principles of Clojure to build this legal data service.
 
 #+BEGIN_QUOTE
 ClojureScript has provided us with a unified development environment
@@ -3370,15 +3336,9 @@ Jonathan Boston
 Software Developer
 #+END_QUOTE
 
-Puppet
-use Clojure to build Trapperkeeper (and more), relying on Clojure's
-simplicity to build an agile, scalable platform.
-Read about
-Trapperkeeper.
-Or
-Dig deeper.
-Or read about
-PuppetDB.
+Puppet use Clojure to build Trapperkeeper (and more), relying on
+Clojure's simplicity to build an agile, scalable platform. Read about
+Trapperkeeper. Or Dig deeper. Or read about PuppetDB.
 
 #+BEGIN_QUOTE
 Clojure is a functional programming language from top to bottom. This
@@ -3388,9 +3348,7 @@ Chris Price
 Software Engineer
 #+END_QUOTE
 
-Beanstalk
-switches to Clojure to speed up caching by 20x.
-Read about
+Beanstalk switches to Clojure to speed up caching by 20x. Read about
 the love.
 
 #+BEGIN_QUOTE
@@ -3402,9 +3360,7 @@ of 20 ms.
 Dima Sabanin
 #+END_QUOTE
 
-MailOnline.com
-rebuilds publishing platform in Clojure.
-Read about
+MailOnline.com rebuilds publishing platform in Clojure. Read about
 Clojure at a newspaper.
 
 #+BEGIN_QUOTE
@@ -3415,10 +3371,8 @@ Jon Pither
 Co-founder, Juxt.pro
 #+END_QUOTE
 
-DRW Trading Group
-has adopted Clojure with great success.
-Watch Jay discuss
-why DRW chose Clojure.
+DRW Trading Group has adopted Clojure with great success. Watch Jay
+discuss why DRW chose Clojure.
 
 #+BEGIN_QUOTE
 Clojure wasn't the first language that I've introduced to an
@@ -3429,12 +3383,8 @@ Jay Fields
 Software Engineer
 #+END_QUOTE
 
-IOOF
-worked with
-Thoughtworks
-to quickly replace and improve a critical component of their financial
-services platform.
-Read about
+IOOF worked with Thoughtworks to quickly replace and improve a
+critical component of their financial services platform. Read about
 recreating their superannuation services.
 
 #+BEGIN_QUOTE
@@ -3447,9 +3397,7 @@ Andrew Todd
 CIO
 #+END_QUOTE
 
-Thoughtworks
-leverages Clojure to accelerate a Java team.
-Read about
+Thoughtworks leverages Clojure to accelerate a Java team. Read about
 using Clojure to deliver early and under budget.
 
 #+BEGIN_QUOTE
@@ -3459,12 +3407,9 @@ seeing speed to market deliveries, that are based on Clojure.
 Dave Eilman
 #+END_QUOTE
 
-The Climate Corporation
-uses Clojure to help the world's farmers sustainably protect and care
-for their crops.
-Read about how they used Clojure to build a
-versioned weather datastore
-.
+The Climate Corporation uses Clojure to help the world's farmers
+sustainably protect and care for their crops. Read about how they used
+Clojure to build a versioned weather datastore .
 
 #+BEGIN_QUOTE
 All our models, datastores, and services are built in Clojure. We find
@@ -3474,12 +3419,9 @@ Leon Barrett
 Software Engineer
 #+END_QUOTE
 
-Precursor
-is real-time collaborative prototyping for teams built with Clojure,
-ClojureScript, and Datomic.
-Read about how Precursor uses ClojureScript to
-make designers productive
-.
+Precursor is real-time collaborative prototyping for teams built with
+Clojure, ClojureScript, and Datomic. Read about how Precursor uses
+ClojureScript to make designers productive .
 
 #+BEGIN_QUOTE
 Learning to use ClojureScript, Om, and React finally made me feel like
@@ -3488,12 +3430,9 @@ Danny King
 Co-Founder/Designer
 #+END_QUOTE
 
-Sonian
-has been using Clojure in production at a large scale to develop a
-common foundation for back-end services.
-Read about how Sonian stays
-SAFE
-.
+Sonian has been using Clojure in production at a large scale to
+develop a common foundation for back-end services. Read about how
+Sonian stays SAFE .
 
 #+BEGIN_QUOTE
 Clojure gives us a performance boost at both ends of the software
@@ -3504,13 +3443,10 @@ Ron Toland
 Clojure Engineer
 #+END_QUOTE
 
-Appsflyer
-develops in Clojure for scalability and for the business agility it
-enables. They can grow and adapt as fast as the mobile advertising
-market.
-For more about Appsflyer, visit their website. And check out their blog
-post about
-using Clojure in end-to-end production
+Appsflyer develops in Clojure for scalability and for the business
+agility it enables. They can grow and adapt as fast as the mobile
+advertising market. For more about Appsflyer, visit their website. And
+check out their blog post about using Clojure in end-to-end production
 .
 
 #+BEGIN_QUOTE
@@ -3520,21 +3456,16 @@ Reshef Mann
 CTO
 #+END_QUOTE
 
-Atlassian
-is using Clojure to build realtime collaboration features into both new
-and existing products.
-Leonardo Borges explains why Atlassian chose Clojure and the exciting
-results the team has achieved in his recent
-presentation
-at EuroClojure 2015.
-Base2
-used Clojure to develop a feature-rich onboard diagnostic system for the
-Boeing 737 MAX. They structured the application with a service framework
-and message queues to enable communication between disparate parts of
-the service while preserving separation of concerns.
-Watch Donevan discuss the development of this onboard application
-in this Clojure/west 2016 presentation
-.
+Atlassian is using Clojure to build realtime collaboration features
+into both new and existing products. Leonardo Borges explains why
+Atlassian chose Clojure and the exciting results the team has achieved
+in his recent presentation at EuroClojure 2015. Base2 used Clojure to
+develop a feature-rich onboard diagnostic system for the Boeing 737
+MAX. They structured the application with a service framework and
+message queues to enable communication between disparate parts of the
+service while preserving separation of concerns. Watch Donevan discuss
+the development of this onboard application in this Clojure/west 2016
+presentation .
 
 #+BEGIN_QUOTE
 We picked Clojure for this project due to its ability to run parallel
@@ -3544,15 +3475,10 @@ Donevan Dolby
 Software Engineer
 #+END_QUOTE
 
-Room Key
-works with Cognitect and leverages Clojure and Datomic to build a
-rapidly scalable, highly agile cloud-based hotel search engine.
-Read about
-60,000% growth using Clojure and AWS.
-Or a
-case study about our collaboration.
-Or about
-how they use Datomic.
+Room Key works with Cognitect and leverages Clojure and Datomic to
+build a rapidly scalable, highly agile cloud-based hotel search
+engine. Read about 60,000% growth using Clojure and AWS. Or a case
+study about our collaboration. Or about how they use Datomic.
 
 #+BEGIN_QUOTE
 [We] knew Cognitect would provide the kind of support we needed. They
@@ -3562,11 +3488,9 @@ Colin Steele
 CTO
 #+END_QUOTE
 
-Greenius
-chose Clojure and Datomic to build a scalable, agile platform for
-gardeners to collaborate and share ideas.
-Learn about
-their ClojureScript integration roadmap.
+Greenius chose Clojure and Datomic to build a scalable, agile platform
+for gardeners to collaborate and share ideas. Learn about their
+ClojureScript integration roadmap.
 
 #+BEGIN_QUOTE
 [We designed our software] with just immutable data structures and
@@ -3577,10 +3501,9 @@ Asier Galdos
 Co-founder/developer
 #+END_QUOTE
 
-Funding Circle
-uses Clojure to write their exchange and accounting systems.
-Learn about how they use Clojure for
-perfomance sensitive back-end services.
+Funding Circle uses Clojure to write their exchange and accounting
+systems. Learn about how they use Clojure for perfomance sensitive
+back-end services.
 
 #+BEGIN_QUOTE
 Clojure is remarkably malleable. We write stream processors, API
@@ -3590,12 +3513,9 @@ Rob Crim
 Chief Architect
 #+END_QUOTE
 
-Kidblog
-uses Clojure to provide safe student publishing for K-12 teachers and
-students.
-Learn about how they use Clojure in their
-platform
-.
+Kidblog uses Clojure to provide safe student publishing for K-12
+teachers and students. Learn about how they use Clojure in their
+platform .
 
 #+BEGIN_QUOTE
 Clojure makes our code more enjoyable to write, pleasant to read, and
@@ -3604,12 +3524,10 @@ Matt Hardy
 Founder
 #+END_QUOTE
 
-LendUp
-uses Clojure to build enterprise financial software that helps provide
-anyone with a path to better financial health.
-LendUp uses Clojure to
-power data pipelines
-and core real-time decisioning & servicing infrastructure.
+LendUp uses Clojure to build enterprise financial software that helps
+provide anyone with a path to better financial health. LendUp uses
+Clojure to power data pipelines and core real-time decisioning &
+servicing infrastructure.
 
 #+BEGIN_QUOTE
 Clojure is elegant and pragmatic; it helps me focus more on solving
@@ -3618,13 +3536,10 @@ Mengxi Lu
 Data Engineering Lead
 #+END_QUOTE
 
-Zimpler
-, being a payment company, strives to deliver a smooth payment
+Zimpler, being a payment company, strives to deliver a smooth payment
 experience. For achieving this we use ClojureScript in all our user
-facing applications.
-Watch as Zimplers CTO
-tells the tale
-about ClojureScript in production at a payment company.
+facing applications. Watch as Zimplers CTO tells the tale about
+ClojureScript in production at a payment company.
 
 #+BEGIN_QUOTE
 Working with Clojure and ClojureScript has allowed us to collaborate
@@ -3633,12 +3548,9 @@ Jean-Louis Giordano
 CTO
 #+END_QUOTE
 
-CloudRepo
-is a cloud based repository manager for storing and sharing your
-software libraries (Leiningen, Boot, Maven, etc).
-CloudRepo's founder
-discusses
-the choice to use a Clojure stack.
+CloudRepo is a cloud based repository manager for storing and sharing
+your software libraries (Leiningen, Boot, Maven, etc). CloudRepo's
+founder discusses the choice to use a Clojure stack.
 
 #+BEGIN_QUOTE
 Simplified development, building a complete product with a very small
@@ -3648,13 +3560,10 @@ Chris Shellenbarger
 Founder, CloudRepo
 #+END_QUOTE
 
-AnyChart
-chose Clojure and ClojureScript to power their JavaScript (HTML5)
-charting libraries' technical documentation ecosystem: user's guide, API
-reference, and chart playground.
-Read about how
-how the AnyChart team uses Clojure
-and why.
+AnyChart chose Clojure and ClojureScript to power their JavaScript
+(HTML5) charting libraries' technical documentation ecosystem: user's
+guide, API reference, and chart playground. Read about how how the
+AnyChart team uses Clojure and why.
 
 #+BEGIN_QUOTE
 We love Clojure for the ability to use Java libraries, writing shared
@@ -3664,13 +3573,9 @@ Vitaly Radionov
 Head of R&D, AnyChart
 #+END_QUOTE
 
-At
-GO-JEK
-, we rewrote our Allocation Engine in Clojure which enabled us to serve
-millions of customers to find a suitable driver for them.
-Watch Abhinav and Kartik
-discuss
-at EuroClojure 2017.
+At GO-JEK , we rewrote our Allocation Engine in Clojure which enabled
+us to serve millions of customers to find a suitable driver for
+them. Watch Abhinav and Kartik discuss at EuroClojure 2017.
 
 #+BEGIN_QUOTE
 We were looking for a language which allows us to express our domain
@@ -3681,11 +3586,9 @@ Shobhit Srivastava
 Head of Technology
 #+END_QUOTE
 
-Pisano
-'s empowering & innovative customer experience platform uses Clojure,
-ClojureScript and Datomic.
-Read
-why Pisano is so happy with using the Clojure platform.
+Pisano's empowering & innovative customer experience platform uses
+Clojure, ClojureScript and Datomic. Read why Pisano is so happy with
+using the Clojure platform.
 
 #+BEGIN_QUOTE
 Modelling our system state with data structure was a gratifying
@@ -3694,11 +3597,9 @@ Ertuğrul Çetin
 Software Engineer & Team Lead
 #+END_QUOTE
 
-Freshcode
-provides Web solutions using Clojure as a core technology.
-Read
-about why our developers choose Clojure and when Clojure development
-matters.
+Freshcode provides Web solutions using Clojure as a core
+technology. Read about why our developers choose Clojure and when
+Clojure development matters.
 
 #+BEGIN_QUOTE
 Why Clojure? Because: live reload, extreme development speed,
@@ -3707,13 +3608,10 @@ Artem Barmin
 Co-Founder at Freshcode
 #+END_QUOTE
 
-The
-French digital administration
-provides digital infrastructure and resources for the ministries and
-public agencies.
-Etalab, the department responsible for open data in France, is
-using Clojure
-to publish the list of public source codes.
+The French digital administration provides digital infrastructure and
+resources for the ministries and public agencies. Etalab, the
+department responsible for open data in France, is using Clojure to
+publish the list of public source codes.
 
 #+BEGIN_QUOTE
 Clojure was used to develop a modest web site, and we appreciate how
@@ -3727,7 +3625,6 @@ Free Software Officer at the French digital administration
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/swag.adoc]]
 :CUSTOM_ID: community/swag
 :END:
-
 *** Official Clojure Gear
 
 The [[http://www.zazzle.com/clojureappreciation][Clojure Appreciation
@@ -3839,7 +3736,6 @@ the most commonly used tools include:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/training.adoc]]
 :CUSTOM_ID: community/training
 :END:
-
 *** For teams
 
 Adding Clojure to your company's capabilities? Give your employees a
@@ -9831,10 +9727,8 @@ In all cases, using a library involves:
 
 1. specifying which library you want to use, providing its name and
    other aspects like version
-
 2. getting it (once) from the git or maven repositories to your local
    machine
-
 3. making it available on the JVM classpath so Clojure can find it while
    your REPL or program is running
 
@@ -12533,7 +12427,6 @@ To install with the Linux script installer:
 
 1. Ensure that the following dependencies are installed: ~bash~, ~curl~,
    ~rlwrap~, and ~Java~.
-
 2. Use the ~linux-install~ script to download and run the install, which
    will create the executables ~/usr/local/bin/clj~,
    ~/usr/local/bin/clojure~, and the directory ~/usr/local/lib/clojure~:
@@ -14862,7 +14755,6 @@ There are two important points here:
 1. The unit of source code is a *Clojure expression*, not a Clojure
    source file. Source files are read as a series of expressions, just
    as if you typed those expressions interactively at the REPL.
-
 2. Separating the Reader and the Compiler is a key separation that makes
    room for macros. Macros are special functions that take code (as
    data), and emit code (as data). Can you see where a loop for macro
@@ -18124,8 +18016,6 @@ time.
 #+CAPTION: A Clojure REPL in a terminal window
 [[/images/content/guides/repl/show-terminal-repl.gif]]
 
-
-
 #+CAPTION: An editor-integrated Clojure REPL
 [[/images/content/guides/repl/show-editor-repl.gif]]
 
@@ -20002,9 +19892,7 @@ There are three ways to build up custom generators - in decreasing order
 of preference:
 
 1. Let spec create a generator based on a predicate/spec
-
 2. Create your own generator from the tools in clojure.spec.gen.alpha
-
 3. Use test.check or other test.check compatible libraries (like
    [[https://github.com/gfredericks/test.chuck][test.chuck]])
 
@@ -24128,13 +24016,9 @@ in your responses to the following survey:
 The survey contains five pages:
 
 1. General info
-
 2. Tool usage
-
 3. Questions specific to JVM Clojure (skip if not applicable)
-
 4. Questions specific to ClojureScript (skip if not applicable)
-
 5. Final comments
 
 The survey will close January 23rd, after which all of the data will be
@@ -24383,12 +24267,9 @@ For Mac or Linux users using Homebrew, Clojure now has its own
 advantages:
 
 1. Clojure team controls formula contents
-
 2. Clojure team controls release timing
-
 3. Freedom to keep an archive of older versioned releases that would be
    too much for the core tap
-
 4. Easier to automate releases
 
 *** Dependencies
@@ -24430,12 +24311,10 @@ available:
 1. Stable releases (obtained with the commands above) - this is what
    most people should use and we expect to update these on the frequency
    of every 1-3 months.
-
 2. Development releases (using the --devel flag) - the latest bits,
    probably best for tools developers and those evaluating new bug fixes
    or functionality. New development releases may come out as frequently
    as multiple times per week during active periods.
-
 3. Archived version releases - occasionally, it may be useful to install
    a specific older release, and there will now be an archive of these
    release formulas available. See the tap docs for how to use.
@@ -24477,13 +24356,9 @@ in your responses to the following survey:
 The survey contains five pages:
 
 1. General info
-
 2. Tool usage
-
 3. Questions specific to JVM Clojure (skip if not applicable)
-
 4. Questions specific to ClojureScript (skip if not applicable)
-
 5. Final comments
 
 Only the first two questions are required, please skip any questions
@@ -27467,7 +27342,6 @@ New releases and tools this week:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/privacy.adoc]]
 :CUSTOM_ID: privacy
 :END:
-
 ** PRIVACY POLICY
 
 Cognitect, Inc. ("*Cognitect,*" "*we,*" or "*us*") provides the website
@@ -27803,19 +27677,15 @@ following will happen:
 
 1. The given fn will be applied to the /state/ of the Agent and the
    args, if any were supplied.
-
 2. The return value of fn will be passed to the validator function, if
    one has been set on the Agent. See
    [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
    for details.
-
 3. If the validator succeeds or if no validator was given, the return
    value of the given fn will become the new state of the Agent.
-
 4. If any watchers were added to the Agent, they will be called. See
    [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch][add-watch]]
    for details.
-
 5. If during the function execution any other dispatches are made
    (directly or indirectly), they will be held until /after/ the state
    of the Agent has been changed.
@@ -30815,22 +30685,18 @@ A Symbol is /resolved/:
 
    1. If it names a special form it is considered a special form, and
       must be utilized accordingly.
-
    2. If in a local scope (e.g. in a function definition or a let form),
       a lookup is done to see if it names a local binding (e.g. a
       function argument or let-bound name). If so, the value is the
       value of the local binding.
-
    3. A lookup is done in the current namespace to see if there is a
       mapping from the symbol to a class. If so, the symbol is
       considered to name a Java class object. Note that class names
       normally denote class objects, but are treated specially in
       certain special forms, e.g. ~.~ and ~new~.
-
    4. A lookup is done in the current namespace to see if there is a
       mapping from the symbol to a var. If so, the value is the value of
       the binding of the var referred-to by the symbol.
-
    5. It is an error.
 
 If a Symbol has metadata, it may be used by the compiler, but will not
@@ -33278,40 +33144,34 @@ left.
 The dispatch macro causes the reader to use a reader macro from another
 table, indexed by the character following
 
-- #{} - see Sets above
-- Regex patterns (#"pattern")
-
-   A regex pattern is read and /compiled at read time/. The resulting
-   object is of type java.util.regex.Pattern. Regex strings do not
-   follow the same escape character rules as strings. Specifically,
-   backslashes in the pattern are treated as themselves (and do not need
-   to be escaped with an additional backslash). For example,
-   ~(re-pattern "\\s*\\d+")~ can be written more concisely as
-   ~#"\s*\d+"~.
-- Var-quote (#')
-
-   ~#'x~ ⇒ ~(var x)~
-- Anonymous function literal (#())
-
-   ~#(…​)~ ⇒ ~(fn [args] (…​))~\\
-   where args are determined by the presence of argument literals taking
-   the form %, %n or %&. % is a synonym for %1, %n designates the nth
-   arg (1-based), and %& designates a rest arg. This is not a
-   replacement for
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn][fn]]
-   - idiomatic use would be for very short one-off mapping/filter fns
-   and the like. #() forms cannot be nested.
-- Ignore next form (#\_)
-
-   The form following #\_ is completely skipped by the reader. (This is
-   a more complete removal than the
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment][comment]]
-   macro which yields nil).
+- ~#{}~ - see Sets above
+- Regex patterns (~#"pattern"~)
+  A regex pattern is read and /compiled at read time/. The resulting
+  object is of type java.util.regex.Pattern. Regex strings do not
+  follow the same escape character rules as strings. Specifically,
+  backslashes in the pattern are treated as themselves (and do not
+  need to be escaped with an additional backslash). For example,
+  ~(re-pattern "\\s*\\d+")~ can be written more concisely as
+  ~#"\s*\d+"~.
+- Var-quote (~#'~): ~#'x~ ⇒ ~(var x)~
+- Anonymous function literal (#()): ~#(…​)~ ⇒ ~(fn [args] (…​))~
+   where args are determined by the presence of argument literals
+  taking the form ~%~, ~%n~ or ~%&~. ~%~ is a synonym for ~%1~, ~%n~ designates
+  the nth arg (1-based), and ~%&~ designates a rest arg. This is not a
+  replacement for
+  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn][fn]] -
+  idiomatic use would be for very short one-off mapping/filter fns and
+  the like. ~#()~ forms cannot be nested.
+- Ignore next form (~#_~)
+   The form following ~#_~ is completely skipped by the reader. (This
+  is a more complete removal than the
+  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment][comment]]
+  macro which yields nil).
 
 **** Syntax-quote (`, note, the "backquote" character), Unquote (~) and Unquote-splicing (~@)
 
-For all forms other than Symbols, Lists, Vectors, Sets and Maps, `x is
-the same as 'x.\\
+For all forms other than Symbols, Lists, Vectors, Sets and Maps, ~`x~ is
+the same as ~'x~.
 
 For Symbols, syntax-quote /resolves/ the symbol in the current context,
 yielding a fully-qualified symbol (i.e. namespace/name or
@@ -33319,7 +33179,7 @@ fully.qualified.Classname). If a symbol is non-namespace-qualified and
 ends with '#', it is resolved to a generated symbol with the same name
 to which '\_' and a unique id have been appended. e.g. x# will resolve
 to x\_123. All references to that symbol within a syntax-quoted
-expression resolve to the same generated symbol.\\
+expression resolve to the same generated symbol.
 
 For Lists/Vectors/Sets/Maps, syntax-quote establishes a template of the
 corresponding data structure. Within the template, unqualified forms
@@ -33327,7 +33187,7 @@ behave as if recursively syntax-quoted, but forms can be exempted from
 such recursive quoting by qualifying them with unquote or
 unquote-splicing, in which case they will be treated as expressions and
 be replaced in the template by their value, or sequence of values,
-respectively.\\
+respectively.
 
 For example:
 
@@ -33587,9 +33447,7 @@ parallel by:
 
 1. Partitioning the reducible collection at a specified granularity
    (default = 512 elements)
-
 2. Applying reduce to each partition
-
 3. Recursively combining each partition using Java's
    [[http://gee.cs.oswego.edu/dl/papers/fj.pdf][fork/join]] framework.
 
@@ -33747,7 +33605,6 @@ In practice, this means:
     as of the starting point of the transaction (its 'read point'). The
     transaction /will/ see any changes it has made. This is called the
     /in-transaction-value/.
-
 2. All changes made to Refs during a transaction (via
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]],
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]]
@@ -33755,26 +33612,20 @@ In practice, this means:
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute][commute]])
     will appear to occur at a single point in the 'Ref world' timeline
     (its 'write point').
-
 3. No changes will have been made by any other transactions to any Refs
     that have been *ref-set* / *altered* / *ensured* by this
     transaction.
-
 4. Changes /may have/ been made by other transactions to any Refs that
     have been commuted by this transaction. That should be okay since
     the function applied by *commute* should be commutative.
-
 5. Readers and commuters will never block writers, commuters, or other
     readers.
-
 6. Writers will never block commuters, or readers.
-
 7. I/O and other activities with side-effects should be avoided in
     transactions, since transactions /will/ be retried. The
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
     macro can be used to prevent the use of an impure function in a
     transaction.
-
 8. If a constraint on the validity of a value of a Ref that is being
     changed depends upon the simultaneous value of a Ref that is /not
     being changed/, that second Ref can be protected from modification
@@ -33782,7 +33633,6 @@ In practice, this means:
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure][ensure]].
     Refs 'ensured' this way will be protected (item #3), but don't
     change the world (item #2).
-
 9. The Clojure MVCC STM is designed to work with the persistent
     collections, and it is strongly recommended that you use the Clojure
     collections as the values of your Refs. Since all work done in an
@@ -33790,7 +33640,6 @@ In practice, this means:
     cost to making copies and modifications. Persistent collections have
     free copies (just use the original, it can't be changed), and
     'modifications' share structure efficiently. In any case:
-
 10. The values placed in Refs /must be, or be considered, immutable/!!
     Otherwise, Clojure can't help you.
 
@@ -33865,7 +33714,6 @@ Ref validators:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/repl_and_main.adoc]]
 :CUSTOM_ID: reference/repl_and_main
 :END:
-
 *** The clojure.main namespace
 
 The ~clojure.main~ namespace provides functions that allow Clojure
@@ -37447,15 +37295,13 @@ headaches:
    and Datomic. Our backend services only share the Datomic database
    with the web servers. Programming with databases as values has made
    doing all of this a pleasure.
-
 2. View caching -- we haven't had to worry about this at all since every
    view on our system is rendered live from source data!
 
 There are so many other libraries that we use daily and have learned
 from!
 
-*What about working with Clojure or ClojureScript gives you the most
-value?*
+*What about working with Clojure or ClojureScript gives you the most value?*
 
 The data orientation of Clojure forces you to deal with naming things
 properly, which in turn forces you to deal with understanding your
@@ -37655,8 +37501,7 @@ I would like to mention 2 libraries:
    creating those without bidirectional routing would have been a
    nightmare.
 
-*What about working with Clojure or ClojureScript gives you the most
-value?*
+*What about working with Clojure or ClojureScript gives you the most value?*
 
 - Interactive development with the REPL and the excellent tools such as
    Cider and figwheel, which allows for extremely quick iteration.
