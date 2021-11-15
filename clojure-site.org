@@ -7733,25 +7733,25 @@ an activity. Activities are described in more detail below the diagram.
    [[file:developing_patches.xml][Developing Patches]] and
    [[file:screening_tickets.xml][Screening Tickets]]):
 
-   1.  Is there a patch?
+   1. Is there a patch?
 
-   2.  Is there a test?
+   2. Is there a test?
 
-   3.  Has author [[file:contributor_agreement.xml][signed the CA]]?
+   3. Has author [[file:contributor_agreement.xml][signed the CA]]?
 
-   4.  Can you apply the patch to current source tree?
+   4. Can you apply the patch to current source tree?
 
-   5.  Do all tests pass?
+   5. Do all tests pass?
 
-   6.  Is patch clean (no extraneous whitespace or changes outside the
+   6. Is patch clean (no extraneous whitespace or changes outside the
        scope of the problem)?
 
-   7.  Are docstrings still accurate?
+   7. Are docstrings still accurate?
 
-   8.  Are there potential performance impacts? If so, what benchmarks
+   8. Are there potential performance impacts? If so, what benchmarks
        have been performed?
 
-   9.  Does the solution follow code guidelines and look like the
+   9. Does the solution follow code guidelines and look like the
        surrounding code in style?
 
    10. Does the solution imply possible similar changes elsewhere?
@@ -13028,7 +13028,7 @@ the [[file:syntax.xml][Learn Clojure]] guide.
 
 **** [[file:functions.xml#_test_your_knowledge][Functions]]
 
-1.  Define a function ~greet~ that takes no arguments and prints
+1. Define a function ~greet~ that takes no arguments and prints
     "Hello".
 
     #+BEGIN_SRC clojure
@@ -13036,7 +13036,7 @@ the [[file:syntax.xml][Learn Clojure]] guide.
       (println "Hello"))
     #+END_SRC
 
-2.  Redefine greet using ~def~ with ~fn~ and ~#()~.
+2. Redefine greet using ~def~ with ~fn~ and ~#()~.
 
     #+BEGIN_SRC clojure
     ;; using fn
@@ -13048,7 +13048,7 @@ the [[file:syntax.xml][Learn Clojure]] guide.
       #(println "Hello"))
     #+END_SRC
 
-3.  Define a function ~greeting~ ...
+3. Define a function ~greeting~ ...
 
     #+BEGIN_SRC clojure
     (defn greeting
@@ -13057,40 +13057,40 @@ the [[file:syntax.xml][Learn Clojure]] guide.
       ([x y] (str x ", " y "!")))
     #+END_SRC
 
-4.  Define a function ~do-nothing~ ...
+4. Define a function ~do-nothing~ ...
 
     #+BEGIN_SRC clojure
     (defn do-nothing [x] x)
     #+END_SRC
 
-5.  Define a function ~always-thing~ ...
+5. Define a function ~always-thing~ ...
 
     #+BEGIN_SRC clojure
     (defn always-thing [& xs] 100)
     #+END_SRC
 
-6.  Define a function ~make-thingy~ ...
+6. Define a function ~make-thingy~ ...
 
     #+BEGIN_SRC clojure
     (defn make-thingy [x]
       (fn [& args] x))
     #+END_SRC
 
-7.  Define a function ~triplicate~ ...
+7. Define a function ~triplicate~ ...
 
     #+BEGIN_SRC clojure
     (defn triplicate [f]
       (f) (f) (f))
     #+END_SRC
 
-8.  Define a function ~opposite~ ...
+8. Define a function ~opposite~ ...
 
     #+BEGIN_SRC clojure
     (defn opposite [f]
       (fn [& args] (not (apply f args))))
     #+END_SRC
 
-9.  Define a function ~triplicate2~ ...
+9. Define a function ~triplicate2~ ...
 
     #+BEGIN_SRC clojure
     (defn triplicate2 [f & args]
@@ -33623,12 +33623,12 @@ operation.
 
 In practice, this means:
 
-1.  All reads of Refs will see a consistent snapshot of the 'Ref world'
+1. All reads of Refs will see a consistent snapshot of the 'Ref world'
     as of the starting point of the transaction (its 'read point'). The
     transaction /will/ see any changes it has made. This is called the
     /in-transaction-value/.
 
-2.  All changes made to Refs during a transaction (via
+2. All changes made to Refs during a transaction (via
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]],
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]]
     or
@@ -33636,26 +33636,26 @@ In practice, this means:
     will appear to occur at a single point in the 'Ref world' timeline
     (its 'write point').
 
-3.  No changes will have been made by any other transactions to any Refs
+3. No changes will have been made by any other transactions to any Refs
     that have been *ref-set* / *altered* / *ensured* by this
     transaction.
 
-4.  Changes /may have/ been made by other transactions to any Refs that
+4. Changes /may have/ been made by other transactions to any Refs that
     have been commuted by this transaction. That should be okay since
     the function applied by *commute* should be commutative.
 
-5.  Readers and commuters will never block writers, commuters, or other
+5. Readers and commuters will never block writers, commuters, or other
     readers.
 
-6.  Writers will never block commuters, or readers.
+6. Writers will never block commuters, or readers.
 
-7.  I/O and other activities with side-effects should be avoided in
+7. I/O and other activities with side-effects should be avoided in
     transactions, since transactions /will/ be retried. The
     [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
     macro can be used to prevent the use of an impure function in a
     transaction.
 
-8.  If a constraint on the validity of a value of a Ref that is being
+8. If a constraint on the validity of a value of a Ref that is being
     changed depends upon the simultaneous value of a Ref that is /not
     being changed/, that second Ref can be protected from modification
     by calling
@@ -33663,7 +33663,7 @@ In practice, this means:
     Refs 'ensured' this way will be protected (item #3), but don't
     change the world (item #2).
 
-9.  The Clojure MVCC STM is designed to work with the persistent
+9. The Clojure MVCC STM is designed to work with the persistent
     collections, and it is strongly recommended that you use the Clojure
     collections as the values of your Refs. Since all work done in an
     STM transaction is speculative, it is imperative that there be a low
