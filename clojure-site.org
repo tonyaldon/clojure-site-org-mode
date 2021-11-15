@@ -134,7 +134,7 @@ dynamic. [[file:xref/../../reference/vars.xml][Dynamic vars]] are also
 mutable references to objects. They have a (thread-shared) root binding
 which can be established by
 [[file:xref/../../reference/special_forms.xml#def][def]], and can be set
-using /*set!*/, but only if they have been bound to a new storage
+using *set!*, but only if they have been bound to a new storage
 location thread-locally using
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]].
 Those bindings and any subsequent modifications to those bindings will
@@ -425,8 +425,8 @@ functions are extended to any data structure that can provide a
 sequential interface to its contents. All of the Clojure data structures
 can provide seqs. Seqs can be used like iterators or generators in other
 languages, with the significant advantage that seqs are immutable and
-persistent. Seqs are extremely simple, providing a */first/* function,
-which return the first item in the sequence, and a */rest/* function
+persistent. Seqs are extremely simple, providing a *first* function,
+which return the first item in the sequence, and a *rest* function
 which returns the rest of the sequence, which is itself either a seq or
 nil.
 
@@ -628,7 +628,7 @@ repetition in your code. Macros should be reserved for situations for
 which functions are insufficient, e.g. when you need to control
 evaluation, generate identifiers etc. Many of the core constructs of
 Clojure are not built-in primitives but macros just like users can
-define. Here's /*and*/:
+define. Here's *and*:
 
 #+BEGIN_SRC clojure
 (defmacro and
@@ -1447,16 +1447,16 @@ as there is simply no change to coordinate.
 While some programs are merely large functions, e.g. compilers or
 theorem provers, many others are not - they are more like working
 models, and as such need to support what I'll refer to in this
-discussion as */identity/.* By identity I mean */a stable logical entity
-associated with a series of different values over time/*. Models need
+discussion as *identity.* By identity I mean *a stable logical entity
+associated with a series of different values over time*. Models need
 identity for the same reasons humans need identity - to represent the
 world. How could it work if identities like 'today' or 'America' had to
 represent a single constant value for all time? Note that by identities
 I don't mean names (I call my mother Mom, but you wouldn't).
 
 So, for this discussion, an identity is an entity that has a state,
-which is its value at a point in time. And */a value is something that
-doesn't change/*. 42 doesn't change. June 29th 2008 doesn't change.
+which is its value at a point in time. And *a value is something that
+doesn't change*. 42 doesn't change. June 29th 2008 doesn't change.
 Points don't move, dates don't change, no matter what some bad class
 libraries may cause you to believe. Even aggregates are values. The set
 of my favorite foods doesn't change, i.e. if I prefer different foods in
@@ -1476,8 +1476,8 @@ obtain the state independent of the identity other than copying it.
 There is no way to observe a stable state (even to copy it) without
 blocking others from changing it. There is no way to associate the
 identity's state with a different value other than in-place memory
-mutation. In other words, */typical OO has imperative programming baked
-into it!/* OO doesn't have to be this way, but, usually, it is
+mutation. In other words, *typical OO has imperative programming baked
+into it!* OO doesn't have to be this way, but, usually, it is
 (Java/C++/Python/Ruby etc).
 
 People accustomed to OO conceive of their programs as mutating the
@@ -1495,10 +1495,10 @@ that should be values etc.
 There is another way, and that is to separate identity and state (once
 again, indirection saves the day in programming). We need to move away
 from a notion of state as "the content of this memory block" to one of
-"the */value/* currently associated with this identity". Thus an
+"the *value* currently associated with this identity". Thus an
 identity can be in different states at different times, but /the state
 itself doesn't change/. That is, an identity is not a state, an identity
-*/has/* a state. Exactly one state at any point in time. And that state
+*has* a state. Exactly one state at any point in time. And that state
 is a true value, i.e. it never changes. If an identity appears to
 change, it is because it becomes associated with different state values
 over time. This is the Clojure model.
@@ -4998,7 +4998,7 @@ signed the Clojure Contributor Agreement.
 - Zach Tellman
 - Zhuang XiaoDan
 
-/*Many thanks for your contributions to Clojure!*/
+*Many thanks for your contributions to Clojure!*
 ** Contributors
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contributors.adoc]]
@@ -17441,7 +17441,7 @@ now focus on giving you a more streamlined development experience with
 the REPL. There are a variety of things you may want to improve:
 
 #+BEGIN_QUOTE
-*/Switching between my editor and the REPL is tedious./*
+*Switching between my editor and the REPL is tedious.*
 #+END_QUOTE
 
 Most Clojure programmers don't use the terminal-based REPL for everyday
@@ -17452,8 +17452,8 @@ have them evaluated in the REPL with one hotkey. See the
 details.
 
 #+BEGIN_QUOTE
-*/I want to do small experiments in Clojure, but it's painful to write
-code in the default CLI tool./*
+*I want to do small experiments in Clojure, but it's painful to write
+code in the default CLI tool.*
 #+END_QUOTE
 
 As mentioned above, one solution could be to use an
@@ -17475,7 +17475,7 @@ exist more ergonomic terminal REPL clients:
    [[https://github.com/Unrepl/unrepl][unrepl]] communication protocol.
 
 #+BEGIN_QUOTE
-*/I need to debug a program I'm running from the REPL./*
+*I need to debug a program I'm running from the REPL.*
 #+END_QUOTE
 
 The REPL can definitely help you do that: see the
@@ -17483,8 +17483,8 @@ The REPL can definitely help you do that: see the
 section below.
 
 #+BEGIN_QUOTE
-*/I find myself repeating a lot of manual steps at the REPL for
-running my development environment./*
+*I find myself repeating a lot of manual steps at the REPL for
+running my development environment.*
 #+END_QUOTE
 
 Consider creating a 'dev' namespace in your project (e.g
@@ -17493,9 +17493,9 @@ development tasks (for example: starting a local web server, running a
 database query, turning on/off email sending, etc.)
 
 #+BEGIN_QUOTE
-*/When I make changes to my code, it's often difficult to reflect that
+*When I make changes to my code, it's often difficult to reflect that
 change in my running program: I have to do a lot of manual work in the
-REPL to make it happen../*
+REPL to make it happen..*
 #+END_QUOTE
 
 Depending on the choices you make when writing your programs,
@@ -17504,14 +17504,14 @@ See the [[writing-repl-friendly-programs][Writing REPL-friendly
 programs]] section below.
 
 #+BEGIN_QUOTE
-*/I would like to save my REPL sessions in a 'notebook' format./*
+*I would like to save my REPL sessions in a 'notebook' format.*
 #+END_QUOTE
 
 [[http://gorilla-repl.org/][Gorilla REPL]] was made for this very
 purpose.
 
 #+BEGIN_QUOTE
-*/I want better data visualization than what the REPL provides./*
+*I want better data visualization than what the REPL provides.*
 #+END_QUOTE
 
 You may get improved visualization features from a specialized Clojure
@@ -17536,7 +17536,7 @@ instance:
    system
 
 #+BEGIN_QUOTE
-*/I want to customize my REPL./*
+*I want to customize my REPL.*
 #+END_QUOTE
 
 You can usually customize how your REPL reads, evaluates and prints, but
@@ -17552,7 +17552,7 @@ the method to do it depends on your toolchain. For instance:
    [[https://nrepl.org/nrepl/design/middleware.html][middleware]].
 
 #+BEGIN_QUOTE
-*/I want to use the REPL to connect to a live production system./*
+*I want to use the REPL to connect to a live production system.*
 #+END_QUOTE
 
 The Clojure
@@ -17565,7 +17565,7 @@ richer experience.
 #+BEGIN_QUOTE
 *Warning*
 
-*/NOTE: You may not need all of this!/*
+*NOTE: You may not need all of this!*
 
 Depending on your projects and personal taste, you will most likely
 use only a fraction of the tools and techniques presented in this
@@ -17802,7 +17802,7 @@ Covering this topic extensively would take us too far for the scope of
 this guide, so we will merely provide some tips and resources to guide
 your own research and problem-solving.
 
-*/REPL-friendly code can be re-defined./* Code is more easily redefined
+*REPL-friendly code can be re-defined.* Code is more easily redefined
 when it is called via a Var (defined e.g via ~(def …​)~ or ~(defn …​)~),
 because a Var can be redefined without touching the code that calls it.
 This is illustrated in the following example, which prints some numbers
@@ -17861,7 +17861,7 @@ at a regular time interval:
     (range)))
 #+END_SRC
 
-*/Beware of derived Vars./* If Var ~b~ is defined in terms of the value
+*Beware of derived Vars.* If Var ~b~ is defined in terms of the value
 of Var ~a~, then you will need to re-define ~b~ each time you re-define
 ~a~; it may be better to define ~b~ as a 0-arity function which uses
 ~a~. Example:
@@ -17901,7 +17901,7 @@ satisfactorily mitigated:
    [[https://github.com/clojure/tools.namespace#clojuretoolsnamespace][clojure.tools.namespace]],
    which let you keep track of changed files and reload them in order.
 
-*/REPL-friendly code can be reloaded./* Make sure that reloading a
+*REPL-friendly code can be reloaded.* Make sure that reloading a
 namespace will not alter the behaviour of the running program. If a Var
 needs to be defined exactly once (which should be very rare), consider
 defining it with ~defonce~.
@@ -17911,7 +17911,7 @@ appropriate namespaces in the correct order can become difficult: the
 *[[https://github.com/clojure/tools.namespace][tools.namespace]]*
 library was made to assist the programmer in this task.
 
-*/Program state and source code should be kept in sync./* You usually
+*Program state and source code should be kept in sync.* You usually
 want to make sure that your program state reflects your source code and
 vice-versa, but this is not automatic. Reloading the code is often not
 enough: you also need to transform the program state accordingly. Stuart
@@ -17921,7 +17921,7 @@ Clojure Workflow, Reloaded]] and his talk
 [[https://www.youtube.com/watch?v=13cmHf_kt-Q][Components Just Enough
 Structure]].
 
-This has motivated the creation of */state management libraries:/*
+This has motivated the creation of *state management libraries:*
 
 - *[[https://github.com/stuartsierra/component][Component]]*, which
    promotes a representation of program state as a managed map of
@@ -17983,16 +17983,16 @@ alternative to CLI, dashboards, etc.
 **** Don't get carried away by the REPL
 
 The REPL can give you a lot of velocity, but do not mistake motion for
-progress. You should */always come to the REPL with a plan/*, otherwise
+progress. You should *always come to the REPL with a plan*, otherwise
 the REPL will bring you more distraction than focus. If you find it
-difficult to keep the plan in your head while using the REPL, */consider
-writing it down/*.
+difficult to keep the plan in your head while using the REPL, *consider
+writing it down*.
 
 The REPL will only guide you through very incremental changes, which is
 prone to getting you stuck in 'local maxima'. When more strategic
 thinking is required, force yourself to take a step back. In particular,
-*/rapid feedback is no substitute for software design and methodic
-problem-solving./*
+*rapid feedback is no substitute for software design and methodic
+problem-solving.*
 
 **** Don't forget to save your work, and make it accessible
 
@@ -18094,16 +18094,16 @@ gradually move to more and more advanced ways of using Clojure REPLs.
 Depending on your needs, you may not need to read the entirety of this
 guide:
 
-- If you are */just starting to learn Clojure/*, the first 2 chapters
+- If you are *just starting to learn Clojure*, the first 2 chapters
    [[file:launching_a_basic_repl.xml][Launching a basic Clojure REPL]]
    and [[file:basic_usage.xml][Basic Usage]] are enough to get you
    started with a productive learning environment.
-- As soon as you start */developing non-trivial programs/* (such as a
+- As soon as you start *developing non-trivial programs* (such as a
    hobby web app), you will need the ideas presented in at least the
    next 2 chapters: [[file:data_visualization_at_the_repl.xml][Data
    visualization at the REPL]] and
    [[file:navigating_namespaces.xml][Navigating namespaces]].
-- For */working on Clojure projects at a professional level/*,
+- For *working on Clojure projects at a professional level*,
    [[file:enhancing_your_repl_workflow.xml][Enhancing your REPL
    workflow]] and
    [[file:guidelines_for_repl_aided_development.xml][Guidelines for
@@ -18226,7 +18226,7 @@ user=>
 :END:
 
 So far we have only used the REPL for small self-contained experiments;
-but the REPL is most valuable for */putting yourself in the shoes/ of
+but the REPL is most valuable for *putting yourself in the shoes of
 the program* you are developing or debugging, i.e evaluating exactly the
 same expressions in the REPL as your program does when it runs.
 
@@ -18247,8 +18247,8 @@ the context of the /current namespace/.
 
 *The current namespace determines:*
 
-- */How the code that you are writing may refer to code from other
-   namespaces./*
+- *How the code that you are writing may refer to code from other
+   namespaces.*
 
 For example, if the current namespace is ~myapp.foo.bar~ and you
 evaluate ~(require [clojure.set :as cset :refer [union]])~, you can now
@@ -18294,8 +18294,8 @@ calling
 #+END_EXAMPLE
 #+END_QUOTE
 
-- */In what namespace the Vars that you define (using for example
-   ~(def …​)~ or ~(defn …​)~) will exist./*
+- *In what namespace the Vars that you define (using for example
+   ~(def …​)~ or ~(defn …​)~) will exist.*
 
 For example, if the current namespace is ~myapp.foo.bar~ and you define
 a Var named ~my-favorite-number~, you will be able to reference that Var
@@ -18406,8 +18406,8 @@ myapp.some-ns=> x ;; `x` is still here!
 42
 #+END_EXAMPLE
 
-*/What happens if you ~in-ns~ to a namespace that has never been
-created?/* You will see strange things happening. For instance, you will
+*What happens if you ~in-ns~ to a namespace that has never been
+created?* You will see strange things happening. For instance, you will
 not be able to define a function using ~defn~:
 
 #+BEGIN_EXAMPLE
@@ -21793,7 +21793,7 @@ In Clojure, it is (internal) /reduce/.
 We now have a new super-generalized and minimal abstraction for
 collections - a collection is some set of things that, when given a
 function to apply to its contents, can do so and give you the result,
-i.e. /a collection is (at minimum) *reducible*/. In other words, you can
+i.e. /a collection is (at minimum) reducible/. In other words, you can
 call /reduce/ on it.
 
 Thus, ~core.reducers/map~ is a function of ~fn * reducible → reducible~.
@@ -21822,7 +21822,7 @@ that calls f1 after applying f to its input.
 
 Thus you can define /map/ as a function of ~fn * reducible → reducible~
 by merely transforming the reducing function. Mapping is semantically a
-function of the function of /*one step*/ of a reduction. This
+function of the function of *one step* of a reduction. This
 transformation is decomplected from both representation and order. We
 call functions such as this /map/, that take a reducible, and in turn
 return something reducible via transformation of the reducing function,
@@ -21904,7 +21904,7 @@ open the door to parallelism, but we are stuck with the semantics of
 [[http://vimeo.com/6624203][fundamentally serial]]. We can parallelize
 reduction by using independent sub-reductions and combining their
 results, and the library defines a function that does just that:
-/*fold*/.
+*fold*.
 
 The primary signature of fold takes a combining function, a reducing
 function, and a collection and returns the result of combining the
@@ -22633,8 +22633,8 @@ One way to think of transducers is like →> but independent of the job
 
 *** Transducers in action
 
-Once you've got a transducer, what can you do with it? /*An open set of
-things.*/
+Once you've got a transducer, what can you do with it? *An open set of
+things.*
 
 For instance, given the above transducer and some data in a vector, you
 can:
@@ -28676,7 +28676,7 @@ Sets are collections:
 
 Sets support 'removal' with
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/disj][disj]],
-as well as /*contains?*/ and /*get*/, the latter returning the object
+as well as *contains?* and *get*, the latter returning the object
 that is held in the set which compares equal to the key, if found:
 
 #+BEGIN_SRC clojure
@@ -28690,7 +28690,7 @@ that is held in the set which compares equal to the key, if found:
 -> :a
 #+END_SRC
 
-Sets are functions of their members, using /*get*/:
+Sets are functions of their members, using *get*:
 
 #+BEGIN_SRC clojure
 (s :b)
@@ -30885,7 +30885,7 @@ a method call. The first element of the list must be a simple symbol,
 and the name of the method is the name of the symbol. The args, if any,
 are evaluated from left to right, and passed to the matching method,
 which is called, and its value returned. If the method has a void return
-type, the value of the expression will be /*nil*/. Note that placing the
+type, the value of the expression will be *nil*. Note that placing the
 method name in a list with any args is optional in the canonic form, but
 can be useful to gather args in macros built upon the form.
 
@@ -31209,9 +31209,9 @@ involving, Java primitive types in local contexts. All Java primitive
 types are supported: int, float, long, double, boolean, char, short, and
 byte.
 
-- /*let*///*loop*/-bound locals can be of primitive types, having the
+- *let* / *loop*-bound locals can be of primitive types, having the
    inferred, possibly primitive type of their init-form.
-- /*recur*/ forms that rebind primitive locals do so without boxing,
+- *recur* forms that rebind primitive locals do so without boxing,
    and do type-checking for same primitive type.
 - Arithmetic (+,-,*,/,inc,dec,<,<=,>,>= etc) is overloaded for
    primitive types where semantics are same.
@@ -31494,7 +31494,7 @@ they need to at least determine if there is a first.
 
 *** Enhancing the seq model - a third operation on seqs - 'next'
 
-- /*Changed:*/ (*rest* aseq) - returns a possibly empty seq, /never
+- *Changed:* (*rest* aseq) - returns a possibly empty seq, /never
    nil/
    - calls seq on arg if not already a seq
    - the returned seq may be empty
@@ -31502,25 +31502,25 @@ they need to at least determine if there is a first.
    - never returns nil
       - currently not enforced on 3rd-party seqs
    - a (possibly) delayed path to the remaining items, if any
-- /*Changed*/: seqs can be empty
+- *Changed*: seqs can be empty
    - always an ISeq
-- /*Changed*/: the *seq* function - no longer an identity for ISeqs
+- *Changed*: the *seq* function - no longer an identity for ISeqs
    - still returns either a seq or nil
-   - (seq aseq) → //*no longer an identity, if aseq empty returns
-      nil*//
+   - (seq aseq) → *no longer an identity, if aseq empty returns
+      nil*
    - still works on nil
 - the *first* function doesn't change
    - calls seq on arg if not already a seq
    - returns first item
    - still works on nil
-- /*New*:/ the *next* function does what *rest* used to do
+- *New*: the *next* function does what *rest* used to do
    - returns the next seq, if any, else nil
    - calls seq on arg if not already a seq
    - (next aseq) ~=~ (seq (rest aseq))
    - works on nil
-- /*Changed*/: seq?
+- *Changed*: seq?
    - (seq? ()) → true
-- /*Changed:*/ Sequence fns (map, filter etc) return seqs, but not nil
+- *Changed:* Sequence fns (map, filter etc) return seqs, but not nil
    - You'll need to call seq on their return value in order to get a
       seq/nil
       - seq also serves as test for end, already idiomatic
@@ -31537,7 +31537,7 @@ they need to at least determine if there is a first.
 
 - Goodbye lazy-cons, hello lazy-seq
    - lazy-cons is gone
-   - new laziness macro - /*lazy-seq*/
+   - new laziness macro - *lazy-seq*
       - takes a body that yields a seq, nil or anything seq-able
       - returns a logical collection that implements seq by calling the
          body
@@ -31810,21 +31810,21 @@ or Scheme.
 - The reader is side-effect free
 - Keywords are not Symbols
 - Symbols are not storage locations (see Var)
-- /*nil*/ is not a Symbol
-- t is not syntax, use /*true*/
+- *nil* is not a Symbol
+- t is not syntax, use *true*
 - The read table is currently not accessible to user programs
-- /*let*/ binds sequentially
-- /*do*/ is not a looping construct
-- There is no tail-call optimization, use /*recur*/.
+- *let* binds sequentially
+- *do* is not a looping construct
+- There is no tail-call optimization, use *recur*.
 - syntax-quote does symbol resolution, so `x is not the same as 'x.
 - ` has auto-gensyms.
 - ~ is unquote ',' is whitespace
 - There is reader syntax for maps, vectors, and sets
-- /*cons*/, /*first*/ and /*rest*/ manipulate sequence abstractions,
+- *cons*, *first* and *rest* manipulate sequence abstractions,
    not concrete cons cells
 - Most data structures are immutable
-- lambda is /*fn*/, and supports overloading by arity
-- /*=*/ is the equality predicate
+- lambda is *fn*, and supports overloading by arity
+- *=* is the equality predicate
 - Global Vars can be dynamically rebound (if declared dynamic) without
    interfering with lexical local bindings. No special declarations are
    necessary to distinguish between dynamic and lexical bindings. Since
@@ -31834,23 +31834,23 @@ or Scheme.
    self-reference,
    [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/letfn][letfn]]
    for mutual reference.
-- In Clojure /*nil*/ means 'nothing'. It signifies the absence of a
+- In Clojure *nil* means 'nothing'. It signifies the absence of a
    value, of any type, and is not specific to lists or sequences.
-- Empty collections are distinct from /*nil*/. Clojure does not equate
-   /*nil*/ and '().
-- /*false*/ means one of the two possible boolean values, the other
-   being /*true*/
+- Empty collections are distinct from *nil*. Clojure does not equate
+   *nil* and '().
+- *false* means one of the two possible boolean values, the other
+   being *true*
 - There is more to collections than lists. You can have instances of
    empty collections, some of which have literal support ([], {}, and
    ()). Thus there can be no sentinel empty collection value.
-- Coming from Scheme, /*nil*/ may map most closely to your notion of
+- Coming from Scheme, *nil* may map most closely to your notion of
    #f.
 - A big difference in Clojure, is sequences. Sequences are not specific
    collections, esp. they are not necessarily concrete lists. When you
    ask an empty collection for a sequence of its elements (by calling
-   *seq*) it returns /*nil*/, saying "I can't produce one". When you ask
-   a sequence on its last element for the /*rest*/ it returns /*another
-   logical sequence.*/ You can only tell if that sequence is empty by
+   *seq*) it returns *nil*, saying "I can't produce one". When you ask
+   a sequence on its last element for the *rest* it returns *another
+   logical sequence.* You can only tell if that sequence is empty by
    calling *seq* on it in turn. This enables sequences and the sequence
    protocol to be /lazy/.
 - Some of the sequence functions correspond to functions from Scheme
@@ -32116,7 +32116,7 @@ relationships between, one or more arguments.
 
 A Clojure multimethod is a combination of a /dispatching/ /function/,
 and one or more /methods/. When a multimethod is defined, using
-/*defmulti*/, a dispatching function must be supplied. This function
+*defmulti*, a dispatching function must be supplied. This function
 will be applied to the arguments to the multimethod in order to produce
 a /dispatching value/. The multimethod will then try to find the method
 associated with the dispatching value or a value from which the
@@ -32125,7 +32125,7 @@ dispatching value is derived. If one has been defined (via
 it will then be called with the arguments and that will be the value of
 the multimethod call. If no method is associated with the dispatching
 value, the multimethod will look for a method associated with the
-default dispatching value (which defaults to /*:default*/), and will use
+default dispatching value (which defaults to *:default*), and will use
 that if present. Otherwise the call is an error.
 
 The multimethod system exposes this API:
@@ -32345,7 +32345,7 @@ function, as keywords are functions of maps, as described in the
 :END:
 
 Namespaces are mappings from simple (unqualified) symbols to Vars and/or
-Classes. Vars can be interned in a namespace, using /*def*/ or any of
+Classes. Vars can be interned in a namespace, using *def* or any of
 its variants, in which case they have a simple symbol for a name and a
 reference to their containing namespace, and the namespace maps that
 symbol to the same var. A namespace can also contain mappings from
@@ -32556,7 +32556,7 @@ function documentation for details on its expected arguments.
 
 *** Parallel Processing (DEPRECATED)
 
-The parallel library (namespace /*parallel*/, in parallel.clj) wraps the
+The parallel library (namespace *parallel*, in parallel.clj) wraps the
 [[http://gee.cs.oswego.edu/dl/concurrency-interest/index.html][ForkJoin
 library]]. This lib is now deprecated.
 
@@ -32564,7 +32564,7 @@ You'll need ~jsr166y.jar~ in your classpath in order to use this
 library. The basic idea is that Clojure collections, and most
 efficiently vectors, can be turned into parallel arrays for use by this
 library with the function par, although most of the functions take
-collections and will call /*par*/ if needed, so normally you will only
+collections and will call *par* if needed, so normally you will only
 need to call par explicitly in order to attach bound/filter/map ops.
 
 Parallel arrays support the attachment of bounds, filters and mapping
@@ -32573,7 +32573,7 @@ of any of several operations on the array
 (pvec/psort/pfilter-nils/pfilter-dupes). Rather than perform composite
 operations in steps, as would normally be done with sequences, maps and
 filters are instead attached and thus composed by providing ops to
-/*par*/. Note that there is an order sensitivity to the attachments -
+*par*. Note that there is an order sensitivity to the attachments -
 bounds precede filters precede mappings. All operations then happen in
 parallel, using multiple threads and a sophisticated work-stealing
 system supported by fork-join, either when the array is realized, or to
@@ -32697,7 +32697,7 @@ function does a depth-first walk, making for easy to understand loops:
 #+END_SRC
 
 Zipper constructors are provided for nested seqs, nested vectors, and
-the xml elements generated by /*xml/parse*/. All it takes is a 4-5 line
+the xml elements generated by *xml/parse*. All it takes is a 4-5 line
 function to support other data structures.
 ** Protocols
 :PROPERTIES:
@@ -32842,7 +32842,7 @@ protocol + function map (evaluated) pairs.
       - if one interface is derived from the other, the more derived is
          used, else which one is used is unspecified.
 - The implementing fn can presume first argument is instanceof AType
-- You can implement a protocol on /*nil*/
+- You can implement a protocol on *nil*
 - To define a default implementation of protocol (for other than nil)
    just use Object
 
@@ -33637,12 +33637,12 @@ In practice, this means:
     (its 'write point').
 
 3.  No changes will have been made by any other transactions to any Refs
-    that have been /*ref-set*/ / /*altered*/ / /*ensured*/ by this
+    that have been *ref-set* / *altered* / *ensured* by this
     transaction.
 
 4.  Changes /may have/ been made by other transactions to any Refs that
     have been commuted by this transaction. That should be okay since
-    the function applied by /*commute*/ should be commutative.
+    the function applied by *commute* should be commutative.
 
 5.  Readers and commuters will never block writers, commuters, or other
     readers.
@@ -34442,7 +34442,7 @@ present/. See [[recur][recur]].
 fns implement the Java ~Callable~, ~Runnable~ and ~Comparator~
 interfaces.
 
-*/Since 1.1/*
+*Since 1.1*
 
 Functions support specifying runtime pre- and post-conditions.
 
@@ -35097,7 +35097,7 @@ Transients support the read-only interface of the source, i.e. you can
 call *nth*, *get*, *count* and fn-call a transient vector, just like a
 persistent vector.
 
-Transients /*do not*/ support the persistent interface of the source
+Transients *do not* support the persistent interface of the source
 data structure. *assoc*, *conj* etc will all throw exceptions, because
 transients are not persistent. Thus you cannot accidentally leak a
 transient into a context requiring a persistent.
@@ -35146,7 +35146,7 @@ transient-using version has exactly the same structure, just:
 (def v2 (vrange2 1000000))  ;; 19.7 ms
 #+END_EXAMPLE
 
-Oh, yeah, /*transients are fast!*/
+Oh, yeah, *transients are fast!*
 
 *** Concurrent use
 
