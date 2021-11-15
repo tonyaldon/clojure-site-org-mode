@@ -134,7 +134,7 @@ dynamic. [[file:xref/../../reference/vars.xml][Dynamic vars]] are also
 mutable references to objects. They have a (thread-shared) root binding
 which can be established by
 [[file:xref/../../reference/special_forms.xml#def][def]], and can be set
-using *set!*, but only if they have been bound to a new storage
+using ~set!~, but only if they have been bound to a new storage
 location thread-locally using
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]].
 Those bindings and any subsequent modifications to those bindings will
@@ -319,7 +319,7 @@ a var, pass it to functions etc.
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
 is a macro that makes defining functions a little simpler. Clojure
 supports arity overloading in a /single/ function object,
-self-reference, and variable-arity functions using *&*:
+self-reference, and variable-arity functions using ~&~:
 
 #+BEGIN_SRC clojure
 ;trumped-up example
@@ -425,8 +425,8 @@ functions are extended to any data structure that can provide a
 sequential interface to its contents. All of the Clojure data structures
 can provide seqs. Seqs can be used like iterators or generators in other
 languages, with the significant advantage that seqs are immutable and
-persistent. Seqs are extremely simple, providing a *first* function,
-which return the first item in the sequence, and a *rest* function
+persistent. Seqs are extremely simple, providing a ~first~ function,
+which return the first item in the sequence, and a ~rest~ function
 which returns the rest of the sequence, which is itself either a seq or
 nil.
 
@@ -628,7 +628,7 @@ repetition in your code. Macros should be reserved for situations for
 which functions are insufficient, e.g. when you need to control
 evaluation, generate identifiers etc. Many of the core constructs of
 Clojure are not built-in primitives but macros just like users can
-define. Here's *and*:
+define. Here's ~and~:
 
 #+BEGIN_SRC clojure
 (defmacro and
@@ -955,7 +955,7 @@ generative tests 'for free'.
 In short, Clojure has no standard, expressive, powerful and integrated
 system for specification and testing.
 
-*clojure.spec* aims to provide it.
+~clojure.spec~ aims to provide it.
 
 *** Objectives
 
@@ -1034,16 +1034,16 @@ communicate and verify about our systems. This goes beyond
 structural/representational types and tagging to predicates that e.g.
 narrow domains or detail relationships between inputs or between inputs
 and output. Additionally, the properties we care most about are often
-those of the runtime values, not some static notion. Thus *spec* is not
+those of the runtime values, not some static notion. Thus ~spec~ is not
 a type system.
 
 **** Names are important
 
 All programs use names, even when the type systems don't, and they
 capture important semantics. ~Int x Int x Int~ just isn't good enough
-(is it length/width/height or height/width/depth?). So *spec* will not
+(is it length/width/height or height/width/depth?). So ~spec~ will not
 have unlabeled sequence components or untagged union bindings. The
-utility of this becomes evident when *spec* needs to talk to users about
+utility of this becomes evident when ~spec~ needs to talk to users about
 specs, e.g. in error reporting, and vice versa, e.g. when users want to
 override generators in specs. When all branches are named, you can talk
 about parts of specs using /paths/.
@@ -1054,7 +1054,7 @@ Clojure supports namespaced keywords and symbols. Note here we are just
 talking about namespace-qualified names, not Clojure namespace objects.
 These are tragically underutilized and convey important benefits because
 they can always co-reside in dictionaries/dbs/maps/sets without
-conflict. *spec* will allow (only) namespace-qualified keywords and
+conflict. ~spec~ will allow (only) namespace-qualified keywords and
 symbols to name specs. People using namespaced keys for their
 informational maps (a practice we'd like to see grow) can register the
 specs for those attributes directly under those names. This
@@ -1076,7 +1076,7 @@ vocabulary, and most of the useful predicates already exist and are well
 known as functions in the core and other namespaces, or can be written
 as simple expressions. Having to 'datafy', possibly renaming, all of
 these predicates adds little value, and has a definite cost in
-understanding precise semantics. *spec* instead leverages the fact that
+understanding precise semantics. ~spec~ instead leverages the fact that
 the original predicates and expressions are data in the first place and
 captures that data for use in communicating with the users in
 documentation and error reporting. Yes, this means that more of the
@@ -1114,10 +1114,10 @@ valuable properties. We will prefer these over ad hoc solutions.
 
 **** Build on test.check but don't require knowledge of it
 
-The generative testing underpinning of *spec* will leverage ~test.check~
+The generative testing underpinning of ~spec~ will leverage ~test.check~
 and not reinvent it. But spec users should not need to know anything
 about ~test.check~ until and unless they want to write their own
-generators or supplement *spec*'s generated tests with further
+generators or supplement ~spec~'s generated tests with further
 property-based tests of their own. There should be no production runtime
 dependency on ~test.check~.
 
@@ -1130,7 +1130,7 @@ dependency on ~test.check~.
 The basic idea is that specs are nothing more than a logical composition
 of predicates. At the bottom we are talking about the simple boolean
 predicates you are used to like ~int?~ or ~symbol?~, or expressions you
-build yourself like ~#(< 42 % 66)~. *spec* adds logical ops like
+build yourself like ~#(< 42 % 66)~. ~spec~ adds logical ops like
 ~spec/and~ and ~spec/or~ which combine specs in a logical way and offer
 deep reporting, generation and conform support and, in the case of
 ~spec/or~, tagged returns.
@@ -1147,9 +1147,9 @@ optional key sets. A spec for a map is produced by calling ~keys~ with
 (spec/keys :req [::x ::y (or ::secret (and ::user ::pwd))] :opt [::z])
 #+END_SRC
 
-One of the most visible differences between *spec* and other systems is
+One of the most visible differences between ~spec~ and other systems is
 that there is no place in that map spec for specifying the /values/ e.g.
-~::x~ can take. It is the (enforced) opinion of *spec* that the
+~::x~ can take. It is the (enforced) opinion of ~spec~ that the
 specification of values associated with a namespaced keyword, like
 ~:my.ns/k~, should be registered under that keyword itself, and applied
 in any map in which that keyword appears. There are a number of
@@ -1199,7 +1199,7 @@ These nest arbitrarily to form complex expressions.
 
 Note that ~cat~ and ~alt~ require all of their components be labeled,
 and the return value of each is a map with the keys corresponding to the
-matched components. In this way *spec* regexes act as destructuring and
+matched components. In this way ~spec~ regexes act as destructuring and
 parsing tools.
 
 #+BEGIN_SRC clojure
@@ -1251,7 +1251,7 @@ In order for a spec to be reusable by name, it has to be registered via
 spec/predicate expression. By convention, specs for data should be
 registered under keywords and attribute values should be registered
 under their attribute name keyword. Once registered, the name can be
-used anywhere a spec/predicate is called for in any of the *spec*
+used anywhere a spec/predicate is called for in any of the ~spec~
 operations.
 
 ***** Function spec registration
@@ -1305,7 +1305,7 @@ You can run a suite of spec-generative tests on an entire ns with
 ~check~. You can get a test.check compatible generator for a spec by
 calling ~gen~. There are built-in associations between many of the
 ~clojure.core~ data predicates and corresponding generators, and the
-composite ops of *spec* know how to build generators atop those. If you
+composite ops of ~spec~ know how to build generators atop those. If you
 call ~gen~ on a spec and it is unable to construct a generator for some
 subtree, it will throw an exception that describes where. You can pass
 generator-returning fns to ~spec~ in order to supply generators for
@@ -21904,7 +21904,7 @@ open the door to parallelism, but we are stuck with the semantics of
 [[http://vimeo.com/6624203][fundamentally serial]]. We can parallelize
 reduction by using independent sub-reductions and combining their
 results, and the library defines a function that does just that:
-*fold*.
+~fold~.
 
 The primary signature of fold takes a combining function, a reducing
 function, and a collection and returns the result of combining the
@@ -22354,7 +22354,7 @@ a system doesn't take on more work than it can achieve.
 
 **** Just a library
 
-*core.async* is a library. It doesn't modify Clojure. It is designed to
+~core.async~ is a library. It doesn't modify Clojure. It is designed to
 support Clojure 1.5+.
 
 **** Creating channels
@@ -22902,7 +22902,7 @@ doing great things!
 :CUSTOM_ID: news/2016/05/23/introducing-clojure-spec
 :END:
 
-I'm happy to introduce today *clojure.spec*, a new core library and
+I'm happy to introduce today ~clojure.spec~, a new core library and
 support for data and function specifications in Clojure.
 
 *** Better Communication
@@ -22911,7 +22911,7 @@ Clojure is a dynamic language, and thus far we have relied on
 documentation or external libraries to explain the use and behavior of
 functions and libraries. But documentation is difficult to produce, is
 frequently not maintained, cannot be automatically checked and varies
-greatly in quality. Specs are expressive and precise. Including *spec*
+greatly in quality. Specs are expressive and precise. Including ~spec~
 in Clojure creates a lingua franca with which we can state how our
 programs work and how to use them.
 
@@ -22919,8 +22919,8 @@ programs work and how to use them.
 
 A key advantage of specifications over documentation is the leverage
 they provide. In particular, specs can be utilized by programs in ways
-that docs cannot. Defining specs takes effort, and *spec* aims to
-maximize the return you get from making that effort. *spec* gives you
+that docs cannot. Defining specs takes effort, and ~spec~ aims to
+maximize the return you get from making that effort. ~spec~ gives you
 tools for leveraging specs in documentation, validation, error
 reporting, destructuring, instrumentation, test-data generation and
 generative testing.
@@ -22939,21 +22939,21 @@ errors occur.
 Clojure has always been about simplifying the development of robust
 software. In all languages, dynamic or not, tests are essential to
 quality - too many critical properties are not captured by common type
-systems. *spec* has been designed from the ground up to directly support
+systems. ~spec~ has been designed from the ground up to directly support
 generative testing via
 [[https://github.com/clojure/test.check][test.check]]. When you use
-*spec* you get generative tests for free.
+~spec~ you get generative tests for free.
 
-Taken together, I think the features of *spec* demonstrate the ongoing
+Taken together, I think the features of ~spec~ demonstrate the ongoing
 advantages of a powerful dynamic language like Clojure for building
 robust software - superior expressivity, instrumentation-enhanced
 REPL-driven development, sophisticated testing and more flexible
-systems. I encourage you to read the *spec*
+systems. I encourage you to read the ~spec~
 [[https://clojure.org/about/spec][rationale and overview]]. Look for
 spec's inclusion in the next alpha release of Clojure, within a day or
 so.
 
-I hope you find *spec* useful and powerful.
+I hope you find ~spec~ useful and powerful.
 
 Rich
 ** [2017-01-31] State of Clojure 2016 Results
@@ -28676,7 +28676,7 @@ Sets are collections:
 
 Sets support 'removal' with
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/disj][disj]],
-as well as *contains?* and *get*, the latter returning the object
+as well as ~contains?~ and ~get~, the latter returning the object
 that is held in the set which compares equal to the key, if found:
 
 #+BEGIN_SRC clojure
@@ -28690,7 +28690,7 @@ that is held in the set which compares equal to the key, if found:
 -> :a
 #+END_SRC
 
-Sets are functions of their members, using *get*:
+Sets are functions of their members, using ~get~:
 
 #+BEGIN_SRC clojure
 (s :b)
@@ -28852,7 +28852,7 @@ programming constructs, but if so, you will find deftype much more
 suitable.
 
 AOT-compiled deftype/defrecord may be suitable for some of the use cases
-of *gen-class*, where their limitations are not prohibitive. In those
+of ~gen-class~, where their limitations are not prohibitive. In those
 cases, they will have better performance than gen-class.
 
 *** Datatypes and protocols are opinionated
@@ -29530,7 +29530,7 @@ operations: ~resolve-deps~ and ~make-classpath-map~.
 
 **** resolve-deps
 
-*=(resolve-deps deps args-map)=*
+~(resolve-deps deps args-map)~
 
 ~resolve-deps~ takes an initial map of required dependencies and a map
 of args that modify the resolution process. It builds a full graph of
@@ -29607,7 +29607,7 @@ shared projects to act as a dependency management system:
 
 **** make-classpath-map
 
-*=(make-classpath-map lib-map paths args-map)=*
+~(make-classpath-map lib-map paths args-map)~
 
 The ~make-classpath-map~ step takes the lib map (the result of
 ~resolve-deps~), the internal source paths of the project ~["src"]~, an
@@ -30885,7 +30885,7 @@ a method call. The first element of the list must be a simple symbol,
 and the name of the method is the name of the symbol. The args, if any,
 are evaluated from left to right, and passed to the matching method,
 which is called, and its value returned. If the method has a void return
-type, the value of the expression will be *nil*. Note that placing the
+type, the value of the expression will be ~nil~. Note that placing the
 method name in a list with any args is optional in the canonic form, but
 can be useful to gather args in macros built upon the form.
 
@@ -31144,7 +31144,7 @@ get a fully compile-time resolved series of calls. Note that type hints
 are not needed for static members (or their return values!) as the
 compiler always has the type for statics.
 
-There is a *warn-on-reflection* flag (defaults to false) which will
+There is a ~*warn-on-reflection*~ flag (defaults to false) which will
 cause the compiler to warn you when it can't resolve to a direct call:
 
 #+BEGIN_SRC clojure
@@ -31209,9 +31209,9 @@ involving, Java primitive types in local contexts. All Java primitive
 types are supported: int, float, long, double, boolean, char, short, and
 byte.
 
-- *let* / *loop*-bound locals can be of primitive types, having the
+- ~let~ / ~loop~-bound locals can be of primitive types, having the
    inferred, possibly primitive type of their init-form.
-- *recur* forms that rebind primitive locals do so without boxing,
+- ~recur~ forms that rebind primitive locals do so without boxing,
    and do type-checking for same primitive type.
 - Arithmetic (+,-,*,/,inc,dec,<,<=,>,>= etc) is overloaded for
    primitive types where semantics are same.
@@ -31489,7 +31489,7 @@ In working on streams a few things became evident:
          reducing effective laziness
 - sequence functions currently return a seq or nil
 
-The eagerness of *rest* means the sequence functions are not fully lazy,
+The eagerness of ~rest~ means the sequence functions are not fully lazy,
 they need to at least determine if there is a first.
 
 *** Enhancing the seq model - a third operation on seqs - 'next'
@@ -31513,7 +31513,7 @@ they need to at least determine if there is a first.
    - calls seq on arg if not already a seq
    - returns first item
    - still works on nil
-- *New*: the *next* function does what *rest* used to do
+- *New*: the ~next~ function does what ~rest~ used to do
    - returns the next seq, if any, else nil
    - calls seq on arg if not already a seq
    - (next aseq) ~=~ (seq (rest aseq))
@@ -31537,7 +31537,7 @@ they need to at least determine if there is a first.
 
 - Goodbye lazy-cons, hello lazy-seq
    - lazy-cons is gone
-   - new laziness macro - *lazy-seq*
+   - new laziness macro - ~lazy-seq~
       - takes a body that yields a seq, nil or anything seq-able
       - returns a logical collection that implements seq by calling the
          body
@@ -31585,16 +31585,16 @@ This has a performance benefit in this new model.
 
 One of the nice things about CL's cons using nil for end-of-list is
 that, when coupled with nil's testability in conditionals,
-cons-returning functions could be used like predicates. Now only *seq*
-and *next* can be used in that manner - map, filter etc cannot. Note
+cons-returning functions could be used like predicates. Now only ~seq~
+and ~next~ can be used in that manner - map, filter etc cannot. Note
 that much of the economy of the seq/nil dyad still applies, e.g. the use
 of when in map above.
 
 *** Extension ISeqs
 
-If you are extending ISeq you'll need to support *ISeq.more()* (the
+If you are extending ISeq you'll need to support ~ISeq.more()~ (the
 underpinnings of rest). Fortunately, most ISeq extenders derive from
-ASeq, which defines *more()* in terms of *next*. If you derive your seq
+ASeq, which defines ~more()~ in terms of ~next~. If you derive your seq
 from ASeq, /don't define more()/, use the version supplied by ASeq. Just
 rename your rest() method to next().
 
@@ -31603,10 +31603,10 @@ rename your rest() method to next().
 To move to the new model you'll need to take the following steps, in
 this order:
 
-- Rename all your calls to *rest* to call *next*
+- Rename all your calls to ~rest~ to call ~next~
 - If you were defining your own lazy sequence functions, using
-   *lazy-cons*, switch them over to *lazy-seq* using the recipe above.
-   Make sure to call *rest* and not *next* in your recursive call.
+   ~lazy-cons~, switch them over to ~lazy-seq~ using the recipe above.
+   Make sure to call ~rest~ and not ~next~ in your recursive call.
 - Audit your code for nil-punning. The lazy branch has supports
    compilation in a debug mode that asserts if you try to test the truth
    value of a lazy sequence in a conditional, and will throw an
@@ -31688,7 +31688,7 @@ following the recipe above. However lazy-seq also creates a closure
 which closes over coll. Without some enhancement, this filter, while
 lazier, will have the same memory footprint as the old. The new lazy
 branch contains a compiler enhancement for this and similar scenarios.
-*lazy-seq* and *delay* both perform closed-over local clearing on the
+~lazy-seq~ and ~delay~ both perform closed-over local clearing on the
 tail call of their body, ensuring no references remain in the closure
 itself when the tail-call executes. They can do this because they cache
 the results, and thus know the closure will be invoked only once. Thus
@@ -31810,21 +31810,21 @@ or Scheme.
 - The reader is side-effect free
 - Keywords are not Symbols
 - Symbols are not storage locations (see Var)
-- *nil* is not a Symbol
-- t is not syntax, use *true*
+- ~nil~ is not a Symbol
+- t is not syntax, use ~true~
 - The read table is currently not accessible to user programs
-- *let* binds sequentially
-- *do* is not a looping construct
-- There is no tail-call optimization, use *recur*.
+- ~let~ binds sequentially
+- ~do~ is not a looping construct
+- There is no tail-call optimization, use ~recur~.
 - syntax-quote does symbol resolution, so `x is not the same as 'x.
 - ` has auto-gensyms.
 - ~ is unquote ',' is whitespace
 - There is reader syntax for maps, vectors, and sets
-- *cons*, *first* and *rest* manipulate sequence abstractions,
+- ~cons~, ~first~ and ~rest~ manipulate sequence abstractions,
    not concrete cons cells
 - Most data structures are immutable
-- lambda is *fn*, and supports overloading by arity
-- *=* is the equality predicate
+- lambda is ~fn~, and supports overloading by arity
+- ~=~ is the equality predicate
 - Global Vars can be dynamically rebound (if declared dynamic) without
    interfering with lexical local bindings. No special declarations are
    necessary to distinguish between dynamic and lexical bindings. Since
@@ -31834,24 +31834,24 @@ or Scheme.
    self-reference,
    [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/letfn][letfn]]
    for mutual reference.
-- In Clojure *nil* means 'nothing'. It signifies the absence of a
+- In Clojure ~nil~ means 'nothing'. It signifies the absence of a
    value, of any type, and is not specific to lists or sequences.
-- Empty collections are distinct from *nil*. Clojure does not equate
-   *nil* and '().
-- *false* means one of the two possible boolean values, the other
-   being *true*
+- Empty collections are distinct from ~nil~. Clojure does not equate
+   ~nil~ and '().
+- ~false~ means one of the two possible boolean values, the other
+   being ~true~
 - There is more to collections than lists. You can have instances of
    empty collections, some of which have literal support ([], {}, and
    ()). Thus there can be no sentinel empty collection value.
-- Coming from Scheme, *nil* may map most closely to your notion of
+- Coming from Scheme, ~nil~ may map most closely to your notion of
    #f.
 - A big difference in Clojure, is sequences. Sequences are not specific
    collections, esp. they are not necessarily concrete lists. When you
    ask an empty collection for a sequence of its elements (by calling
-   *seq*) it returns *nil*, saying "I can't produce one". When you ask
-   a sequence on its last element for the *rest* it returns *another
+   ~seq~) it returns ~nil~, saying "I can't produce one". When you ask
+   a sequence on its last element for the ~rest~ it returns *another
    logical sequence.* You can only tell if that sequence is empty by
-   calling *seq* on it in turn. This enables sequences and the sequence
+   calling ~seq~ on it in turn. This enables sequences and the sequence
    protocol to be /lazy/.
 - Some of the sequence functions correspond to functions from Scheme
    and CL that there manipulated only pairs/conses ('lists') and
@@ -31874,7 +31874,7 @@ or Scheme.
 | Conditionals distinguish:                                           | nil or false/ everything else                                      | nil/non-nil                       | #f/non-#f    | false/true                                                       |    |
 | List/sequence library manipulates distinguished concrete type(s)?   | No - seq abstraction with many collection implementations          | Yes - cons and vector             | Yes - pair   | No - Iterator abstraction with many collection implementations   |    |
 | Singleton empty-list value?                                         | No - can have distinct empty values of concrete collection types   | nil                               | '()          | No                                                               |    |
-| End-of-sequence returns:                                            | a logical sequence for which *seq* returns nil                     | nil                               | '()          | false                                                            |    |
+| End-of-sequence returns:                                            | a logical sequence for which ~seq~ returns nil                     | nil                               | '()          | false                                                            |    |
 | Host null:                                                          | nil                                                                | NA                                | NA           | NA                                                               |    |
 | Host true:                                                          | true (boxed)                                                       | NA                                | NA           | NA                                                               |    |
 | Host false:                                                         | false (boxed)                                                      | NA                                | NA           | NA                                                               |    |
@@ -32116,7 +32116,7 @@ relationships between, one or more arguments.
 
 A Clojure multimethod is a combination of a /dispatching/ /function/,
 and one or more /methods/. When a multimethod is defined, using
-*defmulti*, a dispatching function must be supplied. This function
+~defmulti~, a dispatching function must be supplied. This function
 will be applied to the arguments to the multimethod in order to produce
 a /dispatching value/. The multimethod will then try to find the method
 associated with the dispatching value or a value from which the
@@ -32125,7 +32125,7 @@ dispatching value is derived. If one has been defined (via
 it will then be called with the arguments and that will be the value of
 the multimethod call. If no method is associated with the dispatching
 value, the multimethod will look for a method associated with the
-default dispatching value (which defaults to *:default*), and will use
+default dispatching value (which defaults to ~:default~), and will use
 that if present. Otherwise the call is an error.
 
 The multimethod system exposes this API:
@@ -32345,7 +32345,7 @@ function, as keywords are functions of maps, as described in the
 :END:
 
 Namespaces are mappings from simple (unqualified) symbols to Vars and/or
-Classes. Vars can be interned in a namespace, using *def* or any of
+Classes. Vars can be interned in a namespace, using ~def~ or any of
 its variants, in which case they have a simple symbol for a name and a
 reference to their containing namespace, and the namespace maps that
 symbol to the same var. A namespace can also contain mappings from
@@ -32556,7 +32556,7 @@ function documentation for details on its expected arguments.
 
 *** Parallel Processing (DEPRECATED)
 
-The parallel library (namespace *parallel*, in parallel.clj) wraps the
+The parallel library (namespace ~parallel~, in parallel.clj) wraps the
 [[http://gee.cs.oswego.edu/dl/concurrency-interest/index.html][ForkJoin
 library]]. This lib is now deprecated.
 
@@ -32564,7 +32564,7 @@ You'll need ~jsr166y.jar~ in your classpath in order to use this
 library. The basic idea is that Clojure collections, and most
 efficiently vectors, can be turned into parallel arrays for use by this
 library with the function par, although most of the functions take
-collections and will call *par* if needed, so normally you will only
+collections and will call ~par~ if needed, so normally you will only
 need to call par explicitly in order to attach bound/filter/map ops.
 
 Parallel arrays support the attachment of bounds, filters and mapping
@@ -32573,7 +32573,7 @@ of any of several operations on the array
 (pvec/psort/pfilter-nils/pfilter-dupes). Rather than perform composite
 operations in steps, as would normally be done with sequences, maps and
 filters are instead attached and thus composed by providing ops to
-*par*. Note that there is an order sensitivity to the attachments -
+~par~. Note that there is an order sensitivity to the attachments -
 bounds precede filters precede mappings. All operations then happen in
 parallel, using multiple threads and a sophisticated work-stealing
 system supported by fork-join, either when the array is realized, or to
@@ -32697,7 +32697,7 @@ function does a depth-first walk, making for easy to understand loops:
 #+END_SRC
 
 Zipper constructors are provided for nested seqs, nested vectors, and
-the xml elements generated by *xml/parse*. All it takes is a 4-5 line
+the xml elements generated by ~xml/parse~. All it takes is a 4-5 line
 function to support other data structures.
 ** Protocols
 :PROPERTIES:
@@ -32842,7 +32842,7 @@ protocol + function map (evaluated) pairs.
       - if one interface is derived from the other, the more derived is
          used, else which one is used is unspecified.
 - The implementing fn can presume first argument is instanceof AType
-- You can implement a protocol on *nil*
+- You can implement a protocol on ~nil~
 - To define a default implementation of protocol (for other than nil)
    just use Object
 
@@ -32859,7 +32859,7 @@ Protocols are fully reified and support reflective capabilities via
    and
    [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol][extend-protocol]]
 - If you are providing external definitions inline, these will be more
-   convenient than using *extend* directly
+   convenient than using ~extend~ directly
 
 #+BEGIN_SRC clojure
 (extend-type MyType
@@ -33266,7 +33266,7 @@ rebinding
 If no data reader is found for a tag, the function bound in
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A][*default-data-reader-fn*]]
 will be invoked with the tag and value to produce a value. If
-*default-data-reader-fn* is nil (the default), a RuntimeException will
+~default-data-reader-fn~ is nil (the default), a RuntimeException will
 be thrown.
 
 If a ~data_readers.cljc~ is provided, it is read with the same semantics
@@ -33478,7 +33478,7 @@ non-parallel reduce instead.
 
 *** reduce and fold
 
-The *clojure.core.reducers* namespace (aliased here as *r*) provides an
+The ~clojure.core.reducers~ namespace (aliased here as ~r~) provides an
 alternate
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/reduce][r/reduce]]
 function.
@@ -34079,13 +34079,13 @@ coll is nil, returns nil.
 
 Returns a sequence of the items after the first. Calls seq on its
 argument. If there are no more items, returns a logical sequence for
-which *seq* returns nil.
+which ~seq~ returns nil.
 
 **** (/cons/ item seq)
 
 Returns a new seq where item is the first element and seq is the rest.
 
-For a discussion of *rest* vs. *next* and *lazy-seq* see
+For a discussion of ~rest~ vs. ~next~ and ~lazy-seq~ see
 [[file:lazy.xml][lazy]].
 
 *** The Seq library
@@ -34764,7 +34764,7 @@ cases for transducers]].
 
 *** Terminology
 
-A /reducing function/ is the kind of function you'd pass to *reduce* -
+A /reducing function/ is the kind of function you'd pass to ~reduce~ -
 it is a function that takes an accumulated result and a new input and
 returns a new accumulated result:
 
@@ -34799,7 +34799,7 @@ For example:
 Transducers compose with ordinary function composition. A transducer
 performs its operation before deciding whether and how many times to
 call the transducer it wraps. The recommended way to compose transducers
-is with the existing *comp* function:
+is with the existing ~comp~ function:
 
 #+BEGIN_SRC clojure
 (def xf
@@ -34816,7 +34816,7 @@ transformer runs right-to-left but builds a transformation stack that
 runs left-to-right (filtering happens before mapping in this example).
 
 As a mnemonic, remember that the ordering of transducer functions in
-*comp* is the same order as sequence transformations in *->>*. The
+~comp~ is the same order as sequence transformations in *->>*. The
 transformation above is equivalent to the sequence transformation:
 
 #+BEGIN_SRC clojure
@@ -34865,8 +34865,8 @@ function, which is analogous to the standard reduce function:
 (transduce xform f init coll)
 #+END_SRC
 
-*transduce* will immediately (not lazily) reduce over *coll* with the
-transducer *xform* applied to the reducing function *f*, using init as
+~transduce~ will immediately (not lazily) reduce over ~coll~ with the
+transducer ~xform~ applied to the reducing function ~f~, using init as
 the initial value if supplied or (f) otherwise. f supplies the knowledge
 of how to accumulate the result, which occurs in the (potentially
 stateful) context of the reduce.
@@ -34940,8 +34940,8 @@ Transducers have the following shape (custom code in "...​"):
 Many of the core sequence functions (like map, filter, etc) take
 operation-specific arguments (a predicate, function, count, etc) and
 return a transducer of this shape closing over those arguments. In some
-cases, like *cat*, the core function /is/ a transducer function and does
-not take an *rf*.
+cases, like ~cat~, the core function /is/ a transducer function and does
+not take an ~rf~.
 
 The inner function is defined with 3 arities used for different
 purposes:
@@ -34949,16 +34949,16 @@ purposes:
 - *Init* (arity 0) - should call the init arity on the nested transform
    *rf*, which will eventually call out to the transducing process.
 - *Step* (arity 2) - this is a standard reduction function but it is
-   expected to call the *rf* step arity 0 or more times as appropriate
+   expected to call the ~rf~ step arity 0 or more times as appropriate
    in the transducer. For example, filter will choose (based on the
-   predicate) whether to call *rf* or not. map will always call it
+   predicate) whether to call ~rf~ or not. map will always call it
    exactly once. cat may call it many times depending on the inputs.
 - *Completion* (arity 1) - some processes will not end, but for those
-   that do (like *transduce*), the completion arity is used to produce a
-   final value and/or flush state. This arity must call the *rf*
+   that do (like ~transduce~), the completion arity is used to produce a
+   final value and/or flush state. This arity must call the ~rf~
    completion arity exactly once.
 
-An example use of *completion* is *partition-all*, which must flush any
+An example use of ~completion~ is ~partition-all~, which must flush any
 remaining elements at the end of the input. The
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing][completing]]
 function can be used to convert a reducing function to a transducing
@@ -34984,7 +34984,7 @@ encountered. (See the implementation of cat for an example.)
 
 **** Transducers with reduction state
 
-Some transducers (such as *take*, *partition-all*, etc) require state
+Some transducers (such as ~take~, ~partition-all~, etc) require state
 during the reduction process. This state is created each time the
 transducible process applies the transducer. For example, consider the
 dedupe transducer that collapses a series of duplicate values into a
@@ -35006,10 +35006,10 @@ determine whether the current value should be passed on:
                 (xf result input))))))))
 #+END_SRC
 
-In dedupe, *prev* is a stateful container that stores the previous value
+In dedupe, ~prev~ is a stateful container that stores the previous value
 during the reduction. The prev value is a volatile for performance, but
 it could also be an atom. The prev value will not be initialized until
-the transducing process starts (in a call to *transduce* for example).
+the transducing process starts (in a call to ~transduce~ for example).
 The stateful interactions are therefore contained within the context of
 the transducible process.
 
@@ -35050,7 +35050,7 @@ general rules to be aware of:
 immutable return value, is that ok?/
 
 It's an interesting question. Clojure data structures use mutation every
-time you call, e.g. *assoc*, creating one or more arrays and mutating
+time you call, e.g. ~assoc~, creating one or more arrays and mutating
 them, before returning them for immutable use thereafter. The reason is
 performance - you simply can't get as fast using only pure functions and
 immutable data. Once constructed and shared however, being immutable and
@@ -35083,7 +35083,7 @@ support this feature, but most will. Lists will not, as there is no
 benefit to be had.
 
 You obtain a transient 'copy' of a data structure by calling
-*transient*. This creates a new transient data structure that is a copy
+~transient~. This creates a new transient data structure that is a copy
 of the source, and has the same performance characteristics. In fact, it
 mostly /is/ the source data structure, and highlights the first feature
 of transients - creating one is O(1). It shares structure with its
@@ -35094,16 +35094,16 @@ the source, and the source cannot be modified via use of the transient.
 Your source data is immutable and persistent as always.
 
 Transients support the read-only interface of the source, i.e. you can
-call *nth*, *get*, *count* and fn-call a transient vector, just like a
+call ~nth~, ~get~, ~count~ and fn-call a transient vector, just like a
 persistent vector.
 
 Transients *do not* support the persistent interface of the source
-data structure. *assoc*, *conj* etc will all throw exceptions, because
+data structure. ~assoc~, ~conj~ etc will all throw exceptions, because
 transients are not persistent. Thus you cannot accidentally leak a
 transient into a context requiring a persistent.
 
 Transients support a parallel set of 'changing' operations, with similar
-names followed by *!* - *assoc!*, *conj!* etc. These do the same things
+names followed by ~!~ - ~assoc!~, ~conj!~ etc. These do the same things
 as their persistent counterparts except the return values are themselves
 transient. Note in particular that transients are not designed to be
 bashed in-place. You must capture and use the return value in the next
@@ -35113,8 +35113,8 @@ will allow you to easily enhance the performance of a piece of code
 without structural change.
 
 When you are finished building up your results, you can create a
-persistent data structure by calling *persistent!* on the transient.
-This operation is also O(1). Subsequent to calling *persistent!*, the
+persistent data structure by calling ~persistent!~ on the transient.
+This operation is also O(1). Subsequent to calling ~persistent!~, the
 transient should not be used, and all operations will throw exceptions.
 This will be true also for any aliases you might have created.
 
@@ -35124,9 +35124,9 @@ Here's a very typical example, some code that builds up a vector for
 return, all 'changes' being local to the function. Note how the
 transient-using version has exactly the same structure, just:
 
-- Calling *transient* on the source vector
-- Using *conj!* instead of *conj*
-- Calling *persistent!* on return
+- Calling ~transient~ on the source vector
+- Using ~conj!~ instead of ~conj~
+- Calling ~persistent!~ on return
 
 #+BEGIN_EXAMPLE
 (defn vrange [n]
@@ -36448,7 +36448,7 @@ specs (with gen support): long-in, inst-in, double-in
 1.9.0-alpha2 includes the following changes since 1.9.0-alpha1:
 
 - Better describe for s/+
-- Capture *recursion-limit* on gen call
+- Capture ~recursion-limit~ on gen call
 - explain-data now contains :in key for the input path
 - [[https://clojure.atlassian.net/browse/CLJ-1931][CLJ-1931]] -
    with-gen throws AbstractMethodError
