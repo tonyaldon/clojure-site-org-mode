@@ -23681,14 +23681,14 @@ language and its users. Thank you to everyone that took the time to
 complete the survey and provide your input. This year, we had 2461
 respondents. Some highlights:
 
-- Clojure is used by many <<#work,companies>> for web development,
+- Clojure is used by many [[#content/news/2019/02/04/state-of-clojure-2019#a-language-for-work][companies]] for web development,
   commercial services, and enterprise apps in a broad set of domains
   including financial services, enterprise software, retail,
   advertising, health care, and more.
-- Clojure is <<#strengths,valued>> for its idiomatic support for
+- Clojure is [[#content/news/2019/02/04/state-of-clojure-2019#strengths-of-clojure][valued]] for its idiomatic support for
   functional programming, immutable data, interactive REPL, and ease of
   development.
-- Clojure and its <<#community,community>> are active and vibrant, as
+- Clojure and its [[#content/news/2019/02/04/state-of-clojure-2019#vibrant-community][community]] are active and vibrant, as
   seen in the many thriving discussion forums, conferences, and user
   groups, with active involvement in community library development.
 
@@ -23697,6 +23697,9 @@ For more details and the
 see below.
 
 *** A Language for Work
+:PROPERTIES:
+:CUSTOM_ID: content/news/2019/02/04/state-of-clojure-2019#a-language-for-work
+:END:
 
 In the first Clojure survey in 2010, 27% of respondents reported using
 Clojure for work and 33% for serious hobby projects. This number has
@@ -23748,6 +23751,9 @@ more for work, at bigger companies, impacting ever larger groups of
 users.
 
 *** Strengths of Clojure
+:PROPERTIES:
+:CUSTOM_ID: content/news/2019/02/04/state-of-clojure-2019#strengths-of-clojure
+:END:
 
 For years we have asked people what aspects of Clojure were most
 important to them. These answers are remarkably consistent and this year
@@ -23780,6 +23786,9 @@ Some comments about the language:
   with minimum disruption."
 
 *** Vibrant Community
+:PROPERTIES:
+:CUSTOM_ID: content/news/2019/02/04/state-of-clojure-2019#vibrant-community
+:END:
 
 The Clojure community is active, growing, and always helpful. Over the
 years, the primary communication mechanisms have changed along with the
@@ -24002,11 +24011,14 @@ Ten years ago, Chas Emerick ran the first State of Clojure survey. In
 2010, most users had been using Clojure for just weeks or months, and
 few were using it as a language for serious work.
 [[https://www.surveymonkey.com/results/SM-CDBF7CYT7/][This year]], we
-see consistent and growing use for <<#work,work>>, steady interest in
-the key <<#values,value>> propositions of Clojure, and an ever-evolving
-<<#community,community>> of users.
+see consistent and growing use for [[#content/news/2020/02/20/state-of-clojure-2020#clojure-at-work][work]], steady interest in
+the key [[#content/news/2020/02/20/state-of-clojure-2020#values][value]] propositions of Clojure, and an ever-evolving
+[[#content/news/2020/02/20/state-of-clojure-2020#community][community]] of users.
 
 *** Clojure at Work
+:PROPERTIES:
+:CUSTOM_ID: content/news/2020/02/20/state-of-clojure-2020#clojure-at-work
+:END:
 
 One of the questions we have been asking since 2010 is whether
 respondents are using Clojure for work, hobby projects, tinkering, or
@@ -24063,6 +24075,9 @@ ever higher percentage of developers using it at work for their core
 business.
 
 *** Values
+:PROPERTIES:
+:CUSTOM_ID: content/news/2020/02/20/state-of-clojure-2020#values
+:END:
 
 Since 2015, we have asked a question about which aspects of Clojure
 users valued the most. The weighted ranking of those answers has
@@ -24091,6 +24106,9 @@ development and tradition for growing without breaking:
   Lisp to the mainstream."
 
 *** Community
+:PROPERTIES:
+:CUSTOM_ID: content/news/2020/02/20/state-of-clojure-2020#community
+:END:
 
 Again this year we surveyed the most popular forums where Clojurists
 interact with each other. Some new and/or rising entries included
@@ -29263,8 +29281,8 @@ clj -X:my-fn '[:my :data]' 789
 #+BEGIN_QUOTE
 *Note*
 
-See the later section on <<#quoting,"Quoting keys and values">> for
-more details on how to properly quote edn values on the command line.
+See the later section on [[#content/reference/deps_and_cli#quoting-keys-and-values]["Quoting keys and values"]]
+for more details on how to properly quote edn values on the command line.
 #+END_QUOTE
 
 If you want to execute an arbitrary function, you can pass it on the
@@ -29278,8 +29296,7 @@ clj -X my.qualified/fn :config 789
 *Note*
 
 Alias arg maps can also include a default namespace or namespace
-aliases for resolving the function (see <<#namespaces,"Namespace
-resolution">> for more details).
+aliases for resolving the function (see [[#content/reference/deps_and_cli#namespace-resolution]["Namespace resolution"]] for more details).
 #+END_QUOTE
 
 **** Running a main or script
@@ -30454,6 +30471,9 @@ with ~-X~ (exec), ~-A~ (repl), and ~-M~ (main).
   - ~:main-opts~ - vector of string args to pass to clojure.main
 
 **** Namespace resolution
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#namespace-resolution
+:END:
 
 Symbols in the exec-opts or argmaps (like ~:exec-fn~) are resolved with
 the following rules:
@@ -30501,6 +30521,9 @@ clj -X:a-tool my-fn '{:val 789}'
 #+END_EXAMPLE
 
 **** Quoting keys and values
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#quoting-keys-and-values
+:END:
 
 Keys and values on the command line are read as edn. The following data
 can be used without quoting:
