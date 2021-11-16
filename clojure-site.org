@@ -56,7 +56,7 @@ However, it is often necessary to have state change in a program.
 Clojure, being a practical language, allows state to change but provides
 mechanism to ensure that, when it does so, it remains consistent, while
 alleviating developers from having to avoid conflicts manually using
-locks etc. The [[file:xref/../../reference/refs.xml][software
+locks etc. The [[#content/reference/refs][software
 transactional memory system]] (STM), exposed through
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]],
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref][ref]],
@@ -64,13 +64,13 @@ transactional memory system]] (STM), exposed through
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]],
 et al, supports /sharing/ changing state between threads in a
 /synchronous/ and /coordinated/ manner. The
-[[file:xref/../../reference/agents.xml][agent]] system supports sharing
+[[#content/reference/agents][agent]] system supports sharing
 changing state between threads in an /asynchronous/ and /independent/
-manner. The [[file:xref/../../reference/atoms.xml][atoms]] system
+manner. The [[#content/reference/atoms][atoms]] system
 supports sharing changing state between threads in a /synchronous/ and
-/independent/ manner. The [[file:xref/../../reference/vars.xml][dynamic
+/independent/ manner. The [[#content/reference/vars][dynamic
 var system]], exposed through
-[[file:xref/../../reference/special_forms.xml#def][def]],
+[[#content/reference/special_forms#def][def]],
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]],
 et al, supports isolating changing state within threads.
 
@@ -81,7 +81,7 @@ therefore they work with the Executor framework etc.
 Most of this is covered in more detail in the
 [[https://www.youtube.com/watch?v=nDAfZK8m5_8][concurrency screencast]].
 
-[[file:xref/../../reference/refs.xml][Refs]] are mutable references to
+[[#content/reference/refs][Refs]] are mutable references to
 objects. They can be
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]]
 or
@@ -129,11 +129,11 @@ persistent and immutable, efficiently support simultaneous speculative
 put in refs.
 
 By default Vars are static, but per-thread bindings for Vars defined
-with [[file:xref/../../reference/metadata.xml][metadata]] mark them as
-dynamic. [[file:xref/../../reference/vars.xml][Dynamic vars]] are also
+with [[#content/reference/metadata][metadata]] mark them as
+dynamic. [[#content/reference/vars][Dynamic vars]] are also
 mutable references to objects. They have a (thread-shared) root binding
 which can be established by
-[[file:xref/../../reference/special_forms.xml#def][def]], and can be set
+[[#content/reference/special_forms#def][def]], and can be set
 using ~set!~, but only if they have been bound to a new storage
 location thread-locally using
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]].
@@ -280,15 +280,15 @@ Clojure has a set of useful features that together form a simple,
 coherent, and powerful tool. In Clojure you'll find ideas from Lisp, ML,
 Haskell, and others, but the end result is unique. This section is a
 brief, non-comprehensive tour of some of the features of Clojure.
-Consult the [[file:xref/../../reference/documentation.xml][reference]]
+Consult the [[#content/reference/documentation][reference]]
 for more details.
 
-- [[file:dynamic.xml][Dynamic Development]]
-- [[file:functional_programming.xml][Functional Programming]]
-- [[file:lisp.xml][Lisp]]
-- [[file:runtime_polymorphism.xml][Runtime Polymorphism]]
-- [[file:concurrent_programming.xml][Concurrent Programming]]
-- [[file:jvm_hosted.xml][Hosted on the JVM]]
+- [[#content/about/dynamic][Dynamic Development]]
+- [[#content/about/functional_programming][Functional Programming]]
+- [[#content/about/lisp][Lisp]]
+- [[#content/about/runtime_polymorphism][Runtime Polymorphism]]
+- [[#content/about/concurrent_programming][Concurrent Programming]]
+- [[#content/about/jvm_hosted][Hosted on the JVM]]
 
 ** Functional Programming
 :PROPERTIES:
@@ -307,7 +307,7 @@ robust.
 
 *** First-class functions
 
-[[file:xref/../../reference/special_forms.xml#fn][fn]] creates a
+[[#content/reference/special_forms#fn][fn]] creates a
 function object. It yields a value like any other - you can store it in
 a var, pass it to functions etc.
 
@@ -362,7 +362,7 @@ are not variables. Once created their values never change!*
 *** Immutable Data Structures
 
 The easiest way to avoid mutating state is to use immutable
-[[file:xref/../../reference/data_structures.xml][data structures]].
+[[#content/reference/data_structures][data structures]].
 Clojure provides a set of immutable lists, vectors, sets and maps. Since
 they can't be changed, 'adding' or 'removing' something from an
 immutable collection means creating a new collection just like the old
@@ -396,7 +396,7 @@ collections have readable representations and common interfaces:
 Applications often need to associate attributes and other data about
 data that is orthogonal to the logical value of the data. Clojure
 provides direct support for this
-[[file:xref/../../reference/metadata.xml][metadata]]. Symbols, and all
+[[#content/reference/metadata][metadata]]. Symbols, and all
 of the collections, support a metadata map. It can be accessed with the
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/meta][meta]]
 function. Metadata does /not/ impact equality semantics, nor will
@@ -421,7 +421,7 @@ extensions. This is a big improvement vs. hardwiring a language to the
 concrete implementations of its data types.
 
 A good example of this is the
-[[file:xref/../../reference/sequences.xml][seq]] interface. By making
+[[#content/reference/sequences][seq]] interface. By making
 the core Lisp list construct into an abstraction, a wealth of library
 functions are extended to any data structure that can provide a
 sequential interface to its contents. All of the Clojure data structures
@@ -478,7 +478,7 @@ in tail position do not consume stack space, and thus recursive loops
 utilize constant space. Since Clojure uses the Java calling conventions,
 it cannot, and does not, make the same tail call optimization
 guarantees. Instead, it provides the
-[[file:xref/../../reference/special_forms.xml#recur][recur special
+[[#content/reference/special_forms#recur][recur special
 operator]], which does constant-space recursive looping by rebinding and
 jumping to the nearest enclosing loop or function frame. While not as
 general as tail-call-optimization, it allows most of the same elegant
@@ -612,14 +612,14 @@ Here's a small Swing app as a more involved example:
 
 Clojure is a member of the Lisp family of languages. Many of the
 features of Lisp have made it into other languages, but Lisp's approach
-to code-as-data and its [[file:xref/../../reference/macros.xml][macro
+to code-as-data and its [[#content/reference/macros][macro
 system]] still set it apart. Clojure extends the code-as-data system
 beyond parenthesized lists (s-expressions) to vectors and maps. Thus
 vectors and maps can be used in macro syntax, have literal reader
 representations etc.
 
 Lisp data, and thus Lisp code, is read by the
-[[file:xref/../../reference/reader.xml][reader]]. The result of reading
+[[#content/reference/reader][reader]]. The result of reading
 is the data structure represented by the forms. Clojure can compile data
 structures that represent code, and as part of that process it looks for
 calls to macros. When it sees one, it calls the macro, passing the forms
@@ -672,7 +672,7 @@ functional programming with immutable persistent data structures; and
 providing built-in concurrency support via software transactional memory
 and asynchronous agents. The result is robust, practical, and fast.
 
-Clojure has a distinctive approach to [[file:state.xml][state and
+Clojure has a distinctive approach to [[#content/about/state][state and
 identity]].
 
 *** Why Clojure?
@@ -799,9 +799,8 @@ behind Clojure.
 
 In short, I think Clojure occupies a unique niche as a functional Lisp
 for the JVM with strong concurrency support. Check out some of the
-[[file:features.xml][features]] or
-[[file:xref/../../guides/getting_started.xml][get started with
-Clojure]].
+[[#content/about/features][features]] or
+[[#content/guides/getting_started][get started with Clojure]].
 
 ** Runtime Polymorphism
 :PROPERTIES:
@@ -817,12 +816,12 @@ extend. Clojure supports polymorphism in several ways:
 - Clojure supports the generation of implementations of Java interfaces
   in Clojure using
   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy][proxy]]
-  ([[file:jvm_hosted.xml][see JVM Hosted]]).
+  ([[#content/about/jvm_hosted][see JVM Hosted]]).
 - The Clojure language supports polymorphism along both class and
   custom hierarchies with
-  [[file:xref/../../reference/multimethods.xml][multimethod]]s.
+  [[#content/reference/multimethods][multimethod]]s.
 - The Clojure language also supports a faster form of polymorphism with
-  [[file:xref/../../reference/protocols.xml][protocols]] (but limited
+  [[#content/reference/protocols][protocols]] (but limited
   only to class polymorphism to take advantage of the JVMs existing
   capabilities for invocation).
 
@@ -875,8 +874,7 @@ specifications (no implementation) and allow types to implement multiple
 protocols. Additionally, protocols are open to later dynamic extension
 for new types. Protocols are limited just to dispatch on class type to
 take advantage of the native Java performance of polymorphic method
-calls. For more details, see the
-[[file:xref/../../reference/protocols.xml][protocols]] page.
+calls. For more details, see the [[#content/reference/protocols][protocols]] page.
 
 ** clojure.spec - Rationale and Overview
 :PROPERTIES:
@@ -1319,7 +1317,7 @@ In addition to the destructuring use cases above, you can make calls to
 lighter-weight internal-only specs for tests you intend to run in
 production.
 
-Please see the [[file:xref/../../../guides/spec.xml][spec Guide]] and
+Please see the [[#content/guides/spec][spec Guide]] and
 [[https://clojure.github.io/spec.alpha/index.html][API docs]] for more
 examples and usage information.
 
@@ -1392,12 +1390,12 @@ Rich Hickey
 
 *** More information
 
-- [[file:xref/../../../guides/spec.xml][spec Guide]]
+- [[#content/guides/spec][spec Guide]]
 - [[https://clojure.github.io/spec.alpha][API Docs]]
 - [[https://github.com/clojure/spec.alpha][Project]]
-- [[file:xref/../../../community/resources.xml#spec][spec Resources]]
+- [[resources#spec][spec Resources]]
 
-** Values and Change
+** Values and Change: Clojure's approach to Identity and State
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/state.adoc]]
 :CUSTOM_ID: content/about/state
@@ -1504,8 +1502,8 @@ over time. This is the Clojure model.
 In Clojure's model, value calculation is purely functional. Values never
 change. New values are functions of old, not mutations. But logical
 identity is well supported, via atomic references to values
-([[file:xref/../../reference/refs.xml][Refs]] and
-[[file:xref/../../reference/agents.xml][Agents]]). Changes to references
+([[#content/reference/refs][Refs]] and
+[[#content/reference/agents][Agents]]). Changes to references
 are controlled/coordinated by the system - i.e. cooperation is not
 optional and not manual. The world moves forward due to the cooperative
 efforts of its participants and the programming language/system,
@@ -1621,7 +1619,7 @@ models and provides robust and easy-to-use facilities for managing
 identity and state in a single process in the face of concurrency.
 
 In coming to Clojure from an OO language, you can use one of its
-[[file:xref/../../reference/data_structures.xml][persistent
+[[#content/reference/data_structures][persistent
 collections]], e.g. maps, instead of objects. Use values as much as
 possible. And for those cases where your objects are truly modeling
 identities (far fewer cases than you might realize until you start
@@ -1634,7 +1632,7 @@ manipulating them. If you want polymorphism, use Clojure's multimethods.
 In the local case, since Clojure does not have mutable local variables,
 instead of building up values in a mutating loop, you can instead do it
 functionally with
-[[file:xref/../../reference/special_forms.xml#recur][recur]] or
+[[#content/reference/special_forms#recur][recur]] or
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduce][reduce]].
 
 * Api
@@ -1657,8 +1655,7 @@ functionally with
 
 *** Clojure Contrib Libraries
 
-Documentation for Clojure
-[[file:xref/../../dev/contrib_libs.xml][contrib libraries]]:
+Documentation for Clojure [[#content/dev/contrib_libs][contrib libraries]]:
 
 - [[https://clojure.github.io/][Contrib APIs]]
 
@@ -1872,8 +1869,8 @@ or removed from this list, please contact /clojure@cognitect.com/ or
 submit a pull request to the
 [[https://github.com/clojure/clojure-site][site repository]].
 
-Also, check out the [[file:success_stories.xml][Clojure Success
-Stories]] and [[file:community_stories.xml][Community Stories]] pages!
+Also, check out the [[#content/community/success_stories][Clojure Success
+Stories]] and [[#content/community/community_stories][Community Stories]] pages!
 
 - 3e.eu
 - 8th Light
@@ -2411,18 +2408,21 @@ please consider contributing to this web site, clojure.org. All of the
 content is [[https://github.com/clojure/clojure-site][stored in GitHub]]
 and pull requests and issues are accepted. For more information on how
 to contribute, see the page on
-[[file:contributing_site.xml][contributing to the site]]. Every page has
+[[#content/community/contributing_site][contributing to the site]]. Every page has
 a link to the corresponding source file in the bottom right corner. If
 you have an idea for a new guide or updated documentation, please
 [[https://github.com/clojure/clojure-site/issues][file an issue]] for
 discussion.
 
 *** Reporting Problems and Requesting Enhancements
+:PROPERTIES:
+:CUSTOM_ID: content/community/contributing#reporting-problems-and-requesting-enhancements
+:END:
 
-The Clojure team provides a [[file:ask.xml][forum]] where users can ask
+The Clojure team provides a [[#content/community/ask][forum]] where users can ask
 questions, submit potential problems, and request enhancements to
 Clojure, ClojureScript, or Clojure contrib libraries. For all of these
-cases, please ask a question on the [[file:ask.xml][forum]]. Mark the
+cases, please ask a question on the [[#content/community/ask][forum]]. Mark the
 question with tag ~problem~ for potential problems and ~request~ for
 enhancements. The community and core team will assess the issue and
 determine whether to file an issue in the jira tracker. If an issue is
@@ -2442,11 +2442,11 @@ Clojure was created by Rich Hickey and is developed by a core team of
 developers at [[https://cognitect.com][Cognitect]], which supports this
 work. The Clojure development team values a measured and thoughtful
 approach to language evolution with a strong emphasis on maintaining
-backward compatibility. See [[file:xref/../../dev/dev.xml][Development]]
+backward compatibility. See [[#content/dev/dev][Development]]
 for more information on Clojure development.
 
 If you would like to provide a patch on a specific ticket in the jira
-tracker, please follow the [[file:xref/../../dev/dev.xml][process]] to
+tracker, please follow the [[#content/dev/dev][process]] to
 become a contributor.
 
 ** Contributing to This Site
@@ -2511,29 +2511,29 @@ again as it is the same agreement.
 Small changes can be proposed directly in the GitHub web interface:
 
 1. Go to the content repository
-  [[https://github.com/clojure/clojure-site]]
+   [[https://github.com/clojure/clojure-site]]
 2. Navigate to the page you wish to update under content/ - the url
-  should match the file base name. For example, this file's content is
-  at
-  [[https://github.com/clojure/clojure-site/blob/master/content/community/contributing_site.adoc]].
+   should match the file base name. For example, this file's content is
+   at
+   [[https://github.com/clojure/clojure-site/blob/master/content/community/contributing_site.adoc]].
 3. Click the edit (pencil) icon.
 4. Content is written using the asciidoc format, which is similar to
-  Markdown. The [[file:editing.xml][Editing]] page lists examples of
-  the most common things you will encounter when editing content on
-  this site. Make your changes in the text box. You can preview your
-  changes using the "Preview changes" tab. GitHub understands asciidoc
-  format and will provide a formatted preview of your changes.
+   Markdown. The [[#content/community/editing][Editing]] page lists examples of
+   the most common things you will encounter when editing content on
+   this site. Make your changes in the text box. You can preview your
+   changes using the "Preview changes" tab. GitHub understands asciidoc
+   format and will provide a formatted preview of your changes.
 5. Write a concise description of the change in the bottom section of
-  the page then click "Propose file change". This will fork the
-  original repository into your own version of the repository with the
-  change applied.
+   the page then click "Propose file change". This will fork the
+   original repository into your own version of the repository with the
+   change applied.
 6. You will then be shown a "Comparing changes" page - all of the
-  information should be filled out automatically and a summary of your
-  changes will be at the bottom - this is a good time to look them over
-  one more time. Assuming it all looks correct, you can propose the
-  change back to the original repository by clicking "Create pull
-  request". You'll then be able to add a comment to the pull request
-  itself then click "Create pull request".
+   information should be filled out automatically and a summary of your
+   changes will be at the bottom - this is a good time to look them over
+   one more time. Assuming it all looks correct, you can propose the
+   change back to the original repository by clicking "Create pull
+   request". You'll then be able to add a comment to the pull request
+   itself then click "Create pull request".
 
 *** Submitting Large Changes
 
@@ -2560,7 +2560,7 @@ To create a local environment for working on a bigger change:
   change. You'll use this branch to submit a pull request.
 4. Make one or more commits on this branch, modifying or adding one or
   more files. See the section below on how to build and preview changes
-  locally. The [[file:editing.xml][Editing]] page lists examples of the
+  locally. The [[#content/community/editing][Editing]] page lists examples of the
   most common things you will encounter when editing content on this
   site.
 5. Use ~git push~ to push your changes to the branch.
@@ -2961,8 +2961,7 @@ ecosystem of libraries at your disposal.
 These are groups of open source libraries maintained with common
 infrastructure, people, or goals:
 
-- [[file:xref/../../dev/contrib_libs.xml][Clojure contrib libs]] - open
-  source libs under the Clojure umbrella project
+- [[#content/dev/contrib_libs][Clojure contrib libs]] - open source libs under the Clojure umbrella project
 - [[https://clj-commons.org/][clj-commons]]
 - [[http://clojurewerkz.org/][ClojureWerkz]]
 
@@ -2984,7 +2983,6 @@ or any other, from this software.
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/resources.adoc]]
 :CUSTOM_ID: content/community/resources
 :END:
-
 *** Clojure Discussion
 
 - [[https://ask.clojure.org][Q&A Forum]] (official)
@@ -3005,7 +3003,7 @@ Official:
 
 - [[https://clojure.github.io/clojure/][Clojure API Docs]]
 - [[https://clojure.github.io/][Clojure Contrib Library API Docs]]
-- [[file:xref/../../reference/documentation.xml][Clojure Reference
+- [[#content/reference/documentation][Clojure Reference
   Docs]] - official reference information
 - [[file:xref/../../api/cheatsheet.xml][Clojure Cheatsheet]] - helpful
   categorization of most core functions
@@ -3020,7 +3018,7 @@ Official:
 
 Community:
 
-- [[file:books.xml][Books]]
+- [[#content/community/books][Books]]
 - [[http://www.braveclojure.com/][Clojure for the Brave and True]] - a
   beginner book by Daniel Higginbotham
 - [[http://aphyr.com/posts/301-clojure-from-the-ground-up-welcome][Clojure
@@ -3041,6 +3039,8 @@ Community:
 - [[https://guide.clojure.style/][Clojure Style Guide]]
 - [[https://www.maria.cloud/][Maria]] - a coding environment for
   beginners
+
+<<resources#spec>>
 
 Spec:
 
@@ -3655,8 +3655,7 @@ Clojure T, Small Logo
 :CUSTOM_ID: content/community/tools
 :END:
 
-Community volunteers maintain
-[[file:xref/../../guides/getting_started.xml][Getting Started]]
+Community volunteers maintain [[#content/guides/getting_started][Getting Started]]
 documentation for a number of different tools and approaches. Some of
 the most commonly used tools include:
 
@@ -3707,7 +3706,7 @@ the most commonly used tools include:
 
 *** Dependency management
 
-- [[file:xref/../../guides/deps_and_cli.xml][clj and deps.edn]] - clj
+- [[#content/guides/deps_and_cli][clj and deps.edn]] - clj
   is a tool for managing dependencies, running a REPL, and executing
   Clojure programs, built by the Clojure core team
 - [[https://leiningen.org/][Leiningen]] - an extensible build tool that
@@ -3777,7 +3776,7 @@ sponsors.
 **** Conferences
 
 For conferences and upcoming events, check the upcoming
-[[file:events.xml][Events]] list.
+[[#content/community/events][Events]] list.
 
 *** Resources for trainers
 
@@ -3797,7 +3796,7 @@ If you would like to be added or removed from this list, please contact
 :END:
 
 Do you wish there was a Clojure User Group in your area? Check out our
-page of [[file:start_group.xml][tips for starting your own]]
+page of [[#content/community/start_group][tips for starting your own]]
 
 If you'd like to have your group listed here, please submit a PR against
 the [[https://github.com/clojure/clojure-site][clojure-site]] github
@@ -4012,7 +4011,7 @@ repo.
 This page is a historical document about the splitting of the old
 "monolithic" contrib in the Clojure 1.2 timeframe when many of the
 initial contrib libraries were created. This info is no longer
-maintained and may be out of date. See [[file:contrib_libs.xml][Contrib
+maintained and may be out of date. See [[#content/dev/contrib_libs][Contrib
 Libs]] for up to date info.
 
 If a clojure.contrib namespace is listed here but has no migration
@@ -4281,7 +4280,7 @@ Things you should do if you are a Clojure Contrib committer:
 - coordinate with other committers before making changes to their
   libraries
 - accept contributions from others only if they have
-  [[file:contributors.xml][signed the CA]]
+  [[#content/dev/contributors][signed the CA]]
 
 Things to avoid:
 
@@ -4293,7 +4292,7 @@ Things to avoid:
 
 Here's the process outline for what it takes to become a committer:
 
-- Get your [[file:contributor_agreement.xml][CA]] on file
+- Get your [[#content/dev/contributor_agreement][CA]] on file
 - Join the [[http://groups.google.com/group/clojure-dev][clojure-dev]]
   mailing list
 - Create a [[https://clojure.atlassian.net/projects/CLJ][JIRA account]]
@@ -4412,6 +4411,9 @@ Contrib Release Numbering Policy
   possible
 
 *** Coding Guidelines
+:PROPERTIES:
+:CUSTOM_ID: content/dev/contrib_howto#coding-guidelines
+:END:
 
 Disclaimer:
 
@@ -4540,7 +4542,7 @@ libraries called /Clojure contrib/, which all exist under the
 [[https://github.com/clojure][Clojure organization]] on GitHub.
 
 These libraries use the same contribution model
-([[file:contributor_agreement.xml][Contributor Agreement]], license, and
+([[#content/dev/contributor_agreement][Contributor Agreement]], license, and
 copyright) as Clojure itself, and a shared infrastructure maintained by
 the Clojure core team:
 
@@ -4647,7 +4649,7 @@ And finally, there are some repositories in the Clojure GitHub
 organization that are not libraries at all:
 
 - [[https://github.com/clojure/clojure-site/][clojure-site]] - this web
-  site, see [[file:xref/../../community/contributing_site.xml][Site
+  site, see [[#content/community/contributing_site][Site
   Contributions]]
 - [[https://github.com/clojure/clojurescript-site/][clojurescript-site]]
   - [[https://clojurescript.org]] web site
@@ -4670,8 +4672,7 @@ namespaces contributed by the community. In the Clojure 1.3 timeframe,
 this library was split into the independent libraries that exist today
 with independent owners. Some of the namespaces were seen as
 experimental and not promoted into any public library. Stuart Sierra
-recounts this in more detail in his
-[[file:xref/../../news/2012/02/17/clojure-governance.xml][post]].
+recounts this in more detail in his [[#content/news/2012/02/17/clojure-governance][post]].
 
 At the time there was an idea that some of the contrib libraries could
 eventually be promoted into Clojure's core library itself. With time,
@@ -4679,13 +4680,13 @@ there has been a desire to keep Clojure's core library small and to
 allow these independent libraries to stay independent and evolve at
 their own pace.
 
-Also see [[file:contrib_history.xml][Contrib History]] for some legacy
-history of the contrib split.
+Also see [[#content/dev/contrib_history][Contrib History]] for some legacy history of the contrib
+split.
 
 *** Contrib How-To
 
 Some older content on participating or contributing to contrib can be
-found at [[file:contrib_howto.xml][Contrib How-To]].
+found at [[#content/dev/contrib_howto][Contrib How-To]].
 
 ** Contributor Agreement
 :PROPERTIES:
@@ -4728,7 +4729,7 @@ listing authorized contributors that is accessible via a public URL.
 
 *** Contributors
 
-See the full [[file:contributors.xml][list of contributors]] that have
+See the full [[#content/dev/contributors][list of contributors]] that have
 signed the Clojure Contributor Agreement.
 
 *** Contributed patches to Clojure:
@@ -4907,7 +4908,7 @@ signed the Clojure Contributor Agreement.
 :END:
 
 Below is a list of all signers of the Clojure
-[[file:contributor_agreement.xml][Contributor Agreement]].
+[[#content/dev/contributor_agreement][Contributor Agreement]].
 
 *** /Signed Contributor Agreement:/
 
@@ -6677,11 +6678,11 @@ Below is a list of all signers of the Clojure
 :END:
 
 If you do not have a JIRA account, please follow the
-[[file:xref/../../community/contributing.xml#_reporting_problems_and_requesting_enhancements][preferred
+[[#content/community/contributing#reporting-problems-and-requesting-enhancements][preferred
 process]] for filing an issue at
 [[https://ask.clojure.org][ask.clojure.org]]. If you're interested in
 supplying patches or contributing to Clojure, please see the
-[[file:dev.xml][development overview]].
+[[#content/dev/dev][development overview]].
 
 *** Creating Tickets
 
@@ -6815,7 +6816,7 @@ DO NOT use these tags:
 :END:
 
 If you're interested in supplying patches or contributing to Clojure,
-please see the [[file:dev.xml][development overview]].
+please see the [[#content/dev/dev][development overview]].
 
 *** Before You Code
 
@@ -7184,16 +7185,16 @@ backward compatibility.
 *** Becoming a Contributor
 
 First, please consider the
-[[file:xref/../../community/contributing.xml][many ways to contribute]]
+[[#content/community/contributing][many ways to contribute]]
 as a Clojure user. If you wish to discuss a problem or enhancement,
-[[file:xref/../../community/ask.xml][you can do so on the forum]]
+[[#content/community/ask][you can do so on the forum]]
 without becoming a contributor.
 
 The Clojure core team values those that engage with the current stream
 of ongoing work, doing the hard work of triage,
-[[file:developing_patches.xml][patch development]],
-[[file:screening_tickets.xml][screening]], etc. The
-[[file:workflow.xml][workflow]] page highlights places to tap into those
+[[#content/dev/developing_patches][patch development]],
+[[#content/dev/screening_tickets][screening]], etc. The
+[[#content/dev/workflow][workflow]] page highlights places to tap into those
 queues of work as jira reports. The core team tends to focus on tickets
 primarily in the late alpha / early beta period for a release cycle.
 During other parts of the release cycle, activity may seem dormant, but
@@ -7203,9 +7204,7 @@ quickly through the cycle at the appropriate time.
 
 If you are interested in becoming involved as an active contributor:
 
-1. Sign the [[file:contributor_agreement.xml][Clojure Contributor
-  Agreement]].
-
+1. Sign the [[#content/dev/contributor_agreement][Clojure Contributor Agreement]].
 2. File a
   [[https://clojure.atlassian.net/servicedesk/customer/portal/1][contributor
   support request]] to get a contributor account - please include the
@@ -7217,12 +7216,12 @@ If you are interested in becoming involved as an active contributor:
 Contributors can file tickets directly in the issue tracker. You might
 want to check what you are seeing with others on a Clojure discussion
 forum before filing. Please review the
-[[file:creating_tickets.xml][guide to creating useful tickets]].
+[[#content/dev/creating_tickets][guide to creating useful tickets]].
 
 Clojure accepts contributions as patches on issues. Please review
-[[file:developing_patches.xml][these guidelines]] on developing patches.
+[[#content/dev/developing_patches][these guidelines]] on developing patches.
 Tickets may be assessed over a long period of time, following the
-[[file:workflow.xml][workflow]].
+[[#content/dev/workflow][workflow]].
 
 **** Enhancements and Features
 
@@ -7240,8 +7239,8 @@ this idea for discussion in one of the Clojure forums. In particular,
 the mailing lists or #clojure-dev room on Clojurian slack are good
 places to discuss.
 
-Please follow the guidelines in [[file:creating_tickets.xml][Creating
-Tickets]] and [[file:developing_patches.xml][Developing Patches]] -
+Please follow the guidelines in [[#content/dev/creating_tickets][Creating
+Tickets]] and [[#content/dev/developing_patches][Developing Patches]] -
 enhancement/feature tickets should start with a compelling problem to
 solve and compare alternatives and their tradeoffs, rather than leap
 straight to a solution and a patch. Clojure is a small language and
@@ -7257,7 +7256,7 @@ change during the development of the release in response to either
 feedback or changing external needs. Because of this, a roadmap is
 typically not declared at the beginning of a release. Ongoing
 development is visible during alpha releases, often phased over multiple
-dev releases. The [[file:xref/../../releases/devchangelog.xml][Dev
+dev releases. The [[#content/releases/devchangelog][Dev
 Changelog]] chronicles these changes during the release cycle.
 
 Additionally, the core team may be doing work in dependent projects or
@@ -7272,7 +7271,7 @@ tools.deps, clj, etc. This is still considered part of the broader
 :END:
 
 If you're interested in supplying patches or contributing to Clojure,
-please see the [[file:dev.xml][development overview]].
+please see the [[#content/dev/dev][development overview]].
 
 The job of screening is to create a funnel, so that the highest
 importance, highest urgency items are brought to the BDFL's attention
@@ -7389,7 +7388,7 @@ kinds of things:
 - Test the functionality from the REPL
 - Does the patch accomplish the goals stated in the ticket
 - Is the code in proper style? But remember that
-  [[file:xref/../../dev/contrib_howto.xml#_coding_guidelines][Coding
+  [[#content/dev/contrib_howto#coding-guidelines][Coding
   Guidelines]] are guidelines, not fixed laws of the universe.
 - If questions were raised in the discussion, are they answered in the
   ticket?
@@ -7449,9 +7448,8 @@ of responsibility:
 
 - Anyone - anyone can submit a bug or enhancement request to Clojure
   once you have created a Clojure JIRA account
-- Contributors - anyone that has
-  [[file:contributor_agreement.xml][signed the contributor agreement]]
-  can supply patches or work on improving tickets
+- Contributors - anyone that has [[#content/dev/contributor_agreement][signed the contributor agreement]] can
+  supply patches or work on improving tickets
 - Screeners - a smaller group of trusted individuals have been granted
   the ability to move tickets through (some of) the stages of the
   process, in particular the Triage and Screening activities
@@ -7519,7 +7517,7 @@ an activity. Activities are described in more detail below the diagram.
   tickets]]
 - Goal: decide whether the bug or enhancement described in the ticket
   is actually a real bug or enhancement.
-- Process (see: [[file:creating_tickets.xml][Creating Tickets]]):
+- Process (see: [[#content/dev/creating_tickets][Creating Tickets]]):
   1. Is the ticket about 1 thing? If not, then either split the ticket
      yourself or ask the submitter to do so.
   2. Does the ticket clearly state the problem? If not, then either
@@ -7548,7 +7546,7 @@ an activity. Activities are described in more detail below the diagram.
     - Too many things: break this ticket apart into smaller pieces
   - Set Approval=Triaged - problem is ok
     - If needed, adjust ticket to standards in
-      [[file:creating_tickets.xml][Creating Tickets]]
+      [[#content/dev/creating_tickets][Creating Tickets]]
 
 *Prescreening*
 
@@ -7624,13 +7622,13 @@ an activity. Activities are described in more detail below the diagram.
     submitter has updated ticket since marked Incomplete.
 - Goal: verify that ticket and patch are ready for Rich to review. The
   quality bar is HIGH - the ticket and patch should be perfect.
-- Checks (see [[file:creating_tickets.xml][Creating Tickets]] and
-  [[file:developing_patches.xml][Developing Patches]] and
-  [[file:screening_tickets.xml][Screening Tickets]]):
+- Checks (see [[#content/dev/creating_tickets][Creating Tickets]] and
+  [[#content/dev/developing_patches][Developing Patches]] and
+  [[#content/dev/screening_tickets][Screening Tickets]]):
 
   1. Is there a patch?
   2. Is there a test?
-  3. Has author [[file:contributor_agreement.xml][signed the CA]]?
+  3. Has author [[#content/dev/contributor_agreement][signed the CA]]?
   4. Can you apply the patch to current source tree?
   5. Do all tests pass?
   6. Is patch clean (no extraneous whitespace or changes outside the
@@ -9715,11 +9713,11 @@ In all cases, using a library involves:
 Clojure tools specify a syntax and file (deps.edn) for (a), given which
 they'll handle (b) and (c) automatically.
 
-See [[file:getting_started.xml][Getting Started]] for details on how to
+See [[#content/guides/getting_started][Getting Started]] for details on how to
 install the tools. Here we will demonstrate how to get started. See
-[[file:xref/../../reference/deps_and_cli.xml][Deps and CLI]] for a
+[[#content/reference/deps_and_cli][Deps and CLI]] for a
 complete reference. See the
-[[file:xref/../../releases/tools.xml][changelog]] for version
+[[#content/community/tools][changelog]] for version
 information.
 
 *** Running a REPL and using libraries
@@ -10185,7 +10183,7 @@ $ clj -M -m hello
 Hello, World!
 #+END_EXAMPLE
 
-See [[file:xref/../../reference/compilation.xml][Compilation and Class
+See [[#content/reference/compilation][Compilation and Class
 Generation]] for a complete reference.
 
 **** Run a socket server remote repl
@@ -10235,7 +10233,6 @@ Use Ctrl-D to exit the repl and Ctrl-C to exit the server.
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/destructuring.adoc]]
 :CUSTOM_ID: content/guides/destructuring
 :END:
-
 *** What is Destructuring?
 
 Destructuring is a way to concisely bind names to the values inside a
@@ -10290,6 +10287,9 @@ containing two elements, ~x1~ and ~y1~. This binds ~5~ to the symbol
 need to work with our data.
 
 *** Sequential Destructuring
+:PROPERTIES:
+:CUSTOM_ID: content/guides/destructuring#sequential-destructuring
+:END:
 
 Clojure destructuring is broken up into two categories, sequential
 destructuring and associative destructuring. Sequential destructuring
@@ -10962,7 +10962,7 @@ Exceptions, or possible surprises:
   (as map keys, or set elements), it will not appear equal to a similar
   collection with Clojure counterparts, due to the difference in
   hashing behavior. (see
-  [[file:xref/../equality.xml#equality_and_hash][Equality and hash]]
+  [[#content/guides/equality#equality-and-hash][Equality and hash]]
   and [[https://clojure.atlassian.net/browse/CLJ-1372][CLJ-1372]])
 - When comparing collections with ~=~, numbers within the collections
   are also compared with ~=~, so the three numeric categories above are
@@ -11006,7 +11006,7 @@ as elements, or hash-based maps with those items as keys.
   ~(double x)~ to avoid this issue.
 - ~hash~ is not consistent with ~=~ for immutable Clojure collections
   and their non-Clojure counterparts. See the
-  [[file:xref/../equality.xml#equality_and_hash][Equality and hash]]
+  [[#content/guides/equality#equality-and-hash][Equality and hash]]
   section for more details. /Recommendation:/ Convert non-Clojure
   collections to their Clojure immutable counterparts before including
   them in other Clojure data structures.
@@ -11045,7 +11045,7 @@ false
 
 If you want to test for numeric equality across different numeric
 categories, use ~==~. See the section
-[[file:xref/../equality.xml#numbers][Numbers]] below for details.
+[[#content/guides/equality#numbers][Numbers]] below for details.
 
 Sequential collections (sequences, vectors, lists, and queues) with
 equal elements in the same order are equal:
@@ -11197,6 +11197,9 @@ guaranteeing that all keywords with the same namespace and name will
 return the same keyword object.
 
 *** Numbers
+:PROPERTIES:
+:CUSTOM_ID: content/guides/equality#numbers
+:END:
 
 Java ~equals~ is only true for two numbers if the types and numeric
 values are the same. Thus ~equals~ is false even for Integer 1 and Long
@@ -11234,7 +11237,7 @@ are numerically equal, even if they are in different categories. Thus
 Why does ~=~ have different categories for numbers, you might wonder? It
 would be difficult (if it is even possible) to make ~hash~ consistent
 with ~=~ if it behaved like ~==~ (see section
-[[file:xref/../equality.xml#equality_and_hash][Equality and hash]]).
+[[#content/guides/equality#equality-and-hash][Equality and hash]]).
 Imagine trying to write ~hash~ such that it was guaranteed to return the
 same hash value for all of ~(float 1.5)~, ~(double 1.5)~, BigDecimal
 values 1.50M, 1.500M, etc. and the ratio ~(/ 3 2)~.
@@ -11351,6 +11354,9 @@ true
 #+END_SRC
 
 *** Equality and hash
+:PROPERTIES:
+:CUSTOM_ID: content/guides/equality#equality-and-hash
+:END:
 
 Java has ~equals~ to compare pairs of objects for equality.
 
@@ -11677,7 +11683,7 @@ from a collection of maps possible.
 
 **** Is :1 a valid keyword?
 
-The [[file:xref/../../reference/reader.xml][reader]] page defines
+The [[#content/reference/reader][reader]] page defines
 keywords as "like symbols" and symbols "begin with a non-numeric
 character" so the original intent was that ~:1~ would be invalid. In
 fact, the only reason it is readable at all is due to a
@@ -11740,7 +11746,7 @@ macros). Clojure gives back some of the power of reader macros with
 tagged literals, allowing you to create generically readable /data/,
 that is still extensible.
 
-Also see the [[file:xref/../../about/history.xml][History of Clojure]]
+Also see the [[#content/about/history][History of Clojure]]
 paper section about this (search for "reader macros").
 
 **** What does an \_ mean in a let binding or parameter?
@@ -11748,7 +11754,7 @@ paper section about this (search for "reader macros").
 \_ has no special meaning in Clojure as a symbol. However, it is a
 convention to use \_ (or a leading \_) to denote a binding that will not
 be used in the expression. A common case for this is skipping unneeded
-values in [[file:destructuring.xml#_sequential_destructuring][sequential
+values in [[#content/guides/destructuring#sequential-destructuring][sequential
 destructuring]]:
 
 #+BEGIN_SRC clojure
@@ -11766,7 +11772,7 @@ side-effects. More specifically, a trailing ~?~ indicates that a
 predicate strictly returns a boolean result (~true~ or ~false~). A
 trailing ~!~ was originally intended to indicate that a function has
 side-effects that would make it unsafe to use inside a
-[[file:xref/../../reference/refs.xml][ref transaction]] (in the Software
+[[#content/reference/refs][ref transaction]] (in the Software
 Transactional Memory sense). In the wild, the use of ~!~ is less
 consistent and is sometimes used in a broader way to indicate any sort
 of side-effecting behavior.
@@ -12111,6 +12117,9 @@ Primitive types can be found as the static TYPE field on the boxed
 class, for example: ~Integer/TYPE~.
 
 **** How do you invoke a Java method with a vararg signature?
+:PROPERTIES:
+:CUSTOM_ID: content/guides/faq#varargs
+:END:
 
 Java treats a trailing varargs parameter as an array and it can be
 invoked from Clojure by passing an explicit array.
@@ -12288,7 +12297,7 @@ attached in the email.
 Rich Hickey prefers to evaluate patches attached to JIRA tickets. This
 is not to make it more difficult for contributors, or for legal reasons,
 but because of workflow preferences. See
-[[file:xref/../../dev/dev.xml][the development page]] for more details.
+[[#content/dev/dev][the development page]] for more details.
 
 [[https://groups.google.com/forum/#!msg/clojure/jWMaop_eVaQ/3M4gddaXDZoJ][Link]]
 to Oct 2012 Clojure Google group message from Rich Hickey on this topic.
@@ -12325,9 +12334,9 @@ and we encourage you to go for it!
 
 Welcome to Clojure!
 
-Check out [[file:learn/syntax.xml][Learn Clojure]],
-[[file:xref/../../community/resources.xml][Resources]], or
-[[file:xref/../../community/books.xml][Books]] to learn the language! If
+Check out [[#content/guides/learn/syntax][Learn Clojure]],
+[[#content/community/resources][Resources]], or
+[[#content/community/books][Books]] to learn the language! If
 you have questions, you can search or ask at the official forum
 [[https://ask.clojure.org][Ask Clojure]].
 
@@ -12344,7 +12353,7 @@ or that the ~JAVA_HOME~ environment variable is set.
 
 *** Clojure installer and CLI tools
 
-Clojure provides [[file:deps_and_cli.xml][command line tools]] that can
+Clojure provides [[#content/reference/deps_and_cli][command line tools]] that can
 be used to start a Clojure repl, use Clojure and Java libraries, and
 start Clojure programs.
 
@@ -12409,12 +12418,15 @@ Clojure]] or Clojurians slack in #clj-on-windows.
 
 **** Other versions
 
-See the [[file:xref/../../releases/tools.xml][changelog]] for version
+See the [[#content/community/tools][changelog]] for version
 history and the [[https://github.com/clojure/homebrew-tools][Clojure
 tap]] for info on installing older versions or newer prereleases
 instead.
 
 *** Other ways to run Clojure
+:PROPERTIES:
+:CUSTOM_ID: content/guides/getting_started#other-ways-to-run-clojure
+:END:
 
 *Local build*
 
@@ -12443,11 +12455,11 @@ Clojure repl for interactive exploration.
 
 *** Next steps
 
-- [[file:xref/../../community/tools.xml][Install editors and build
+- [[#content/community/tools][Install editors and build
   tools]]
-- [[file:learn/syntax.xml][Start learning the Clojure basics]]
-- [[file:xref/../../community/books.xml][Learn Clojure from a book]]
-- [[file:xref/../../community/resources.xml][Explore Clojure
+- [[#content/guides/learn/syntax][Start learning the Clojure basics]]
+- [[#content/community/books][Learn Clojure from a book]]
+- [[#content/community/resources][Explore Clojure
   communities and resources]]
 - [[https://ask.clojure.org][Ask questions about Clojure]]
 
@@ -12456,7 +12468,6 @@ Clojure repl for interactive exploration.
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/core_async_go.adoc]]
 :CUSTOM_ID: content/guides/core_async_go
 :END:
-
 *** General advice
 
 It's very tempting to do the following to send a message without waiting
@@ -12578,28 +12589,28 @@ practical compromise, translation stops when it sees a ~(fn [] …​)~.
 
 *** Learning
 
-- [[file:getting_started.xml][Getting Started]]
-- [[file:learn/syntax.xml][Learn Clojure]]
-- [[file:repl/introduction.xml][Programming at the REPL]]
-- [[file:faq.xml][FAQ]]
+- [[#content/guides/getting_started][Getting Started]]
+- [[#content/guides/learn/syntax][Learn Clojure]]
+- [[#content/guides/repl/introduction][Programming at the REPL]]
+- [[#content/guides/faq][FAQ]]
 
 *** Language
 
-- [[file:spec.xml][spec]]
-- [[file:weird_characters.xml][Reading Clojure Characters]]
-- [[file:destructuring.xml][Destructuring]]
-- [[file:threading_macros.xml][Threading Macros]]
-- [[file:comparators.xml][Comparators]]
-- [[file:reader_conditionals.xml][Reader Conditionals]]
+- [[#content/about/spec][spec]]
+- [[#content/guides/weird_characters][Reading Clojure Characters]]
+- [[#content/guides/destructuring][Destructuring]]
+- [[#content/guides/threading_macros][Threading Macros]]
+- [[#content/guides/comparators][Comparators]]
+- [[#content/guides/reader_conditionals][Reader Conditionals]]
 
 *** Tools
 
-- [[file:deps_and_cli.xml][Deps and CLI]]
-- [[file:test_check_beginner.xml][test.check]]
+- [[#content/reference/deps_and_cli][Deps and CLI]]
+- [[#content/guides/test_check_beginner][test.check]]
 
 *** Libraries
 
-- [[file:core_async_go.xml][Go Block Best Practices]]
+- [[#content/guides/core_async_go][Go Block Best Practices]]
 
 ** Higher Order Functions
 :PROPERTIES:
@@ -12901,9 +12912,12 @@ user=> (binding [*compile-files* true] (require 'user :reload-all))
 :END:
 
 This page contains solutions to the "Test your knowledge" sections of
-the [[file:syntax.xml][Learn Clojure]] guide.
+the [[#content/guides/learn/syntax][Learn Clojure]] guide.
 
-**** [[file:syntax.xml#_test_your_knowledge][Syntax]]
+**** [[#content/guides/learn/syntax#test-your-knowledge][Syntax]]
+:PROPERTIES:
+:CUSTOM_ID: content/guides/learn/answers#syntax
+:END:
 
 1. Using the REPL, compute the sum of 7654 and 1234.
 
@@ -12942,7 +12956,10 @@ the [[file:syntax.xml][Learn Clojure]] guide.
 
    ~pst~
 
-**** [[file:functions.xml#_test_your_knowledge][Functions]]
+**** [[#content/guides/learn/functions#test-your-knowledge][Functions]]
+:PROPERTIES:
+:CUSTOM_ID: content/guides/learn/answers#functions
+:END:
 
 1. Define a function ~greet~ that takes no arguments and prints
    "Hello".
@@ -13088,7 +13105,7 @@ leads to less duplicate code, as well as fewer intermediate variables.
 Flow control operators are also extensible via macros, which allow the
 compiler to be extended by user code. We won't be discussing macros
 today, but you can read more about them at
-[[file:xref/../../../reference/macros.xml][Macros]],
+[[#content/reference/macros][Macros]],
 [[https://aphyr.com/posts/305-clojure-from-the-ground-up-macros][Clojure
 from the Ground Up]], or
 [[http://www.braveclojure.com/writing-macros/][Clojure for the Brave and
@@ -13693,8 +13710,11 @@ Clojure:
 #+END_SRC
 
 **** Test your knowledge
+:PROPERTIES:
+:CUSTOM_ID: content/guides/learn/functions#test-your-knowledge
+:END:
 
-/[[file:answers.xml#_functions][Check your answers]]/
+/[[#content/guides/learn/answers#functions][Check your answers]]/
 
 1) Define a function ~greet~ that takes no arguments and prints "Hello".
 Replace the ~___~ with the implementation: ~(defn greet [] _)~
@@ -14585,7 +14605,6 @@ user=> (pop stack)
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/syntax.adoc]]
 :CUSTOM_ID: content/guides/learn/syntax
 :END:
-
 **** Literals
 
 Below are some examples of literal representations of common primitives
@@ -14689,7 +14708,7 @@ loaded by the JVM.
 [[/images/content/guides/learn/syntax/clojure-evaluation.png]]
 
 In Clojure, source code is read as characters by the
-[[file:xref/../../../reference/reader.xml][Reader]]. The Reader may read
+[[#content/reference/reader][Reader]]. The Reader may read
 the source either from .clj files or be given a series of expressions
 interactively. The Reader produces Clojure data. The Clojure compiler
 then produces the bytecode for the JVM.
@@ -15018,20 +15037,20 @@ Depending on context, you may prefer either the human form or the data
 form.
 
 **** Test your knowledge
+:PROPERTIES:
+:CUSTOM_ID: content/guides/learn/syntax#test-your-knowledge
+:END:
 
 1. Using the REPL, compute the sum of 7654 and 1234.
-
 2. Rewrite the following algebraic expression as a Clojure expression:
-  ~( 7 + 3 * 4 + 5 ) / 10~.
-
+   ~( 7 + 3 * 4 + 5 ) / 10~.
 3. Using REPL documentation functions, find the documentation for the
-  ~rem~ and ~mod~ functions. Compare the results of the provided
-  expressions based on the documentation.
-
+   ~rem~ and ~mod~ functions. Compare the results of the provided
+   expressions based on the documentation.
 4. Using ~find-doc~, find the function that prints the stack trace of
-  the most recent REPL exception.
+   the most recent REPL exception.
 
-[[file:answers.xml#_syntax][Check your answers]]
+[[#content/guides/learn/answers#syntax][Check your answers]]
 
 ** Reader Conditionals Guide
 :PROPERTIES:
@@ -15051,7 +15070,7 @@ require any extra tooling. To use reader conditionals, all you need is
 for your file to have a ~.cljc~ extension. Reader conditionals are
 expressions, and can be manipulated like ordinary Clojure expressions.
 For more technical details, see the reference page on
-[[file:xref/../../reference/reader.xml][the reader]].
+[[#content/reference/reader][the reader]].
 
 There are two types of reader conditionals, standard and splicing. The
 standard reader conditional behaves similarly to a traditional ~cond~.
@@ -15228,7 +15247,7 @@ code between platforms was solved by a Leiningen plugin called
 ~.cljx~ extension and outputs multiple platform specific files to a
 generated sources directory. These were then read as normal Clojure or
 ClojureScript files by the Clojure
-[[file:xref/../../reference/reader.xml][reader]]. This worked well, but
+[[#content/reference/reader][reader]]. This worked well, but
 required another piece of tooling to run. cljx was deprecated on June 13
 2015 in favour of reader conditionals.
 
@@ -15289,7 +15308,7 @@ splicing reader conditional to splice the vector into the parent
 This page explains the Clojure syntax for characters that are difficult
 to "google". Sections are not in any particular order, but related items
 are grouped for ease. Please refer to
-[[file:xref/../../reference/reader.xml][the reader reference page]] as
+[[#content/reference/reader][the reader reference page]] as
 the authoritative reference on the Clojure reader. This guide is based
 on [[http://twitter.com/kouphax][James Hughes]] original
 [[https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/][blog
@@ -15301,8 +15320,7 @@ author.
 Lists are sequential heterogeneous collections implemented as a linked
 list.
 
-- [[file:xref/../../reference/data_structures.xml#Lists][Clojure
-  Documentation: Lists]]
+- [[#content/reference/data_structures#lists][Clojure Documentation: Lists]]
 
 A list of three values:
 
@@ -15323,8 +15341,7 @@ user=> (get ["a" 13.7 :foo] 1)
 13.7
 #+END_SRC
 
-- [[file:xref/../../reference/data_structures.xml#Vectors][Clojure
-  Documentation: Vectors]]
+- [[#content/reference/data_structures#vectors][Clojure Documentation: Vectors]]
 
 *** ~{ …​ }~ - Map
 
@@ -15336,10 +15353,12 @@ user=> (keys {:a 1 :b 2})
 (:a :b)
 #+END_SRC
 
-- [[file:xref/../../reference/data_structures.xml#Maps][Clojure
-  Documentation: Maps]]
+- [[#content/reference/data_structures#maps][Clojure Documentation: Maps]]
 
 *** ~#~ - Dispatch character
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#dispatch
+:END:
 
 You'll see this character beside another e.g. ~#(~ or ~#"~.
 
@@ -15347,15 +15366,15 @@ You'll see this character beside another e.g. ~#(~ or ~#"~.
 that takes Clojure source and "reads" it as Clojure data) how to
 interpret the next character using a /read table/. Although some Lisps
 allow the read table to be extended by users, Clojure
-[[file:faq.xml#reader_macros][does not]].
+[[#content/guides/faq#reader-macros][does not]].
 
 The ~#~ is also used at the /end/ of a symbol when creating
-[[file:xref/../weird_characters.xml#gensym][generated symbols]] inside a
+[[#content/guides/weird_characters#gensym][generated symbols]] inside a
 syntax quote.
 
 *** ~#{ …​ }~ - Set
 
-See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
+See [[#content/guides/weird_characters#dispatch][#]] for additional
 details.
 
 ~#{…​}~ defines a set (a collection of unique values), specifically a
@@ -15378,12 +15397,11 @@ Syntax error reading source at (REPL:83:13).
 Duplicate key: 1
 #+END_SRC
 
-- [[file:xref/../../reference/data_structures.xml#sets][Clojure
-  Documentation: Sets]]
+- [[#content/reference/data_structures#sets][Clojure Documentation: Sets]]
 
 *** ~#_~ - Discard
 
-See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
+See [[#content/guides/weird_characters#dispatch][#]] for additional
 details.
 
 ~#_~ tells the reader to ignore the next form completely.
@@ -15414,14 +15432,12 @@ the reader (This is a more complete removal than the ~comment~ macro
 which yields ~nil~).". This can prove useful for debugging situations or
 for multiline comments.
 
-- [[file:xref/../../reference/reader.xml][Clojure Documentation -
-  Reader]]
-- [[https://github.com/edn-format/edn#tagged-elements][edn Tagged
-  Elements]]
+- [[#content/reference/reader][Clojure Documentation - Reader]]
+- [[https://github.com/edn-format/edn#tagged-elements][edn Tagged Elements]]
 
 *** ~#"…​"~ - Regular Expression
 
-See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
+See [[#content/guides/weird_characters#dispatch][#]] for additional
 details.
 
 ~#"~ indicates the start of a regular expression
@@ -15435,14 +15451,14 @@ This form is compiled at /read time/ into a host-specific regex
 machinery, but it is not available in edn. Note that when using regexes
 in Clojure, Java string escaping is not required
 
-- [[file:xref/../../reference/other_functions.xml#regex][Clojure
+- [[#content/reference/other_functions#regex-support][Clojure
   Documentation: Regex Support]]
 - [[http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html][Java
   Regex]]
 
 *** ~#(…​)~ - Anonymous function
 
-See [[file:xref/../weird_characters.xml#dispatch][#]] for additional
+See [[#content/guides/weird_characters#dispatch][#]] for additional
 details.
 
 ~#(~ begins the short hand syntax for an inline function definition. The
@@ -15486,12 +15502,11 @@ user=> #'nine
 When used it will attempt to return the referenced var. This is useful
 when you want to talk about the reference/declaration instead of the
 value it represents. See the use of ~meta~ in the metadata
-([[file:xref/../weird_characters.xml#metadata][^]]) discussion.
+([[#content/guides/weird_characters#metadata][^]]) discussion.
 
 Note that var quote is not available in edn.
 
-- [[file:xref/../../reference/special_forms.xml#var][Clojure Official
-  Documentation: Special Forms]]
+- [[#content/reference/special_forms#var][Clojure Official Documentation: Special Forms]]
 
 *** ~##~ - Symbolic values
 
@@ -15605,13 +15620,16 @@ user=>
 
 ~@~ is used to get the current value of a reference. The above example
 uses ~@~ to get the current value of an
-[[file:xref/../../reference/atoms.xml][atom]], but ~@~ can be applied to
+[[#content/reference/atoms][atom]], but ~@~ can be applied to
 other things such as ~future~ s, ~delay~ s, ~promises~ s etc. to force
 computation and potentially block.
 
 Note that ~@~ is not available in edn.
 
 *** ~^~ (and ~#^~) - Metadata
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#metadata
+:END:
 
 ~^~ is the metadata marker. Metadata is a map of values (with shorthand
 option) that can be attached to various forms in Clojure. This provides
@@ -15674,7 +15692,7 @@ you will see in most Clojure, but occasionally you will encounter the
 
 Note that metadata is available in edn, but type hints are not.
 
-- [[file:xref/../../reference/metadata.xml][Clojure Official
+- [[#content/reference/metadata][Clojure Official
   Documentation]]
 - [[http://en.wikibooks.org/wiki/Learning_Clojure/Meta_Data][Learning
   Clojure: Meta Data]]
@@ -15699,8 +15717,7 @@ user=> (quote (1 2 3)) ; using the longer quote method
 user=>
 #+END_SRC
 
-- [[file:xref/../../reference/special_forms.xml#quote][Clojure Special
-  Forms]]
+- [[#content/reference/special_forms#quote][Clojure Special Forms]]
 
 *** ~;~ - Comment
 
@@ -15758,10 +15775,12 @@ user => (get my-map :three 3) ; same as above, but using get
 3
 #+END_SRC
 
-- [[file:xref/../../reference/data_structures.xml#Keywords][Data
-  Structures - Keywords]]
+- [[#content/reference/data_structures#keywords][Data Structures - Keywords]]
 
 *** ~::~ - Auto-resolved keyword
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#autoresolved-keys
+:END:
 
 ~::~ is used to auto-resolve a keyword in the current namespace. If no
 qualifier is specified, it will auto-resolve to the current namespace.
@@ -15784,7 +15803,7 @@ qualified name.
 
 Note that ~::~ is not available in edn.
 
-- [[file:xref/../../reference/reader.xml][Reader]]
+- [[#content/reference/reader][Reader]]
 
 *** ~#:~ and ~#::~ - Namespace Map Syntax
 
@@ -15830,7 +15849,7 @@ user=> (keys #::{:a 1, :b 2})
 #+END_SRC
 
 Similar to
-[[file:xref/../weird_characters.xml#autoresolved_keys][autoresolved
+[[#content/guides/weird_characters#autoresolved-keys][autoresolved
 keywords]], you can also use ~#::alias~ to auto-resolve with a namespace
 alias defined in the ~ns~ form:
 
@@ -15855,7 +15874,7 @@ is read the same as:
                      :rebel.ship/model "YT-1300f light freighter"}}
 #+END_SRC
 
-- [[file:xref/../../reference/reader.xml#map_namespace_syntax][Reader]]
+- [[#content/reference/reader#map-namespace-syntax][Reader]]
 
 *** ~/~ - Namespace separator
 
@@ -15864,7 +15883,7 @@ separator in a symbol name to separate a symbol's name and namespace
 qualifier, e.g. ~my-namespace/utils~. Namespace qualifiers can thus
 prevent naming collisions for simple names.
 
-- [[file:xref/../../reference/reader.xml][Reader]]
+- [[#content/reference/reader][Reader]]
 
 *** ~\~ - Character literal
 
@@ -15901,18 +15920,21 @@ is an imported Java class
 
 - [[http://blog.jayfields.com/2011/01/clojure-using-java-inner-classes.html][Clojure:
   Using Java Inner Classes]]
-- [[file:xref/../../reference/java_interop.xml][Official
+- [[#content/reference/java_interop][Official
   Documentation]]
 
 *** ~->~, ~->>~, ~some->~, ~cond->~, ~as->~ etc. - Threading macros
 
 These are threading macros. Please refer to
-[[file:xref/../threading_macros.xml][Official Clojure Documentation]]
+[[#content/guides/threading_macros][Official Clojure Documentation]]
 
 - [[http://blog.fogus.me/2009/09/04/understanding-the-clojure-macro/][Understanding
   the Clojure -> macro]]
 
 *** ~`~ - Syntax quote
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#syntax-quote
+:END:
 
 ~`~ is the syntax quote. Syntax quote is similar to quoting (to delay
 evaluation) but has some additional effects.
@@ -15958,20 +15980,22 @@ form that will evaluate the body, print its value, and then return the
 value. Here the syntax quote creates a list, but does not evaluate it.
 That list is actually code.
 
-See [[file:xref/../weird_characters.xml#unquote_splicing][~@]] and
-[[file:xref/../weird_characters.xml#unquote][~]] for additional syntax
+See [[#content/guides/weird_characters#unquote-splice][~@]] and
+[[#content/guides/weird_characters#unquote][~]] for additional syntax
 allowed only within syntax quote.
 
 - [[http://www.braveclojure.com/writing-macros/][Clojure for the Brave
   and True - Writing Macros]]
 - [[http://aphyr.com/posts/305-clojure-from-the-ground-up-macros][Clojure
   from the ground up: macros]]
-- [[file:xref/../../reference/macros.xml][Clojure Official
-  Documentation]]
+- [[#content/reference/macros][Clojure Official Documentation]]
 
 *** ~~~ - Unquote
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#unquote
+:END:
 
-See [[file:xref/../weird_characters.xml#syntax_quote][`]] for
+See [[#content/guides/weird_characters#syntax-quote][`]] for
 additional information.
 
 ~~~ is unquote. Syntax quote, like quote, means that evaluation is not
@@ -15998,16 +16022,19 @@ are functions invoked during compilation that take code and return code.
   and True - Writing Macros]]
 - [[http://aphyr.com/posts/305-clojure-from-the-ground-up-macros][Clojure
   from the ground up: macros]]
-- [[file:xref/../../macros.xml][Clojure Official Documentation]]
+- [[#content/reference/macros][Clojure Official Documentation]]
 
 *** ~~@~ - Unquote splicing
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#unquote-splice
+:END:
 
-See [[file:xref/../weird_characters.xml#syntax_quote][`]] and
-[[file:xref/../weird_characters.xml#unquote][~]] for additional
+See [[#content/guides/weird_characters#syntax-quote][`]] and
+[[#content/guides/weird_characters#unquote][~]] for additional
 information.
 
 ~~@~ is unquote-splicing. Where unquote
-[[file:xref/../weird_characters.xml#unquote][(~~~)]] evaluates a form
+[[#content/guides/weird_characters#unquote][(~~~)]] evaluates a form
 and places the result into the quoted result, ~~@~ expects the evaluated
 value to be a collection and splices the /contents/ of that collection
 into the quoted result.
@@ -16027,9 +16054,12 @@ Again, this is a powerful tool for writing macros.
   and True - Writing Macros]]
 - [[http://aphyr.com/posts/305-clojure-from-the-ground-up-macros][Clojure
   from the ground up: macros]]
-- [[file:xref/../../macros.xml][Clojure Official Documentation]]
+- [[#content/reference/macros][Clojure Official Documentation]]
 
 *** ~<symbol>#~ - Gensym
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#gensym
+:END:
 
 A ~#~ /at the end/ of a symbol is used to automatically generate a new
 symbol. This is useful inside macros to keep macro specifics from
@@ -16091,7 +16121,7 @@ traditional ~cond~. The syntax for usage is ~#?~ and looks like this:
    :default (fallthrough expression))
 #+END_SRC
 
-- [[file:xref/../reader_conditionals.xml][Reader conditionals]]
+- [[#content/guides/reader_conditionals][Reader conditionals]]
 
 *** ~#?@~ - Splicing Reader conditional
 
@@ -16112,7 +16142,7 @@ as this:
   (list 5 6 7 8))
 #+END_SRC
 
-- [[file:xref/../reader_conditionals.xml][Reader conditonals]]
+- [[#content/guides/reader_conditionals][Reader conditonals]]
 
 *** ~*var-name*~ - "Earmuffs"
 
@@ -16177,7 +16207,7 @@ the pain of managing asynchronous code from the code base.
 - [[https://github.com/clojure/core.async/blob/master/examples/walkthrough.clj][core.async
   Code Walkthrough]]
 - [[https://github.com/clojure/core.async/wiki][core.async Wiki]]
-- [[file:xref/../core_async_go.xml][Go Block Best Practices]]
+- [[#content/guides/core_async_go][Go Block Best Practices]]
 
 *** ~<symbol>?~ - Predicate Suffix
 
@@ -16412,7 +16442,7 @@ confusing in this case: the reason is that the Clojure compiler, having
 found no loaded namespace named ~clojure.set~, is trying to interpret
 clojure.set as a Java class. The solution is to make sure the
 clojure.set lib
-[[file:navigating_namespaces.xml#how-to-make-sure-a-lib-is-loaded][has
+[[#content/guides/repl/navigating_namespaces#how-to-make-sure-a-lib-is-loaded][has
 been loaded]].
 
 **** Trying to require a namespace that does not exist
@@ -16427,7 +16457,7 @@ Could not locate a/b/c__init.class, a/b/c.clj or a/b/c.cljc on classpath.
 
 *Explanations:* Clojure did not find any existing namespace named
 ~a.b.c~, then searched the classpath for a
-[[file:xref/../../../reference/libs.xml][lib]] that would define it,
+[[#content/reference/libs][lib]] that would define it,
 eventualling failing with the above Exception. The cause may vary:
 
 - maybe you just made a typo in the namespace name
@@ -16447,7 +16477,7 @@ eventualling failing with the above Exception. The cause may vary:
 **** Evaluating Clojure expressions
 
 Having started the REPL (as described
-[[file:launching_a_basic_repl.xml][in the previous chapter]]), you can
+[[#content/guides/repl/launching_a_basic_repl][in the previous chapter]]), you can
 now evaluate Clojure expressions by simply typing them into the REPL and
 pressing ENTER:
 
@@ -16497,7 +16527,7 @@ example of what this looks like (the editor used is
 
 [[/images/content/guides/repl/editor-cli-repl.gif]]
 
-In the /[[file:enhancing_your_repl_workflow.xml][Enhancing your REPL
+In the /[[#content/guides/repl/enhancing_your_repl_workflow][Enhancing your REPL
 workflow]]/ chapter of this guide, we will see more ergonomic
 configurations for using the REPL. However, this minimalist setup is
 sufficient for the scope of this tutorial, and is important for
@@ -16534,7 +16564,7 @@ nature:
 So far, we have only called code that we had defined manually at the
 REPL (for instance our ~factorial~ function defined above). But the REPL
 also lets you use pre-existing Clojure code, i.e Clojure
-[[file:xref/../../../reference/libs.xml][libs]].[fn:1] Given a Clojure
+[[#content/reference/libs][libs]].[fn:1] Given a Clojure
 lib with namespace ~my.name.space~, you can evaluate
 ~(require '[my.name.space])~ to make that lib's code loaded and
 available in the REPL.
@@ -16754,7 +16784,7 @@ This is illustrated by this example REPL session:
 #+END_QUOTE
 
 [fn:1] Note that what we call a Clojure
-       [[file:xref/../../../reference/libs.xml][lib]] is not necessarily
+       [[#content/reference/libs][lib]] is not necessarily
        a [[https://en.wikipedia.org/wiki/Library_(computing)][library]]:
        it can also be a source code file in your current project.
 
@@ -17226,7 +17256,7 @@ needs.
 
 Finally, there also exist 3rd-party Clojure tools for data
 visualization; we will see a selection of them in chapter
-[[file:enhancing_your_repl_workflow.xml][Enhancing your REPL workflow]].
+[[#content/guides/repl/enhancing_your_repl_workflow][Enhancing your REPL workflow]].
 
 **** Dealing with mysterious values (advanced)
 
@@ -17381,8 +17411,7 @@ exist more ergonomic terminal REPL clients:
 
 - *[[https://github.com/bhauman/rebel-readline][rebel-readline]]* is a
   terminal readline library made by Bruce Hauman. If you have already
-  installed the [[file:xref/../../deps_and_cli.xml][Clojure CLI
-  tools]], you can launch it in
+  installed the [[#content/reference/deps_and_cli][Clojure CLI tools]], you can launch it in
   [[https://github.com/bhauman/rebel-readline#quick-try][one line at
   the terminal]] without any additional installation steps.
 - *[[https://github.com/Unrepl/unravel][Unravel]]* by Paulus Esterhazy
@@ -17458,7 +17487,7 @@ You can usually customize how your REPL reads, evaluates and prints, but
 the method to do it depends on your toolchain. For instance:
 
 - when using a REPL started from
-  [[file:xref/../../../reference/repl_and_main.xml][clojure.main]] (as
+  [[#content/reference/repl_and_main][clojure.main]] (as
   is the case when using the ~clj~ tool) you can customize the REPL by
   launching a 'sub-REPL': see
   [[https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl][clojure.main/repl]].
@@ -17471,7 +17500,7 @@ the method to do it depends on your toolchain. For instance:
 #+END_QUOTE
 
 The Clojure
-[[file:xref/../../../reference/repl_and_main.xml#launching_a_socket_server][socket
+[[#content/reference/repl_and_main#launching-a-socket-server][socket
 server]] feature can be used to that end. Tools like
 *[[https://nrepl.org][nREPL]]* and
 *[[https://github.com/Unrepl/unrepl][unrepl]]* can be used to provide a
@@ -17947,7 +17976,7 @@ a poor tool for detecting breakage.
 :END:
 
 This guide is for developers who have at least a
-[[file:xref/../../learn/syntax.xml][basic understanding]] of Clojure,
+[[#content/guides/learn/syntax][basic understanding]] of Clojure,
 and want to become more proficient at using the Clojure REPL.
 
 **** What is a REPL?
@@ -18010,21 +18039,21 @@ Depending on your needs, you may not need to read the entirety of this
 guide:
 
 - If you are *just starting to learn Clojure*, the first 2 chapters
-  [[file:launching_a_basic_repl.xml][Launching a basic Clojure REPL]]
-  and [[file:basic_usage.xml][Basic Usage]] are enough to get you
+  [[#content/guides/repl/launching_a_basic_repl][Launching a basic Clojure REPL]]
+  and [[#content/guides/repl/basic_usage][Basic Usage]] are enough to get you
   started with a productive learning environment.
 - As soon as you start *developing non-trivial programs* (such as a
   hobby web app), you will need the ideas presented in at least the
-  next 2 chapters: [[file:data_visualization_at_the_repl.xml][Data
+  next 2 chapters: [[#content/guides/repl/data_visualization_at_the_repl][Data
   visualization at the REPL]] and
-  [[file:navigating_namespaces.xml][Navigating namespaces]].
+  [[#content/guides/repl/navigating_namespaces][Navigating namespaces]].
 - For *working on Clojure projects at a professional level*,
-  [[file:enhancing_your_repl_workflow.xml][Enhancing your REPL
+  [[#content/guides/repl/enhancing_your_repl_workflow][Enhancing your REPL
   workflow]] and
-  [[file:guidelines_for_repl_aided_development.xml][Guidelines for
+  [[#content/guides/repl/guidelines_for_repl_aided_development][Guidelines for
   REPL-Aided Development]] are must-reads.
 
-First, we'll learn how to [[file:launching_a_basic_repl.xml][launch a
+First, we'll learn how to [[#content/guides/repl/launching_a_basic_repl][launch a
 basic Clojure REPL]].
 
 *** Programming at the REPL
@@ -18039,7 +18068,7 @@ terminal window:
 **** Using the CLI tools
 
 The easiest way to start a Clojure REPL is with using the ~clj~ command
-of the Clojure [[file:xref/../../deps_and_cli.xml][CLI tools]]:
+of the Clojure [[#content/reference/deps_and_cli][CLI tools]]:
 
 #+BEGIN_EXAMPLE
 clj ## run this command in a terminal window
@@ -18052,7 +18081,7 @@ Clojure 1.9.0
 user=>
 #+END_EXAMPLE
 
-See [[file:xref/../../getting_started.xml][Getting Started]] to learn
+See [[#content/guides/getting_started][Getting Started]] to learn
 how to install the Clojure CLI.
 
 You can exit the REPL by typing ~Ctrl+D~ (pressing the ~Ctrl~ and ~D~
@@ -18120,9 +18149,7 @@ boot.user=>
 
 **** Using Java and the Clojure JAR
 
-If you have
-[[file:xref/../../getting_started.xml#_other_ways_to_run_clojure][downloaded
-and built Clojure]], you can use Java to launch a Clojure REPL:
+If you have [[#content/guides/getting_started#other-ways-to-run-clojure][downloaded and built Clojure]], you can use Java to launch a Clojure REPL:
 
 #+BEGIN_EXAMPLE
 java -jar clojure.jar
@@ -18148,7 +18175,7 @@ same expressions in the REPL as your program does when it runs.
 
 This is achieved by giving your REPL the same context as your running
 program, which implies using REPL in the same
-[[file:xref/../../../reference/namespaces.xml][namespaces]] where your
+[[#content/reference/namespaces][namespaces]] where your
 code is defined. We will see how to do that in the following sections.
 
 *NOTE:* Namespaces are one of the trickiest parts of Clojure. If you're
@@ -18366,7 +18393,7 @@ to deal with these subtleties.
 
 Most of the namespaces you will navigate at the REPL will already exist
 in source files or dependencies of your project, i.e in
-[[file:xref/../../../reference/libs.xml][libs]] of your project.
+[[#content/reference/libs][libs]] of your project.
 
 There is an important usage precaution for switching to namespaces
 defined in libs:
@@ -18375,21 +18402,22 @@ defined in libs:
 *Note*
 
 *If a namespace is defined in a
-[[file:xref/../../../reference/libs.xml][lib]] of your project, always
+[[#content/reference/libs][lib]] of your project, always
 make sure you have /loaded/ the lib in the REPL before switching to
 it.*
 #+END_QUOTE
 
 ***** How to make sure a lib is loaded
+:PROPERTIES:
+:CUSTOM_ID: content/guides/repl/navigating_namespaces#how-to-make-sure-a-lib-is-loaded
+:END:
 
 To make sure that a lib with namespace ~mylib.ns1~ has been loaded in
 the REPL, you can do any one of the following:
 
 1. ~require~ it directly: ~(require '[mylib.ns1])~
-
 2. load a namespace which itself requires ~mylib.ns1~ (directly or
-  indirectly).
-
+   indirectly).
 3. evaluate manually all the code in the source file ~mylib.ns1~
 
 ***** Example: a project for greeting people
@@ -18534,7 +18562,7 @@ Unable to resolve symbol: nicknames in this context
 :END:
 *** Getting started
 
-The [[file:xref/../../../about/spec.xml][spec]] library
+The [[#content/about/spec][spec]] library
 ([[https://clojure.github.io/spec.alpha][API docs]]) specifies the
 structure of data, validates or conforms it, and can generate data based
 on the spec.
@@ -20203,10 +20231,10 @@ generator techniques and help on testing in a future update.
 
 *** More information
 
-- [[file:xref/../../../about/spec.xml][spec Rationale]]
+- [[#content/about/spec][spec Rationale]]
 - [[https://clojure.github.io/spec.alpha][API Docs]]
 - [[https://github.com/clojure/spec.alpha][Project]]
-- [[file:xref/../../../community/resources.xml#spec][spec Resources]]
+- [[resources#spec][spec Resources]]
 
 ** test.check
 :PROPERTIES:
@@ -20775,7 +20803,7 @@ functions used, but there are a few rules of thumb:
   variants. Pipelines that transform maps using these functions often
   require the ~->~ macro.
 - When calling methods through
-  [[file:xref/../../reference/java_interop.xml][Java interop]], the
+  [[#content/reference/java_interop][Java interop]], the
   Java object is passed in as the first argument. In such cases, ~->~
   is useful, for example, to check a string for a prefix:
 
@@ -20819,7 +20847,7 @@ resembles ~->~ in that it threads a value through a number of
 expressions. However, it also short-circuits execution when an
 expression evaluates as ~nil~ at any point in the chain. One common
 problem with arrow macros in the context of
-[[file:xref/../../reference/java_interop.xml][Java interop]] is that
+[[#content/reference/java_interop][Java interop]] is that
 Java methods do not expect to be passed ~nil~ (~null~). One way to avoid
 a ~NullPointerException~ in these cases is to add an explicit guard:
 
@@ -20962,6 +20990,9 @@ The remainder of this guide demonstrates individual common use cases and
 how to satisfy them with tools.build programs.
 
 *** Source library jar build
+:PROPERTIES:
+:CUSTOM_ID: content/guides/tools_build#source-library-jar-build
+:END:
 
 The most common Clojure build creates a jar file containing Clojure
 source code. To do this with tools.build we'll use the following tasks:
@@ -21283,7 +21314,7 @@ never been a goal of Clojure, nor will it be a goal of ClojureScript.
 We have a [[https://clojure.atlassian.net/projects/CLJS][ClojureScript
 JIRA instance]] set up to track bugs. As with Clojure itself, submitting
 patches requires signing the
-[[file:xref/../../../../../dev/contributor_agreement.xml][Clojure
+[[#content/dev/contributor_agreement][Clojure
 Contributor Agreement]]. We can only accept patches through JIRA, not
 GitHub pull requests.
 
@@ -21510,7 +21541,7 @@ contrib libraries were stagnant, their original authors lacking time to
 continue working on them.
 
 Finally, almost a year later, the situation has stabilized:
-[[file:xref/../../../../../dev/contrib_libs.xml][contrib libraries]],
+[[#content/dev/contrib_libs][contrib libraries]],
 each with its own Git repository, test suite,
 [[https://build.clojure.org/][continuous integration]], and independent
 release cycle. The overall code quality is higher and development is
@@ -21579,7 +21610,7 @@ from the free-wheeling, fast-paced open-source world of Ruby on Rails.
 We really don't enjoy saying "no" all the time. But a conservative
 attitude toward new features is exactly the reason Clojure is so stable.
 Patches don't get into the language until they have been
-[[file:xref/../../../../../dev/workflow.xml][reviewed by at least three
+[[#content/dev/workflow][reviewed by at least three
 people]], one of them Rich Hickey. New libraries don't get added to
 contrib without mailing-list discussions. None of the new contrib
 libraries has reached the 1.0.0 milestone, and probably won't for some
@@ -21912,7 +21943,7 @@ task at hand.
 *** Follow Up
 
 See the follow up
-[[file:xref/../../../05/15/anatomy-of-reducer.xml][blog post]] for more
+[[#content/news/2012/05/15/anatomy-of-reducer][blog post]] for more
 details about what constitutes a reducer, as well as some background
 about the library.
 
@@ -21924,7 +21955,7 @@ Rich
 :CUSTOM_ID: content/news/2012/05/15/anatomy-of-reducer
 :END:
 
-Last time, [[file:xref/../../08/reducers.xml][I blogged]] about
+Last time, [[#content/news/2012/05/08/reducers][I blogged]] about
 Clojure's new
 [[https://github.com/clojure/clojure/blob/master/src/clj/clojure/core/reducers.clj][reducers
 library]]. This time I'd like to look at the details of what constitutes
@@ -22618,7 +22649,7 @@ list]] of all changes since Clojure 1.6 for more details.
 
 *** Transducers
 
-[[file:xref/../../../../../../reference/transducers.xml][Transducers]]
+[[#content/reference/transducers][Transducers]]
 are composable algorithmic transformations. They are independent from
 the context of their input and output sources and specify only the
 essence of the transformation in terms of an individual element. Because
@@ -22658,9 +22689,7 @@ platform-specific versions (.clj/.class or .cljs) of those namespaces.
 
 To support cases where is not feasible to isolate the varying parts of
 the code, or where the code is mostly portable with only small
-platform-specific parts, 1.7 provides
-[[file:xref/../../../../../../reference/reader.xml#_reader_conditionals][Reader
-Conditionals]].
+platform-specific parts, 1.7 provides [[#content/reference/reader#reader-conditionals][Reader Conditionals]].
 
 Reader conditionals are a new reader form that is only allowed in
 portable cljc files. A reader conditional expression is similar to a
@@ -22725,17 +22754,17 @@ There are also several new things on the site:
 - [[file:xref/../../../../news.xml][News]] - periodically we will post
   topical news here about new features, releases, or other things of
   note - these also appear as links on the home page
-- [[file:xref/../../../../../community/events.xml][Events]] - there is
+- [[#content/community/events][Events]] - there is
   now a page for each upcoming Clojure event, also with links on the
   home page
-- [[file:xref/../../../../../guides.xml][Guides]] - a new section for
+- [[#content/guides/guides][Guides]] - a new section for
   building out community guides and tutorials
 
 Most importantly, all of the site content is stored in a
 [[https://github.com/clojure/clojure-site][repository]] and open for
 pull requests from contributors with a signed contributor agreement. If
 you are interested in adding or changing content, please check out the
-page on [[file:xref/../../../../../community/contributing_site.xml][site
+page on [[#content/community/contributing_site][site
 contributions]] and the current
 [[https://github.com/clojure/clojure-site/issues][issues]] list.
 
@@ -22751,10 +22780,8 @@ Some of the new features for 1.8 are:
   [[https://clojure.github.io/clojure/clojure.string-api.html][clojure.string]]
   (portable to ClojureScript): index-of, last-index-of, starts-with?,
   ends-with?, includes?
-- Compiler
-  [[file:xref/../../../../../reference/compilation.xml#directlinking][direct
-  linking]] - improves performance and startup time
-- [[file:xref/../../../../../reference/repl_and_main.xml#_launching_a_socket_server][Socket
+- Compiler [[#content/reference/compilation#direct-linking][direct linking]] - improves performance and startup time
+- [[#content/reference/repl_and_main#launching-a-socket-server][Socket
   server]] and socket server REPL - adds the ability to allow remote
   Clojure REPL connections
 
@@ -23268,8 +23295,8 @@ Clojure 1.9 is now available!
 Clojure 1.9 introduces two major new features: integration with spec and
 command line tools.
 
-spec ([[file:xref/../../../../../about/spec.xml][rationale]],
-[[file:xref/../../../../../guides/spec.xml][guide]]) is a library for
+spec ([[#content/about/spec][rationale]],
+[[#content/guides/spec][guide]]) is a library for
 describing the structure of data and functions with support for:
 
 - Validation
@@ -23291,9 +23318,8 @@ This modularization facilitates refinement of spec separate from the
 Clojure release cycle.
 
 The command line tools
-([[file:xref/../../../../../guides/getting_started.xml][getting
-started]], [[file:xref/../../../../../guides/deps_and_cli.xml][guide]],
-[[file:xref/../../../../../reference/deps_and_cli.xml][reference]])
+([[#content/guides/getting_started][getting started]], [[#content/guides/deps_and_cli][guide]],
+[[#content/reference/deps_and_cli][reference]])
 provide:
 
 - Quick and easy install
@@ -23407,12 +23433,10 @@ to convert these ideas into a working system.
 
 For more information see:
 
-- [[file:xref/../../../../../guides/getting_started.xml][Getting
-  Started]] - to install or update the Clojure tools
-- [[file:xref/../../../../../guides/deps_and_cli.xml][Deps and CLI
+- [[#content/guides/getting_started][Getting Started]] - to install or update the Clojure tools
+- [[#content/guides/deps_and_cli][Deps and CLI
   Guide]] - on how to use the Clojure tools
-- [[file:xref/../../../../../reference/deps_and_cli.xml][Deps and CLI
-  Reference]] - complete reference info
+- [[#content/reference/deps_and_cli][Deps and CLI Reference]] - complete reference info
 - [[https://www.youtube.com/watch?v=oyLBGkS5ICk][Spec-ulation]] keynote
   - on growth versus breakage
 
@@ -23577,7 +23601,7 @@ Clojure 1.10 focuses on two major areas: improved error reporting and
 Java compatibility.
 
 Error reporting at the REPL now
-[[file:xref/../../../../../reference/repl_and_main.xml#_error_printing][categorizes]]
+[[#content/reference/repl_and_main#error-printing][categorizes]]
 errors based on their phase of execution (read, macroexpand, compile,
 etc). Errors carry additional information about location and context as
 data, and present phase-specific error messages with better location
@@ -23716,7 +23740,7 @@ Survey comments said:
   and with Clojurists again should my current gig come to an end."
 
 Hundreds of
-[[file:xref/../../../../../community/companies.xml][companies]] and tens
+[[#content/community/companies][companies]] and tens
 of thousands of Clojure developers are working in Clojure or
 ClojureScript every day, using it as the foundation of their business.
 The survey indicates that Clojure developers are increasingly using it
@@ -23895,7 +23919,7 @@ This release will now catch exceptions and use the same error triage and
 printing functionality as the Clojure repl. The full stack trace,
 ex-info, and other information will be printed to a target specified by
 the configuration. See
-[[file:xref/../../../../../reference/repl_and_main.xml#_as_launcher][clojure.main
+[[#content/reference/repl_and_main#as-launcher][clojure.main
 docs]] for configuration details.
 
 *** Changelog
@@ -23942,7 +23966,7 @@ developers submitting and working on patches, but not for initial
 problem reporting.
 
 For more information see the
-[[file:xref/../../../../../community/ask.xml][forum usage details]].
+[[#content/community/ask][forum usage details]].
 
 ** [2020-01-07] State of Clojure 2020 Survey
 :PROPERTIES:
@@ -24034,7 +24058,7 @@ both companies and teams:
   very happy with it."
 
 Clojure's use continues to grow at hundreds of
-[[file:xref/../../../../../community/companies.xml][companies]], with an
+[[#content/community/companies][companies]], with an
 ever higher percentage of developers using it at work for their core
 business.
 
@@ -25279,11 +25303,11 @@ crafting from a REPL!
 :END:
 
 Several years ago, Clojure introduced
-[[file:xref/../../../../../reference/deps_and_cli.xml#_deps_edn][deps.edn]]
+[[#content/reference/deps_and_cli#deps.edn][deps.edn]]
 (a data definition for dependencies),
 [[https://github.com/clojure/tools.deps.alpha/][tools.deps]] (a library
 for computing classpaths), and the
-[[file:xref/../../../../../reference/deps_and_cli.xml][Clojure CLI]] to
+[[#content/reference/deps_and_cli][Clojure CLI]] to
 run programs. The Clojure community has widely adopted these and we are
 excited today to provide a clear path for users looking to use these
 same tools to build their projects:
@@ -25328,16 +25352,14 @@ for your deps.edn project, you will:
 For more details and full examples, see the following:
 
 - [[https://clojure.github.io/tools.build][tools.build API]]
-- [[file:xref/../../../../../guides/tools_build.xml#_source_library_jar_build][tools.build
+- [[#content/guides/tools_build#source-library-jar-build][tools.build
   guide]]
 
 *** Source Repos as Libs
 
 Due to Clojure's dynamic nature, we can directly use source repositories
 as libraries without the overhead of making, distributing, and consuming
-artifacts. This release provides some
-[[file:xref/../../../../../reference/deps_and_cli.xml#_git][updates for
-git libraries]]:
+artifacts. This release provides some [[#content/reference/deps_and_cli#git][updates for git libraries]]:
 
 - Git repository urls are now optional and inferred if the library name
   follows a naming convention
@@ -25370,8 +25392,7 @@ function using the ~:build~ alias, presumably filling the
 ~target/classes~ directory with necessary classes to put on the
 classpath (~"target/classes"~ should be in the project ~:paths~). More
 information on supporting unprepped dependencies is available in the
-[[file:xref/../../../../../reference/deps_and_cli.xml#prep][Clojure CLI
-reference]].
+[[#content/reference/deps_and_cli#prep-libs][Clojure CLI reference]].
 
 *** Tools
 
@@ -25410,8 +25431,7 @@ clj -X:deps help/doc :ns help
 To look at the documentation for the ~clojure.tools.cli.help~ namespace.
 
 More information on the new
-[[file:xref/../../../../../reference/deps_and_cli.xml#tool_install][tools
-support in the CLI]] is available in the reference docs.
+[[#content/reference/deps_and_cli#tool-installation-and-invocation][tools support in the CLI]] is available in the reference docs.
 
 *** Installation
 
@@ -25420,9 +25440,7 @@ A prerelease version of the CLI is now available: 1.10.3.905.
 On Mac or Linux, you can install the prerelease
 [[https://github.com/clojure/homebrew-tools#version-archive-tool-releases][using
 brew]]. On Linux or Windows you can use the installer per the
-instructions in
-[[file:xref/../../../../../guides/getting_started.xml][Getting Started]]
-to install the specific version above.
+instructions in [[#content/guides/getting_started][Getting Started]] to install the specific version above.
 
 *** What's New
 
@@ -25432,11 +25450,10 @@ required for existing deps.edn projects or CLI usage.
 - [[https://github.com/clojure/tools.build][tools.build]] - a new
   library for builds
   - [[https://clojure.github.io/tools.build][API]] - what's available
-  - [[file:xref/../../../../../guides/tools_build.xml][Guide]] - how
+  - [[#content/guides/tools_build][Guide]] - how
     to use it
 - deps.edn:
-  - [[file:xref/../../../../../reference/deps_and_cli.xml#_git][git
-    deps]]
+  - [[#content/reference/deps_and_cli#git][git deps]]
     - If a git library name follows the repo convention names, the
       ~:git/url~ can now be inferred (~:git/url~ can also be
       specified explicitly and takes precedence)
@@ -25446,24 +25463,20 @@ required for existing deps.edn projects or CLI usage.
       supported for backwards compatibility
   - A new ~:deps/prep-lib~ top-level key is used to say how a lib is
     prepared with the following keys: ~:alias~, ~:fn~, and ~:ensures~.
-    See
-    [[file:xref/../../../../../reference/deps_and_cli.xml#prep][prep]]
-    docs for more.
+    See [[#content/reference/deps_and_cli#prep-libs][prep]] docs for more.
   - A new ~:tools/usage~ top-level key is used to provide the
     ~:ns-default~ and ~:ns-aliases~ context for a tool
-- [[file:xref/../../../../../reference/deps_and_cli.xml][Clojure CLI]]
+- [[#content/reference/deps_and_cli][Clojure CLI]]
   - New ~-T~ switch is like ~-X~ (invokes a function) but omits the
     project ~:paths~ and ~:deps~ and adds ~:paths ["."]~ to provide a
     clean tool classpath. ~-T:aliases~ is same as -X, ~-Ttoolname~ -
     resolves and uses tool context.
-  - New API
-    [[file:xref/../../../../../reference/deps_and_cli.xml#_other_programs][help
-    functions]] available via the built-in ~:deps~ alias: ~help/doc~
+  - New API [[#content/reference/deps_and_cli#other-programs][help functions]] available via the built-in ~:deps~ alias: ~help/doc~
     and ~help/dir~
   - New API function ~basis~ that can be used to provide a custom
     basis to use, in combination with other tools that take a basis
   - New API program ~prep~ that is used to
-    [[file:xref/../../../../../reference/deps_and_cli.xml#prep][prep]]
+    [[#content/reference/deps_and_cli#prep-libs][prep]]
     source libs
 - [[https://github.com/clojure/tools.deps.alpha][tools.deps.alpha]]
   - New library API: ~create-basis~ (also available in tools.build -
@@ -25471,7 +25484,7 @@ required for existing deps.edn projects or CLI usage.
 - [[https://github.com/clojure/tools.tools][tools.tools]] - a tool
   library for managing tools
   - [[https://clojure.github.io/tools.tools][API]]
-  - [[file:xref/../../../../../reference/deps_and_cli.xml#tool_install][Reference]]
+  - [[#content/reference/deps_and_cli#tool-installation-and-invocation][Reference]]
   - tools.tools is auto-installed by the Clojure CLI as a tool named
     ~tools~ (invoke with ~-Ttools~)
 
@@ -27590,7 +27603,7 @@ USA
 :END:
 
 Like Refs, Agents provide shared access to mutable state. Where
-[[file:refs.xml][Refs]] support /coordinated/, /synchronous/ change of
+[[#content/reference/refs][Refs]] support /coordinated/, /synchronous/ change of
 /multiple/ locations, Agents provide /independent/, /asynchronous/
 change of /individual/ locations. Agents are bound to a single storage
 location for their lifetime, and only allow mutation of that location
@@ -27609,7 +27622,7 @@ itself immutable (preferably an instance of one of Clojure's persistent
 collections), and the state of an Agent is always immediately available
 for reading by any thread (using the
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
-function or [[file:reader.xml][reader]] macro @) without any messages,
+function or [[#content/reference/reader][reader]] macro @) without any messages,
 i.e. observation does not require cooperation or coordination.
 
 Agent action dispatches take the form (send agent fn args*).
@@ -27699,7 +27712,7 @@ Create an Agent:
 
 Examine an Agent:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
-/(see also the @ [[file:reader.xml][reader]] macro)/
+/(see also the @ [[#content/reference/reader][reader]] macro)/
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error][agent-error]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler][error-handler]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode][error-mode]]
@@ -27877,6 +27890,9 @@ following should occur:
   - A stub classfile will be produced with the specified name
 
 *** Compiler options
+:PROPERTIES:
+:CUSTOM_ID: content/reference/compilation#compiler-options
+:END:
 
 The Clojure compiler can be controlled via the use of several compiler
 flags. At runtime these are stored in the dynamic var
@@ -27918,6 +27934,10 @@ may make certain features inoperable (for example, ~doc~ cannot return
 docstrings if they have been elided).
 
 **** Direct linking
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/reference/compilation.adoc]]
+:CUSTOM_ID: content/reference/compilation#direct-linking
+:END:
 
 Normally, invoking a function will cause a var to be dereferenced to
 find the function instance implementing it, then invoking that function.
@@ -28244,7 +28264,7 @@ Coercions:
 *** Strings
 
 Clojure strings are Java Strings. See also
-[[file:other_functions.xml#printing][Printing]].
+[[#content/reference/other_functions#printing][Printing]].
 
 #+BEGIN_EXAMPLE
 user=> (map (fn [x] (.toUpperCase x)) (.split "Dasher Dancer Prancer" " "))
@@ -28272,10 +28292,13 @@ Clojure characters are Java Characters.
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-escape-string][char-escape-string]]
 
 *** Keywords
+:PROPERTIES:
+:CUSTOM_ID: content/reference/data_structures#keywords
+:END:
 
 Keywords are symbolic identifiers that evaluate to themselves. They
 provide very fast equality tests. Like Symbols, they have names and
-optional [[file:namespaces.xml][namespaces]], both of which are strings.
+optional [[#content/reference/namespaces][namespaces]], both of which are strings.
 The leading ':' is not part of the namespace or name.
 
 Keywords implement IFn for invoke() of one argument (a map) with an
@@ -28294,7 +28317,7 @@ optional second argument (a default value). For example
 Symbols are identifiers that are normally used to refer to something
 else. They can be used in program forms to refer to function parameters,
 let bindings, class names and global vars. They have names and optional
-[[file:namespaces.xml][namespaces]], both of which are strings. Symbols
+[[#content/reference/namespaces][namespaces]], both of which are strings. Symbols
 can have metadata (see
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta][with-meta]]).
 
@@ -28309,7 +28332,7 @@ Symbols, just like Keywords, implement IFn for invoke() of one argument
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol][symbol]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol?][symbol?]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/genysm][gensym]]
-(see also the #-suffix [[file:reader.xml][reader]] macro)
+(see also the #-suffix [[#content/reference/reader][reader]] macro)
 
 *** Collections
 
@@ -28336,7 +28359,7 @@ collections.
 
 Because collections support the
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
-function, all of the [[file:sequences.xml][sequence functions]] can be
+function, all of the [[#content/reference/sequences][sequence functions]] can be
 used with any collection.
 
 **** Java collection hashes
@@ -28391,6 +28414,9 @@ The
 algorithm is an implementation detail subject to change.
 
 *** Lists (IPersistentList)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/data_structures#lists
+:END:
 
 Lists are collections. They implement the ISeq interface directly. (Note
 that the empty list implements ISeq as well, however the ~seq~ function
@@ -28414,6 +28440,9 @@ Examine a list:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list?][list?]]
 
 *** Vectors (IPersistentVector)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/data_structures#vectors
+:END:
 
 A Vector is a collection of values indexed by contiguous integers.
 Vectors support access to items by index in log32N hops.
@@ -28448,9 +28477,12 @@ Examine a vector:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subvec][subvec]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace][replace]]
 
-See also [[file:other_libraries.xml][zippers]]
+See also [[#content/reference/other_libraries][zippers]]
 
 *** Maps (IPersistentMap)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/data_structures#maps
+:END:
 
 A Map is a collection that maps keys to values. Two different map types
 are provided - hashed and sorted. Hash maps require keys that correctly
@@ -28507,7 +28539,7 @@ Examine a map entry:
 *Note*
 
 Most uses of StructMaps would now be better served by
-[[file:datatypes.xml][records]].
+[[#content/reference/datatypes][records]].
 #+END_QUOTE
 
 Often many map instances have the same base set of keys, for instance
@@ -28570,6 +28602,9 @@ un-'modified'. Subsequent assoc-ing will eventually cause it to 'become'
 a hash-map.
 
 *** Sets
+:PROPERTIES:
+:CUSTOM_ID: content/reference/data_structures#sets
+:END:
 
 Sets are collections of unique values.
 
@@ -28667,7 +28702,6 @@ are simply sets of maps -
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/datatypes.adoc]]
 :CUSTOM_ID: content/reference/datatypes
 :END:
-
 *** Motivation
 
 Clojure is written in terms of abstractions. There are abstractions for
@@ -28676,7 +28710,7 @@ many implementations of these abstractions. The abstractions are
 specified by host interfaces, and the implementations by host classes.
 While this was sufficient for bootstrapping the language, it left
 Clojure without similar abstraction and low-level implementation
-facilities. The [[file:protocols.xml][protocols]] and [[#][datatypes]]
+facilities. The [[#content/reference/protocols][protocols]] and [[#][datatypes]]
 features add powerful and flexible mechanisms for abstraction and data
 structure definition with no compromises vs the facilities of the host
 platform.
@@ -28692,7 +28726,7 @@ and
 , provide the mechanism for defining implementations of abstractions,
 and in the case of reify, instances of those implementations. The
 abstractions themselves are defined by either
-[[file:protocols.xml][protocols]] or interfaces. A datatype provides a
+[[#content/reference/protocols][protocols]] or interfaces. A datatype provides a
 host type, (named in the case of deftype and defrecord, anonymous in the
 case of reify), with some structure (explicit fields in the case of
 deftype and defrecord, implicit closure in the case of reify), and
@@ -28856,6 +28890,9 @@ invocation. *reify* is preferable to proxy in all cases where its
 constraints are not prohibitive.
 
 *** Java annotation support
+:PROPERTIES:
+:CUSTOM_ID: content/reference/datatypes#java-annotation-support
+:END:
 
 Types created with deftype, defrecord, and definterface, can emit
 classes that include Java annotations for Java interop. Annotations are
@@ -29078,6 +29115,9 @@ the keys:
 - ~:exclusions~ - the exclusions map (format subject to change)
 
 *** Tree printing
+:PROPERTIES:
+:CUSTOM_ID: content/reference/dep_expansion#tree-printing
+:END:
 
 A dependency can be printed using either ~clj -Stree~ or the program
 ~clj -X:deps tree~ which
@@ -29109,7 +29149,7 @@ suppressed). The current set of reason codes (subject to change) are:
 
 Clojure "endeavors to be a general-purpose language suitable in those
 areas where Java is suitable" (from
-[[file:xref/../../about/rationale.xml][Rationale]]). To effectively
+[[#content/about/rationale][Rationale]]). To effectively
 target the JVM platform, Clojure needs to provide ready access to Java
 libraries, ideally in a way suited for dynamic development. In practice,
 this means meeting the JVM platform in two places:
@@ -29254,7 +29294,7 @@ clojure [clj-opt*] -M[aliases] [main-opts]
 The -M aliases are pulled from ~deps.edn~ and combined to form an arg
 map. The arg map can modify the classpath or supply main options.
 
-See the [[file:repl_and_main.xml][clojure.main]] documentation for more
+See the [[#content/reference/repl_and_main][clojure.main]] documentation for more
 details on main options.
 
 **** Running a tool
@@ -29335,7 +29375,7 @@ expansion of the dependency tree is computed. Dependency sources
 information. At the completion of this step, all libraries to use in the
 execution have been found and downloaded to local files if needed.
 
-See [[file:dep_expansion.xml][dep expansion]] for more details on the
+See [[#content/reference/dep_expansion][dep expansion]] for more details on the
 dep expansion algorithm.
 
 *Prep libs*
@@ -29364,6 +29404,9 @@ classpath, JVM environment, and main arguments if relevant are used in
 the execution.
 
 *** deps.edn
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#deps.edn
+:END:
 
 The configuration file format (in ~deps.edn~ files) is an edn map with
 top-level keys ~:deps~, ~:paths~, and ~:aliases~, plus provider-specific
@@ -29767,6 +29810,9 @@ environment can be prepared to execute and do necessary network activity
 first, and then later execute without that activity.
 
 **** Other programs
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#other-programs
+:END:
 
 There are some options that can be provided to ~clj~ that short circuit
 normal execution and run an alternate program instead:
@@ -29778,7 +29824,7 @@ The ~:deps~ alias is built into the root deps.edn and provides a default
 namespace with several additional programs:
 
 - ~-X:deps tree~ - print dependency tree (also see
-  [[file:dep_expansion.xml#_tree_printing][tree printing]])
+  [[#content/reference/dep_expansion#tree-printing][tree printing]])
 - ~-X:deps mvn-pom~ - generate (or update an existing) pom.xml with
   deps and paths
 - ~-X:deps git-resolve-tags~ - resolve git coordinate tags to shas and
@@ -29822,6 +29868,9 @@ clojure -X:deps help/doc :ns help
   docs]]
 
 ***** Prep libs
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#prep-libs
+:END:
 
 Source libs with Clojure source can immediately be added to the
 classpath of a project using it. However, some source libs require some
@@ -29850,7 +29899,7 @@ The keys under ~:deps/prep-lib~ are:
 
 Thus, the deps.edn should also have an alias that can execute the fn
 specified. See the
-[[file:xref/../../../guides/tools_build.xml][tools.build Guide]] for how
+[[#content/guides/tools_build][tools.build Guide]] for how
 to use tools.build to define a build script with an invokable function.
 
 If you add this git library as a dependency and try to run a program,
@@ -29882,7 +29931,7 @@ no. All users of this git library on a machine will share the prepared
 classpath created by the prep step. The choice of Clojure compiler and
 dependent libraries is better left to each application making using of
 this lib. For more on using dev-time compilation, see the
-[[file:xref/../../guides/dev_startup_time.xml][Dev Startup Time]]
+[[#content/guides/dev_startup_time][Dev Startup Time]]
 guide.
 #+END_QUOTE
 
@@ -30142,6 +30191,9 @@ This mechanism is used by repositories that authenticate using a token,
 rather than by username and password.
 
 **** Git
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#git
+:END:
 
 The Clojure CLI supports using source-based libs directly from Git
 repositories. Git libs are downloaded by default to the ~~/.gitlibs~
@@ -30224,10 +30276,12 @@ integration:
 
 **** Clojure CLI installers
 
-For tools installation, see the instructions in the
-[[file:xref/../../guides/getting_started.xml][Getting Started]] guide.
+For tools installation, see the instructions in the [[#content/guides/getting_started][Getting Started]] guide.
 
 *** Tool installation and invocation
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#tool-installation-and-invocation
+:END:
 
 The Clojure CLI supports the idea of running tools, which are programs
 that don't use the project classpath, with the -T exec option. Tools are
@@ -30426,6 +30480,9 @@ clj -X:my-fn '[:my :data]' 789
 #+END_EXAMPLE
 
 **** Trailing map argument
+:PROPERTIES:
+:CUSTOM_ID: content/reference/deps_and_cli#trailing-map-argument
+:END:
 
 In addition to passing key-path/value pairs and key paths in the command
 line, an optional map providing value mappings may be passed as the
@@ -30573,35 +30630,35 @@ for project creation, packaging, and much more.
 :END:
 *** Reference Documentation
 
-- [[file:reader.xml][The Reader]]
-- [[file:repl_and_main.xml][The REPL and main]]
-- [[file:evaluation.xml][Evaluation]]
-- [[file:special_forms.xml][Special Forms]]
-- [[file:macros.xml][Macros]]
-- [[file:other_functions.xml][Other Functions]]
-- [[file:data_structures.xml][Data Structures]]
-- [[file:datatypes.xml][Datatypes]]
-- [[file:sequences.xml][Sequences]]
-- [[file:transients.xml][Transients]]
-- [[file:transducers.xml][Transducers]]
-- [[file:multimethods.xml][Multimethods and Hierarchies]]
-- [[file:protocols.xml][Protocols]]
-- [[file:metadata.xml][Metadata]]
-- [[file:namespaces.xml][Namespaces]]
-- [[file:libs.xml][Libs]]
-- [[file:vars.xml][Vars and Environments]]
-- [[file:refs.xml][Refs and Transactions]]
-- [[file:agents.xml][Agents]]
-- [[file:atoms.xml][Atoms]]
-- [[file:reducers.xml][Reducers]]
-- [[file:java_interop.xml][Java Interop]]
-- [[file:compilation.xml][Compilation and Class Generation]]
-- [[file:other_libraries.xml][Other Libraries]]
-- [[file:lisps.xml][Differences with Lisps]]
+- [[#content/reference/reader][The Reader]]
+- [[#content/reference/repl_and_main][The REPL and main]]
+- [[#content/reference/evaluation][Evaluation]]
+- [[#content/reference/special_forms][Special Forms]]
+- [[#content/reference/macros][Macros]]
+- [[#content/reference/other_functions][Other Functions]]
+- [[#content/reference/data_structures][Data Structures]]
+- [[#content/reference/datatypes][Datatypes]]
+- [[#content/reference/sequences][Sequences]]
+- [[#content/reference/transients][Transients]]
+- [[#content/reference/transducers][Transducers]]
+- [[#content/reference/multimethods][Multimethods and Hierarchies]]
+- [[#content/reference/protocols][Protocols]]
+- [[#content/reference/metadata][Metadata]]
+- [[#content/reference/namespaces][Namespaces]]
+- [[#content/reference/libs][Libs]]
+- [[#content/reference/vars][Vars and Environments]]
+- [[#content/reference/refs][Refs and Transactions]]
+- [[#content/reference/agents][Agents]]
+- [[#content/reference/atoms][Atoms]]
+- [[#content/reference/reducers][Reducers]]
+- [[#content/reference/java_interop][Java Interop]]
+- [[#content/reference/compilation][Compilation and Class Generation]]
+- [[#content/reference/other_libraries][Other Libraries]]
+- [[#content/reference/lisps][Differences with Lisps]]
 
 *** API Documentation
 
-- [[file:xref/../../api/api.xml][Clojure API documentation]]
+- [[#content/api/api][Clojure API documentation]]
 
 ** Evaluation
 :PROPERTIES:
@@ -30681,9 +30738,9 @@ or functions. A call has the form (operator operands*).
 Special forms are primitives built-in to Clojure that perform core
 operations. If the operator of a call is a symbol that resolves to the
 name of a special form, the call is to that special form. Each form
-discussed individually under [[file:special_forms.xml][Special Forms]].
+discussed individually under [[#content/reference/special_forms][Special Forms]].
 
-[[file:macros.xml][Macros]] are functions that manipulate forms,
+[[#content/reference/macros][Macros]] are functions that manipulate forms,
 allowing for syntactic abstraction. If the operator of a call is a
 symbol that names a global var that is a macro function, that macro
 function is called and is passed the /unevaluated/ operand forms. The
@@ -30698,7 +30755,7 @@ return value of invoke() is the value of the call expression. If the
 function call form has metadata, it may be used by the compiler, but
 will not be part of the resulting value. Note that special forms and
 macros might have other-than-normal evaluation of their arguments, as
-described in their entries under [[file:special_forms.xml][Special
+described in their entries under [[#content/reference/special_forms][Special
 Forms]].
 
 Any object other than those discussed above will evaluate to itself.
@@ -30790,6 +30847,10 @@ Classname/staticField ==> (. Classname staticField)
 #+END_SRC
 
 *** The Dot special form
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/reference/java_interop.adoc]]
+:CUSTOM_ID: content/reference/java_interop#dot
+:END:
 
 - ~(. instance-expr member-symbol)~
 - ~(. Classname-symbol member-symbol)~
@@ -30869,6 +30930,8 @@ returning it.
 -> {a=1, b=2}
 #+END_SRC
 
+<<java_interop#new>>
+
 - ~(Classname. args*)~
 - ~(new Classname args*)~
 
@@ -30895,6 +30958,8 @@ the latter expanding into the former at macro expansion time.
 
 Evaluates expr and tests if it is an instance of the class. Returns true
 or false
+
+<<java_interop#set!>>
 
 - ~(/set!/ (. instance-expr instanceFieldName-symbol) expr)~
 - ~(/set!/ (. Classname-symbol staticFieldName-symbol) expr)~
@@ -30965,9 +31030,9 @@ As of Clojure 1.2,
 is also available for implementing interfaces.
 
 Java annotations may be attached to classes, constructors, and methods
-via [[file:metadata.xml][metadata]] on ~gen-class~ and Clojure type
+via [[#content/reference/metadata][metadata]] on ~gen-class~ and Clojure type
 constructs, see the
-[[file:datatypes.xml#_java_annotation_support][datatypes reference]] for
+[[#content/reference/datatypes#java-annotation-support][datatypes reference]] for
 an example.
 
 - ~(proxy [class-and-interfaces] [args] fs+)~
@@ -31002,7 +31067,7 @@ It is recommended that you limit use of arrays to interop with Java
 libraries that require them as arguments or use them as return values.
 
 Note that many other Clojure functions work with arrays such as via the
-[[file:sequences.xml][seq library]]. The functions listed here exist for
+[[#content/reference/sequences][seq library]]. The functions listed here exist for
 initial creation of arrays, or to support mutation or higher performance
 operations on arrays.
 
@@ -31014,7 +31079,7 @@ of the vargs.
 
 Depending on the varargs type, use the type-specific array constructors
 for primitives or ~into-array~ to make an array of a specific type. See
-the [[file:xref/../../guides/faq.xml#varargs][FAQ]] for examples.
+the [[#content/guides/faq#varargs][FAQ]] for examples.
 
 Create array from existing collection:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone][aclone]]
@@ -31060,12 +31125,15 @@ Process an existing array:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce][areduce]]
 
 *** Type Hints
+:PROPERTIES:
+:CUSTOM_ID: content/reference/java_interop#type-hints
+:END:
 
 Clojure supports the use of type hints to assist the compiler in
 avoiding reflection in performance-critical areas of code. Normally, one
 should avoid the use of type hints until there is a known performance
 bottleneck. Type hints are
-[[file:metadata.xml#_metadata_reader_macros][metadata tags]] placed on
+[[#content/reference/metadata#metadata-reader-macros][metadata tags]] placed on
 symbols or expressions that are consumed by the compiler. They can be
 placed on function parameters, let-bound names, var names (when
 defined), and expressions:
@@ -31846,8 +31914,8 @@ normal macros.
 
 Some macros produce simple combinations of primitive forms. For example,
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when][when]]
-combines [[file:special_forms.xml#if][if]] and
-[[file:special_forms.xml#do][do]]:
+combines [[#content/reference/special_forms#if][if]] and
+[[#content/reference/special_forms#do][do]]:
 
 #+BEGIN_EXAMPLE
 user=> (macroexpand '(when (pos? a) (println "positive") (/ b a)))
@@ -31897,13 +31965,13 @@ Branching:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond][cond]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp][condp]]
 
-Looping (see also [[file:sequences.xml][Sequences]]):
+Looping (see also [[#content/reference/sequences][Sequences]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq][doseq]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes][dotimes]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while][while]]
 
-Working with vars (see also [[file:vars.xml][Vars and Environment]]):
+Working with vars (see also [[#content/reference/vars][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare][declare]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
@@ -31920,7 +31988,7 @@ Arranging code differently:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto][doto]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e][->]]
 
-Dynamic scopes (see also [[file:vars.xml][Vars and Environment]]):
+Dynamic scopes (see also [[#content/reference/vars][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/locking][locking]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time][time]]
@@ -31930,12 +31998,12 @@ Dynamic scopes (see also [[file:vars.xml][Vars and Environment]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str][with-out-str]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision][with-precision]]
 
-Creating lazy things (see also [[file:sequences.xml][Sequences]]):
+Creating lazy things (see also [[#content/reference/sequences][Sequences]]):
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat][lazy-cat]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cons][lazy-cons]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay][delay]]
 
-[[file:java_interop.xml][Java interop]] macros:
+[[#content/reference/java_interop][Java interop]] macros:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E][..]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce][areduce]]
@@ -31954,7 +32022,7 @@ Transactions:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
 
-A few [[file:special_forms.xml][special forms]] are actually implemented
+A few [[#content/reference/special_forms][special forms]] are actually implemented
 as macros, primarily to provide destructuring: fn let loop
 
 ** Metadata
@@ -32036,9 +32104,12 @@ Modify or reset the metadata respectively for a
 namespace/var/ref/agent/atom.
 
 *** Metadata Reader Macros
+:PROPERTIES:
+:CUSTOM_ID: content/reference/metadata#metadata-reader-macros
+:END:
 
 In addition to with-meta, there are a number of reader macros
-([[file:reader.xml#macrochars][The Reader: Macro Characters]]) for
+([[#content/reference/reader#macro-characters][The Reader: Macro Characters]]) for
 applying metadata to the expression following it at read-time:
 
 - ~^{:doc "How it works!"}~ - adds the metadata map to the metadata of
@@ -32048,7 +32119,7 @@ applying metadata to the expression following it at read-time:
 - ~^"java.lang.String"~ - like ~^{:tag java.lang.String}~
 
 The ~:tag~ key is used to hint an objects type to the Clojure compiler.
-See [[file:java_interop.xml#typehints][Java Interop: Type Hints]] for
+See [[#content/reference/java_interop#type-hints][Java Interop: Type Hints]] for
 more information and a complete list of special type hints.
 
 It is possible to add multiple pieces of metadata by chaining the
@@ -32283,7 +32354,7 @@ route to error-handling methods etc.
 
 /Note: In this example, the keyword :Shape is being used as the dispatch
 function, as keywords are functions of maps, as described in the
-[[file:data_structures.xml][Data Structures]] section./
+[[#content/reference/data_structures][Data Structures]] section./
 
 #+BEGIN_SRC clojure
 (defmulti area :Shape)
@@ -32354,7 +32425,7 @@ Creating and switching to a namespace:
 
 Adding to a namespace:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alias][alias]]
-[[file:special_forms.xml#def][def]]
+[[#content/reference/special_forms#def][def]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import][import]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern][intern]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer][refer]]
@@ -32386,9 +32457,9 @@ Removing things:
 
 Also see:
 
-- [[file:xref/../../../guides/learn/namespaces.xml][Learn Clojure -
+- [[#content/guides/learn/namespaces][Learn Clojure -
   Namespaces]]
-- [[file:vars.xml][Reference - vars]]
+- [[#content/reference/vars][Reference - vars]]
 
 ** Other Useful Functions and Macros
 :PROPERTIES:
@@ -32415,16 +32486,20 @@ Miscellaneous:
 
 *** Creating functions
 
-| Function                                                                                          | Example expression                     | Return value               |    |
-|---------------------------------------------------------------------------------------------------+----------------------------------------+----------------------------+----|
-| [[file:special_forms.xml#fn][fn]]                                                                 | ~(map (fn [x] (+ 2 x)) [1 2 3])~       | ~(3 4 5)~                  |    |
-| #() [[file:reader.xml][reader]] macro                                                             | ~(map #(+ 2 %) [1 2 3])~               | ~(3 4 5)~                  |    |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partial][partial]]         | ~(map (partial + 2) [1 2 3])~          | ~(3 4 5)~                  |    |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comp][comp]]               | ~(map (comp - *) [2 4 6] [1 2 3])~     | ~(-2 -8 -18)~              |    |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/complement][complement]]   | ~(map (complement zero?) [3 2 1 0])~   | ~(true true true false)~   |    |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/constantly][constantly]]   | ~(map (constantly 9) [1 2 3])~         | ~(9 9 9)~                  |    |
+| Function                                                                                        | Example expression                   | Return value             |   |
+|-------------------------------------------------------------------------------------------------+--------------------------------------+--------------------------+---|
+| [[#content/reference/special_forms#fn][fn]]                                                               | ~(map (fn [x] (+ 2 x)) [1 2 3])~     | ~(3 4 5)~                |   |
+| #() [[#content/reference/reader][reader]] macro                                                 | ~(map #(+ 2 %) [1 2 3])~             | ~(3 4 5)~                |   |
+| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partial][partial]]       | ~(map (partial + 2) [1 2 3])~        | ~(3 4 5)~                |   |
+| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comp][comp]]             | ~(map (comp - *) [2 4 6] [1 2 3])~   | ~(-2 -8 -18)~            |   |
+| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/complement][complement]] | ~(map (complement zero?) [3 2 1 0])~ | ~(true true true false)~ |   |
+| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/constantly][constantly]] | ~(map (constantly 9) [1 2 3])~       | ~(9 9 9)~                |   |
 
 *** Printing
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_functions.adoc]]
+:CUSTOM_ID: content/reference/other_functions#printing
+:END:
 
 Several functions are provided to print objects to the output stream
 that is the current value of ~*out*~. The -str versions bind ~*out*~ to
@@ -32473,6 +32548,9 @@ Print to string:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str][with-out-str]]
 
 *** Regex Support
+:PROPERTIES:
+:CUSTOM_ID: content/reference/other_functions#regex-support
+:END:
 
 Regex patterns can be compiled at read-time via the ~#"pattern"~ reader
 macro, or at run time with
@@ -32677,7 +32755,7 @@ many implementations of these abstractions. The abstractions are
 specified by host interfaces, and the implementations by host classes.
 While this was sufficient for bootstrapping the language, it left
 Clojure without similar abstraction and low-level implementation
-facilities. The [[#][protocols]] and [[file:datatypes.xml][datatypes]]
+facilities. The [[#][protocols]] and [[#content/reference/datatypes][datatypes]]
 features add powerful and flexible mechanisms for abstraction and data
 structure definition with no compromises vs the facilities of the host
 platform.
@@ -32996,6 +33074,9 @@ Vectors are zero or more forms enclosed in square brackets: ~[1 2 3]~
 - Keys and values can be any forms.
 
 ***** Map namespace syntax
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#map-namespace-syntax
+:END:
 
 /Added in Clojure 1.9/
 
@@ -33059,6 +33140,9 @@ Sets are zero or more forms enclosed in braces preceded by ~#~:
   resulting defrecord instance.
 
 *** Macro characters
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#macro-characters
+:END:
 
 The behavior of the reader is driven by a combination of built-in
 constructs and an extension system called the read table. Entries in the
@@ -33206,7 +33290,7 @@ contain a Clojure map of symbols, like this:
 
 The key in each pair is a tag that will be recognized by the Clojure
 reader. The value in the pair is the fully-qualified name of a
-[[file:vars.xml][Var]] which will be invoked by the reader to parse the
+[[#content/reference/vars][Var]] which will be invoked by the reader to parse the
 form following the tag. For example, given the ~data_readers.clj~ file
 above, the Clojure reader would parse this form:
 
@@ -33294,6 +33378,9 @@ of the ~:tag~ and ~:form~:
 #+END_SRC
 
 *** Reader Conditionals
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#reader-conditionals
+:END:
 
 Clojure 1.7 introduced a new extension (.cljc) for portable files that
 can be loaded by multiple Clojure platforms. The primary mechanism for
@@ -33406,7 +33493,7 @@ for these types:
 :END:
 
 Reducers provide an alternative approach to using
-[[file:sequences.xml][sequences]] to manipulate standard Clojure
+[[#content/reference/sequences][sequences]] to manipulate standard Clojure
 collections. Sequence functions are typically applied lazily, in order,
 create intermediate results, and in a single thread. However, many
 sequence functions (like map and filter) could conceptually be applied
@@ -33554,7 +33641,7 @@ Use ~fold~ when:
 :CUSTOM_ID: content/reference/refs
 :END:
 
-While [[file:vars.xml][Vars]] ensure safe use of mutable storage
+While [[#content/reference/vars][Vars]] ensure safe use of mutable storage
 locations via thread /isolation/, transactional references (Refs) ensure
 safe /shared/ use of mutable storage locations via a
 [[https://en.wikipedia.org/wiki/Software_transactional_memory][software
@@ -33676,7 +33763,7 @@ Create a Ref:
 
 Examine a Ref:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
-/(see also the @ [[file:reader.xml][reader]] macro)/
+/(see also the @ [[#content/reference/reader][reader]] macro)/
 
 Transaction macros:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
@@ -33741,7 +33828,7 @@ classpath. Classpath-relative paths have prefix of @ or @/
 *** Launching a REPL
 
 The simplest way to launch a Clojure /repl/ is to use the
-[[file:xref/../../guides/getting_started.xml][clj]] command tool, which
+[[#content/guides/getting_started][clj]] command tool, which
 invokes clojure.main:
 
 #+BEGIN_EXAMPLE
@@ -33802,6 +33889,9 @@ to the var ~*command-line-args*~:
 #+END_EXAMPLE
 
 *** Error printing
+:PROPERTIES:
+:CUSTOM_ID: content/reference/repl_and_main#error-printing
+:END:
 **** At REPL
 
 As of Clojure 1.10, Clojure errors categorized into one of several
@@ -33854,6 +33944,9 @@ Other REPLs can use one or more pieces of this pipeline as necessary
 when building or customizing their exception printing.
 
 **** As launcher
+:PROPERTIES:
+:CUSTOM_ID: content/reference/repl_and_main#as-launcher
+:END:
 
 Up to Clojure 1.10.0, clojure.main when used as a program launcher (with
 -m, -e, or with a script), uncaught exceptions would be automatically
@@ -33898,6 +33991,9 @@ are registered, tap> discards. Remove taps with
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-tap][remove-tap]].
 
 *** Launching a Socket Server
+:PROPERTIES:
+:CUSTOM_ID: content/reference/repl_and_main#launching-a-socket-server
+:END:
 
 The Clojure runtime now has the ability to start a socket server at
 initialization based on system properties. One expected use for this is
@@ -33997,7 +34093,7 @@ return seqs do so incrementally, as they are consumed, and thus consume
 any seq arguments incrementally as well. Functions returning lazy seqs
 can be implemented using the
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq][lazy-seq]]
-macro. See also [[file:lazy.xml][lazy]].
+macro. See also [[#content/reference/lazy][lazy]].
 
 When
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
@@ -34038,7 +34134,7 @@ which ~seq~ returns nil.
 Returns a new seq where item is the first element and seq is the rest.
 
 For a discussion of ~rest~ vs. ~next~ and ~lazy-seq~ see
-[[file:lazy.xml][lazy]].
+[[#content/reference/lazy][lazy]].
 
 *** The Seq library
 
@@ -34048,7 +34144,7 @@ appear in more than one group. There are many more listed in the
 [[https://clojure.github.io/clojure/][API]] section.
 
 Since Clojure 1.7, Clojure also provides
-[[file:transducers.xml][transducers]], an alternate model for composable
+[[#content/reference/transducers][transducers]], an alternate model for composable
 transformations on collections. Transducers decouple the input,
 processing, and output parts of transformation and allow reuse of
 transformations in more contexts, such as core.async channels. Many of
@@ -34207,6 +34303,9 @@ grammar using regular expression syntax: ? (optional), * (0 or more),
 and + (1 or more). Non-terminals are denoted by /italics/.
 
 *** (~def~ /symbol/ /doc-string/? /init/?)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#def
+:END:
 
 Creates and interns or locates a global
 [[https://clojure.org/reference/vars][var]] with the name of ~symbol~
@@ -34294,6 +34393,9 @@ provide a thread-local value for the var, or putting a
 transactions or actions for mutation.
 
 *** (~if~ /test/ /then/ /else/?)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#if
+:END:
 
 Evaluates ~test~. If not the singular values ~nil~ or ~false~, evaluates
 and yields ~then~, otherwise, evaluates and yields ~else~. If ~else~ is
@@ -34308,6 +34410,9 @@ java.lang.Boolean, only the singular value ~false~ (Java's
 sure to use ~Boolean/valueOf~ and not the Boolean constructors.
 
 *** (~do~ /expr/*)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#do
+:END:
 
 Evaluates the expressions /expr/s in order and returns the value of the
 last. If no expressions are supplied, returns ~nil~.
@@ -34339,6 +34444,9 @@ forms.
 never change!*
 
 *** (~quote~ /form/)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#quote
+:END:
 
 Yields the unevaluated /form/.
 
@@ -34351,12 +34459,17 @@ Note there is no attempt made to call the function ~a~. The return value
 is a list of 3 symbols.
 
 *** (~var~ /symbol/)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#var
+:END:
 
 The ~symbol~ must resolve to a var, and the Var object itself /(not its
 value)/ is returned. The reader macro ~#'x~ expands to ~(var x)~.
 
-*** (~fn~ /name/? [/params/* ] /expr/*)
-*** (~fn~ /name/? ([/params/* ] /expr/*)+)
+*** (~fn~ /name/? [/params/* ] /expr/*), (~fn~ /name/? ([/params/* ] /expr/*)+)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#fn
+:END:
 
 - /params/ ⇒ /positional-param/* , or /positional-param/* & /rest-param/
 - /positional-param/ ⇒ /binding-form/
@@ -34415,8 +34528,7 @@ Functions support specifying runtime pre- and post-conditions.
 
 The syntax for function definitions becomes the following:
 
-*** (~fn~ /name/? [/param/* ] /condition-map/? /expr/*)
-*** (~fn~ name? ([/param/* ] /condition-map/? /expr/*)+)
+*** (~fn~ /name/? [/param/* ] /condition-map/? /expr/*), (~fn~ name? ([/param/* ] /condition-map/? /expr/*)+)
 
 The syntax extension also applies to ~defn~ and other macros which
 expand to ~fn~ forms.
@@ -34460,6 +34572,9 @@ point at the top of the loop, with arity equal to the number of
 bindings. See [[recur][recur]].
 
 *** (~recur~ /expr/*)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/special_forms#recur
+:END:
 
 Evaluates the expressions /expr/s in order, then, in parallel, rebinds
 the bindings of the recursion point to the values of the /expr/s. If the
@@ -34515,13 +34630,13 @@ code. Use the ~locking~ macro.
 
 *** Other Special Forms
 
-The special forms [[file:java_interop.xml#dot][dot ('.')]],
-[[file:java_interop.xml#new][new]], and
-[[file:java_interop.xml#set][set!]] of fields are described in the
-[[file:java_interop.xml][Java Interop]] section of the reference.
+The special forms [[#content/reference/java_interop#dot][dot ('.')]],
+[[java_interop#new][new]], and
+[[java_interop#set!][set!]] of fields are described in the
+[[#content/reference/java_interop][Java Interop]] section of the reference.
 
-[[file:vars.xml#set%21][set!]] of vars is described in the
-[[file:vars.xml][Vars]] section of the reference.
+[[#content/reference/vars#set!][set!]] of vars is described in the
+[[#content/reference/vars][Vars]] section of the reference.
 
 *** Binding Forms (Destructuring)
 
@@ -35161,8 +35276,8 @@ Clojure 1.1.
 Clojure is a practical language that recognizes the occasional need to
 maintain a persistent reference to a changing value and provides 4
 distinct mechanisms for doing so in a controlled manner - Vars,
-[[file:refs.xml][Refs]], [[file:agents.xml][Agents]] and
-[[file:atoms.xml][Atoms]]. Vars provide a mechanism to refer to a
+[[#content/reference/refs][Refs]], [[#content/reference/agents][Agents]] and
+[[#content/reference/atoms][Atoms]]. Vars provide a mechanism to refer to a
 mutable storage location that can be dynamically rebound (to a new
 storage location) on a per-thread basis. Every Var can (but needn't)
 have a root binding, which is a binding that is shared by all threads
@@ -35233,7 +35348,7 @@ with logging behavior only in certain call contexts or threads.
 *** Binding conveyance
 
 Some Clojure concurrency functions (futures,
-[[file:agents.xml][agents]]) provide "binding conveyance", which allows
+[[#content/reference/agents][agents]]) provide "binding conveyance", which allows
 the current set of dynamic bindings to be conveyed to another thread for
 the purpose of continuing work asynchronously with the same environment.
 This functionality is provided by
@@ -35250,9 +35365,12 @@ and
 #+END_SRC
 
 *** (*set!* var-symbol expr)
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/reference/vars.adoc]]
+:CUSTOM_ID: content/reference/vars#set!
+:END:
 
 Assignment special form.
-
 When the first operand is a symbol, it must resolve to a global var. The
 value of the var's current thread binding is set to the value of expr.
 Currently, it is an error to attempt to set the root binding of a var
@@ -35264,24 +35382,24 @@ Java fields, Vars, Refs and Agents are mutable in Clojure/.
 
 Using
 [[http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set!][set!]]
-for Java fields is documented in [[file:java_interop.xml#set][Java
+for Java fields is documented in [[java_interop#set!][Java
 Interop]].
 
 *** Interning
 
 The Namespace system maintains global maps of symbols to Var objects
-/(see [[file:namespaces.xml][Namespaces]])/. If a ~def~ expression does
+/(see [[#content/reference/namespaces][Namespaces]])/. If a ~def~ expression does
 not find an interned entry in the current namespace for the symbol being
 def-ed, it creates one, otherwise it uses the existing Var. This
 find-or-create process is called interning. This means that, unless they
 have been unmap-ed, Var objects are stable references and need not be
 looked up every time. It also means that namespaces constitute a global
 environment in which, as described in
-[[file:evaluation.xml][Evaluation]], the compiler attempts to resolve
+[[#content/reference/evaluation][Evaluation]], the compiler attempts to resolve
 all free symbols as Vars.
 
-The [[file:special_forms.xml#var][var]] special form or the ~#'~ reader
-macro /(see [[file:reader.xml][Reader]])/ can be used to get an interned
+The [[#content/reference/special_forms#var][var]] special form or the ~#'~ reader
+macro /(see [[#content/reference/reader][Reader]])/ can be used to get an interned
 Var object instead of its current value.
 
 *** Non-interned Vars
@@ -35295,7 +35413,7 @@ thread-local mutable cells.
 *** Var metadata
 
 The forms that create vars ~def~, ~defn~, ~defmacro~, etc use a standard
-set of var [[file:metadata.xml][metadata]] to describe vars. Some of
+set of var [[#content/reference/metadata][metadata]] to describe vars. Some of
 these forms provide explicit places in the syntax to provide values
 stored in the metadata, but generally you can also supply that metadata
 as a map on the var symbol.
@@ -35336,7 +35454,7 @@ Common var metadata keys (all optional at var definition):
   var will not affect code that consumes the var that has already been
   compiled and loaded in the runtime.
 
-Also see [[file:compilation.xml#_compiler_options][Compiler Options]]
+Also see [[#content/reference/compilation#compiler-options][Compiler Options]]
 for more information about direct linking and metadata elision during
 compilation.
 
@@ -35357,7 +35475,7 @@ Working with interned Vars:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern][intern]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]]
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-var][find-var]]
-[[file:special_forms.xml#var][var]]
+[[#content/reference/special_forms#var][var]]
 
 Working with Var objects:
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars][with-local-vars]]
@@ -35435,7 +35553,7 @@ since the prior release.
 
 - [[https://clojure.atlassian.net/browse/CLJ-2603][CLJ-2603]] Clojure
   keyword argument functions now also accept a map, see
-  [[file:xref/../../../news/2021/03/18/apis-serving-people-and-programs.xml][details]]
+  [[#content/news/2021/03/18/apis-serving-people-and-programs][details]]
 
 *** Release 1.10.3
 **** 1.10.3-rc1 (Feb 16, 2021)
@@ -36518,7 +36636,7 @@ use a DNS server that can find the MIT key server (pgp.mit.edu).
 *** Where did Clojure Contrib go?
 
 If you are migrating from a pre-1.3 version of Clojure, please see
-[[file:xref/../../dev/contrib_history.xml][this page]] for migration
+[[#content/dev/contrib_history][this page]] for migration
 help regarding old contrib libraries.
 
 ** Clojure Downloads
@@ -36531,7 +36649,7 @@ help regarding old contrib libraries.
 *Note*
 
 New to Clojure? Head to the
-[[file:xref/../../guides/getting_started.xml][Getting Started]] guide
+[[#content/guides/getting_started][Getting Started]] guide
 instead for information on how to install the Clojure tools!
 
 These tools allow you to start a REPL for interactive use, download
@@ -36586,7 +36704,7 @@ for detailed release information.
 - Clojure 1.11.0-alpha2
 - [[https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.clojure%22%20AND%20a%3A%22clojure%22%20AND%20v%3A1.11.0*][Clojure
   1.11.0 pre-release builds]]
-- [[file:devchangelog.xml][Dev changelog]]
+- [[#content/releases/devchangelog][Dev changelog]]
 - Dependencies:
   - ~org.clojure/spec.alpha {:mvn/version "0.2.194"}~
   - ~org.clojure/core.specs.alpha {:mvn/version "0.2.62"}~
@@ -36594,7 +36712,7 @@ for detailed release information.
 
 *** Older Releases
 
-- For older releases, see [[file:downloads_older.xml][Older Releases]]
+- For older releases, see [[#content/releases/downloads_older][Older Releases]]
 
 *** Clojure Source
 
@@ -36669,7 +36787,7 @@ In pom.xml:
 
 *** Download verification
 
-See the [[file:download_key.xml][download key]] page for more on
+See the [[#content/releases/download_key][download key]] page for more on
 verifying Maven downloads against the Clojure public key.
 
 ** Tools Releases
@@ -36685,10 +36803,10 @@ Clojure and Java libraries, and start Clojure programs.
 
 For more information see the following docs:
 
-- [[file:xref/../../guides/getting_started.xml][Getting Started]] guide
+- [[#content/guides/getting_started][Getting Started]] guide
   installation instructions
-- [[file:xref/../../guides/deps_and_cli.xml][Deps and CLI guide]]
-- [[file:xref/../../reference/deps_and_cli.xml][Deps and CLI
+- [[#content/guides/deps_and_cli][Deps and CLI guide]]
+- [[#content/reference/deps_and_cli][Deps and CLI
   reference]]
 - [[https://github.com/clojure/homebrew-tools][Clojure Homebrew tap]]
 
@@ -36768,7 +36886,7 @@ changelog]].
 **** 1.10.3.933 (July 28, 2021)
 
 - deps.edn
-  - [[file:xref/../../reference/deps_and_cli.xml#_git][git deps]]
+  - [[#content/reference/deps_and_cli#git][git deps]]
     - If a git library name follows the repo convention names, the
       ~:git/url~ can now be inferred (~:git/url~ can also be
       specified explicitly and takes precedence)
@@ -36779,22 +36897,22 @@ changelog]].
   - ~:deps/prep-lib~ - a new top-level key can be used to say how a
     source lib should be prepared before being added to the classpath.
     This key's value is a map with ~:alias~, ~:fn~, and ~:ensures~.
-    See [[file:xref/../../reference/deps_and_cli.xml#prep][prep docs]]
+    See [[#content/reference/deps_and_cli#prep-libs][prep docs]]
     for more info.
   - ~:tools/usage~ - a new top-level key can be used to provide the
     ~:ns-default~ and ~:ns-aliases~ context for a tool
-- [[file:xref/../../reference/deps_and_cli.xml#tool_install][Tools]] -
+- [[#content/reference/deps_and_cli#tool-installation-and-invocation][Tools]] -
   git-based programs that can be installed with a local name. Tools can
   provide their own usage context in deps.edn.
   - Added new auto-installed tool named ~tools~ with
     [[https://clojure.github.io/tools.tools][functions]] ~install~,
     ~list~, ~remove~. See
-    [[file:xref/../../reference/deps_and_cli.xml#tool_install][reference]].
+    [[#content/reference/deps_and_cli#tool-installation-and-invocation][reference]].
   - Install a tool with
     ~clojure -Ttools install <lib> <coord> :as <toolname>~
   - Run a tool with ~clojure -T<toolname> fn~ (also takes -X style
     args)
-- [[file:xref/../../reference/deps_and_cli.xml][Clojure CLI]]
+- [[#content/reference/deps_and_cli][Clojure CLI]]
   - New ~-T~ option is like ~-X~ (executes a function) but does not
     use the project classpath, instead uses tool classpath (and adds
     ~:paths ["."]~ by default). ~-T:aliases~ is otherwise same as
@@ -36816,7 +36934,7 @@ changelog]].
   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.api-api.html#clojure.tools.cli.api/find-versions][find-versions]]
     - to find versions of Maven or git libs or tools
   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.api-api.html#clojure.tools.cli.api/prep][prep]]
-    - use to [[file:xref/../../reference/deps_and_cli.xml#prep][prep]]
+    - use to [[#content/reference/deps_and_cli#prep-libs][prep]]
       source libs
   - [[https://clojure.github.io/tools.deps.alpha/clojure.tools.cli.help-api.html#clojure.tools.cli.help/dir][help/dir]]
     - to list available functions in a tool namespace
@@ -36824,7 +36942,7 @@ changelog]].
     - to list docs for a tool namespace or function
 
 Read more at
-[[file:xref/../../news/2021/07/09/source-libs-builds.xml][Source Libs
+[[#content/news/2021/07/09/source-libs-builds][Source Libs
 and Builds]].
 
 **** 1.10.3.855 (May 25, 2021)
@@ -36834,7 +36952,7 @@ and Builds]].
 **** 1.10.3.849 (May 21, 2021)
 
 - Adds support for a
-  [[file:xref/../../reference//deps_and_cli.xml#_trailing_map_argument][trailing
+  [[#content/reference/deps_and_cli#trailing-map-argument][trailing
   map of kvs]] in -X calls (similar to Clojure 1.11 trailing map to
   vararg calls)
 - Updates all Maven deps to latest (maven-resolver 1.7.0, maven core
