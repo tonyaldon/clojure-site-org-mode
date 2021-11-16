@@ -11666,9 +11666,7 @@ These questions and answers are adapted from mailing lists and other
 Clojure community forums.
 
 *** Reader and Syntax
-
-*[[why_keywords][What's the advantage of representing text tokens as
-keywords (instead of as strings)?]]*
+**** What's the advantage of representing text tokens as keywords (instead of as strings)?
 
 Keywords are cached and interned. This means that a keyword is reused
 (reducing memory) everywhere in your program and that checks for
@@ -11677,7 +11675,7 @@ Additionally, keywords are invokable to look themselves up in a map and
 thus this enables the common pattern of extracting a particular field
 from a collection of maps possible.
 
-*[[keyword_number][Is :1 a valid keyword?]]*
+**** Is :1 a valid keyword?
 
 The [[file:xref/../../reference/reader.xml][reader]] page defines
 keywords as "like symbols" and symbols "begin with a non-numeric
@@ -11700,8 +11698,7 @@ read.
 In general, it's best to avoid using keywords that start with a number
 unless it is in a narrow and controlled scope.
 
-*[[unreadable_keywords][Why is it possible to create keywords that can't
-be read by the reader?]]*
+**** Why is it possible to create keywords that can't be read by the reader?
 
 The
 [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword][keyword]]
@@ -11722,8 +11719,10 @@ read back into a keyword (due to spaces or other non-allowed
 characters). If this is important to you, you should validate the
 keyword inputs first, before creating the keyword.
 
-*[[reader_macros][Why does Clojure not have user-extensible reader
-macros?]]*
+**** Why does Clojure not have user-extensible reader macros?
+:PROPERTIES:
+:CUSTOM_ID: content/guides/faq#reader-macros
+:END:
 
 The reader takes text (Clojure source) and returns Clojure data, which
 is subsequently compiled and evaluated. Reader macros tell the Clojure
@@ -11744,7 +11743,7 @@ that is still extensible.
 Also see the [[file:xref/../../about/history.xml][History of Clojure]]
 paper section about this (search for "reader macros").
 
-*[[underscore][What does an \_ mean in a let binding or parameter?]]*
+**** What does an \_ mean in a let binding or parameter?
 
 \_ has no special meaning in Clojure as a symbol. However, it is a
 convention to use \_ (or a leading \_) to denote a binding that will not
@@ -11758,7 +11757,7 @@ destructuring]]:
     y))
 #+END_SRC
 
-*[[qmark_bang][What does a ? or ! mean in a function name?]]*
+**** What does a ? or ! mean in a function name?
 
 ~?~ and ~!~ have no special meaning in Clojure as part of a function
 name. However, it is a convention to use a trailing ~?~ to denote a
@@ -11772,8 +11771,7 @@ Transactional Memory sense). In the wild, the use of ~!~ is less
 consistent and is sometimes used in a broader way to indicate any sort
 of side-effecting behavior.
 
-*[[anon_vector][Why doesn't the anonymous function ~#([%1])~ work to
-construct a vector?]]*
+**** Why doesn't the anonymous function ~#([%1])~ work to construct a vector?
 
 ~#()~ always expands to include parens around the expression you give
 it, thus in this case it yields ~(fn [x] ([x]))~ which fails when the
@@ -11781,9 +11779,7 @@ vector is invoked. Instead, use the vector function ~#(vector %)~ or
 just ~vector~, which is the function being described.
 
 *** Collections, Sequences, and Transducers
-
-*[[conj][Why does ~conj~ add to the front of a list, but the back of a
-vector?]]*
+**** Why does ~conj~ add to the front of a list, but the back of a vector?
 
 Most Clojure data structure operations, including ~conj~ (conjoin), are
 designed to give the user a performance expectation. With ~conj~, the
@@ -11799,9 +11795,7 @@ then the appropriate function to use is ~cons~, which will always add to
 the front. Note however that this will produce a sequence, not an
 instance of the original collection type.
 
-*[[seqs_vs_colls][I keep forgetting that after calling sequence
-functions on vectors/sets, the return value is no longer a vector or a
-set.]]*
+**** I keep forgetting that after calling sequence functions on vectors/sets, the return value is no longer a vector or a set.
 
 Generally you should divide the Clojure core functions into these two
 categories:
@@ -11839,8 +11833,7 @@ as needed (with chunking under the hood for greater performance).
 Neither of these is right or wrong, but they are both useful in
 different circumstances.
 
-*[[arg_order][What are the rules of thumb for arg order in core
-functions?]]*
+**** What are the rules of thumb for arg order in core functions?
 
 Primary collection operands come first. That way one can write ~->~ and
 its ilk, and their position is independent of whether or not they have
@@ -11881,7 +11874,7 @@ sequence functions are variadic, it is usually in their sources.
 [[https://groups.google.com/d/msg/clojure/iyyNyWs53dc/Q_8BtjRthqgJ][comments
 by Rich Hickey]]./
 
-*[[transducers_vs_seqs][What are good use cases for transducers?]]*
+**** What are good use cases for transducers?
 
 When performing a series of transformations, sequences will create an
 intermediate (cached) sequence between each transformation. Transducers
@@ -11932,8 +11925,7 @@ Design benefits of sequences:
   cases where input and transformation are separated).
 
 *** Core functions
-
-*[[def_minus][Why ~defn-~ but no ~def-~?]]*
+**** Why ~defn-~ but no ~def-~?
 
 At one point, metadata was more cumbersome to use than now (the syntax
 for a private defn was ~#^{:private true}~), and ~defn-~ seemed worth
@@ -11944,8 +11936,7 @@ preferred to use ~^:private~ metadata when needed on ~def~ or other def
 forms..
 
 *** Spec
-
-*[[spec_alpha][Why is spec alpha?]]*
+**** Why is spec alpha?
 
 spec is in alpha to indicate that the API may still change. spec was
 broken out of Clojure core so that spec can be updated independently
@@ -11954,7 +11945,7 @@ considered stable and at that point the alpha will be removed. The next
 version of spec is being developed at
 [[https://github.com/clojure/spec-alpha2][alpha.spec]].
 
-*[[spec_location][Where should I put my specs?]]*
+**** Where should I put my specs?
 
 There is no single right answer to this question. For data specs, it is
 often useful to put them in their own namespace, which may or may not
@@ -11969,7 +11960,7 @@ optionally be required when needed (for testing or validation). In the
 latter case, Clojure core has followed the pattern of using
 foo.bar.specs to hold function specs for the functions in foo.bar.
 
-*[[regex_nesting][How do nested regex ops work?]]*
+**** How do nested regex ops work?
 
 Regex ops (cat, alt, *, +, ?, etc) always describe the elements in a
 sequential collection. They are not, by themselves, specs. When used in
@@ -11979,7 +11970,7 @@ form a single regex spec over the same sequential collection.
 To validate a nested collection, use ~s/spec~ to wrap the inner regex,
 forcing a spec boundary between regex ops.
 
-*[[instrument_ret][Why doesn't ~instrument~ check return values?]]*
+**** Why doesn't ~instrument~ check return values?
 
 Instrument is intended to verify that a function is being invoked
 according to its args spec. That is, is the function being called
@@ -11990,13 +11981,12 @@ and this should be checked with the ~check~ function which will actually
 invoke the function with generated args and verify the ret and fn specs
 on each invocation.
 
-*[[skip_macros][Is there a way to skip checking macro specs?]]*
+**** Is there a way to skip checking macro specs?
 
 Yes, set the Java system property ~-Dclojure.spec.skip-macros=true~ and
 no macro specs will be checked during macroexpansion.
 
-*[[exclusive_keys][How do I write a map that only allows certain
-keys?]]*
+**** How do I write a map that only allows certain keys?
 
 Spec's general philosophy is one of "open" specs where maps can contain
 additional keys beyond what is specified as required or optional in an
@@ -12010,14 +12000,12 @@ an additional constraint:
     #(every? #{::user ::password} (keys %))))
 #+END_SRC
 
-*[[spec_doc][Can I add docs or metadata for specs?]]*
+**** Can I add docs or metadata for specs?
 
 Currently, no. This is under consideration for the next version of spec.
 
 *** State and Concurrency
-
-*[[concurrency_features][What are the trade-offs between reducers,
-core.async, futures, and pmap?]]*
+**** What are the trade-offs between reducers, core.async, futures, and pmap?
 
 Each of these really addresses a different use case.
 
@@ -12043,8 +12031,7 @@ Each of these really addresses a different use case.
   overlap with core.async here which has a very useful
   transducer-friendly pipeline functionality.
 
-*[[agent_shutdown][Why does Clojure "hang" for 1 minute when my program
-ends?]]*
+**** Why does Clojure "hang" for 1 minute when my program ends?
 
 This is most commonly asked in the context of programs that use
 ~future~, ~pmap~, ~agent-send~, or other functions that invoke those
@@ -12061,8 +12048,7 @@ thread pool with a 60 second timeout. In the scenario above, the program
 will wait until the background threads have completed their work and the
 threads expire before it can exit.
 
-*[[write_skew][Why the Clojure STM does not guarantee serializability
-but only snapshot isolation?]]*
+**** Why the Clojure STM does not guarantee serializability but only snapshot isolation?
 
 If reads were included by default, then STM would be slower (as more
 transactions would require serializability). However, in many cases,
@@ -12071,8 +12057,7 @@ performance penalty when it is necessary and get faster performance when
 it is not.
 
 *** Namespaces
-
-*[[ns_file][Do namespaces map 1-to-1 with files?]]*
+**** Do namespaces map 1-to-1 with files?
 
 No (although that is typical). One namespace can be split across
 multiple files by using ~load~ to load secondary files and ~in-ns~ in
@@ -12080,11 +12065,7 @@ those files to retain the namespace (clojure.core is defined in this
 way). Also, it is possible to declare multiple namespaces in a single
 file (although this is very unusual).
 
-*[[ns_as_fn][Do namespaces work like regular functions? Looking at the
-syntax, it seems ns could be returning a function that makes a
-namespace, and then if you just stick parens around the contents of the
-file, that would be a regular S expression too. Does that imply you can
-put more than one in a file?]]*
+**** Do namespaces work like regular functions? Looking at the syntax, it seems ns could be returning a function that makes a namespace, and then if you just stick parens around the contents of the file, that would be a regular S expression too. Does that imply you can put more than one in a file?
 
 ns is a macro that does a number of things:
 
@@ -12104,9 +12085,7 @@ be surprising to most clj programmers and would likely not work as
 desired in AOT).
 
 *** Compiler
-
-*[[direct_linking_repl][How does direct linking affect the REPL
-experience?]]*
+**** How does direct linking affect the REPL experience?
 
 Anything that has been direct linked will not see redefinitions to vars.
 For example, if you redefine something in clojure.core, other parts of
@@ -12121,19 +12100,17 @@ developing at the REPL. Or you may need to mark parts of your app with
 dynamic vars.
 
 *** Java and Interop
-
-*[[inner][How do you refer to a nested or inner class?]]*
+**** How do you refer to a nested or inner class?
 
 Use a $ to separate outer from inner class name. For example:
 ~java.util.Map$Entry~ is the Entry inner class inside Map.
 
-*[[primitive_type][How do you refer to the class representing a
-primitive?]]*
+**** How do you refer to the class representing a primitive?
 
 Primitive types can be found as the static TYPE field on the boxed
 class, for example: ~Integer/TYPE~.
 
-*[[varargs][How do you invoke a Java method with a vararg signature?]]*
+**** How do you invoke a Java method with a vararg signature?
 
 Java treats a trailing varargs parameter as an array and it can be
 invoked from Clojure by passing an explicit array.
@@ -12159,7 +12136,7 @@ Examples:
 (.getMethod String "getBytes" (into-array Class []))
 #+END_SRC
 
-*[[illegal_access][Why do I get an illegal access warning?]]*
+**** Why do I get an illegal access warning?
 
 Java 9 added a module system, allowing code to be partitioned into
 modules where code outside a module cannot invoke code inside the module
@@ -12221,8 +12198,7 @@ occurring, it may help to add the flag:
 #+END_EXAMPLE
 
 *** Design and Use
-
-*[[encapsulation][How do you achieve encapsulation with Clojure?]]*
+**** How do you achieve encapsulation with Clojure?
 
 Because of its focus on immutable data, there is generally not a high
 value placed on data encapsulation. Because data is immutable, there is
@@ -12239,13 +12215,12 @@ indicate which parts of an API should be considered public for use vs
 part of the implementation.
 
 *** Deps and CLI
-
-*[[clj_alpha][Are clj and tools.deps.alpha done?]]*
+**** Are clj and tools.deps.alpha done?
 
 No. There are lots of known gaps and ideas still to implement. But it is
 useful now. :)
 
-*[[clj_replace][Is clj a replacement for lein and boot?]]*
+**** Is clj a replacement for lein and boot?
 
 No. The clojure tools are focused on a) building classpaths and b)
 launching clojure programs. They do not (and will not) create artifacts,
@@ -12256,15 +12231,12 @@ dependency resolution and classpath construction. clj/clojure wraps
 these into a command-line form that can be used to run Clojure programs.
 You can compose these pieces to do many other things.
 
-*[[clj_dynamic][Do these tools allow you to dynamically add dependencies
-to a running repl?]]*
+**** Do these tools allow you to dynamically add dependencies to a running repl?
 
 No. Other tools exist to do this now or could be added on top of the
 existing functionality but this was not part of the initial goal.
 
-*[[clj_standalone][How can I create a single-file Clojure script,
-ideally self-invokable via a
-[[https://en.wikipedia.org/wiki/Shebang_(Unix)][shebang line]]?]]*
+**** How can I create a single-file Clojure script, ideally self-invokable via a [[https://en.wikipedia.org/wiki/Shebang_(Unix)][shebang line]]?
 
 If you don't need any extra dependencies, just put
 ~#!/usr/bin/env clojure~ as the first line. Note that ~clojure~ won't
@@ -12284,19 +12256,17 @@ Monroe, substituting whatever deps you need in place of ~funcool/tubax~:
 #+END_EXAMPLE
 
 *** Contributing
-
-*[[ca][Why does Clojure require that contributors first sign a
-contributor agreement (CA)?]]*
+**** Why does Clojure require that contributors first sign a contributor agreement (CA)?
 
 See [[http://clojure.org/contributing]]
 
 It boils down to two reasons:
 
 1. To protect Clojure from future legal challenges that might discourage
-  businesses from adopting it.
+   businesses from adopting it.
 
 2. To enable Clojure to be relicensed under a different open-source
-  license if that would be advantageous.
+   license if that would be advantageous.
 
 Signing the Contributor Agreement grants Rich Hickey joint ownership of
 your contributions. In exchange, Rich Hickey guarantees that Clojure
@@ -12304,8 +12274,7 @@ will always be available under an open-source license approved by either
 the [[http://www.fsf.org/][Free Software Foundation]] or the
 [[http://opensource.org/][Open Source Initiative]].
 
-*[[echosign_bug][Why does my CA email confirmation say "Clojure CA
-(between <my-company> and Rich Hickey) is Signed and Filed!"]]*
+**** Why does my CA email confirmation say "Clojure CA (between <my-company> and Rich Hickey) is Signed and Filed!"?
 
 This is a quirk of Adobe EchoSign specific to users whose email account
 is already associated with an Adobe EchoSign account. In those cases,
@@ -12314,8 +12283,7 @@ subject line rather than the individual name that was signed on the
 form. Don't worry! This has no effect - the agreement is as signed and
 attached in the email.
 
-*[[prs][Other projects hosted on GitHub accept pull requests. Why not
-Clojure?]]*
+**** Other projects hosted on GitHub accept pull requests. Why not Clojure?
 
 Rich Hickey prefers to evaluate patches attached to JIRA tickets. This
 is not to make it more difficult for contributors, or for legal reasons,
@@ -12326,8 +12294,7 @@ but because of workflow preferences. See
 to Oct 2012 Clojure Google group message from Rich Hickey on this topic.
 
 *** Future ideas
-
-*[[native][Will there be a native version of Clojure in the future?]]*
+**** Will there be a native version of Clojure in the future?
 
 Frequently people ask for a "native" version of Clojure, ie one that
 does not rely on the JVM. ClojureScript self-hosting is one current path
