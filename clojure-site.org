@@ -530,12 +530,12 @@ the process and people behind its creation and development.
 Rich
 
 #+CAPTION: A History of Clojure
-[[/images/content/about/preview.png]]
+[[./assets/images/content/about/preview.png]]
 
 From HOPL IV in June 2021:
 
 #+CAPTION: HOPL IV conference talk and Q&A
-[[/images/content/about/hopl-video.png]]
+[[./assets/images/content/about/hopl-video.png]]
 
 ** Hosted on the JVM
 :PROPERTIES:
@@ -602,7 +602,7 @@ Here's a small Swing app as a more involved example:
 (celsius)
 #+END_SRC
 
-[[/images/content/about/celsius.png]]
+[[./assets/images/content/about/celsius.png]]
 
 ** Clojure as a Dialect of Lisp
 :PROPERTIES:
@@ -7535,7 +7535,7 @@ the colors correspond to the group (Orange = contributors, Blue =
 screeners, Green = BDFL). Diamonds represent decisions to be made during
 an activity. Activities are described in more detail below the diagram.
 
-[[/images/content/community/process.png]]
+[[./assets/images/content/community/process.png]]
 
 *** Activities
 
@@ -14750,7 +14750,7 @@ Next we will consider how Clojure reads and evaluates expressions.
 
 ***** Traditional Evaluation (Java)
 
-[[/images/content/guides/learn/syntax/traditional-evaluation.png]]
+[[./assets/images/content/guides/learn/syntax/traditional-evaluation.png]]
 
 In Java, source code (.java files) are read as characters by the
 compiler (javac), which produces bytecode (.class files) which can be
@@ -14758,7 +14758,7 @@ loaded by the JVM.
 
 ***** Clojure Evaluation
 
-[[/images/content/guides/learn/syntax/clojure-evaluation.png]]
+[[./assets/images/content/guides/learn/syntax/clojure-evaluation.png]]
 
 In Clojure, source code is read as characters by the
 [[#content/reference/reader][Reader]]. The Reader may read
@@ -14780,7 +14780,7 @@ There are two important points here:
 
 Consider a Clojure expression:
 
-[[/images/content/guides/learn/syntax/structure-and-semantics.png]]
+[[./assets/images/content/guides/learn/syntax/structure-and-semantics.png]]
 
 This diagram illustrates the difference between syntax in green (the
 Clojure data structure produced by the Reader) and semantics in blue
@@ -16578,7 +16578,7 @@ and paste code from the editor to the REPL terminal window. Here's an
 example of what this looks like (the editor used is
 [[https://atom.io/packages/language-clojure/][Atom]]):
 
-[[/images/content/guides/repl/editor-cli-repl.gif]]
+[[./assets/images/content/guides/repl/editor-cli-repl.gif]]
 
 In the /[[#content/guides/repl/enhancing_your_repl_workflow][Enhancing your REPL
 workflow]]/ chapter of this guide, we will see more ergonomic
@@ -16953,7 +16953,7 @@ If you want your pretty-printed result to be displayed with more
 visual contrast, you can also copy it to your editor buffer (the
 editor used below is [[https://www.gnu.org/software/emacs/][Emacs]]):
 
-[[/images/content/guides/repl/repl-copy-pprint-editor.gif]]
+[[./assets/images/content/guides/repl/repl-copy-pprint-editor.gif]]
 #+END_QUOTE
 
 Needing to pretty-print the last REPL result is so common that
@@ -17304,7 +17304,7 @@ user=> (insp/inspect-table (mapv number-summary [2 5 6 28 42]))
 #object[javax.swing.JFrame 0x26425897 "javax.swing.JFrame[frame1,0,23,400x600,layout=java.awt.BorderLayout,title=Clojure Inspector,resizable,normal,defaultCloseOperation=HIDE_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,22,400x578,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]"]
 #+END_EXAMPLE
 
-[[/images/content/guides/repl/clj-inspect-table.png]]
+[[./assets/images/content/guides/repl/clj-inspect-table.png]]
 
 [[https://clojure.github.io/clojure/clojure.java.browse-api.html#clojure.java.browse/browse-url][clojure.java.browse/browse-url]]
 lets you open any URL in a Web browser, which can be handy for specific
@@ -17584,7 +17584,7 @@ switching a programmer has to do. Here's what it looks like (the editor
 used in this example is
 [[https://cursive-ide.com/userguide/repl.html][Cursive]]):
 
-[[/images/content/guides/repl/cursive-repl-demo.gif]]
+[[./assets/images/content/guides/repl/cursive-repl-demo.gif]]
 
 #+BEGIN_QUOTE
 *Tip*
@@ -18051,10 +18051,10 @@ Clojure program and modify it, by evaluating one code expression at a
 time.
 
 #+CAPTION: A Clojure REPL in a terminal window
-[[/images/content/guides/repl/show-terminal-repl.gif]]
+[[./assets/images/content/guides/repl/show-terminal-repl.gif]]
 
 #+CAPTION: An editor-integrated Clojure REPL
-[[/images/content/guides/repl/show-editor-repl.gif]]
+[[./assets/images/content/guides/repl/show-editor-repl.gif]]
 
 **** Why use a REPL?
 
@@ -21703,7 +21703,7 @@ committers on contrib libraries. Within Clojure/dev is the smaller set
 of people who have been tasked with screening Clojure language tickets.
 Clojure/core overlaps with both groups.
 
-[[/images/content/news/2012-02-17/clojure-community-layers.png]]
+[[./assets/images/content/news/2012-02-17/clojure-community-layers.png]]
 
 At the tail end of this year's
 [[http://clojure-conj.org/][Clojure/conj]], Stuart Halloway opened the
@@ -22999,7 +22999,7 @@ always happy to see signs of commercial adoption.
 Last year, we had an outright majority of users (57%) using Clojure at
 work. This year, that number accelerates up to 67%.
 
-[[/images/content/news/2017-01-31/use.jpg]]
+[[./assets/images/content/news/2017-01-31/use.jpg]]
 
 Within this group of users, several interesting themes emerge:
 
@@ -23025,7 +23025,7 @@ said "company-wide/enterprise". This year, only 5% answered "just me".
 Even without the direct results comparison, the data shows a dramatic
 shift towards building products.
 
-[[/images/content/news/2017-01-31/users.jpg]]
+[[./assets/images/content/news/2017-01-31/users.jpg]]
 
 This year we also introduced a new question, asking what industry or
 industries people develop for. For commercial users, "Enterprise
@@ -23037,7 +23037,7 @@ turn, we find that within each one, "outside my organization" is still
 the most common answer. In fact, only in "Financial services/fintech" do
 internal tools come within 15% of "outside my organization".
 
-[[/images/content/news/2017-01-31/industry.jpg]]
+[[./assets/images/content/news/2017-01-31/industry.jpg]]
 
 *** Clojure users are adopting the public cloud
 :PROPERTIES:
@@ -23054,7 +23054,7 @@ today"
 Clojurists in the workforce are considerably ahead of this curve, if
 true.
 
-[[/images/content/news/2017-01-31/deploy.jpg]]
+[[./assets/images/content/news/2017-01-31/deploy.jpg]]
 
 There is, unsurprisingly, a heavy correlation between use of the public
 cloud and developing applications for use "outside my organization". The
@@ -23071,7 +23071,7 @@ Telecom had a majority of respondents indicating "private/hybrid", which
 is almost certainly a reflection of the fact that hybrid cloud offerings
 are, by and large, products from the Telecom sector.
 
-[[/images/content/news/2017-01-31/deploy-private.jpg]]
+[[./assets/images/content/news/2017-01-31/deploy-private.jpg]]
 
 *** Clojure has penetrated all kinds of companies, not just startups
 :PROPERTIES:
@@ -23082,7 +23082,7 @@ If you look at the spread of response for size of organization, while
 there is a clear winner (11-100), the split is fairly even otherwise. A
 full 17% of responses were from companies of 1000+ people.
 
-[[/images/content/news/2017-01-31/size.jpg]]
+[[./assets/images/content/news/2017-01-31/size.jpg]]
 
 Web development and open source development are the dominant two domains
 regardless of company size, but coming in at a strong #3 is "building
@@ -23090,7 +23090,7 @@ and delivering commercial services", except when you look at responses
 from 1000+ companies, in which case "enterprise apps" unsurprisingly
 moves ahead.
 
-[[/images/content/news/2017-01-31/large-industry.jpg]]
+[[./assets/images/content/news/2017-01-31/large-industry.jpg]]
 
 "Enterprise software" is the #1 industry regardless of company size.
 However, #2 is quite distinctly different across sizes --- in smaller
@@ -23102,12 +23102,12 @@ dominant #2.
 most respondents coming from the middle two categories, 11-100 and
 101-1000. For example:
 
-[[/images/content/news/2017-01-31/size-per-industry.jpg]]
+[[./assets/images/content/news/2017-01-31/size-per-industry.jpg]]
 
 Only two industries show the inverted bell curve, with the most
 respondents at the edges --- Academia, and Government/Military.
 
-[[/images/content/news/2017-01-31/size-per-industry-invert.jpg]]
+[[./assets/images/content/news/2017-01-31/size-per-industry-invert.jpg]]
 
 You will note that these are the two industries where "traditional
 infrastructure" also dominates, so the distribution of respondents
@@ -23126,7 +23126,7 @@ fallen several percent since then. Interestingly, "Need docs/tutorials"
 has jumped from #5 in 2015 to #3 now, which corresponds well with a
 continuing growth of new entrants into the community.
 
-[[/images/content/news/2017-01-31/prevent.jpg]]
+[[./assets/images/content/news/2017-01-31/prevent.jpg]]
 
 When you break down respondents by size, each category is relatively
 uniform with one glaring exception: for some reason, companies of
@@ -23174,7 +23174,7 @@ ClojureScript rose yet again, such that 2/3 of users are now using both
 Clojure and ClojureScript together (this has continually risen from
 about 1/2 3 years ago):
 
-[[/images/content/news/2017-01-31/dialect.jpg]]
+[[./assets/images/content/news/2017-01-31/dialect.jpg]]
 
 Clojure increasingly delivers on the promise of a single unified
 language stack that can be used to cover an entire application.
@@ -23188,7 +23188,7 @@ that developers come to Clojure either from imperative/OO languages
 etc) with only small numbers coming from functional programming
 languages like Scala, Common Lisp, Haskell, Erlang, etc.
 
-[[/images/content/news/2017-01-31/prior-lang.jpg]]
+[[./assets/images/content/news/2017-01-31/prior-lang.jpg]]
 
 **** What is your *primary* Clojure, ClojureScript, or ClojureCLR development environment?
 
@@ -23200,7 +23200,7 @@ Light Table, and Eclipse/Counterclockwise all became a bit less common.
 The most interesting development was the rise in the use of Atom which
 was a new choice and selected by 6% of respondents.
 
-[[/images/content/news/2017-01-31/editor.jpg]]
+[[./assets/images/content/news/2017-01-31/editor.jpg]]
 
 **** What Clojure, ClojureScript, or ClojureCLR community forums have you used or attended in the last year?
 
@@ -23211,7 +23211,7 @@ connect with others and has taken the place of IRC for many. About half
 of respondents are using the original language mailing lists, and almost
 that many have looked at the Clojure subreddit.
 
-[[/images/content/news/2017-01-31/community.jpg]]
+[[./assets/images/content/news/2017-01-31/community.jpg]]
 
 Interestingly, most respondents have not attended either local Clojure
 meetups or Clojure conferences either in-person or remotely. There are
@@ -23229,7 +23229,7 @@ are using a Clojure version older than Clojure 1.7, which is good news
 for those that wish to rely on 1.7 features like cljc files or
 transducers.
 
-[[/images/content/news/2017-01-31/clojure-versions.jpg]]
+[[./assets/images/content/news/2017-01-31/clojure-versions.jpg]]
 
 **** What versions of the JDK do you target?
 
@@ -23240,14 +23240,14 @@ users are using it with only about 2% using a version older than Java
 1.7. For the moment, Clojure is still supported on Java 1.6 but
 eventually that support will be dropped.
 
-[[/images/content/news/2017-01-31/jdk-versions.jpg]]
+[[./assets/images/content/news/2017-01-31/jdk-versions.jpg]]
 
 **** What tools do you use to compile/package/deploy/release your Clojure projects?
 
 While Leiningen continues to be ubiquitous, boot made significant
 advances this year, moving from 13% usage to 22% usage.
 
-[[/images/content/news/2017-01-31/tools.jpg]]
+[[./assets/images/content/news/2017-01-31/tools.jpg]]
 
 **** What has been most frustrating or has prevented you from using Clojure more than you do now?
 
@@ -23267,7 +23267,7 @@ this year compared to last year:
 - Portability - from 10% to 5% (continued uptake of cljc / reader
   conditionals)
 
-[[/images/content/news/2017-01-31/prevent-reason.jpg]]
+[[./assets/images/content/news/2017-01-31/prevent-reason.jpg]]
 
 **** Which JavaScript environments do you target?
 
@@ -23281,7 +23281,7 @@ As JavaScript continues to seep into every area of computing,
 ClojureScript is following along with it and seeing new and interesting
 uses.
 
-[[/images/content/news/2017-01-31/js-env.jpg]]
+[[./assets/images/content/news/2017-01-31/js-env.jpg]]
 
 **** Which tools do you use to compile/package/deploy/release your ClojureScript projects?
 
@@ -23290,7 +23290,7 @@ its release) with about 2/3 of ClojureScript users now using it. And as
 we saw in the prior tools question, there is a big jump in the number of
 ClojureScript developers using boot (from 15 to 23%).
 
-[[/images/content/news/2017-01-31/cljs-deploy.jpg]]
+[[./assets/images/content/news/2017-01-31/cljs-deploy.jpg]]
 
 **** Which ClojureScript REPL do you use most often?
 
@@ -23298,14 +23298,14 @@ Again, even more usage of Figwheel here (76%, up from 71% last year). We
 added Planck this year and it registered at 9%. The Lumo repl was not
 listed as a choice but did make a showing in the comments.
 
-[[/images/content/news/2017-01-31/cljs-repl.jpg]]
+[[./assets/images/content/news/2017-01-31/cljs-repl.jpg]]
 
 **** How are you running your ClojureScript tests?
 
 We added this question to gather some information on what seems like an
 underserved area of the ecosystem. Of those who responded, we saw:
 
-[[/images/content/news/2017-01-31/cljs-test.jpg]]
+[[./assets/images/content/news/2017-01-31/cljs-test.jpg]]
 
 However, there was a lot of information in the "Other" responses as
 well. At least 60 people (more than replied for the Nashorn choice
@@ -23324,7 +23324,7 @@ biggest pain points in this area, which culminated in the recent release
 of a new ClojureScript version with better support for externs and
 modules.
 
-[[/images/content/news/2017-01-31/cljs-prevent.jpg]]
+[[./assets/images/content/news/2017-01-31/cljs-prevent.jpg]]
 
 Some of the other choices fell in importance this year (similar to
 Clojure):
@@ -23540,7 +23540,7 @@ in version usage, and we did. 72% of developers are already using it
 with about 60% still using Clojure 1.8 as well. Only a small (6%) number
 of developers are still using versions 1.7 or older.
 
-[[/images/content/news/2018-03-19/clojure-use.png]]
+[[./assets/images/content/news/2018-03-19/clojure-use.png]]
 
 We also keep an eye on JDK usage. Uptake of Java 1.9, released last
 year, has been a bit slower with only 29% adopting Java 1.9 so far and
@@ -23554,7 +23554,7 @@ happening around Atom and VS Code, which was not included but saw a lot
 of mentions in the comments (~5% of total respondents) - will definitely
 add next year!
 
-[[/images/content/news/2018-03-19/editor.png]]
+[[./assets/images/content/news/2018-03-19/editor.png]]
 
 In the ClojureScript world, Figwheel continues to dominate as a critical
 part of most ClojureScript developer's REPL workflow (76%).
@@ -23565,7 +23565,7 @@ they have been
 work on Figwheel among other projects. Lumo was a new REPL option this
 year and made a strong showing of 12%.
 
-[[/images/content/news/2018-03-19/repl.png]]
+[[./assets/images/content/news/2018-03-19/repl.png]]
 
 In CLJS target environments, we saw an increase of +6% targeting Node
 (to 29%) and +4% targeting Lambda (to 13%) - both things to watch.
@@ -23588,7 +23588,7 @@ Ruby). Clearly people are finding ClojureScript (and its strong
 resonance with React) as an interesting and viable alternative to
 JavaScript.
 
-[[/images/content/news/2018-03-19/prior-langs.png]]
+[[./assets/images/content/news/2018-03-19/prior-langs.png]]
 
 As to where Clojurists hang out, we saw significant increases in use of
 Reddit (+5%) and Slack (+4%) and some decreases in use of the Clojure
@@ -23599,7 +23599,7 @@ volume live chat) and mailing lists (low volume asynchronous
 discussion). This was a new option yet 17% of respondents reported using
 it.
 
-[[/images/content/news/2018-03-19/community-forums.png]]
+[[./assets/images/content/news/2018-03-19/community-forums.png]]
 
 *** Clojure and ClojureScript Used in Many Domains and Industries
 
@@ -23612,7 +23612,7 @@ doing web dev and these days fully 82% of Clojure devs are involved in
 some kind of web development (not surprising given how many Clojure devs
 are using both Clojure and ClojureScript together).
 
-[[/images/content/news/2018-03-19/domains.png]]
+[[./assets/images/content/news/2018-03-19/domains.png]]
 
 When looking at the industries using Clojure, we added a few choices
 this year based on prominent results in last year's "Other" category -
@@ -23621,7 +23621,7 @@ We also saw a noticeable increase (+3%) in Financial services. Perhaps
 due to the new choices, we saw small decreases in the largest and most
 generic categories, enterprise software and consumer software.
 
-[[/images/content/news/2018-03-19/industries.png]]
+[[./assets/images/content/news/2018-03-19/industries.png]]
 
 *** Interest in Hiring Stays Strong
 
@@ -24106,13 +24106,13 @@ respondents are using Clojure for work, hobby projects, tinkering, or
 studies. This year, we saw the highest percentage yet of Clojure use at
 work:
 
-[[/images/content/news/2020-02-20/use.png]]
+[[./assets/images/content/news/2020-02-20/use.png]]
 
 Additionally, we saw a small shift in company size to bigger companies -
 an increase of 3% in companies of size 1000+ (and reduction in companies
 size 1-10).
 
-[[/images/content/news/2020-02-20/org-size.png]]
+[[./assets/images/content/news/2020-02-20/org-size.png]]
 
 We also asked respondents for the first time how many people were using
 Clojure at their organization. As expected, many Clojure teams are
@@ -24120,7 +24120,7 @@ small. As a high-leverage tool, Clojure is a great fit for small
 highly-productive teams. However, it was also great to see many
 respondents at companies with 40 or even 100+ Clojure developers.
 
-[[/images/content/news/2020-02-20/at-org.png]]
+[[./assets/images/content/news/2020-02-20/at-org.png]]
 
 A question we've been asking since 2010 (with some variation in wording
 and choices), is in what domains Clojure is being used. The top results
@@ -24128,7 +24128,7 @@ have not changed too much over the years but we did see a noticeable
 increase this year in "enterprise applications", to its highest level
 ever.
 
-[[/images/content/news/2020-02-20/domains.png]]
+[[./assets/images/content/news/2020-02-20/domains.png]]
 
 Feedback comments indicate Clojure is a tool yielding high leverage for
 both companies and teams:
@@ -24197,7 +24197,7 @@ in-person Clojure conferences (we saw many new ones this year!), the new
 [[https://ask.clojure.org][Ask Clojure]] site, Telegram chats, and
 Discord.
 
-[[/images/content/news/2020-02-20/forums.png]]
+[[./assets/images/content/news/2020-02-20/forums.png]]
 
 We also collect information on how users are involved in the Clojure
 ecosystem. The response this year were very similar to last year but we
@@ -24205,7 +24205,7 @@ did see mild upticks in helping new Clojure users, advocating for
 Clojure in their organization, and maintaining open source libraries,
 all great contributions!
 
-[[/images/content/news/2020-02-20/ecosystem.png]]
+[[./assets/images/content/news/2020-02-20/ecosystem.png]]
 
 In feedback comments, many people enjoyed the kind and responsive
 Clojure community:
@@ -24231,13 +24231,13 @@ operating system to give us better guidance about tool-related work. As
 expected, MacOS was the leader (55%), followed by Linux (35%) and
 Windows (9%):
 
-[[/images/content/news/2020-02-20/os.png]]
+[[./assets/images/content/news/2020-02-20/os.png]]
 
 For primary development tool, there were only minor updates this year.
 Emacs dropped slightly to 43%, IntelliJ/Cursive rose slightly to 32%,
 and VS Code with Calva had the biggest increase to 10%.
 
-[[/images/content/news/2020-02-20/tool.png]]
+[[./assets/images/content/news/2020-02-20/tool.png]]
 
 Clojure users have a wealth of fine development environments, each
 suited to different communities and tastes, and we're glad to see them
@@ -24251,7 +24251,7 @@ mixed Clojure/ClojureScript projects. In response to this, we tailored
 this question more tightly to dependency management and made it
 multi-select this year:
 
-[[/images/content/news/2020-02-20/deps.png]]
+[[./assets/images/content/news/2020-02-20/deps.png]]
 
 Looking at previous years, we continue to see strong (but slightly
 reduced) use of Leiningen, and a steady increase in use of clj/deps.edn.
@@ -24266,7 +24266,7 @@ and in all JVM communities this has caused a significant user base to
 remain on Java 8. Clojure reflects this as well (although probably shows
 more shift to Java 11 than other language communities):
 
-[[/images/content/news/2020-02-20/java.png]]
+[[./assets/images/content/news/2020-02-20/java.png]]
 
 Releases like Java 9, 10, 12, and soon 13 are effectively dead when the
 next release comes out and we would recommend sticking primarily to the
@@ -24287,7 +24287,7 @@ improvements building on the changes in Clojure 1.10.0 and mitigations
 for some Java performance regressions in their service releases after
 Java 8u201. Use of Clojure 1.8 and earlier continues to dwindle:
 
-[[/images/content/news/2020-02-20/clojure.png]]
+[[./assets/images/content/news/2020-02-20/clojure.png]]
 
 In addition to the prior dependency management question, we also added a
 new question on how respondents are starting their apps in production.
@@ -24295,7 +24295,7 @@ Based on feedback, it's likely the wording and answer choices will need
 some fine-tuning next year, but there is some interesting feedback in
 the results:
 
-[[/images/content/news/2020-02-20/run-app.png]]
+[[./assets/images/content/news/2020-02-20/run-app.png]]
 
 The majority of users are using launchers like Leiningen or clj to start
 their production apps, more so than by building jars or uberjars and
@@ -24564,7 +24564,7 @@ community strong.
 Continuing the trend from last year, Clojure has seen growth in large
 companies (i.e. those having 100-1000 employees).
 
-[[/images/content/news/2021-03-15/sizes.png]]
+[[./assets/images/content/news/2021-03-15/sizes.png]]
 
 Nubank currently employs approximately 700 (at the time of writing)
 Clojure programmers, and Nubank is just one prominent example of the
@@ -24573,7 +24573,7 @@ Clojure today, accounting for 22% (and growing) of the Clojure job
 market as reported by survey respondents. The survey shows healthy gains
 in the healthcare and retail markets as well.
 
-[[/images/content/news/2021-03-15/industries.png]]
+[[./assets/images/content/news/2021-03-15/industries.png]]
 
 Having said all of that, just where are Clojure projects deployed in
 production systems? Interestingly, the survey shows some nice growth in
@@ -24588,7 +24588,7 @@ Clojure deployments as well.
 While more large companies are adopting Clojure than ever, the sweet
 spot is still the smaller companies of less than 100 employees.
 
-[[/images/content/news/2021-03-15/lgvssmall.png]]
+[[./assets/images/content/news/2021-03-15/lgvssmall.png]]
 
 The reasons that start-ups choose Clojure are many and variegated:
 
@@ -24613,7 +24613,7 @@ virtual machine certainly helps smooth the path from Java to Clojure.
 However, many other advantages allow Clojure programmers a greater
 flexibility and agility in their day to day work lives using Clojure.
 
-[[/images/content/news/2021-03-15/features.png]]
+[[./assets/images/content/news/2021-03-15/features.png]]
 
 First, Clojure programmers value a *functional style of programming*
 facilitating a separation of data and process. Coupled with its suite of
@@ -35083,7 +35083,7 @@ The composed xf transducer will be invoked left-to-right with a final
 call to the reducing function f. In the last example, input values will
 be filtered, then incremented, and finally summed.
 
-[[/images/content/reference/transducers/xf.png]]
+[[./assets/images/content/reference/transducers/xf.png]]
 
 **** eduction
 
@@ -37306,7 +37306,7 @@ and Builds]].
 :CUSTOM_ID: content/stories/anychart
 :END:
 
-[[/images/content/stories/anychart.png]]
+[[./assets/images/content/stories/anychart.png]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -37408,7 +37408,7 @@ the Clojure community.
 :CUSTOM_ID: content/stories/cloudrepo
 :END:
 
-[[/images/content/stories/cloudrepo.png]]
+[[./assets/images/content/stories/cloudrepo.png]]
 
 *What product or service are you building with Clojure or ClojureScript?*
 
@@ -37481,7 +37481,7 @@ code thanks to immutability.
 :CUSTOM_ID: content/stories/cognician
 :END:
 
-[[/images/content/stories/cognician.jpg]]
+[[./assets/images/content/stories/cognician.jpg]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -37631,7 +37631,7 @@ remote REPL. :-)
 We talked with Cameron Desautels about his use of Clojure and
 ClojureScript at [[https://collbox.co/][CollBox]].
 
-[[/images/content/stories/collbox.png]]
+[[./assets/images/content/stories/collbox.png]]
 
 *How long have you been working with Clojure and ClojureScript?*
 
@@ -37698,7 +37698,7 @@ DynamoDB). Our web framework is custom-built, but makes heavy use of
 This interview is with Ikuru Kanuma, a developer for Cybozu Startups in
 Japan.
 
-[[/images/content/stories/cstap.png]]
+[[./assets/images/content/stories/cstap.png]]
 
 *What product or service are you building with Clojure or ClojureScript?*
 
@@ -37784,7 +37784,7 @@ This interview is a discussion with Adam Tornhill about
 [[http://www.empear.com/][Empear]] and their code analysis tool
 [[https://codescene.io/][CodeScene]].
 
-[[/images/content/stories/empear.png]]
+[[./assets/images/content/stories/empear.png]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -37887,7 +37887,7 @@ virtually a guarantee that things get done.
 :CUSTOM_ID: content/stories/freshcode
 :END:
 
-[[/images/content/stories/freshcode.png]]
+[[./assets/images/content/stories/freshcode.png]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -37978,7 +37978,7 @@ with your business partners.
 We talked with Matt Hardy about their use of Clojure at
 [[https://kidblog.org][Kidblog]].
 
-[[/images/content/stories/kidblog.jpg]]
+[[./assets/images/content/stories/kidblog.jpg]]
 
 *How long have you been working with Clojure?*
 
@@ -38032,7 +38032,7 @@ read, and easier to review.
 We talked to [[https://www.lendup.com][LendUp]] about their use of
 Clojure.
 
-[[/images/content/stories/lendup.jpg]]
+[[./assets/images/content/stories/lendup.jpg]]
 
 *How long have you been working with Clojure?*
 
@@ -38097,7 +38097,7 @@ Java libraries, and we have a much smaller code base to maintain.
 
 Today we talk to Peter Lubell-Doughtie about [[https://ona.io][Ona]].
 
-[[/images/content/stories/ona-logo.png]]
+[[./assets/images/content/stories/ona-logo.png]]
 
 *How long have you been working with Clojure and ClojureScript?*
 
@@ -38214,7 +38214,7 @@ us please [[https://ona.io/contact.html][get in touch]].
 :CUSTOM_ID: content/stories/pisano
 :END:
 
-[[/images/content/stories/pisano.png]]
+[[./assets/images/content/stories/pisano.png]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -38297,7 +38297,7 @@ faster. Now enterprise software development a lot more fun with Clojure.
 :CUSTOM_ID: content/stories/reify
 :END:
 
-[[/images/content/stories/reify.png]]
+[[./assets/images/content/stories/reify.png]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -38401,7 +38401,7 @@ work to do.
 Welcome to the first in an ongoing series of interviews with companies
 using Clojure and ClojureScript!
 
-[[/images/content/stories/rts.jpeg]]
+[[./assets/images/content/stories/rts.jpeg]]
 
 This first interview is with Frédéric Vergez about his work at
 [[https://rts.ch/][RTS (Radio Télévision Suisse)]], the Swiss national
@@ -38486,7 +38486,7 @@ seriously considering using it with ClojureScript + Node.
 We talked with Luca Grulla about their use of Clojure and ClojureScript
 at [[http://signalmedia.co/][Signal]].
 
-[[/images/content/stories/signal.jpg]]
+[[./assets/images/content/stories/signal.jpg]]
 
 *How long have you been working with Clojure and ClojureScript?*
 
@@ -38546,7 +38546,7 @@ talented people to join our team!
 :CUSTOM_ID: content/stories/stitch
 :END:
 
-[[/images/content/stories/stitch.jpg]]
+[[./assets/images/content/stories/stitch.jpg]]
 
 *What product or service are you building with Clojure or ClojureScript?*
 
@@ -38611,7 +38611,7 @@ quickly with a tight iterative TDD loop.
 :CUSTOM_ID: content/stories/swing
 :END:
 
-[[/images/content/stories/swing-logo.png]]
+[[./assets/images/content/stories/swing-logo.png]]
 
 *How long have you been working with Clojure or ClojureScript?*
 
@@ -38743,7 +38743,7 @@ and also have a mobile app implemented in
 This interview is a discussion with Dmitri Sotnikov about his use of
 Clojure and ClojureScript at University Health Network (UHN).
 
-[[/images/content/stories/logo-uhn.png]]
+[[./assets/images/content/stories/logo-uhn.png]]
 
 *How long have you been working with Clojure and ClojureScript?*
 
@@ -38890,7 +38890,7 @@ specifically are:
 :CUSTOM_ID: content/stories/zimpler
 :END:
 
-[[/images/content/stories/zimpler.png]]
+[[./assets/images/content/stories/zimpler.png]]
 
 This story is about [[https://www.zimpler.com/][Zimpler]] and their use
 of Clojure and ClojureScript,
