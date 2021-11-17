@@ -9,6 +9,13 @@
 # We could have use a link abbreviation but they doesn't work in org
 # properties.
 
+
+#+LINK: clojure ./clojure/src/clj/clojure/
+
+# we can replace ~[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]~
+# link by ~[[clojure:core.clj::(defmacro dosync][dosync]]~
+
+
 * About
 ** Clojure CLR
 :PROPERTIES:
@@ -58,10 +65,10 @@ mechanism to ensure that, when it does so, it remains consistent, while
 alleviating developers from having to avoid conflicts manually using
 locks etc. The [[#content/reference/refs][software
 transactional memory system]] (STM), exposed through
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref][ref]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]],
+[[clojure:core.clj::(defmacro dosync][dosync]],
+[[clojure:core.clj::(defn ref][ref]],
+[[clojure:core.clj::(defn ref-set][ref-set]],
+[[clojure:core.clj::(defn alter][alter]],
 et al, supports /sharing/ changing state between threads in a
 /synchronous/ and /coordinated/ manner. The
 [[#content/reference/agents][agent]] system supports sharing
@@ -71,7 +78,7 @@ supports sharing changing state between threads in a /synchronous/ and
 /independent/ manner. The [[#content/reference/vars][dynamic
 var system]], exposed through
 [[#content/reference/special_forms#def][def]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]],
+[[clojure:core.clj::(defmacro binding][binding]],
 et al, supports isolating changing state within threads.
 
 In all cases, Clojure does not replace the Java thread system, rather it
@@ -83,12 +90,12 @@ Most of this is covered in more detail in the
 
 [[#content/reference/refs][Refs]] are mutable references to
 objects. They can be
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]]
+[[clojure:core.clj::(defn ref-set][ref-set]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]]ed
+[[clojure:core.clj::(defn alter][alter]]ed
 to refer to different objects during transactions, which are delimited
 by
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
+[[clojure:core.clj::(defmacro dosync][dosync]]
 blocks. All ref modifications within a transaction happen or none do.
 Also, reads of refs within a transaction reflect a snapshot of the
 reference world at a particular point in time, i.e. each transaction is
@@ -136,7 +143,7 @@ which can be established by
 [[#content/reference/special_forms#def][def]], and can be set
 using ~set!~, but only if they have been bound to a new storage
 location thread-locally using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]].
+[[clojure:core.clj::(defmacro binding][binding]].
 Those bindings and any subsequent modifications to those bindings will
 only be seen /within/ the thread by code in the dynamic scope of the
 binding block. Nested bindings obey a stack protocol and unwind as
@@ -169,7 +176,7 @@ Dynamic vars provide a way to communicate between different points on
 the call stack without polluting the argument lists and return values of
 the intervening calls. In addition, dynamic vars support a flavor of
 context-oriented programming. Because fns defined with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
+[[clojure:core.clj::defn (fn defn][defn]]
 are stored in vars, they too can be dynamically rebound:
 
 #+BEGIN_SRC clojure
@@ -318,7 +325,7 @@ a var, pass it to functions etc.
 -> "Hello world"
 #+END_SRC
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
+[[clojure:core.clj::defn (fn defn][defn]]
 is a macro that makes defining functions a little simpler. Clojure
 supports arity overloading in a /single/ function object,
 self-reference, and variable-arity functions using ~&~:
@@ -342,7 +349,7 @@ self-reference, and variable-arity functions using ~&~:
 #+END_SRC
 
 You can create local names for values inside a function using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let][let]].
+[[clojure:core.clj::(defmacro let][let]].
 The scope of any local names is lexical, so a function created in the
 scope of local names will close over their values:
 
@@ -356,7 +363,7 @@ scope of local names will close over their values:
 #+END_SRC
 
 *Locals created with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/let][let]]
+[[clojure:core.clj::(defmacro let][let]]
 are not variables. Once created their values never change!*
 
 *** Immutable Data Structures
@@ -398,7 +405,7 @@ data that is orthogonal to the logical value of the data. Clojure
 provides direct support for this
 [[#content/reference/metadata][metadata]]. Symbols, and all
 of the collections, support a metadata map. It can be accessed with the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/meta][meta]]
+[[clojure:core.clj::meta (fn][meta]]
 function. Metadata does /not/ impact equality semantics, nor will
 metadata be seen in operations on the value of a collection. Metadata
 can be read, and can be printed.
@@ -454,10 +461,10 @@ Many of the Clojure library functions produce and consume seqs /lazily/:
 #+END_SRC
 
 You can define your own lazy seq-producing functions using the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq][lazy-seq]]
+[[clojure:core.clj::(defmacro lazy-seq][lazy-seq]]
 macro, which takes a body of expressions that will be called on demand
 to produce a list of 0 or more items. Here's a simplified
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take][take]]:
+[[clojure:core.clj::(defn take][take]]:
 
 #+BEGIN_SRC clojure
 (defn take [n coll]
@@ -501,7 +508,7 @@ only happen in a tail position.
 
 For situations where mutual recursion is called for, recur can't be
 used. Instead,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/trampoline][trampoline]]
+[[clojure:core.clj::(defn trampoline][trampoline]]
 may be a good option.
 
 ** History
@@ -549,9 +556,9 @@ Clojure is a great Java library consumer, offering the dot-target-member
 notation for calls to Java. Class names can be referenced in full, or as
 non-qualified names after being imported. Clojure supports the dynamic
 implementation of Java interfaces and classes using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify][reify]]
+[[clojure:core_deftype.clj::(defmacro reify][reify]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy][proxy]]:
+[[clojure:core_proxy.clj::(defmacro proxy][proxy]]:
 
 Tapping into a Java class is as easy as:
 
@@ -815,7 +822,7 @@ extend. Clojure supports polymorphism in several ways:
   defined by Java interfaces.
 - Clojure supports the generation of implementations of Java interfaces
   in Clojure using
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy][proxy]]
+  [[clojure:core_proxy.clj::(defmacro proxy][proxy]]
   ([[#content/about/jvm_hosted][see JVM Hosted]]).
 - The Clojure language supports polymorphism along both class and
   custom hierarchies with
@@ -838,10 +845,10 @@ the result of an arbitrary function of the arguments. Clojure does not
 support implementation inheritance.
 
 Multimethods are defined using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti][defmulti]],
+[[clojure:core.clj::(defmacro defmulti][defmulti]],
 which takes the name of the multimethod and the dispatch function.
 Methods are independently defined using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod][defmethod]],
+[[clojure:core.clj::(defmacro defmethod][defmethod]],
 passing the multimethod name, the dispatch /value/ and the function
 body.
 
@@ -866,7 +873,7 @@ body.
 #+END_SRC
 
 Multimethods are in every respect fns, e.g. can be passed to
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map][map]]
+[[clojure:core.clj::(defn map][map]]
 etc.
 
 Similar to interfaces, Clojure protocols define only function
@@ -1552,10 +1559,10 @@ identity to a new state by reading its current value, calling a pure
 function on that value to create a new value, and setting that value as
 the new state. These composite operations are made easy and atomic by
 the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute][commute]]
+[[clojure:core.clj::(defn alter][alter]],
+[[clojure:core.clj::(defn commute][commute]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send][send]]
+[[clojure:core.clj::2115][send]]
 functions.
 
 *** Message Passing and Actors
@@ -1633,7 +1640,7 @@ In the local case, since Clojure does not have mutable local variables,
 instead of building up values in a mutating loop, you can instead do it
 functionally with
 [[#content/reference/special_forms#recur][recur]] or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduce][reduce]].
+[[clojure:core.clj::(defn reduce][reduce]].
 
 * Api
 ** API Documentation
@@ -1641,13 +1648,14 @@ functionally with
 :CLOJURE_SITE_FILE: [[./clojure-site/content/api/api.adoc]]
 :CUSTOM_ID: content/api/api
 :END:
-
 *** Clojure API
 
 - [[https://clojure.github.io/clojure/][Clojure API]]
 - [[https://clojure.github.io/clojure/javadoc/][Clojure Java API]] -
   for calling from Java into Clojure
 # FIXME - [[file:cheatsheet.xml][Clojure Cheatsheet]]
+# refer to the file /clojure-site/content/api/cheatsheet.html
+# that I haven't convert into Org
 
 *** ClojureScript API
 
@@ -8969,14 +8977,14 @@ return values should be, depending upon the order of ~x~ and ~y~.
 
 In Clojure you need comparators for sorting a collection of values, or
 for maintaining a collection of values in a desired sorted order, e.g a
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map][sorted-map]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-set][sorted-set]],
+[[clojure:core.clj::(defn sorted-map][sorted-map]],
+[[clojure:core.clj::(defn sorted-set][sorted-set]],
 or
 [[https://clojure.github.io/data.priority-map/#clojure.data.priority-map/priority-map][priority-map]]
 (also known as a priority queue).
 
 The default comparator
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare][compare]]
+[[clojure:core.clj::(defn compare][compare]]
 works well for sorting numbers in increasing order, or strings,
 keywords, or symbols, in
 [[https://en.wikipedia.org/wiki/Lexicographical_order][lexicographic]]
@@ -9025,15 +9033,15 @@ DO NOTs:
   really know what you are doing.
 
 See also:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare][compare]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort][sort]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort-by][sort-by]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-set][sorted-set]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-set-by][sorted-set-by]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map][sorted-map]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map-by][sorted-map-by]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subseq][subseq]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq][rsubseq]]
+[[clojure:core.clj::(defn compare][compare]],
+[[clojure:core.clj::3090][sort]],
+[[clojure:core.clj::(defn sort-by][sort-by]],
+[[clojure:core.clj::(defn sorted-set][sorted-set]],
+[[clojure:core.clj::(defn sorted-set-by][sorted-set-by]],
+[[clojure:core.clj::(defn sorted-map][sorted-map]],
+[[clojure:core.clj::(defn sorted-map-by][sorted-map-by]],
+[[clojure:core.clj::(defn subseq][subseq]],
+[[clojure:core.clj::(defn rsubseq][rsubseq]]
 
 *** Introduction
 
@@ -9305,7 +9313,7 @@ collections
 
 Clojure's default comparator ~compare~ treats "Not a Number" (~##NaN~)
 values as equal to all other numbers. If you call
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort][sort]]
+[[clojure:core.clj::3090][sort]]
 on sequences of numbers that contain occurrences of ~##NaN~, it might
 throw an exception.
 
@@ -10172,9 +10180,9 @@ directly to a jar file instead of a directory:
 :END:
 
 When using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class][gen-class]]
+[[clojure:genclass.clj::(defmacro gen-class][gen-class]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface][gen-interface]],
+[[clojure:genclass.clj::(defmacro gen-interface][gen-interface]],
 the Clojure source must be ahead-of-time compiled to generate the java
 class(es).
 
@@ -10242,7 +10250,7 @@ Generation]] for a complete reference.
 :END:
 
 Clojure provides built-in support for running
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/start-server][socket
+[[clojure:core/server.clj::(defn start-server][socket
 servers]], and in particular using them to host remote REPLs.
 
 To configure a socket server repl, add the following base configuration
@@ -11760,12 +11768,12 @@ unless it is in a narrow and controlled scope.
 **** Why is it possible to create keywords that can't be read by the reader?
 
 The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword][keyword]]
+[[clojure:core.clj::616][keyword]]
 function can be used to programmatically create keywords based on user
 data or other sources of input. Similarly, the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace][namespace]]
+[[clojure:core.clj::(defn namespace][namespace]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/name][name]]
+[[clojure:core.clj::(defn name][name]]
 functions can be used to pull a keyword back apart into components. It
 is common for programs to use this functionality to create keywords to
 be used as identifiers or map keys without ever printing and reading
@@ -12096,7 +12104,7 @@ This is most commonly asked in the context of programs that use
 ~future~, ~pmap~, ~agent-send~, or other functions that invoke those
 functions. When a program like this finishes, there will be a 60 second
 pause before exit. To fix this problem, call
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents][shutdown-agents]]
+[[clojure:core.clj::(defn shutdown-agents][shutdown-agents]]
 as the program exits.
 
 Clojure uses two internal thread pools to service futures and agent
@@ -12868,7 +12876,7 @@ Did you know:
 - Most libraries are distributed as source and you compile them over
   and over
 - You can compile namespaces explicitly using
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile][compile]]
+  [[clojure:core.clj::(defn compile][compile]]
 - Namespace compilation is transitive
 - ~compile~ writes these files to disk and ~require~ will use them
 - You can use ~compile~ on the namespace you load when you start
@@ -12877,7 +12885,7 @@ Did you know:
 
 The ~compile~ function takes a namespace symbol and compiles that
 namespace and all the namespaces it requires into
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Acompile-path%2A][*compile-path*]]
+[[clojure:core.clj::(add-doc-and-meta *compile-path*][*compile-path*]]
 (which defaults to ~classes~). That directory must exist and be on your
 classpath:
 
@@ -16602,7 +16610,7 @@ the ~(println "Hello World")~ expression yielded 2 results:
 ~Hello World~ and ~nil~.
 
 This is because the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println][println]]
+[[clojure:core.clj::(defn println][println]]
 function /prints/ its argument to the standard output but /returns/ nil.
 Therefore, the 2 lines we see under our expression are very different in
 nature:
@@ -16958,7 +16966,7 @@ editor used below is [[https://www.gnu.org/software/emacs/][Emacs]]):
 
 Needing to pretty-print the last REPL result is so common that
 ~clojure.pprint~ has a function for that:
-[[https://clojure.github.io/clojure/clojure.pprint-api.html#clojure.pprint/pp][clojure.pprint/pp]]
+[[clojure:pprint/pprint_base.clj::(defmacro pp][clojure.pprint/pp]]
 
 #+BEGIN_EXAMPLE
 user=> (mapv number-summary [12 28])
@@ -16979,7 +16987,7 @@ nil
 
 Finally, for a result which is a sequence of maps (like the above), you
 can use
-[[https://clojure.github.io/clojure/clojure.pprint-api.html#clojure.pprint/print-table][clojure.pprint/print-table]]
+[[clojure:pprint/print_table.clj::(defn print-table][clojure.pprint/print-table]]
 to print it as a table:
 
 #+BEGIN_EXAMPLE
@@ -17118,7 +17126,7 @@ available.
 First, you can visualize the /stacktrace/ of the Exception - that is,
 the chain of function calls which led to the faulty instruction. The
 stacktrace can be printed using
-[[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst][clojure.repl/pst]]:
+[[clojure:repl.clj::(defn pst][clojure.repl/pst]]:
 
 #+BEGIN_EXAMPLE
 user=> (pst *e)
@@ -17186,7 +17194,7 @@ following charateristics in Clojure programs:
 - *Exceptions convey data:* in Clojure programs, it's common to attach
   additional data to an Exception (not just a human-readable error
   message): this is done by creating the Exception via
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ex-info][clojure.core/ex-info]].
+  [[clojure:core.clj::(defn ex-info][clojure.core/ex-info]].
 - *Exceptions are chained:* an Exception can be annotated with an
   optional /cause/, which is another (lower-level) Exception.
 
@@ -17279,7 +17287,7 @@ Finally, the REPL being a full-featured programming environment, it is
 not limited to text-based visualizations. Here are some handy
 "graphical" visualization tools bundled Clojure:
 
-[[https://clojure.github.io/clojure/clojure.java.javadoc-api.html][clojure.java.javadoc]]
+[[clojure:java/javadoc.clj][clojure.java.javadoc]]
 lets you view the [[https://en.wikipedia.org/wiki/Javadoc][Javadoc]] of
 a class or object. Here is how to view the Javadoc for a Java
 [[https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html][regex
@@ -17294,7 +17302,7 @@ user=> (jdoc/javadoc java.util.regex.Pattern) ;; equivalent to the above
 true
 #+END_EXAMPLE
 
-[[https://clojure.github.io/clojure/clojure.inspector-api.html][clojure.inspector]]
+[[clojure:inspector.clj][clojure.inspector]]
 lets you open GUI-based visualizations of data, for instance:
 
 #+BEGIN_EXAMPLE
@@ -17306,7 +17314,7 @@ user=> (insp/inspect-table (mapv number-summary [2 5 6 28 42]))
 
 [[./assets/images/content/guides/repl/clj-inspect-table.png]]
 
-[[https://clojure.github.io/clojure/clojure.java.browse-api.html#clojure.java.browse/browse-url][clojure.java.browse/browse-url]]
+[[clojure:java/browse.clj::(defn browse-url][clojure.java.browse/browse-url]]
 lets you open any URL in a Web browser, which can be handy for specific
 needs.
 
@@ -17359,7 +17367,7 @@ user=> (ancestors (type v))
 ***** Using Javadoc
 
 As we saw in the previous section, we can use the
-[[https://clojure.github.io/clojure/clojure.java.javadoc-api.html][clojure.java.javadoc]]
+[[clojure:java/javadoc.clj][clojure.java.javadoc]]
 lib to view online documentation about a Java type:
 
 #+BEGIN_EXAMPLE
@@ -17545,7 +17553,7 @@ the method to do it depends on your toolchain. For instance:
   [[#content/reference/repl_and_main][clojure.main]] (as
   is the case when using the ~clj~ tool) you can customize the REPL by
   launching a 'sub-REPL': see
-  [[https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl][clojure.main/repl]].
+  [[clojure:main.clj::368][clojure.main/repl]].
 - when using [[https://nrepl.org][nREPL]].[fn:1], this can be done by
   writing custom
   [[https://nrepl.org/nrepl/design/middleware.html][middleware]].
@@ -18428,14 +18436,14 @@ Unable to resolve symbol: defn in this context
 #+END_EXAMPLE
 
 *Explanation:* in this situation,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns][in-ns]]
+[[clojure:core.clj::(alter-meta! #'in-ns][in-ns]]
 creates the new namespace and switches to it like
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
+[[clojure:core.clj::(defmacro ns][ns]]
 does, but it does a little less work than
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]],
+[[clojure:core.clj::(defmacro ns][ns]],
 because it does not automatically make available all the names defined
 in ~clojure.core~, such as
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]].
+[[clojure:core.clj::defn (fn defn][defn]].
 You can fix that by evaluating ~(clojure.core/refer-clojure)~:
 
 #+BEGIN_EXAMPLE
@@ -18449,7 +18457,7 @@ nil
 #+END_EXAMPLE
 
 If you only use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns][in-ns]]
+[[clojure:core.clj::(alter-meta! #'in-ns][in-ns]]
 to switch to namespaces that have already been created, you won't have
 to deal with these subtleties.
 
@@ -20766,7 +20774,7 @@ improve code of this type by rewriting it to use the thread-first macro
 #+END_SRC
 
 Taking an initial value as its first argument,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->][->]]
+[[clojure:core.clj::(defmacro ->][->]]
 threads it through one or more expressions.
 
 /Note: The word "thread" in this context (meaning passing a value
@@ -20835,7 +20843,7 @@ Like ~transform~, ~calculate~ is a pipeline of transformations, but
 unlike the former, the threaded value appears in each function call in
 the final position in the argument list. Instead of the thread-first
 macro we need to use the thread-last macro
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/->>][->>]]
+[[clojure:core.clj::(defmacro ->>][->>]]
 instead:
 
 #+BEGIN_SRC clojure
@@ -20862,12 +20870,12 @@ functions used, but there are a few rules of thumb:
   ~->>~ macro.
 - Core functions that operate on data structures, on the other hand,
   expect the value they work on as their first argument. These include
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][assoc]],
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/update][update]],
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc][dissoc]],
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]]
+  [[clojure:core.clj::(fn ^:static assoc][assoc]],
+  [[clojure:core.clj::6211][update]],
+  [[clojure:core.clj::(defn dissoc][dissoc]],
+  [[clojure:core.clj::(defn get][get]]
   and their
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc-in][-in]]
+  [[clojure:core.clj::(defn assoc-in][-in]]
   variants. Pipelines that transform maps using these functions often
   require the ~->~ macro.
 - When calling methods through
@@ -20880,14 +20888,14 @@ functions used, but there are a few rules of thumb:
   #+END_SRC
 
   Note also the more specialized interop macros
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/..][..]]
+  [[clojure:core.clj::(defmacro ..][..]]
   and
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto][doto]].
+  [[clojure:core.clj::(defmacro doto][doto]].
 
 Finally, there are cases where neither ~->~ nor ~->>~ are applicable. A
 pipeline may consist of function calls with varying insertion points. In
 these cases, you'll need to use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/as->][as->]],
+[[clojure:core.clj::(defmacro as->][as->]],
 the more flexible alternative. ~as->~ expects two fixed arguments and a
 variable number of expressions. As with ~->~, the first argument is a
 value to be threaded through the following forms. The second argument is
@@ -20907,9 +20915,9 @@ thread into any argument position, not just first or last.
 *** some->, some->> and cond->
 
 Two of Clojure's more specialized threading macros,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->][some->]]
+[[clojure:core.clj::(defmacro some->][some->]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->>][some->>]],
+[[clojure:core.clj::(defmacro some->>][some->>]],
 are used most commonly when interfacing with Java methods. ~some->~
 resembles ~->~ in that it threads a value through a number of
 expressions. However, it also short-circuits execution when an
@@ -20945,7 +20953,7 @@ required:
 #+END_SRC
 
 Like ~->~, the macro
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond->][cond->]]
+[[clojure:core.clj::(defmacro cond->][cond->]]
 takes an initial value, but unlike the former, it interprets its
 argument list as a series of ~test, expr~ pairs. ~cond->~ threads a
 value through the expressions but skips those with failing tests. For
@@ -20953,9 +20961,9 @@ each pair, ~test~ is evaluated. If the result is truthy, the expression
 is evaluated with the threaded value inserted as its first argument;
 otherwise evaluation proceeds with the next ~test, expr~ pair. Note that
 unlike its relatives,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some->][some->]]
+[[clojure:core.clj::(defmacro some->][some->]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond][cond]],
+[[clojure:core.clj::(defmacro cond][cond]],
 ~cond->~ never short-circuits evaluation, even if a test evaluates to
 ~false~ or ~nil~:
 
@@ -22845,7 +22853,7 @@ contributions]] and the current
 Some of the new features for 1.8 are:
 
 - More string functions in
-  [[https://clojure.github.io/clojure/clojure.string-api.html][clojure.string]]
+  [[clojure:string.clj][clojure.string]]
   (portable to ClojureScript): index-of, last-index-of, starts-with?,
   ends-with?, includes?
 - Compiler [[#content/reference/compilation#direct-linking][direct linking]] - improves performance and startup time
@@ -27720,14 +27728,14 @@ message loop and no blocking receive. The state of an Agent should be
 itself immutable (preferably an instance of one of Clojure's persistent
 collections), and the state of an Agent is always immediately available
 for reading by any thread (using the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
+[[clojure:core.clj::(defn deref][deref]]
 function or [[#content/reference/reader][reader]] macro @) without any messages,
 i.e. observation does not require cooperation or coordination.
 
 Agent action dispatches take the form (send agent fn args*).
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send][send]]
+[[clojure:core.clj::2115][send]]
 (and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off][send-off]])
+[[clojure:core.clj::(defn send-off][send-off]])
 always returns immediately. At some point later, in another thread, the
 following will happen:
 
@@ -27735,12 +27743,12 @@ following will happen:
   args, if any were supplied.
 2. The return value of fn will be passed to the validator function, if
   one has been set on the Agent. See
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
+  [[clojure:core.clj::(defn set-validator!][set-validator!]]
   for details.
 3. If the validator succeeds or if no validator was given, the return
   value of the given fn will become the new state of the Agent.
 4. If any watchers were added to the Agent, they will be called. See
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch][add-watch]]
+  [[clojure:core.clj::(defn add-watch][add-watch]]
   for details.
 5. If during the function execution any other dispatches are made
   (directly or indirectly), they will be held until /after/ the state
@@ -27751,18 +27759,18 @@ will occur, and the exception will be cached in the Agent itself. When
 an Agent has errors cached, any subsequent interactions will immediately
 throw an exception, until the agent's errors are cleared. Agent errors
 can be examined with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error][agent-error]]
+[[clojure:core.clj::(defn agent-error][agent-error]]
 and the agent restarted with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent][restart-agent]].
+[[clojure:core.clj::(defn restart-agent][restart-agent]].
 
 The actions of all Agents get interleaved amongst threads in a thread
 pool. At any point in time, at most one action for each Agent is being
 executed. Actions dispatched to an agent from another single agent or
 thread will occur in the order they were sent, potentially interleaved
 with actions dispatched to the same agent from other sources.
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send][send]]
+[[clojure:core.clj::2115][send]]
 should be used for actions that are CPU limited, while
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off][send-off]]
+[[clojure:core.clj::(defn send-off][send-off]]
 is appropriate for actions that may block on IO.
 
 Agents are integrated with the STM - any dispatches made in a
@@ -27774,7 +27782,7 @@ involved.
 
 Note that use of Agents starts a pool of non-daemon background threads
 that will prevent shutdown of the JVM. Use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents][shutdown-agents]]
+[[clojure:core.clj::(defn shutdown-agents][shutdown-agents]]
 to terminate these threads and allow shutdown.
 
 *** Example
@@ -27807,42 +27815,42 @@ dispatched to the head of the chain and relayed through it.
 *** Related functions
 
 Create an Agent:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent][agent]]
+[[clojure:core.clj::(defn agent][agent]]
 
 Examine an Agent:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
+[[clojure:core.clj::(defn deref][deref]]
 /(see also the @ [[#content/reference/reader][reader]] macro)/
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error][agent-error]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler][error-handler]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode][error-mode]]
+[[clojure:core.clj::(defn agent-error][agent-error]]
+[[clojure:core.clj::(defn error-handler][error-handler]]
+[[clojure:core.clj::(defn error-mode][error-mode]]
 
 Change Agent state:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send][send]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off][send-off]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent][restart-agent]]
+[[clojure:core.clj::2115][send]]
+[[clojure:core.clj::(defn send-off][send-off]]
+[[clojure:core.clj::(defn restart-agent][restart-agent]]
 
 Block waiting for an Agent:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await][await]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/await-for][await-for]]
+[[clojure:core.clj::(defn await][await]]
+[[clojure:core.clj::(defn await-for][await-for]]
 
 Ref validators:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator][get-validator]]
+[[clojure:core.clj::(defn set-validator!][set-validator!]]
+[[clojure:core.clj::(defn get-validator][get-validator]]
 
 Watchers:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-watch][add-watch]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-watch][remove-watch]]
+[[clojure:core.clj::(defn add-watch][add-watch]]
+[[clojure:core.clj::(defn remove-watch][remove-watch]]
 
 Agent thread management:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shutdown-agents][shutdown-agents]]
+[[clojure:core.clj::(defn shutdown-agents][shutdown-agents]]
 
 Agent error management:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/agent-error][agent-error]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/restart-agent][restart-agent]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-handler!][set-error-handler!]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-handler][error-handler]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-error-mode!][set-error-mode!]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error-mode][error-mode]]
+[[clojure:core.clj::(defn agent-error][agent-error]]
+[[clojure:core.clj::(defn restart-agent][restart-agent]]
+[[clojure:core.clj::(defn set-error-handler!][set-error-handler!]]
+[[clojure:core.clj::(defn error-handler][error-handler]]
+[[clojure:core.clj::(defn set-error-mode!][set-error-mode!]]
+[[clojure:core.clj::(defn error-mode][error-mode]]
 
 ** Atoms
 :PROPERTIES:
@@ -27852,23 +27860,23 @@ Agent error management:
 
 Atoms provide a way to manage shared, synchronous, independent state.
 They are a reference type like refs and vars. You create an atom with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/atom][atom]],
+[[clojure:core.clj::(defn atom][atom]],
 and can access its state with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref/@]].
+[[clojure:core.clj::(defn deref][deref/@]].
 Like refs and agents, atoms support validators. To change the value of
 an atom, you can use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!][swap!]].
+[[clojure:core.clj::(defn swap!][swap!]].
 A lower-level
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compare-and-set!][compare-and-set!]]
+[[clojure:core.clj::(defn compare-and-set!][compare-and-set!]]
 is also provided. Changes to atoms are always free of race conditions.
 
 As with all reference types, the intended use of atom is to hold one of
 Clojure's immutable data structures. And, similar to ref's alter and
 agent's send, you change the value by applying a function to the old
 value. This is done in an atomic manner by
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!][swap!]]
+[[clojure:core.clj::(defn swap!][swap!]]
 Internally,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/swap!][swap!]]
+[[clojure:core.clj::(defn swap!][swap!]]
 reads the current value, applies the function to it, and attempts to
 compare-and-set! it in. Since another thread may have changed the value
 in the intervening time, it may have to retry, and does so in a spin
@@ -27940,7 +27948,7 @@ nature of Clojure, in spite of the code-reloading limitations of Java.
   namespace is compiled, when its loader .class file is older than its
   source.
 - A stand-alone
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class][gen-class]]
+  [[clojure:genclass.clj::(defmacro gen-class][gen-class]]
   facility is provided to create named classes for direct use as Java
   classes, with facilities for:
   - Naming the generated class
@@ -27956,9 +27964,9 @@ nature of Clojure, in spite of the code-reloading limitations of Java.
   - Generating more than one named class from a single file, with
       implementations in one or more namespaces
 - An optional
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class][:gen-class]]
+  [[clojure:genclass.clj::(defmacro gen-class][:gen-class]]
   directive can be used in the
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
+  [[clojure:core.clj::(defmacro ns][ns]]
   declaration to generate a named class corresponding to a namespace.
   (:gen-class ...​), when supplied, defaults to :name corresponding to
   the ns name, :main true, :impl-ns same as ns, and :init-impl-ns true.
@@ -27966,7 +27974,7 @@ nature of Clojure, in spite of the code-reloading limitations of Java.
 - gen-class and the :gen-class directive are ignored when not
   compiling.
 - A stand-alone
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface][gen-interface]]
+  [[clojure:genclass.clj::(defmacro gen-interface][gen-interface]]
   facility is provided for generating named interface classes for
   direct use as Java interfaces, with facilities for:
   - Naming the generated interface
@@ -27976,7 +27984,7 @@ nature of Clojure, in spite of the code-reloading limitations of Java.
 *** Compiling
 
 To compile a lib, use the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/compile][compile]]
+[[clojure:core.clj::(defn compile][compile]]
 function, and supply the namespace name as a symbol. For some namespace
 my.domain.lib, defined in my/domain/lib.clj, in the classpath, the
 following should occur:
@@ -28310,55 +28318,55 @@ N and M respectively.
 **** Related functions
 
 Computation:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2B][+]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2D][-]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2A][*]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2F][/]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/inc][inc]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dec][dec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/quot][quot]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rem][rem]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/min][min]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/max][max]]
+[[clojure:core.clj::986][+]]
+[[clojure:core.clj::1045][-]]
+[[clojure:core.clj::1010][*]]
+[[clojure:core.clj::(defn /][/]]
+[[clojure:core.clj::924][inc]]
+[[clojure:core.clj::1144][dec]]
+[[clojure:core.clj::(defn quot][quot]]
+[[clojure:core.clj::(defn rem][rem]]
+[[clojure:core.clj::(defn min][min]]
+[[clojure:core.clj::(defn max][max]]
 
 Auto-promoting computation:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2B%27][+']]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2D%27][-']]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2A%27][*']]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/inc%27][inc']]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dec%27][dec']]
+[[clojure:core.clj::(defn +'][+']]
+[[clojure:core.clj::(defn -'][-']]
+[[clojure:core.clj::(defn *'][*']]
+[[clojure:core.clj::(defn inc'][inc']]
+[[clojure:core.clj::(defn dec'][dec']]
 
 Comparison:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3D%3D][==]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3C][<]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3C%3D][link>
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3E][>]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%3E%3D][>=]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zero%3F][zero?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pos%3F][pos?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/neg%3F][neg?]]
+[[clojure:core.clj::(defn ==][==]]
+[[clojure:core.clj::(defn <][<]]
+[[clojure:core.clj::(defn <=][<=]]
+[[clojure:core.clj::(defn >][>]]
+[[clojure:core.clj::(defn >=][>=]]
+[[clojure:core.clj::(defn zero?][zero?]]
+[[clojure:core.clj::(defn pos?][pos?]]
+[[clojure:core.clj::(defn neg?][neg?]]
 
 Bitwise operations:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-and][bit-and]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-or][bit-or]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-xor][bit-xor]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-not][bit-not]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-shift-right][bit-shift-right]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bit-shift-left][bit-shift-left]]
+[[clojure:core.clj::(defn bit-and][bit-and]]
+[[clojure:core.clj::(defn bit-or][bit-or]]
+[[clojure:core.clj::(defn bit-xor][bit-xor]]
+[[clojure:core.clj::(defn bit-not][bit-not]]
+[[clojure:core.clj::(defn bit-shift-right][bit-shift-right]]
+[[clojure:core.clj::(defn bit-shift-left][bit-shift-left]]
 
 Ratios:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/numerator][numerator]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/denominator][denominator]]
+[[clojure:core.clj::(defn numerator][numerator]]
+[[clojure:core.clj::(defn denominator][denominator]]
 
 Coercions:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int][int]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigdec][bigdec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint][bigint]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double][double]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float][float]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long][long]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num][num]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short][short]]]]
+[[clojure:core.clj::(defn int][int]]
+[[clojure:core.clj::(defn bigdec][bigdec]]
+[[clojure:core.clj::(defn bigint][bigint]]
+[[clojure:core.clj:: double][double]]
+[[clojure:core.clj::(defn float][float]]
+[[clojure:core.clj::(defn long][long]]
+[[clojure:core.clj::(defn num][num]]
+[[clojure:core.clj::(defn short][short]]]]
 
 *** Strings
 
@@ -28372,13 +28380,13 @@ user=> (map (fn [x] (.toUpperCase x)) (.split "Dasher Dancer Prancer" " "))
 
 **** Related functions
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str][str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/string?][string?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str][pr-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str][prn-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print-str][print-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println-str][println-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str][with-out-str]]
+[[clojure:core.clj::(defn str][str]]
+[[clojure:core.clj::string? (fn ^:static string?][string?]]
+[[clojure:core.clj::(defn pr-str][pr-str]]
+[[clojure:core.clj::(defn prn-str][prn-str]]
+[[clojure:core.clj::(defn print-str][print-str]]
+[[clojure:core.clj::(defn println-str][println-str]]
+[[clojure:core.clj::(defmacro with-out-str][with-out-str]]
 
 *** Characters
 
@@ -28386,9 +28394,9 @@ Clojure characters are Java Characters.
 
 **** Related functions
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char][char]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-name-string][char-name-string]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-escape-string][char-escape-string]]
+[[clojure:core.clj::(defn char][char]]
+[[clojure:core_print.clj::char-name-string][char-name-string]]
+[[clojure:core_print.clj::char-escape-string][char-escape-string]]
 
 *** Keywords
 :PROPERTIES:
@@ -28404,12 +28412,12 @@ Keywords implement IFn for invoke() of one argument (a map) with an
 optional second argument (a default value). For example
 ~(:mykey my-hash-map :none)~ means the same as
 ~(get my-hash-map :mykey :none)~. See
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]].
+[[clojure:core.clj::(defn get][get]].
 
 **** Related functions
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword][keyword]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword?][keyword?]]
+[[clojure:core.clj::616][keyword]]
+[[clojure:core.clj::(defn keyword?][keyword?]]
 
 *** Symbols
 
@@ -28418,19 +28426,19 @@ else. They can be used in program forms to refer to function parameters,
 let bindings, class names and global vars. They have names and optional
 [[#content/reference/namespaces][namespaces]], both of which are strings. Symbols
 can have metadata (see
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta][with-meta]]).
+[[clojure:core.clj::with-meta (fn ^:static with-meta][with-meta]]).
 
 Symbols, just like Keywords, implement IFn for invoke() of one argument
 (a map) with an optional second argument (a default value). For example
 ~('mysym my-hash-map :none)~ means the same as
 ~(get my-hash-map 'mysym :none)~. See
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]].
+[[clojure:core.clj::(defn get][get]].
 
 **** Related functions
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol][symbol]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol?][symbol?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/genysm][gensym]]
+[[clojure:core.clj::591][symbol]]
+[[clojure:core.clj::(defn symbol?][symbol?]]
+[[clojure:core.clj::(defn gensym][gensym]]
 (see also the #-suffix [[#content/reference/reader][reader]] macro)
 
 *** Collections
@@ -28447,17 +28455,17 @@ new collection might not have the same concrete type as the source
 collection, but will have the same logical (interface) type.
 
 All the collections support
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count][count]]
+[[clojure:core.clj::(defn count][count]]
 for getting the size of the collection,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj][conj]]
+[[clojure:core.clj::conj (fn ^:static conj][conj]]
 for 'adding' to the collection, and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 to get a sequence that can walk the entire collection, though their
 specific behavior is slightly different for different types of
 collections.
 
 Because collections support the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 function, all of the [[#content/reference/sequences][sequence functions]] can be
 used with any collection.
 
@@ -28479,7 +28487,7 @@ value.
 
 The ~IHashEq~ interface marks collections that provide the ~hasheq()~
 function to obtain the hasheq value. In Clojure, the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash][hash]]
+[[clojure:core.clj::5177][hash]]
 function can be used to compute the hasheq value.
 
 Ordered collections (vector, list, seq, etc) must use the following
@@ -28509,7 +28517,7 @@ overflow calculations.
 #+END_SRC
 
 The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mix-collection-hash][mix-collection-hash]]
+[[clojure:core.clj::(defn mix-collection-hash][mix-collection-hash]]
 algorithm is an implementation detail subject to change.
 
 *** Lists (IPersistentList)
@@ -28520,23 +28528,23 @@ algorithm is an implementation detail subject to change.
 Lists are collections. They implement the ISeq interface directly. (Note
 that the empty list implements ISeq as well, however the ~seq~ function
 will always return ~nil~ for an empty sequence.)
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count][count]]
+[[clojure:core.clj::(defn count][count]]
 is O(1).
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj][conj]]
+[[clojure:core.clj::conj (fn ^:static conj][conj]]
 puts the item at the front of the list.
 
 **** Related functions
 
 Create a list:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list][list]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list*][list*]]
+[[clojure:core.clj::list (. clojure.lang.PersistentList][list]]
+[[clojure:core.clj::(defn list*][list*]]
 
 Treat a list like a stack:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek][peek]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop][pop]]
+[[clojure:core.clj::(defn peek][peek]]
+[[clojure:core.clj::(defn pop][pop]]
 
 Examine a list:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list?][list?]]
+[[clojure:core.clj::(defn list?][list?]]
 
 *** Vectors (IPersistentVector)
 :PROPERTIES:
@@ -28545,11 +28553,11 @@ Examine a list:
 
 A Vector is a collection of values indexed by contiguous integers.
 Vectors support access to items by index in log32N hops.
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count][count]]
+[[clojure:core.clj::(defn count][count]]
 is O(1).
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj][conj]]
+[[clojure:core.clj::conj (fn ^:static conj][conj]]
 puts the item at the end of the vector. Vectors also support
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq][rseq]],
+[[clojure:core.clj::(defn rseq][rseq]],
 which returns the items in reverse order. Vectors implement IFn, for
 invoke() of one argument, which they presume is an index and look up in
 themselves as if by nth, i.e. vectors are functions of their indices.
@@ -28559,22 +28567,22 @@ order.
 **** Related functions
 
 Create a vector:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector][vector]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vec][vec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector-of][vector-of]]
+[[clojure:core.clj::(defn vector][vector]]
+[[clojure:core.clj::369][vec]]
+[[clojure:gvec.clj::(defn vector-of][vector-of]]
 
 Examine a vector:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][nth]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek][peek]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq][rseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector?][vector?]]
+[[clojure:core.clj::(defn get][get]]
+[[clojure:core.clj::(defn nth][nth]]
+[[clojure:core.clj::(defn peek][peek]]
+[[clojure:core.clj::(defn rseq][rseq]]
+[[clojure:core.clj::vector? (fn ^:static vector?][vector?]]
 
 'change' a vector:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][assoc]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop][pop]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subvec][subvec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace][replace]]
+[[clojure:core.clj::(fn ^:static assoc][assoc]]
+[[clojure:core.clj::(defn pop][pop]]
+[[clojure:core.clj::(defn subvec][subvec]]
+[[clojure:core.clj::(defn replace][replace]]
 
 See also [[#content/reference/other_libraries][zippers]]
 
@@ -28588,18 +28596,18 @@ are provided - hashed and sorted. Hash maps require keys that correctly
 support hashCode and equals. Sorted maps require keys that implement
 Comparable, or an instance of Comparator. Hash maps provide faster
 access (log32N hops) vs (logN hops), but sorted maps are, well, sorted.
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count][count]]
+[[clojure:core.clj::(defn count][count]]
 is O(1).
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj][conj]]
+[[clojure:core.clj::conj (fn ^:static conj][conj]]
 expects another (possibly single entry) map as the item, and returns a
 new map which is the old map plus the entries from the new, which may
 overwrite entries of the old.
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj][conj]]
+[[clojure:core.clj::conj (fn ^:static conj][conj]]
 also accepts a MapEntry or a vector of two items (key and value).
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 returns a sequence of map entries, which are key/value pairs. Sorted map
 also supports
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq][rseq]],
+[[clojure:core.clj::(defn rseq][rseq]],
 which returns the entries in reverse order. Maps implement IFn, for
 invoke() of one argument (a key) with an optional second argument (a
 default value), i.e. maps are functions of their keys. nil keys and
@@ -28608,29 +28616,29 @@ values are ok.
 **** Related functions
 
 Create a new map:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-map][hash-map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map][sorted-map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map-by][sorted-map-by]]
+[[clojure:core.clj::(defn hash-map][hash-map]]
+[[clojure:core.clj::(defn sorted-map][sorted-map]]
+[[clojure:core.clj::(defn sorted-map-by][sorted-map-by]]
 
 'change' a map:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc][assoc]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc][dissoc]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/select-keys][select-keys]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge][merge]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge-with][merge-with]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap][zipmap]]
+[[clojure:core.clj::(fn ^:static assoc][assoc]]
+[[clojure:core.clj::(defn dissoc][dissoc]]
+[[clojure:core.clj::(defn select-keys][select-keys]]
+[[clojure:core.clj::(defn merge][merge]]
+[[clojure:core.clj::(defn merge-with][merge-with]]
+[[clojure:core.clj::(defn zipmap][zipmap]]
 
 Examine a map:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get][get]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/contains?][contains?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find][find]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keys][keys]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vals][vals]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map?][map?]]
+[[clojure:core.clj::(defn get][get]]
+[[clojure:core.clj::(defn contains?][contains?]]
+[[clojure:core.clj::(defn find][find]]
+[[clojure:core.clj::(defn keys][keys]]
+[[clojure:core.clj::(defn vals][vals]]
+[[clojure:core.clj::map? (fn ^:static map?][map?]]
 
 Examine a map entry:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/key][key]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/val][val]]
+[[clojure:core.clj::1569][key]]
+[[clojure:core.clj::1576][val]]
 
 *** StructMaps
 
@@ -28653,13 +28661,13 @@ from one of its base keys. A struct map will retain its base keys in
 order.
 
 StructMaps are created by first creating a structure basis object using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct][create-struct]]
+[[clojure:core.clj::(defn create-struct][create-struct]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]],
+[[clojure:core.clj::(defmacro defstruct][defstruct]],
 then creating instances with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map][struct-map]]
+[[clojure:core.clj::(defn struct-map][struct-map]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct][struct]].
+[[clojure:core.clj::4050][struct]].
 
 #+BEGIN_SRC clojure
 (defstruct desilu :fred :ricky)
@@ -28680,13 +28688,13 @@ or
 **** Related functions
 
 StructMap setup:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct][create-struct]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/accessor][accessor]]
+[[clojure:core.clj::(defn create-struct][create-struct]]
+[[clojure:core.clj::(defmacro defstruct][defstruct]]
+[[clojure:core.clj::(defn accessor][accessor]]
 
 Create individual struct:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map][struct-map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct][struct]]
+[[clojure:core.clj::(defn struct-map][struct-map]]
+[[clojure:core.clj::4050][struct]]
 
 *** ArrayMaps
 
@@ -28695,7 +28703,7 @@ which maintains key order. An array map is such a map - it is simply
 implemented as an array of key val key val...​ As such, it has linear
 lookup performance, and is only suitable for /very small/ maps. It
 implements the full map interface. New ArrayMaps can be created with the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/array-map][array-map]]
+[[clojure:core.clj::(defn array-map][array-map]]
 function. Note that an array map will only maintain sort order when
 un-'modified'. Subsequent assoc-ing will eventually cause it to 'become'
 a hash-map.
@@ -28715,9 +28723,9 @@ There is literal support for hash-sets:
 #+END_SRC
 
 You can create sets with the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-set][hash-set]]
+[[clojure:core.clj::(defn hash-set][hash-set]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-set][sorted-set]]
+[[clojure:core.clj::(defn sorted-set][sorted-set]]
 functions:
 
 #+BEGIN_SRC clojure
@@ -28729,7 +28737,7 @@ functions:
 #+END_SRC
 
 You can also get a set of the values in a collection using the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set][set]]
+[[clojure:core.clj::4093][set]]
 function:
 
 #+BEGIN_SRC clojure
@@ -28755,7 +28763,7 @@ Sets are collections:
 #+END_SRC
 
 Sets support 'removal' with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/disj][disj]],
+[[clojure:core.clj::(defn disj][disj]],
 as well as ~contains?~ and ~get~, the latter returning the object
 that is held in the set which compares equal to the key, if found:
 
@@ -28781,20 +28789,20 @@ Sets are functions of their members, using ~get~:
 #+END_SRC
 
 Clojure provides basic set operations like
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/union][union]]
+[[clojure:set.clj::(defn union][union]]
 /
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/difference][difference]]
+[[clojure:set.clj::(defn difference][difference]]
 /
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/intersection][intersection]],
+[[clojure:set.clj::(defn intersection][intersection]],
 as well as some pseudo-relational algebra support for 'relations', which
 are simply sets of maps -
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/select][select]]
+[[clojure:set.clj::(defn select][select]]
 /
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/index][index]]
+[[clojure:set.clj::(defn index][index]]
 /
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/rename][rename]]
+[[clojure:set.clj::89][rename]]
 /
-[[https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/join][join]].
+[[clojure:set.clj::(defn join][join]].
 
 ** Datatypes
 :PROPERTIES:
@@ -28817,11 +28825,11 @@ platform.
 *** Basics
 
 The datatype features -
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype][deftype]]
+[[clojure:core_deftype.clj::(defmacro deftype][deftype]]
 ,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord][defrecord]]
+[[clojure:core_deftype.clj::(defmacro defrecord][defrecord]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify][reify]]
+[[clojure:core_deftype.clj::(defmacro reify][reify]]
 , provide the mechanism for defining implementations of abstractions,
 and in the case of reify, instances of those implementations. The
 abstractions themselves are defined by either
@@ -28840,9 +28848,9 @@ the highest-performing data structures possible on the platform.
 
 *** deftype and defrecord
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype][deftype]]
+[[clojure:core_deftype.clj::(defmacro deftype][deftype]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord][defrecord]]
+[[clojure:core_deftype.clj::(defmacro defrecord][defrecord]]
 dynamically generate compiled bytecode for a named class with a set of
 given fields, and, optionally, methods for one or more protocols and/or
 interfaces. They are suitable for dynamic and interactive development,
@@ -28872,9 +28880,9 @@ structures with named fields, but differ from defstruct in that:
   ~->Foo~ is defined that passes its arguments to the constructor
   (versions 1.3 and later only)
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype][deftype]]
+[[clojure:core_deftype.clj::(defmacro deftype][deftype]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord][defrecord]]
+[[clojure:core_deftype.clj::(defmacro defrecord][defrecord]]
 differ in the following ways:
 
 - deftype provides no functionality not specified by the user, other
@@ -28967,7 +28975,7 @@ of the incidental complexities of OO.
 *** reify
 
 While deftype and defrecord define named types,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify][reify]]
+[[clojure:core_deftype.clj::(defmacro reify][reify]]
 defines both an anonymous type and creates an instance of that type. The
 use case is where you need a one-off implementation of one or more
 protocols or interfaces and would like to take advantage of the local
@@ -31021,7 +31029,7 @@ expands to:
 ~(. (. System (getProperties)) (get "os.name"))~
 
 but is easier to write, read, and understand. See also the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2d%3e][->]]
+[[clojure:core.clj::(defmacro ->][->]]
 macro which can be used similarly:
 
 ~(-> (System/getProperties) (.get "os.name"))~
@@ -31128,12 +31136,12 @@ using Java objects in Clojure algorithms.
 
 Clojure supports the dynamic creation of objects that implement one or
 more interfaces and/or extend a class with the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy][proxy]]
+[[clojure:core_proxy.clj::(defmacro proxy][proxy]]
 macro. The resulting objects are of an anonymous class. You can also
 generate statically-named classes and .class files with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class][gen-class]].
+[[clojure:genclass.clj::(defmacro gen-class][gen-class]].
 As of Clojure 1.2,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify][reify]]
+[[clojure:core_deftype.clj::(defmacro reify][reify]]
 is also available for implementing interfaces.
 
 Java annotations may be attached to classes, constructors, and methods
@@ -31189,47 +31197,47 @@ for primitives or ~into-array~ to make an array of a specific type. See
 the [[#content/guides/faq#varargs][FAQ]] for examples.
 
 Create array from existing collection:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone][aclone]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array][to-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d][to-array-2d]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array][into-array]]
+[[clojure:core.clj::(defn aclone][aclone]]
+[[clojure:core.clj::(defmacro amap][amap]]
+[[clojure:core.clj::(defn to-array][to-array]]
+[[clojure:core.clj::(defn to-array-2d][to-array-2d]]
+[[clojure:core.clj::(defn into-array][into-array]]
 
 Multi-dimensional array support:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget][aget]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset][aset]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d][to-array-2d]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-array][make-array]]
+[[clojure:core.clj::(defn aget][aget]]
+[[clojure:core.clj::(defn aset][aset]]
+[[clojure:core.clj::(defn to-array-2d][to-array-2d]]
+[[clojure:core.clj::(defn make-array][make-array]]
 
 Type-specific array constructors:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean-array][boolean-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/byte-array][byte-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-array][char-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double-array][double-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array][float-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array][int-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long-array][long-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/object-array][object-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short-array][short-array]]
+[[clojure:core.clj::(defn boolean-array][boolean-array]]
+[[clojure:core.clj::(defn byte-array][byte-array]]
+[[clojure:core.clj::(defn char-array][char-array]]
+[[clojure:core.clj::(defn double-array][double-array]]
+[[clojure:core.clj::(defn float-array][float-array]]
+[[clojure:core.clj::(defn int-array][int-array]]
+[[clojure:core.clj::(defn long-array][long-array]]
+[[clojure:core.clj::(defn object-array][object-array]]
+[[clojure:core.clj::(defn short-array][short-array]]
 
 Primitive array casts:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/booleans][booleans]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bytes][bytes]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/chars][chars]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doubles][doubles]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/floats][floats]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints][ints]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/longs][longs]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shorts][shorts]]
+[[clojure:core.clj::(definline booleans][booleans]]
+[[clojure:core.clj::(definline bytes][bytes]]
+[[clojure:core.clj::(definline chars][chars]]
+[[clojure:core.clj::(definline doubles][doubles]]
+[[clojure:core.clj::(definline floats][floats]]
+[[clojure:core.clj::(definline ints][ints]]
+[[clojure:core.clj::(definline longs][longs]]
+[[clojure:core.clj::(definline shorts][shorts]]
 
 Mutate an array:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset][aset]]
+[[clojure:core.clj::(defn aset][aset]]
 
 Process an existing array:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget][aget]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alength][alength]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce][areduce]]
+[[clojure:core.clj::(defn aget][aget]]
+[[clojure:core.clj::(defn alength][alength]]
+[[clojure:core.clj::(defmacro amap][amap]]
+[[clojure:core.clj::(defmacro areduce][areduce]]
 
 *** Type Hints
 :PROPERTIES:
@@ -31339,45 +31347,45 @@ byte.
   and do type-checking for same primitive type.
 - Arithmetic (+,-,*,/,inc,dec,<,<=,>,>= etc) is overloaded for
   primitive types where semantics are same.
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aget][aget]]
+- [[clojure:core.clj::(defn aget][aget]]
   /
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aset][aset]]
+  [[clojure:core.clj::(defn aset][aset]]
   are overloaded for arrays of primitives
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/aclone][aclone]],
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alength][alength]]
+- [[clojure:core.clj::(defn aclone][aclone]],
+  [[clojure:core.clj::(defn alength][alength]]
   functions for arrays of primitives
 - constructor functions for primitive arrays:
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float-array][float-array]],
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int-array][int-array]],
+  [[clojure:core.clj::(defn float-array][float-array]],
+  [[clojure:core.clj::(defn int-array][int-array]],
   etc.
 - Type hints for primitive arrays - \^ints, \^floats, etc.
 - Coercion ops
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int][int]],
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float][float]],
+  [[clojure:core.clj::(defn int][int]],
+  [[clojure:core.clj::(defn float][float]],
   etc. produce primitives when consumer can take primitive
 - The
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num][num]]
+  [[clojure:core.clj::(defn num][num]]
   coercion function boxes primitives to force generic arithmetic
 - Array cast functions
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ints][ints]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/longs][longs]],
+  [[clojure:core.clj::(definline ints][ints]]
+  [[clojure:core.clj::(definline longs][longs]],
   etc. which produce int[], long[], etc.
 - A set of "unchecked" operations for utmost performing, but
   potentially unsafe, integer (int/long) ops:
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-multiply][unchecked-multiply]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-dec][unchecked-dec]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-inc][unchecked-inc]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-negate][unchecked-negate]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-add][unchecked-add]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-subtract][unchecked-subtract]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-remainder][unchecked-remainder]]
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/unchecked-divide][unchecked-divide]]
+  [[clojure:core.clj::1228][unchecked-multiply]]
+  [[clojure:core.clj::1172][unchecked-dec]]
+  [[clojure:core.clj::1158][unchecked-inc]]
+  [[clojure:core.clj::1186][unchecked-negate]]
+  [[clojure:core.clj::1200][unchecked-add]]
+  [[clojure:core.clj::1214][unchecked-subtract]]
+  # FIXME: not in the source code [[clojure:core.clj::(defn unchecked-remainder][unchecked-remainder]]
+  # FIXME: not in the source code [[clojure:core.clj::(defn unchecked-divide][unchecked-divide]]
 - A dynamic var to automatically swap safe operations with unchecked
   operations:
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Aunchecked-math%2A][*unchecked-math*]]
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
+  [[clojure:core.clj::(add-doc-and-meta *unchecked-math*][*unchecked-math*]]
+- [[clojure:core.clj::(defmacro amap][amap]]
   and
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce][areduce]]
+  [[clojure:core.clj::(defmacro areduce][areduce]]
   macros for functionally (i.e. non-destructively) processing one or
   more arrays in order to produce a new array or aggregate value
   respectively.
@@ -31451,17 +31459,17 @@ to the primitive-typed overload).
 At times it is necessary to have a value of a particular primitive type.
 These coercion functions yield a value of the indicated type as long as
 such a coercion is possible:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigdec][bigdec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/bigint][bigint]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/boolean][boolean]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/byte][byte]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char][char]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/double][double]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/float][float]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/int][int]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/long][long]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/num][num]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short][short]]
+[[clojure:core.clj::(defn bigdec][bigdec]]
+[[clojure:core.clj::(defn bigint][bigint]]
+[[clojure:core.clj::1607][boolean]]
+[[clojure:core.clj::(defn byte][byte]]
+[[clojure:core.clj::(defn char][char]]
+[[clojure:core.clj::3480][double]]
+[[clojure:core.clj::(defn float][float]]
+[[clojure:core.clj::(defn int][int]]
+[[clojure:core.clj::(defn long][long]]
+[[clojure:core.clj::(defn num][num]]
+[[clojure:core.clj::(defn short][short]]
 
 *** Some optimization tips
 
@@ -31523,8 +31531,7 @@ package provides a minimal interface to bootstrap Clojure access from
 other JVM languages. It does this by providing:
 
 1. The ability to use Clojure's namespaces to locate an arbitrary var,
-  returning the var's clojure.lang.IFn interface.
-
+   returning the var's clojure.lang.IFn interface.
 2. A convenience method read for reading data using Clojure's edn reader
 
 IFns provide complete access to Clojure's APIs. You can also access any
@@ -31896,14 +31903,14 @@ two forms are equivalent:
 *** Related functions
 
 Creating a namespace:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
+[[clojure:core.clj::(defmacro ns][ns]]
 
 Ensuring a lib is loaded:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/require][require]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use][use]]
+[[clojure:core.clj::(defn require][require]]
+[[clojure:core.clj::(defn use][use]]
 
 Listing loaded libs:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/loaded-libs][loaded-libs]]
+[[clojure:core.clj::(defn loaded-libs][loaded-libs]]
 
 *** Lib load order
 :PROPERTIES:
@@ -31963,7 +31970,7 @@ or Scheme.
   (if they are marked as dynamic).
 - No letrec, labels or flet - use (fn name [args]...​) for
   self-reference,
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/letfn][letfn]]
+  [[clojure:core.clj::(defmacro letfn][letfn]]
   for mutual reference.
 - In Clojure ~nil~ means 'nothing'. It signifies the absence of a
   value, of any type, and is not specific to lists or sequences.
@@ -32023,7 +32030,7 @@ Many core constructs of Clojure are not, in fact, primitives, but are
 normal macros.
 
 Some macros produce simple combinations of primitive forms. For example,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when][when]]
+[[clojure:core.clj::(defmacro when][when]]
 combines [[#content/reference/special_forms#if][if]] and
 [[#content/reference/special_forms#do][do]]:
 
@@ -32058,79 +32065,79 @@ All of the following macros are documented on the
 discussed on topic pages as noted:
 
 Creating macros:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro][defmacro]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline][definline]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand-1][macroexpand-1]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/macroexpand][macroexpand]]
+[[clojure:core.clj::defmacro (fn][defmacro]]
+[[clojure:core.clj::(defmacro definline][definline]]
+[[clojure:core.clj::(defn macroexpand-1][macroexpand-1]]
+[[clojure:core.clj::4014][macroexpand]]
 
 Branching:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/and][and]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/or][or]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when][when]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-not][when-not]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-let][when-let]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-first][when-first]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-not][if-not]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/if-let][if-let]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cond][cond]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/condp][condp]]
+[[clojure:core.clj::(defmacro and][and]]
+[[clojure:core.clj::(defmacro or][or]]
+[[clojure:core.clj::(defmacro when][when]]
+[[clojure:core.clj::(defmacro when-not][when-not]]
+[[clojure:core.clj::(defmacro when-let][when-let]]
+[[clojure:core.clj::(defmacro when-first][when-first]]
+[[clojure:core.clj::(defmacro if-not][if-not]]
+[[clojure:core.clj::(defmacro if-let][if-let]]
+[[clojure:core.clj::(defmacro cond][cond]]
+[[clojure:core.clj::(defmacro condp][condp]]
 
 Looping (see also [[#content/reference/sequences][Sequences]]):
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq][doseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes][dotimes]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/while][while]]
+[[clojure:core.clj::(defmacro for][for]]
+[[clojure:core.clj::(defmacro doseq][doseq]]
+[[clojure:core.clj::(defmacro dotimes][dotimes]]
+[[clojure:core.clj::(defmacro while][while]]
 
 Working with vars (see also [[#content/reference/vars][Vars and Environment]]):
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare][declare]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro][defmacro]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline][definline]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod][defmethod]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti][defmulti]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-][defn-]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce][defonce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]
+[[clojure:core.clj::(defmacro ns][ns]]
+[[clojure:core.clj::(declare][declare]]
+[[clojure:core.clj::defn (fn defn][defn]]
+[[clojure:core.clj::defmacro (fn][defmacro]]
+[[clojure:core.clj::(defmacro definline][definline]]
+[[clojure:core.clj::(defmacro defmethod][defmethod]]
+[[clojure:core.clj::(defmacro defmulti][defmulti]]
+[[clojure:core.clj::(defn-][defn-]]
+[[clojure:core.clj::(defmacro defonce][defonce]]
+[[clojure:core.clj::(defmacro defstruct][defstruct]]
 
 Arranging code differently:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E][..]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doto][doto]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/-%3e][->]]
+[[clojure:core.clj::(defmacro ..][..]]
+[[clojure:core.clj::(defmacro doto][doto]]
+[[clojure:core.clj::(defmacro ->][->]]
 
 Dynamic scopes (see also [[#content/reference/vars][Vars and Environment]]):
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/locking][locking]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time][time]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-in-str][with-in-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars][with-local-vars]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open][with-open]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str][with-out-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-precision][with-precision]]
+[[clojure:core.clj::(defmacro binding][binding]]
+[[clojure:core.clj::(defmacro locking][locking]]
+[[clojure:core.clj::(defmacro time][time]]
+[[clojure:core.clj::(defmacro with-in-str][with-in-str]]
+[[clojure:core.clj::(defmacro with-local-vars][with-local-vars]]
+[[clojure:core.clj::(defmacro with-open][with-open]]
+[[clojure:core.clj::(defmacro with-out-str][with-out-str]]
+[[clojure:core.clj::(defmacro with-precision][with-precision]]
 
 Creating lazy things (see also [[#content/reference/sequences][Sequences]]):
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat][lazy-cat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cons][lazy-cons]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/delay][delay]]
+[[clojure:core.clj::(defmacro lazy-cat][lazy-cat]]
+# FIXME: don't know how lazy-cons defined [[clojure:core.clj::(lazy-cons][lazy-cons]]
+[[clojure:core.clj::(defmacro delay][delay]]
 
 [[#content/reference/java_interop][Java interop]] macros:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2E%2E][..]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/amap][amap]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/areduce][areduce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-class][gen-class]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/gen-interface][gen-interface]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy][proxy]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/proxy-super][proxy-super]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/memfn][memfn]]
+[[clojure:core.clj::(defmacro ..][..]]
+[[clojure:core.clj::(defmacro amap][amap]]
+[[clojure:core.clj::(defmacro areduce][areduce]]
+[[clojure:genclass.clj::(defmacro gen-class][gen-class]]
+[[clojure:genclass.clj::(defmacro gen-interface][gen-interface]]
+[[clojure:core_proxy.clj::(defmacro proxy][proxy]]
+[[clojure:core_proxy.clj::(defmacro proxy-super][proxy-super]]
+[[clojure:core.clj::(defmacro memfn][memfn]]
 
 Documenting code:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert][assert]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment][comment]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doc][doc]]
+[[clojure:core.clj::(defmacro assert][assert]]
+[[clojure:core.clj::(defmacro comment][comment]]
+[[clojure:repl.clj::(defmacro doc][doc]]
 
 Transactions:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
+[[clojure:core.clj::(defmacro dosync][dosync]]
+[[clojure:core.clj::(defmacro io!][io!]]
 
 A few [[#content/reference/special_forms][special forms]] are actually implemented
 as macros, primarily to provide destructuring: fn let loop
@@ -32267,7 +32274,7 @@ will be applied to the arguments to the multimethod in order to produce
 a /dispatching value/. The multimethod will then try to find the method
 associated with the dispatching value or a value from which the
 dispatching value is derived. If one has been defined (via
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod][defmethod]]),
+[[clojure:core.clj::(defmacro defmethod][defmethod]]),
 it will then be called with the arguments and that will be the value of
 the multimethod call. If no method is associated with the dispatching
 value, the multimethod will look for a method associated with the
@@ -32275,14 +32282,14 @@ default dispatching value (which defaults to ~:default~), and will use
 that if present. Otherwise the call is an error.
 
 The multimethod system exposes this API:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti][defmulti]]
+[[clojure:core.clj::(defmacro defmulti][defmulti]]
 creates new multimethods,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod][defmethod]]
+[[clojure:core.clj::(defmacro defmethod][defmethod]]
 creates and installs a new method of multimethod associated with a
 dispatch-value,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method][remove-method]]
+[[clojure:core.clj::(defn remove-method][remove-method]]
 removes the method associated with a dispatch-value and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method][prefer-method]]
+[[clojure:core.clj::(defn prefer-method][prefer-method]]
 creates an ordering between methods when they would otherwise be
 ambiguous.
 
@@ -32290,13 +32297,13 @@ Derivation is determined by a combination of either Java inheritance
 (for class values), or using Clojure's ad hoc hierarchy system. The
 hierarchy system supports derivation relationships between names (either
 symbols or keywords), and relationships between classes and names. The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive][derive]]
+[[clojure:core.clj::(defn derive][derive]]
 function creates these relationships, and the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 function tests for their existence. Note that
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa?][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 is not
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/instance?][instance?]].
+[[clojure:core.clj::instance? (fn instance?][instance?]].
 
 You can define hierarchical relationships with (derive child parent).
 Child and parent can be either symbols or keywords, and must be
@@ -32309,7 +32316,7 @@ namespace-qualified:
 -> :user/rect
 #+END_SRC
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/derive][derive]]
+[[clojure:core.clj::(defn derive][derive]]
 is the fundamental relationship-maker
 
 #+BEGIN_SRC clojure
@@ -32317,13 +32324,13 @@ is the fundamental relationship-maker
 (derive ::square ::rect)
 #+END_SRC
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents][parents]]
+[[clojure:core.clj::(defn parents][parents]]
 /
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors][ancestors]]
+[[clojure:core.clj::(defn ancestors][ancestors]]
 /
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants][descendants]]
+[[clojure:core.clj::(defn descendants][descendants]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 let you query the hierarchy
 
 #+BEGIN_SRC clojure
@@ -32365,7 +32372,7 @@ hierarchy:
 -> true
 #+END_SRC
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 also tests for class relationships:
 
 #+BEGIN_SRC clojure
@@ -32374,11 +32381,11 @@ also tests for class relationships:
 #+END_SRC
 
 as do
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/parents][parents]]
+[[clojure:core.clj::(defn parents][parents]]
 /
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ancestors][ancestors]]
+[[clojure:core.clj::(defn ancestors][ancestors]]
 (but not
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/descendants][descendants]],
+[[clojure:core.clj::(defn descendants][descendants]],
 since class descendants are an open set)
 
 #+BEGIN_SRC clojure
@@ -32389,9 +32396,9 @@ since class descendants are an open set)
     java.util.RandomAccess java.util.AbstractList}
 #+END_SRC
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 works with vectors by calling
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 on their corresponding elements:
 
 #+BEGIN_SRC clojure
@@ -32402,10 +32409,10 @@ on their corresponding elements:
 *** isa? based dispatch
 
 Multimethods use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 rather than = when testing for dispatch value matches. Note that the
 first test of
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/isa%3F][isa?]]
+[[clojure:core.clj::(defn isa?][isa?]]
 is =, so exact matches work.
 
 #+BEGIN_SRC clojure
@@ -32423,7 +32430,7 @@ is =, so exact matches work.
 :a-string
 #+END_SRC
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method][prefer-method]]
+[[clojure:core.clj::(defn prefer-method][prefer-method]]
 is used for disambiguating in case of multiple matches where neither
 dominates the other. You can just declare, per multimethod, that one
 dispatch value is preferred over another:
@@ -32449,7 +32456,7 @@ dispatch value is preferred over another:
 All of the examples above use the global hierarchy used by the
 multimethod system, but entire independent hierarchies can also be
 created with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/make-hierarchy][make-hierarchy]],
+[[clojure:core.clj::(defn make-hierarchy][make-hierarchy]],
 and all of the above functions can take an optional hierarchy as a first
 argument.
 
@@ -32497,71 +32504,71 @@ its variants, in which case they have a simple symbol for a name and a
 reference to their containing namespace, and the namespace maps that
 symbol to the same var. A namespace can also contain mappings from
 symbols to vars interned in other namespaces by using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer][refer]]
+[[clojure:core.clj::(defn refer][refer]]
 or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/use][use]],
+[[clojure:core.clj::(defn use][use]],
 or from symbols to Class objects by using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import][import]].
+[[clojure:core.clj::(defn import][import]].
 Note that namespaces are first-class, they can be enumerated etc.
 Namespaces are also dynamic, they can be created, removed and modified
 at runtime, at the Repl etc.
 
 The best way to set up a new namespace at the top of a Clojure source
 file is to use the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns
+[[clojure:core.clj::(defmacro ns][ns
 macro]]. By default this will create a new namespace that contains
 mappings for the classnames in java.lang plus ~clojure.lang.Compiler~,
 and the functions in ~clojure.core~.
 
 At the Repl it's best to use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns][in-ns]],
+[[clojure:core.clj::(alter-meta! #'in-ns][in-ns]],
 in which case the new namespace will contain mappings only for the
 classnames in java.lang. In order to access the names from the
 ~clojure.core~ namespace you must execute (clojure.core/refer
 'clojure.core). The ~user~ namespace at the Repl has already done this.
 
 The current namespace, /*ns*/ can and should be set only with a call to
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns][in-ns]]
+[[clojure:core.clj::(alter-meta! #'in-ns][in-ns]]
 or the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns
+[[clojure:core.clj::(defmacro ns][ns
 macro]], both of which create the namespace if it doesn't exist.
 
 *** Related functions
 
 Creating and switching to a namespace:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/in-ns][in-ns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns][ns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-ns][create-ns]]
+[[clojure:core.clj::(alter-meta! #'in-ns][in-ns]]
+[[clojure:core.clj::(defmacro ns][ns]]
+[[clojure:core.clj::(defn create-ns][create-ns]]
 
 Adding to a namespace:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alias][alias]]
+[[clojure:core.clj::(defn alias][alias]]
 [[#content/reference/special_forms#def][def]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/import][import]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern][intern]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/refer][refer]]
+[[clojure:core.clj::(defn import][import]]
+[[clojure:core.clj::(defn intern][intern]]
+[[clojure:core.clj::(defn refer][refer]]
 
 Finding what namespaces exist:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/all-ns][all-ns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-ns][find-ns]]
+[[clojure:core.clj::(defn all-ns][all-ns]]
+[[clojure:core.clj::(defn find-ns][find-ns]]
 
 Examining a namespace:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-name][ns-name]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-aliases][ns-aliases]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-imports][ns-imports]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-interns][ns-interns]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-map][ns-map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-publics][ns-publics]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-refers][ns-refers]]
+[[clojure:core.clj::(defn ns-name][ns-name]]
+[[clojure:core.clj::(defn ns-aliases][ns-aliases]]
+[[clojure:core.clj::(defn ns-imports][ns-imports]]
+[[clojure:core.clj::(defn ns-interns][ns-interns]]
+[[clojure:core.clj::(defn ns-map][ns-map]]
+[[clojure:core.clj::(defn ns-publics][ns-publics]]
+[[clojure:core.clj::(defn ns-refers][ns-refers]]
 
 Getting a namespace from a symbol:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resolve][resolve]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-resolve][ns-resolve]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/namespace][namespace]]
+[[clojure:core.clj::(defn resolve][resolve]]
+[[clojure:core.clj::(defn ns-resolve][ns-resolve]]
+[[clojure:core.clj::(defn namespace][namespace]]
 
 Removing things:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unalias][ns-unalias]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ns-unmap][ns-unmap]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-ns][remove-ns]]
+[[clojure:core.clj::(defn ns-unalias][ns-unalias]]
+[[clojure:core.clj::(defn ns-unmap][ns-unmap]]
+[[clojure:core.clj::(defn remove-ns][remove-ns]]
 
 *** More information
 
@@ -32578,21 +32585,21 @@ Also see:
 :END:
 
 Boolean and comparison functions:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/=][=]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/==][==]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identical?][identical?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not=][not=]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not][not]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/true?][true?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/false?][false?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nil?][nil?]]
+[[clojure:core.clj::(defn =][=]]
+[[clojure:core.clj::(defn ==][==]]
+[[clojure:core.clj::(defn identical?][identical?]]
+[[clojure:core.clj::(defn not=][not=]]
+[[clojure:core.clj::(defn not][not]]
+[[clojure:core.clj::(defn true?][true?]]
+[[clojure:core.clj::(defn false?][false?]]
+[[clojure:core.clj::(defn nil?][nil?]]
 
 Miscellaneous:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/identity][identity]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dotimes][dotimes]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/time][time]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assert][assert]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-open][with-open]]
+[[clojure:core.clj::(defn identity][identity]]
+[[clojure:core.clj::(defmacro dotimes][dotimes]]
+[[clojure:core.clj::(defmacro time][time]]
+[[clojure:core.clj::(defmacro assert][assert]]
+[[clojure:core.clj::(defmacro with-open][with-open]]
 
 *** Creating functions
 
@@ -32600,10 +32607,10 @@ Miscellaneous:
 |-------------------------------------------------------------------------------------------------+--------------------------------------+--------------------------+---|
 | [[#content/reference/special_forms#fn][fn]]                                                               | ~(map (fn [x] (+ 2 x)) [1 2 3])~     | ~(3 4 5)~                |   |
 | #() [[#content/reference/reader][reader]] macro                                                 | ~(map #(+ 2 %) [1 2 3])~             | ~(3 4 5)~                |   |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partial][partial]]       | ~(map (partial + 2) [1 2 3])~        | ~(3 4 5)~                |   |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comp][comp]]             | ~(map (comp - *) [2 4 6] [1 2 3])~   | ~(-2 -8 -18)~            |   |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/complement][complement]] | ~(map (complement zero?) [3 2 1 0])~ | ~(true true true false)~ |   |
-| [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/constantly][constantly]] | ~(map (constantly 9) [1 2 3])~       | ~(9 9 9)~                |   |
+| [[clojure:core.clj::(defn partial][partial]]       | ~(map (partial + 2) [1 2 3])~        | ~(3 4 5)~                |   |
+| [[clojure:core.clj::2561][comp]]         | ~(map (comp - *) [2 4 6] [1 2 3])~   | ~(-2 -8 -18)~            |   |
+| [[clojure:core.clj::(defn complement][complement]] | ~(map (complement zero?) [3 2 1 0])~ | ~(true true true false)~ |   |
+| [[clojure:core.clj::(defn constantly][constantly]] | ~(map (constantly 9) [1 2 3])~       | ~(9 9 9)~                |   |
 
 *** Printing
 :PROPERTIES:
@@ -32614,29 +32621,29 @@ Miscellaneous:
 Several functions are provided to print objects to the output stream
 that is the current value of ~*out*~. The -str versions bind ~*out*~ to
 a StringWriter, print to that, and return the resulting string.
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr][pr]]
+[[clojure:core.clj::3665][pr]]
 prints the object(s), separated by spaces if there is more than one.
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn][prn]]
+[[clojure:core.clj::(defn prn][prn]]
 does the same and follows it with a
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline][newline]].
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print][print]]
+[[clojure:core.clj::(defn newline][newline]].
+[[clojure:core.clj::(defn print][print]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println][println]]
+[[clojure:core.clj::(defn println][println]]
 call
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr][pr]]
+[[clojure:core.clj::3665][pr]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn][prn]]
+[[clojure:core.clj::(defn prn][prn]]
 respectively, with ~*print-readably*~ (which defaults to true) bound to
 nil, which causes strings to print without surrounding quotes or any
 escape character encoding, and characters to print without the leading
 '\', or any escape character encoding. By default,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr][pr]]
+[[clojure:core.clj::3665][pr]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn][prn]]
+[[clojure:core.clj::(defn prn][prn]]
 print in a way that objects can be read by the reader, while
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print][print]]
+[[clojure:core.clj::(defn print][print]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println][println]]
+[[clojure:core.clj::(defn println][println]]
 produce output for human consumption. When ~*print-readably*~ is
 non-nil, the printing of metadata is toggled by ~*print-meta*~, which
 defaults to nil.
@@ -32644,18 +32651,18 @@ defaults to nil.
 **** Related functions
 
 Print to ~*out*~:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr][pr]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn][prn]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print][print]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println][println]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/newline][newline]]
+[[clojure:core.clj::3665][pr]]
+[[clojure:core.clj::(defn prn][prn]]
+[[clojure:core.clj::(defn print][print]]
+[[clojure:core.clj::(defn println][println]]
+[[clojure:core.clj::(defn newline][newline]]
 
 Print to string:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str][pr-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str][prn-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print-str][print-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println-str][println-str]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str][with-out-str]]
+[[clojure:core.clj::(defn pr-str][pr-str]]
+[[clojure:core.clj::(defn prn-str][prn-str]]
+[[clojure:core.clj::(defn print-str][print-str]]
+[[clojure:core.clj::(defn println-str][println-str]]
+[[clojure:core.clj::(defmacro with-out-str][with-out-str]]
 
 *** Regex Support
 :PROPERTIES:
@@ -32664,7 +32671,7 @@ Print to string:
 
 Regex patterns can be compiled at read-time via the ~#"pattern"~ reader
 macro, or at run time with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-pattern][re-pattern]].
+[[clojure:core.clj::(defn re-pattern][re-pattern]].
 Both forms produce
 [[https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html][java.util.regex.Pattern]]
 objects.
@@ -32683,11 +32690,11 @@ user=> (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
 
 **** Related functions
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matcher][re-matcher]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-find][re-find]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-matches][re-matches]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-groups][re-groups]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-seq][re-seq]]
+[[clojure:core.clj::(defn re-matcher][re-matcher]]
+[[clojure:core.clj::(defn re-find][re-find]]
+[[clojure:core.clj::(defn re-matches][re-matches]]
+[[clojure:core.clj::(defn re-groups][re-groups]]
+[[clojure:core.clj::(defn re-seq][re-seq]]
 
 ** Other Included Libraries
 :PROPERTIES:
@@ -32696,21 +32703,21 @@ user=> (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
 :END:
 *** Java Utilities (clojure.java.*)
 
-*[[https://clojure.github.io/clojure/clojure.java.io-api.html][clojure.java.io]]*
+*[[clojure:java/io.clj][clojure.java.io]]*
 Contains polymorphic I/O utility functions for Clojure backed by Java
 classes.
 
-*[[https://clojure.github.io/clojure/clojure.java.javadoc-api.html][clojure.java.javadocs]]*
+*[[clojure:java/javadoc.clj][clojure.java.javadocs]]*
 
 Provides the function
-[[https://clojure.github.io/clojure/clojure.java.javadoc-api.html#clojure.java.javadoc/javadoc][javadoc]]
+[[clojure:java/javadoc.clj::(defn javadoc][javadoc]]
 that attempts to display the appropriate Javadocs for a class or
 instance class.
 
-*[[https://clojure.github.io/clojure/clojure.java.shell-api.html][clojure.java.shell]]*
+*[[clojure:java/shell.clj][clojure.java.shell]]*
 
 Provides a
-[[https://clojure.github.io/clojure/clojure.java.shell-api.html#clojure.java.shell/sh][sh]]
+[[clojure:java/shell.clj::(defn sh][sh]]
 function that facilitates launching and managing subprocesses. See the
 function documentation for details on its expected arguments.
 
@@ -32756,37 +32763,37 @@ f
 -> [[1 5] [4 6] [7 11] [0 12] [9 13] [6 15] [11 17] [14 18] [7 19]]
 #+END_SRC
 
-*** Reflection Utilities ([[https://clojure.github.io/clojure/clojure.reflect-api.html][clojure.reflect]])
+*** Reflection Utilities ([[clojure:reflect.clj][clojure.reflect]])
 
 Provides functions and protocols useful for gathering and building host
 type reflection information as Clojure data.
 
-*** REPL Utilities ([[https://clojure.github.io/clojure/clojure.repl-api.html][clojure.repl]])
+*** REPL Utilities ([[clojure:repl.clj][clojure.repl]])
 
 Utilities meant to be used interactively at the REPL.
 
-*** Sets and Relational Algebra ([[https://clojure.github.io/clojure/clojure.set-api.html][clojure.set]])
+*** Sets and Relational Algebra ([[clojure:set.clj][clojure.set]])
 
 Functions useful for manipulating, building, and querying mathematical
 sets using relational algebra.
 
-*** String Handling ([[https://clojure.github.io/clojure/clojure.string-api.html][clojure.string]])
+*** String Handling ([[clojure:string.clj][clojure.string]])
 
 Functions for manipulating strings.
 
-*** Unit Testing ([[https://clojure.github.io/clojure/clojure.test-api.html][clojure.test]])
+*** Unit Testing ([[clojure:test.clj][clojure.test]])
 
 A Clojure unit testing framework.
 
-*** Walking Data Structures ([[https://clojure.github.io/clojure/clojure.walk-api.html][clojure.walk]])
+*** Walking Data Structures ([[clojure:walk.clj][clojure.walk]])
 
 Utilities for traversing and manipulating nested data structures.
 
-*** XML ([[https://clojure.github.io/clojure/clojure.xml-api.html][clojure.xml]])
+*** XML ([[clojure:xml.clj][clojure.xml]])
 
 Utilities for reading and writing XML data.
 
-*** Zippers - Functional Tree Editing ([[https://clojure.github.io/clojure/clojure.zip-api.html][clojure.zip]])
+*** Zippers - Functional Tree Editing ([[clojure:zip.clj][clojure.zip]])
 
 Clojure includes purely functional, generic tree walking and editing,
 using a technique called a zipper (in namespace /*zip*/) . For
@@ -32798,10 +32805,10 @@ provides down/up/left/right navigation, and localized functional
 'editing', insertion and removal of nodes. With zippers you can write
 code that looks like an imperative, destructive walk through a tree,
 call
-[[https://clojure.github.io/clojure/clojure.zip-api.html#clojure.zip/root][root]]
+[[clojure:zip.clj::(defn root][root]]
 when you are done and get a new tree reflecting all the changes, when in
 fact nothing at all is mutated - it's all thread safe and shareable. The
-[[https://clojure.github.io/clojure/clojure.zip-api.html#clojure.zip/next][next]]
+[[clojure:zip.clj::(defn next][next]]
 function does a depth-first walk, making for easy to understand loops:
 
 #+BEGIN_SRC clojure
@@ -32900,7 +32907,7 @@ Protocols were introduced in Clojure 1.2.
 
 A protocol is a named set of named methods and their signatures, defined
 using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol][defprotocol]]:
+[[clojure:core_deftype.clj::(defmacro defprotocol][defprotocol]]:
 
 #+BEGIN_SRC clojure
 (defprotocol AProtocol
@@ -32918,7 +32925,7 @@ using
   and thus must have at least one argument
 - defprotocol is dynamic, and does not require AOT compilation
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol][defprotocol]]
+[[clojure:core_deftype.clj::(defmacro defprotocol][defprotocol]]
 will automatically generate a corresponding interface, with the same
 name as the protocol, e.g. given a protocol my.ns/Protocol, an interface
 my.ns.Protocol. The interface will have methods corresponding to the
@@ -32926,11 +32933,11 @@ protocol functions, and the protocol will automatically work with
 instances of the interface.
 
 Note that you do not need to use this interface with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype][deftype]]
+[[clojure:core_deftype.clj::(defmacro deftype][deftype]]
 ,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord][defrecord]]
+[[clojure:core_deftype.clj::(defmacro defrecord][defrecord]]
 , or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify][reify]],
+[[clojure:core_deftype.clj::(defmacro reify][reify]],
 as they support protocols directly:
 
 #+BEGIN_SRC clojure
@@ -32963,7 +32970,7 @@ efficiently by implementing the protocol-generated interface.
 External implementations of the protocol (which are needed when you want
 a class or type not in your control to participate in the protocol) can
 be provided using the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend][extend]]
+[[clojure:core_deftype.clj::(defn extend][extend]]
 construct:
 
 #+BEGIN_SRC clojure
@@ -33000,17 +33007,17 @@ protocol + function map (evaluated) pairs.
   just use Object
 
 Protocols are fully reified and support reflective capabilities via
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extends%3F][extends?]]
+[[clojure:core_deftype.clj::(defn extends?][extends?]]
 ,
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extenders][extenders]]
+[[clojure:core_deftype.clj::(defn extenders][extenders]]
 , and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies%3F][satisfies?]]
+[[clojure:core_deftype.clj::(defn satisfies?][satisfies?]]
 .
 
 - Note the convenience macros
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-type][extend-type]]
+  [[clojure:core_deftype.clj::(defmacro extend-type][extend-type]]
   and
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend-protocol][extend-protocol]]
+  [[clojure:core_deftype.clj::(defmacro extend-protocol][extend-protocol]]
 - If you are providing external definitions inline, these will be more
   convenient than using ~extend~ directly
 
@@ -33102,7 +33109,7 @@ in many of the same contexts one might use XML or JSON etc.
 One might say the reader has syntax defined in terms of characters, and
 the Clojure language has syntax defined in terms of symbols, lists,
 vectors, maps etc. The reader is represented by the function
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read][read]],
+[[clojure:core.clj::(defn read][read]],
 which reads the next form (not character) from a stream, and returns the
 object represented by that form.
 
@@ -33292,7 +33299,7 @@ Metadata is a map associated with some kinds of objects: Symbols, Lists,
 Vector, Sets, Maps, tagged literals returning an IMeta, and record,
 type, and constructor calls. The metadata reader macro first reads the
 metadata and attaches it to the next form read (see
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta][with-meta]]
+[[clojure:core.clj::with-meta (fn ^:static with-meta][with-meta]]
 to attach meta to an object):
 
 ~^{:a 1 :b 2} [1 2 3]~ yields the vector ~[1 2 3]~ with a metadata map
@@ -33335,13 +33342,13 @@ table, indexed by the character following
   taking the form ~%~, ~%n~ or ~%&~. ~%~ is a synonym for ~%1~, ~%n~ designates
   the nth arg (1-based), and ~%&~ designates a rest arg. This is not a
   replacement for
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fn][fn]] -
+  [[clojure:core.clj::fn (fn* fn ][fn]] -
   idiomatic use would be for very short one-off mapping/filter fns and
   the like. ~#()~ forms cannot be nested.
 - Ignore next form (~#_~)
   The form following ~#_~ is completely skipped by the reader. (This
   is a more complete removal than the
-  [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/comment][comment]]
+  [[clojure:core.clj::(defmacro comment][comment]]
   macro which yields nil).
 
 **** Syntax-quote (`, note, the "backquote" character), Unquote (~) and Unquote-splicing (~@)
@@ -33414,12 +33421,12 @@ normal Clojure data structure by the reader.
 
 Reader tags without namespace qualifiers are reserved for Clojure.
 Default reader tags are defined in
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/default-data-readers][default-data-readers]]
+[[clojure:core.clj::(def ^{:added "1.4"} default-data-readers][default-data-readers]]
 but may be overridden in ~data_readers.clj~ / ~data_readers.cljc~ or by
 rebinding
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adata-readers%2A][*data-readers*]].
+[[clojure:core.clj::(def ^{:added "1.4" :dynamic true} *data-readers*][*data-readers*]].
 If no data reader is found for a tag, the function bound in
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A][*default-data-reader-fn*]]
+[[clojure:core.clj::(def ^{:added "1.5" :dynamic true} *default-data-reader-fn*][*default-data-reader-fn*]]
 will be invoked with the tag and value to produce a value. If
 ~default-data-reader-fn~ is nil (the default), a RuntimeException will
 be thrown.
@@ -33442,7 +33449,7 @@ details. The default reader will parse the supplied string into a
 #+END_SRC
 
 Since
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adata-readers%2A][*data-readers*]]
+[[clojure:core.clj::(def ^{:added "1.4" :dynamic true} *data-readers*][*data-readers*]]
 is a dynamic var that can be bound, you can replace the default reader
 with a different one. For example,
 ~clojure.instant/read-instant-calendar~ will parse the literal into a
@@ -33469,10 +33476,10 @@ The ~#uuid~ tagged literal will be parsed into a ~java.util.UUID~:
 **** Default data reader function
 
 If no data reader is found when reading a tagged literal, the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/%2Adefault-data-reader-fn%2A][*default-data-reader-fn*]]
+[[clojure:core.clj::(def ^{:added "1.5" :dynamic true} *default-data-reader-fn*][*default-data-reader-fn*]]
 is invoked. You can set your own default data reader function and the
 provided
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal][tagged-literal]]
+[[clojure:core.clj::7767][tagged-literal]]
 function can be used to build an object that can store an unhandled
 literal. The object returned by ~tagged-literal~ supports keyword lookup
 of the ~:tag~ and ~:form~:
@@ -33546,9 +33553,9 @@ An example:
 #+END_SRC
 
 The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read][read]]
+[[clojure:core.clj::(defn read][read]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read-string][read-string]]
+[[clojure:core.clj::(defn read-string][read-string]]
 functions optionally take a map of options as a first argument. The
 current feature set and reader conditional behavior can be set in the
 options map with these keys and values:
@@ -33591,10 +33598,10 @@ supports keyword retrieval for keys with ~:form~ and ~:tag~ keys.
 The following functions can also be used as predicates or constructors
 for these types:
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional%3F][reader-conditional?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reader-conditional][reader-conditional]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal%3F][tagged-literal?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tagged-literal][tagged-literal]]
+[[clojure:core.clj::(defn reader-conditional?][reader-conditional?]]
+[[clojure:core.clj::7780][reader-conditional]]
+[[clojure:core.clj::(defn tagged-literal?][tagged-literal?]]
+[[clojure:core.clj::7767][tagged-literal]]
 
 ** Reducers
 :PROPERTIES:
@@ -33638,7 +33645,7 @@ non-parallel reduce instead.
 
 The ~clojure.core.reducers~ namespace (aliased here as ~r~) provides an
 alternate
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/reduce][r/reduce]]
+[[clojure:core/reducers.clj::(defn reduce][r/reduce]]
 function.
 
 - ~(r/reduce f coll)~
@@ -33654,7 +33661,7 @@ The reducers version differs in that:
 
 In general most users will not call r/reduce directly and instead should
 prefer
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/fold][r/fold]],
+[[clojure:core/reducers.clj::(defn fold][r/fold]],
 which implements parallel reduce and combine. However, it may be useful
 to execute an eager reduce with fewer intermediate results.
 
@@ -33673,21 +33680,21 @@ performed in parallel. Results will preserve order.
 
 The following functions (analogous to the sequence versions) create
 reducers from a reducible or foldable collection:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/map][r/map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/mapcat][r/mapcat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/filter][r/filter]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/remove][r/remove]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/flatten][r/flatten]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take-while][r/take-while]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/take][r/take]]
+[[clojure:core/reducers.clj::(defcurried map][r/map]]
+[[clojure:core/reducers.clj::(defcurried mapcat][r/mapcat]]
+[[clojure:core/reducers.clj::(defcurried filter][r/filter]]
+[[clojure:core/reducers.clj::(defcurried remove][r/remove]]
+[[clojure:core/reducers.clj::(defcurried flatten][r/flatten]]
+[[clojure:core/reducers.clj::(defcurried take-while][r/take-while]]
+[[clojure:core/reducers.clj::(defcurried take][r/take]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/drop][r/drop]].
+[[clojure:core/reducers.clj::(defcurried drop][r/drop]].
 None of these functions actually transforms the source collection. To
 produce an accumulated result, you must use r/reduce or r/fold. To
 produce an output collection, use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into][clojure.core/into]]
+[[clojure:core.clj::6928][clojure.core/into]]
 to choose the collection type or the provided
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat][r/foldcat]]
+[[clojure:core/reducers.clj::(defn foldcat][r/foldcat]]
 to produce a collection that is reducible, foldable, seqable, and
 counted.
 
@@ -33702,7 +33709,7 @@ Use fold to sum with +:
 #+END_SRC
 
 Use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into][into]]
+[[clojure:core.clj::6928][into]]
 to produce a final collection:
 
 #+BEGIN_SRC clojure
@@ -33710,7 +33717,7 @@ to produce a final collection:
 #+END_SRC
 
 Or
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.reducers/foldcat][r/foldcat]]:
+[[clojure:core/reducers.clj::(defn foldcat][r/foldcat]]:
 
 #+BEGIN_SRC clojure
 (r/foldcat (r/filter even? (r/map inc (range 100000))))
@@ -33776,7 +33783,7 @@ The Clojure STM uses
 concurrency control]] with adaptive history queues for
 [[https://en.wikipedia.org/wiki/Snapshot_isolation][snapshot
 isolation]], and provides a distinct
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute][commute]]
+[[clojure:core.clj::(defn commute][commute]]
 operation.
 
 In practice, this means:
@@ -33786,10 +33793,10 @@ In practice, this means:
    transaction /will/ see any changes it has made. This is called the
    /in-transaction-value/.
 2. All changes made to Refs during a transaction (via
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]],
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]]
+   [[clojure:core.clj::(defn ref-set][ref-set]],
+   [[clojure:core.clj::(defn alter][alter]]
    or
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute][commute]])
+   [[clojure:core.clj::(defn commute][commute]])
    will appear to occur at a single point in the 'Ref world' timeline
    (its 'write point').
 3. No changes will have been made by any other transactions to any Refs
@@ -33803,14 +33810,14 @@ In practice, this means:
 6. Writers will never block commuters, or readers.
 7. I/O and other activities with side-effects should be avoided in
    transactions, since transactions /will/ be retried. The
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
+   [[clojure:core.clj::(defmacro io!][io!]]
    macro can be used to prevent the use of an impure function in a
    transaction.
 8. If a constraint on the validity of a value of a Ref that is being
    changed depends upon the simultaneous value of a Ref that is /not
    being changed/, that second Ref can be protected from modification
    by calling
-   [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure][ensure]].
+   [[clojure:core.clj::(defn ensure][ensure]].
    Refs 'ensured' this way will be protected (item #3), but don't
    change the world (item #2).
 9. The Clojure MVCC STM is designed to work with the persistent
@@ -33869,25 +33876,25 @@ Distinct: 1000
 *** Related functions
 
 Create a Ref:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref][ref]]
+[[clojure:core.clj::(defn ref][ref]]
 
 Examine a Ref:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
+[[clojure:core.clj::(defn deref][deref]]
 /(see also the @ [[#content/reference/reader][reader]] macro)/
 
 Transaction macros:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/io!][io!]]
+[[clojure:core.clj::(defmacro dosync][dosync]]
+[[clojure:core.clj::(defmacro io!][io!]]
 
 Allowed only in a transaction:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ensure][ensure]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ref-set][ref-set]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter][alter]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/commute][commute]]
+[[clojure:core.clj::(defn ensure][ensure]]
+[[clojure:core.clj::(defn ref-set][ref-set]]
+[[clojure:core.clj::(defn alter][alter]]
+[[clojure:core.clj::(defn commute][commute]]
 
 Ref validators:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator][get-validator]]
+[[clojure:core.clj::(defn set-validator!][set-validator!]]
+[[clojure:core.clj::(defn get-validator][get-validator]]
 
 ** The REPL and main entry points
 :PROPERTIES:
@@ -33957,20 +33964,20 @@ Several special vars are available when using the REPL:
 - *e - holds the result of the last exception.
 
 The
-[[https://clojure.github.io/clojure/clojure.repl-api.html][clojure.repl]]
+[[clojure:repl.clj][clojure.repl]]
 namespace has a number of useful functions for inspecting the source and
 documentation of available functions:
 
-- [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc][doc]]
+- [[clojure:repl.clj::(defmacro doc][doc]]
   - prints the docstring for a var given its name
-- [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc][find-doc]]
+- [[clojure:repl.clj::(defn find-doc][find-doc]]
   - prints the docstring for any var whose doc or name matches the
   pattern
-- [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos][apropos]]
+- [[clojure:repl.clj::(defn apropos][apropos]]
   - returns a seq of definitions matching a regex
-- [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source][source]]
+- [[clojure:repl.clj::(defmacro source][source]]
   - prints the source for a symbol
-- [[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst][pst]]
+- [[clojure:repl.clj::(defn pst][pst]]
   - Print Stack Trace for a given exception or *e by default
 
 *** Launching a Script
@@ -34038,13 +34045,13 @@ The clojure.main REPL includes the categorization and printing of errors
 by default, but the individual steps of this process are exposed as well
 for other REPLs to use, specifically the functions:
 
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/Throwable-%3Emap][Throwable->map]]
+- [[clojure:core_print.clj::(defn Throwable->map][Throwable->map]]
   - converts an Exception chain into Clojure data
-- [[https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-triage][ex-triage]]
+- [[clojure:main.clj::(defn ex-triage][ex-triage]]
   - analyzes Clojure exception data to pull relevant information from
   the top and bottom of the exception chain into a map describing just
   the set of data needed to format an exception string
-- [[https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-str][ex-str]]
+- [[clojure:main.clj::(defn ex-str][ex-str]]
   - produces a phase-appropriate message given a set of exception data
 
 The clojure.main REPL combines these functions in a pipeline to produce
@@ -34081,7 +34088,7 @@ system property, use ~-Dclojure.main.report=<target>~.
 
 Other programs may wish to take advantage of this functionality, and it
 is available in
-[[https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/report-error][report-error]],
+[[clojure:main.clj::(defn report-error][report-error]],
 which takes a Throwable and optionally the :target.
 
 *** tap
@@ -34091,14 +34098,14 @@ informational or diagnostic values to a set of (presumably effectful)
 handler functions. It can be used as a better debug ~prn~, or for
 facilities like logging etc.
 
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tap%3E][tap>]]
+[[clojure:core.clj::(defn tap>][tap>]]
 sends a value to the set of taps. Taps can be added with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-tap][add-tap]]
+[[clojure:core.clj::(defn add-tap][add-tap]]
 and will be called with any value sent to tap>. The tap function may
 (briefly) block (e.g. for streams) and will never impede calls to tap>,
 but blocking indefinitely may cause tap values to be dropped. If no taps
 are registered, tap> discards. Remove taps with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-tap][remove-tap]].
+[[clojure:core.clj::(defn remove-tap][remove-tap]].
 
 *** Launching a Socket Server
 :PROPERTIES:
@@ -34129,7 +34136,7 @@ following properties:
 
 Additionally, there is a repl function provided that is slightly
 customized for use with the socket server in
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl][clojure.core.server/repl]].
+[[clojure:core/server.clj::180][clojure.core.server/repl]].
 
 Following is an example of starting a socket server with a repl
 listener. This can be added to any existing Clojure program to allow it
@@ -34191,7 +34198,7 @@ logical list, and unlike most Lisps where the list is represented by a
 concrete, 2-slot structure, Clojure uses the ISeq interface to allow
 many data structures to provide access to their elements as sequences.
 The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 function yields an implementation of ISeq appropriate to the collection.
 Seqs differ from iterators in that they are persistent and immutable,
 not stateful cursors into a collection. As such, they are useful for
@@ -34202,16 +34209,16 @@ Most of the sequence library functions are /lazy/, i.e. functions that
 return seqs do so incrementally, as they are consumed, and thus consume
 any seq arguments incrementally as well. Functions returning lazy seqs
 can be implemented using the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq][lazy-seq]]
+[[clojure:core.clj::(defmacro lazy-seq][lazy-seq]]
 macro. See also [[#content/reference/lazy][lazy]].
 
 When
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 is used on objects that implement Iterable, the resulting sequence is
 still immutable and persistent, and will represent a single pass across
 the data. Because that pass might happen lazily, the pass might see
 changes that happen after
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 has been called. Also, if the backing iterator is subject to
 ConcurrentModificationException, then so too is the resulting seq. When
 seq is used on native Java arrays, changes to the underlying array will
@@ -34223,7 +34230,7 @@ them.
 
 Many of the functions in the seq library take one or more collections,
 call
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
 on them, and then operate on the resulting seq. In other words, many of
 these functions take collections but operate on their seqs.
 
@@ -34264,140 +34271,140 @@ input collection is omitted. See the Transducers page for more details.
 **** Seq in, Seq out
 
 Shorter seq from a longer seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct][distinct]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter][filter]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove][remove]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep][keep]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed][keep-indexed]]
+[[clojure:core.clj::(defn distinct][distinct]]
+[[clojure:core.clj::(defn filter][filter]]
+[[clojure:core.clj::2830][remove]]
+[[clojure:core.clj::(defmacro for][for]]
+[[clojure:core.clj::(defn keep][keep]]
+[[clojure:core.clj::(defn keep-indexed][keep-indexed]]
 
 Longer seq from a shorter seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cons][cons]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/concat][concat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-cat][lazy-cat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat][mapcat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cycle][cycle]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interleave][interleave]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose][interpose]]
+[[clojure:core.clj::cons (fn* ^:static cons][cons]]
+[[clojure:core.clj::(defn concat][concat]]
+[[clojure:core.clj::(defmacro lazy-cat][lazy-cat]]
+[[clojure:core.clj::(defn mapcat][mapcat]]
+[[clojure:core.clj::(defn cycle][cycle]]
+[[clojure:core.clj::(defn interleave][interleave]]
+[[clojure:core.clj::(defn interpose][interpose]]
 
 Seq with head-items missing:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rest][rest]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/next][next]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/fnext][fnext]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nnext][nnext]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop][drop]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while][drop-while]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext][nthnext]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
+[[clojure:core.clj::rest (fn ^:static rest][rest]]
+[[clojure:core.clj::next (fn ^:static next][next]]
+[[clojure:core.clj::fnext (fn ^:static fnext][fnext]]
+[[clojure:core.clj::nnext (fn ^:static nnext][nnext]]
+[[clojure:core.clj::(defn drop][drop]]
+[[clojure:core.clj::(defn drop-while][drop-while]]
+[[clojure:core.clj::(defn nthnext][nthnext]]
+[[clojure:core.clj::(defmacro for][for]]
 
 Seq with tail-items missing:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take][take]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth][take-nth]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while][take-while]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/butlast][butlast]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-last][drop-last]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
+[[clojure:core.clj::(defn take][take]]
+[[clojure:core.clj::(defn take-nth][take-nth]]
+[[clojure:core.clj::(defn take-while][take-while]]
+[[clojure:core.clj::butlast (fn ^:static butlast][butlast]]
+[[clojure:core.clj::(defn drop-last][drop-last]]
+[[clojure:core.clj::(defmacro for][for]]
 
 Rearrangment of a seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/flatten][flatten]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reverse][reverse]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort][sort]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort-by][sort-by]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/shuffle][shuffle]]
+[[clojure:core.clj::(defn flatten][flatten]]
+[[clojure:core.clj::(defn reverse][reverse]]
+[[clojure:core.clj::3090][sort]]
+[[clojure:core.clj::(defn sort-by][sort-by]]
+[[clojure:core.clj::(defn shuffle][shuffle]]
 
 Create nested seqs:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/split-at][split-at]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/split-with][split-with]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition][partition]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all][partition-all]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by][partition-by]]
+[[clojure:core.clj::(defn split-at][split-at]]
+[[clojure:core.clj::(defn split-with][split-with]]
+[[clojure:core.clj::(defn partition][partition]]
+[[clojure:core.clj::(defn partition-all][partition-all]]
+[[clojure:core.clj::(defn partition-by][partition-by]]
 
 Process each item of a seq to create a new seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map][map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pmap][pmap]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat][mapcat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/for][for]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace][replace]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reductions][reductions]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed][map-indexed]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seque][seque]]
+[[clojure:core.clj::(defn map][map]]
+[[clojure:core.clj::(defn pmap][pmap]]
+[[clojure:core.clj::(defn mapcat][mapcat]]
+[[clojure:core.clj::(defmacro for][for]]
+[[clojure:core.clj::(defn replace][replace]]
+[[clojure:core.clj::(defn reductions][reductions]]
+[[clojure:core.clj::(defn map-indexed][map-indexed]]
+[[clojure:core.clj::5409][seque]]
 
 **** Using a seq
 
 Extract a specific-numbered item from a seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/first][first]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/ffirst][ffirst]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nfirst][nfirst]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/second][second]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][nth]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/when-first][when-first]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/last][last]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand-nth][rand-nth]]
+[[clojure:core.clj::first (fn ^:static first][first]]
+[[clojure:core.clj::ffirst (fn ^:static ffirst][ffirst]]
+[[clojure:core.clj::nfirst (fn ^:static nfirst][nfirst]]
+[[clojure:core.clj::second (fn ^:static second][second]]
+[[clojure:core.clj::(defn nth][nth]]
+[[clojure:core.clj::(defmacro when-first][when-first]]
+[[clojure:core.clj::last (fn ^:static last][last]]
+[[clojure:core.clj::(defn rand-nth][rand-nth]]
 
 Construct a collection from a seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap][zipmap]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into][into]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduce][reduce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set][set]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vec][vec]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into-array][into-array]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/to-array-2d][to-array-2d]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/frequencies][frequencies]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/group-by][group-by]]
+[[clojure:core.clj::(defn zipmap][zipmap]]
+[[clojure:core.clj::6928][into]]
+[[clojure:core.clj::(defn reduce][reduce]]
+[[clojure:core.clj::][set]]
+[[clojure:core.clj::369][vec]]
+[[clojure:core.clj::(defn into-array][into-array]]
+[[clojure:core.clj::(defn to-array-2d][to-array-2d]]
+[[clojure:core.clj::(defn frequencies][frequencies]]
+[[clojure:core.clj::(defn group-by][group-by]]
 
 Pass items of a seq as arguments to a function:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/apply][apply]]
+[[clojure:core.clj::(defn apply][apply]]
 
 Compute a boolean from a seq:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not-empty][not-empty]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some][some]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduce][reduce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq?][seq?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/every?][every?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not-every?][not-every?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/not-any?][not-any?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/empty?][empty?]]
+[[clojure:core.clj::(defn not-empty][not-empty]]
+[[clojure:core.clj::2696][some]]
+[[clojure:core.clj::(defn reduce][reduce]]
+[[clojure:core.clj::seq? (fn ^:static seq?][seq?]]
+[[clojure:core.clj::(defn every?][every?]]
+[[clojure:core.clj:: not-every? (comp not every?)][not-every?]]
+[[clojure:core.clj:: not-any? (comp not some))][not-any?]]
+[[clojure:core.clj::(defn empty?][empty?]]
 
 Search a seq using a predicate:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/some][some]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter][filter]]
+[[clojure:core.clj::2696][some]]
+[[clojure:core.clj::(defn filter][filter]]
 
 Force evaluation of lazy seqs:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doseq][doseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dorun][dorun]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/doall][doall]]
+[[clojure:core.clj::(defmacro doseq][doseq]]
+[[clojure:core.clj::(defn dorun][dorun]]
+[[clojure:core.clj::(defn doall][doall]]
 
 Check if lazy seqs have been forcibly evaluated:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/realized?][realized?]]
+[[clojure:core.clj::(defn realized?][realized?]]
 
 **** Creating a seq
 
 Lazy seq from collection:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq][seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vals][vals]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keys][keys]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq][rseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subseq][subseq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq][rsubseq]]
+[[clojure:core.clj::seq (fn ^:static seq][seq]]
+[[clojure:core.clj::(defn vals][vals]]
+[[clojure:core.clj::(defn keys][keys]]
+[[clojure:core.clj::(defn rseq][rseq]]
+[[clojure:core.clj::(defn subseq][subseq]]
+[[clojure:core.clj::(defn rsubseq][rsubseq]]
 
 Lazy seq from producer function:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/lazy-seq][lazy-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/repeatedly][repeatedly]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/iterate][iterate]]
+[[clojure:core.clj::(defmacro lazy-seq][lazy-seq]]
+[[clojure:core.clj::(defn repeatedly][repeatedly]]
+[[clojure:core.clj::(defn iterate][iterate]]
 
 Lazy seq from constant:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/repeat][repeat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/range][range]]
+[[clojure:core.clj::(defn repeat][repeat]]
+[[clojure:core.clj::(defn range][range]]
 
 Lazy seq from other objects:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/line-seq][line-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/resultset-seq][resultset-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/re-seq][re-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tree-seq][tree-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/file-seq][file-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/xml-seq][xml-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/iterator-seq][iterator-seq]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/enumeration-seq][enumeration-seq]]
+[[clojure:core.clj::(defn line-seq][line-seq]]
+[[clojure:core.clj::(defn resultset-seq][resultset-seq]]
+[[clojure:core.clj::(defn re-seq][re-seq]]
+[[clojure:core.clj::(defn tree-seq][tree-seq]]
+[[clojure:core.clj::(defn file-seq][file-seq]]
+[[clojure:core.clj::(defn xml-seq][xml-seq]]
+[[clojure:core.clj::(defn iterator-seq][iterator-seq]]
+[[clojure:core.clj::(defn enumeration-seq][enumeration-seq]]
 
 ** Special Forms
 :PROPERTIES:
@@ -34774,13 +34781,13 @@ associative structure, etc) bind to ~nil~.
 
 Vector /binding\_form/s sequentially bind values in collections like
 vectors, lists, seqs, strings, arrays, and anything that supports
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth][nth]].
+[[clojure:core.clj::(defn nth][nth]].
 The sequential destructuring form is a vector of /binding-form/s, which
 will be bound to successive elements from the /init-expr/, looked up via
 ~nth~. In addition, and optionally, a /binding-form/ following a ~&~
 will be bound to the remainder of the sequence, i.e. that part not yet
 bound, and looked up via
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext][nthnext]].
+[[clojure:core.clj::(defn nthnext][nthnext]].
 
 Finally, also optionally, ~:as~ followed by a symbol binds that symbol
 to the entire /init-expr/:
@@ -35028,26 +35035,26 @@ transformation above is equivalent to the sequence transformation:
 
 The following functions produce a transducer when the input collection
 is omitted:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map][map]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat][cat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat][mapcat]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter][filter]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove][remove]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take][take]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while][take-while]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth][take-nth]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop][drop]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while][drop-while]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace][replace]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by][partition-by]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all][partition-all]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep][keep]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed][keep-indexed]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed][map-indexed]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct][distinct]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose][interpose]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe][dedupe]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample][random-sample]]
+[[clojure:core.clj::(defn map][map]]
+[[clojure:core.clj::(defn cat][cat]]
+[[clojure:core.clj::(defn mapcat][mapcat]]
+[[clojure:core.clj::(defn filter][filter]]
+[[clojure:core.clj::2830][remove]]
+[[clojure:core.clj::(defn take][take]]
+[[clojure:core.clj::(defn take-while][take-while]]
+[[clojure:core.clj::(defn take-nth][take-nth]]
+[[clojure:core.clj::(defn drop][drop]]
+[[clojure:core.clj::(defn drop-while][drop-while]]
+[[clojure:core.clj::(defn replace][replace]]
+[[clojure:core.clj::(defn partition-by][partition-by]]
+[[clojure:core.clj::(defn partition-all][partition-all]]
+[[clojure:core.clj::(defn keep][keep]]
+[[clojure:core.clj::(defn keep-indexed][keep-indexed]]
+[[clojure:core.clj::(defn map-indexed][map-indexed]]
+[[clojure:core.clj::(defn distinct][distinct]]
+[[clojure:core.clj::(defn interpose][interpose]]
+[[clojure:core.clj::(defn dedupe][dedupe]]
+[[clojure:core.clj::(defn random-sample][random-sample]]
 
 **** Using Transducers
 
@@ -35057,7 +35064,7 @@ new ones).
 **** transduce
 
 One of the most common ways to apply transducers is with the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/transduce][transduce]]
+[[clojure:core.clj::(defn transduce][transduce]]
 function, which is analogous to the standard reduce function:
 
 #+BEGIN_SRC clojure
@@ -35088,7 +35095,7 @@ be filtered, then incremented, and finally summed.
 **** eduction
 
 To capture the process of applying a transducer to a coll, use the
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/eduction][eduction]]
+[[clojure:core.clj::(defn eduction][eduction]]
 function. It takes any number of xforms and a final coll and returns a
 reducible/iterable application of the transducer to the items in coll.
 These applications will be performed each time reduce/iterator is
@@ -35104,7 +35111,7 @@ called.
 
 To apply a transducer to an input collection and construct a new output
 collection, use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into][into]]
+[[clojure:core.clj::6928][into]]
 (which efficiently uses reduce and transients if possible):
 
 #+BEGIN_SRC clojure
@@ -35115,7 +35122,7 @@ collection, use
 
 To create a sequence from the application of a transducer to an input
 collection, use
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence][sequence]]:
+[[clojure:core.clj::(defn sequence][sequence]]:
 
 #+BEGIN_SRC clojure
 (sequence xf (range 1000))
@@ -35160,7 +35167,7 @@ purposes:
 
 An example use of ~completion~ is ~partition-all~, which must flush any
 remaining elements at the end of the input. The
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing][completing]]
+[[clojure:core.clj::(defn completing][completing]]
 function can be used to convert a reducing function to a transducing
 function by adding a default completion arity.
 
@@ -35168,12 +35175,12 @@ function by adding a default completion arity.
 
 Clojure has a mechanism for specifying early termination of a reduce:
 
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced][reduced]]
+- [[clojure:core.clj::(defn reduced][reduced]]
   - takes a value and returns a /reduced/ value indicating reduction
   should stop
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?][reduced?]]
+- [[clojure:core.clj::(defn reduced?][reduced?]]
   - returns true if the value was created with /reduced/
-- [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref][deref]]
+- [[clojure:core.clj::(defn deref][deref]]
   or @ can be used to retrieve the value inside a /reduced/
 
 A process that uses transducers must check for and stop when the step
@@ -35428,7 +35435,7 @@ user=> x
 
 By default Vars are static, but Vars can be marked as dynamic to allow
 per-thread bindings via the macro
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]].
+[[clojure:core.clj::(defmacro binding][binding]].
 Within each thread they obey a stack discipline:
 
 #+BEGIN_SRC clojure
@@ -35452,13 +35459,13 @@ on the call stack. This capability is opt-in only by setting a metadata
 tag: ~^:dynamic~ to true as in the code block above. There are scenarios
 that one might wish to redefine static Vars within a context and Clojure
 (since version 1.3) provides the functions
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs][with-redefs]]
+[[clojure:core.clj::(defmacro with-redefs][with-redefs]]
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn][with-redefs-fn]]
+[[clojure:core.clj::(defn with-redefs-fn][with-redefs-fn]]
 for such purposes.
 
 Functions defined with
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
+[[clojure:core.clj::defn (fn defn][defn]]
 are stored in Vars, allowing for the re-definition of functions in a
 running program. This also enables many of the possibilities of aspect-
 or context-oriented programming. For instance, you could wrap a function
@@ -35471,11 +35478,11 @@ Some Clojure concurrency functions (futures,
 the current set of dynamic bindings to be conveyed to another thread for
 the purpose of continuing work asynchronously with the same environment.
 This functionality is provided by
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/future][future]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send][send]],
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/send-off][send-off]],
+[[clojure:core.clj::(defmacro future][future]],
+[[clojure:core.clj::2115][send]],
+[[clojure:core.clj::(defn send-off][send-off]],
 and
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pmap][pmap]].
+[[clojure:core.clj::(defn pmap][pmap]].
 
 #+BEGIN_SRC clojure
 (def ^:dynamic *num* 1)
@@ -35527,7 +35534,7 @@ Var object instead of its current value.
 *** Non-interned Vars
 
 It is possible to create vars that are not interned by using
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars][with-local-vars]].
+[[clojure:core.clj::(defmacro with-local-vars][with-local-vars]].
 These vars will not be found during free symbol resolution, and their
 values have to be accessed manually. But they can serve as useful
 thread-local mutable cells.
@@ -35583,39 +35590,39 @@ compilation.
 *** Related functions
 
 Variants of ~def~:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn][defn]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defn-][defn-]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/definline][definline]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmacro][defmacro]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod][defmethod]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti][defmulti]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defonce][defonce]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct][defstruct]]
+[[clojure:core.clj::defn (fn defn][defn]]
+[[clojure:core.clj::(defn-][defn-]]
+[[clojure:core.clj::(defmacro definline][definline]]
+[[clojure:core.clj::defmacro (fn][defmacro]]
+[[clojure:core.clj::(defmacro defmethod][defmethod]]
+[[clojure:core.clj::(defmacro defmulti][defmulti]]
+[[clojure:core.clj::(defmacro defonce][defonce]]
+[[clojure:core.clj::(defmacro defstruct][defstruct]]
 
 Working with interned Vars:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/declare][declare]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/intern][intern]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/binding][binding]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find-var][find-var]]
+[[clojure:core.clj::(defmacro declare][declare]]
+[[clojure:core.clj::(defn intern][intern]]
+[[clojure:core.clj::(defmacro binding][binding]]
+[[clojure:core.clj::(defn find-var][find-var]]
 [[#content/reference/special_forms#var][var]]
 
 Working with Var objects:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-local-vars][with-local-vars]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var-get][var-get]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var-set][var-set]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/alter-var-root][alter-var-root]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/var?][var?]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs][with-redefs]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-redefs-fn][with-redefs-fn]]
+[[clojure:core.clj::(defmacro with-local-vars][with-local-vars]]
+[[clojure:core.clj::(defn var-get][var-get]]
+[[clojure:core.clj::(defn var-set][var-set]]
+[[clojure:core.clj::(defn alter-var-root][alter-var-root]]
+[[clojure:core.clj::(defn var?][var?]]
+[[clojure:core.clj::(defmacro with-redefs][with-redefs]]
+[[clojure:core.clj::(defn with-redefs-fn][with-redefs-fn]]
 
 Var validators:
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set-validator!][set-validator!]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get-validator][get-validator]]
+[[clojure:core.clj::(defn set-validator!][set-validator!]]
+[[clojure:core.clj::(defn get-validator][get-validator]]
 
 Using Var metadata:
-[[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc][doc]]
-[[https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc][find-doc]]
-[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/test][test]]
+[[clojure:repl.clj::(defmacro doc][doc]]
+[[clojure:repl.clj::(defn find-doc][find-doc]]
+[[clojure:core.clj::(defn test][test]]
 
 * Releases
 ** Dev Changelog
