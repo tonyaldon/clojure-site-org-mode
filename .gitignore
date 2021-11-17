@@ -1,1 +1,5 @@
+clojure/
 clojure-site/
+core.async/
+spec.alpha/
+test.check/
