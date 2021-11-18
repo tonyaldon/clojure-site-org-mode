@@ -1645,6 +1645,11 @@ functionally with
 [[clojure:core.clj::(defn reduce][reduce]].
 
 * Api
+** Cheatsheet
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/api/cheatsheet.html]]
+:CUSTOM_ID: content/api/cheatsheet
+:END:
 ** API Documentation
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/api/api.adoc]]
@@ -1653,11 +1658,8 @@ functionally with
 *** Clojure API
 
 - [[https://clojure.github.io/clojure/][Clojure API]]
-- [[https://clojure.github.io/clojure/javadoc/][Clojure Java API]] -
-  for calling from Java into Clojure
-# FIXME - [[file:cheatsheet.xml][Clojure Cheatsheet]]
-# refer to the file /clojure-site/content/api/cheatsheet.html
-# that I haven't convert into Org
+- [[https://clojure.github.io/clojure/javadoc/][Clojure Java API]] - for calling from Java into Clojure
+- [[#content/api/cheatsheet][Clojure cheatsheet]]
 
 *** ClojureScript API
 
@@ -3031,9 +3033,8 @@ Official:
 
 - [[https://clojure.github.io/clojure/][Clojure API Docs]]
 - [[https://clojure.github.io/][Clojure Contrib Library API Docs]]
-- [[#content/reference/documentation][Clojure Reference
-  Docs]] - official reference information
-# FIXME: - [[file:xref/../../api/cheatsheet.xml][Clojure Cheatsheet]] - helpful categorization of most core functions
+- [[#content/reference/documentation][Clojure Reference Docs]] - official reference information
+- [[#content/api/cheatsheet][Clojure Cheatsheet]] - helpful categorization of most core functions
 - Source - [[https://github.com/clojure/clojure][Clojure]],
   [[https://github.com/clojure/clojurescript][ClojureScript]],
   [[https://github.com/clojure/clojure-clr][ClojureCLR]]
@@ -15023,7 +15024,7 @@ implementation of the Clojure library itself is an excellent way to
 learn more about the language and how it is used.
 
 It is also an excellent idea to keep a copy of the
-# FIXME: [[file:xref/../../../api/cheatsheet.xml][Clojure Cheatsheet]] open while
+[[#content/api/cheatsheet][Clojure Cheatsheet]] open while
 you are learning Clojure. The cheatsheet categorizes the functions
 available in the standard library and is an invaluable reference.
 
