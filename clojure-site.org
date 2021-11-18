@@ -10,7 +10,9 @@
 # properties.
 
 
-#+LINK: clojure ./clojure/src/clj/clojure/
+#+LINK: clojure    ./clojure/src/clj/clojure/
+#+LINK: spec.alpha ./spec.alpha/src/main/clojure/
+#+LINK: core.async ./core.async/src/main/clojure/
 
 # we can replace ~[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]~
 # link by ~[[clojure:core.clj::(defmacro dosync][dosync]]~
@@ -3031,8 +3033,7 @@ Official:
 - [[https://clojure.github.io/][Clojure Contrib Library API Docs]]
 - [[#content/reference/documentation][Clojure Reference
   Docs]] - official reference information
-- [[file:xref/../../api/cheatsheet.xml][Clojure Cheatsheet]] - helpful
-  categorization of most core functions
+# FIXME: - [[file:xref/../../api/cheatsheet.xml][Clojure Cheatsheet]] - helpful categorization of most core functions
 - Source - [[https://github.com/clojure/clojure][Clojure]],
   [[https://github.com/clojure/clojurescript][ClojureScript]],
   [[https://github.com/clojure/clojure-clr][ClojureCLR]]
@@ -18671,7 +18672,7 @@ specs.
 Any existing Clojure function that takes a single argument and returns a
 truthy value is a valid predicate spec. We can check whether a
 particular data value conforms to a spec using
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/conform][conform]]:
+[[spec.alpha:clojure/spec/alpha.clj::(defn conform][conform]]:
 
 #+BEGIN_SRC clojure
 (s/conform even? 1000)
@@ -18687,7 +18688,7 @@ deviate. If the value does not conform to the spec, the special value
 
 If you don't want to use the conformed value or check for
 ~:clojure.spec.alpha/invalid~, the helper
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/valid?][valid?]]
+[[spec.alpha:clojure/spec/alpha.clj::(defn valid?][valid?]]
 can be used instead to return a boolean.
 
 #+BEGIN_SRC clojure
@@ -18730,7 +18731,7 @@ namespaces ensures that we can define reusable non-conflicting specs
 across libraries or applications.
 
 Specs are registered using
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/def][s/def]].
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro def][s/def]].
 It's up to you to register the specification in a namespace that makes
 sense (typically a namespace you control).
 
@@ -18787,9 +18788,9 @@ Spec
 *** Composing predicates
 
 The simplest way to compose specs is with
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/and][and]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro and][and]]
 and
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/or][or]].
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro or][or]].
 Let's create a spec that combines several predicates into a composite
 spec with ~s/and~:
 
@@ -18829,7 +18830,7 @@ conformed value:
 Many predicates that check an instance's type do not allow ~nil~ as a
 valid value (~string?~, ~number?~, ~keyword?~, etc). To include ~nil~ as
 a valid value, use the provided function
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/nilable][nilable]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro nilable][nilable]]
 to make a spec:
 
 #+BEGIN_SRC clojure
@@ -18841,7 +18842,7 @@ to make a spec:
 
 *** Explain
 
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain][explain]]
+[[spec.alpha:clojure/spec/alpha.clj::267][explain]]
 is another high-level operation in spec that can be used to report (to
 ~*out*~) why a value does not conform to a spec. Let's see what explain
 says about some non-conforming examples we've seen so far.
@@ -18879,9 +18880,9 @@ the ~:id~ path instead. The actual value is a keyword so neither is a
 match.
 
 In addition to ~explain~, you can use
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-str][explain-str]]
+[[spec.alpha:clojure/spec/alpha.clj::(defn explain-str][explain-str]]
 to receive the error messages as a string or
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-data][explain-data]]
+[[spec.alpha:clojure/spec/alpha.clj::225][explain-data]]
 to receive the errors as data.
 
 #+BEGIN_SRC clojure
@@ -18927,7 +18928,7 @@ The keys could then be checked for conformance, creating a system with
 greater opportunities for collaboration and consistency.
 
 Entity maps in spec are defined with
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys][keys]]:
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro keys][keys]]:
 
 #+BEGIN_SRC clojure
 (def email-regex #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$")
@@ -19043,7 +19044,7 @@ One common occurrence in Clojure is the use of "keyword args" where
 keyword keys and values are passed in a sequential data structure as
 options. Spec provides special support for this pattern with the regex
 op
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys*][keys*]].
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro keys*][keys*]].
 ~keys*~ has the same syntax and semantics as ~keys~ but can be embedded
 inside a sequential regex structure.
 
@@ -19096,7 +19097,7 @@ using attributes stored in the registry by namespaced keyword.
 Attributes shared across entity types automatically gain shared
 semantics. However, we also want to be able to specify the required keys
 per entity type and for that spec provides
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/multi-spec][multi-spec]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro multi-spec][multi-spec]]
 which leverages a multimethod to provide for the specification of an
 open set of entity types based on a type tag.
 
@@ -19180,10 +19181,10 @@ added later by just extending the ~event-type~ multimethod.
 *** Collections
 
 A few helpers are provided for other special collection cases -
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/coll-of][coll-of]],
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/tuple][tuple]],
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro coll-of][coll-of]],
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro tuple][tuple]],
 and
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/map-of][map-of]].
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro map-of][map-of]].
 
 For the special case of a homogenous collection of arbitrary size, you
 can use ~coll-of~ to specify a collection of elements satisfying a
@@ -19228,9 +19229,9 @@ errors for different kinds of invalid values:
 
 Both ~coll-of~ and ~map-of~ will conform all of their elements, which
 may make them unsuitable for large collections. In that case, consider
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every][every]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro every][every]]
 or for maps
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/every-kv][every-kv]].
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro every-kv][every-kv]].
 #+END_QUOTE
 
 While ~coll-of~ is good for homogenous collections of any size, another
@@ -19287,15 +19288,15 @@ Sometimes sequential data is used to encode additional structure
 [[https://en.wikipedia.org/wiki/Regular_expression][regular expression]]
 operators to describe the structure of a sequential data value:
 
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/cat][cat]]
+- [[spec.alpha:clojure/spec/alpha.clj::(defmacro cat][cat]]
   - concatenation of predicates/patterns
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/alt][alt]]
+- [[spec.alpha:clojure/spec/alpha.clj::(defmacro alt][alt]]
   - choice among alternative predicates/patterns
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/*][*]]
+- [[spec.alpha:clojure/spec/alpha.clj::(defmacro *][*]]
   - 0 or more of a predicate/pattern
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%2B][+]]
+- [[spec.alpha:clojure/spec/alpha.clj::(defmacro +][+]]
   - 1 or more of a predicate/pattern
-- [[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/%3F][?]]
+- [[spec.alpha:clojure/spec/alpha.clj::(defmacro ?][?]]
   - 0 or 1 of a predicate/pattern
 
 Like ~or~, both ~cat~ and ~alt~ tag their "parts" - these tags are then
@@ -19378,7 +19379,7 @@ one. Let's try it on some of the specifications we've already defined:
 #+END_SRC
 
 Spec also defines one additional regex operator,
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/&][&]],
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro &][&]],
 which takes a regex operator and constrains it with one or more
 additional predicates. This can be used to create regular expressions
 with additional constraints that would otherwise require custom
@@ -19396,7 +19397,7 @@ an even number of strings:
 When regex ops are combined, they describe a single sequence. If you
 need to spec a nested sequential collection, you must use an explicit
 call to
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/spec][spec]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro spec][spec]]
 to start a new nested regex context. For example to describe a sequence
 like ~[:names ["a" "b"] :nums [1 2 3]]~, you need nested regular
 expressions to describe the inner sequential data:
@@ -19517,7 +19518,7 @@ interesting question - how do we define the input and output
 specifications for a function or macro?
 
 Spec has explicit support for this using
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fdef][fdef]],
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro fdef][fdef]],
 which defines specifications for a function - the arguments and/or the
 return value spec, and optionally a function that can specify a
 relationship between args and return.
@@ -19576,7 +19577,7 @@ testing.
 *** Higher order functions
 
 Higher order functions are common in Clojure and spec provides
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/fspec][fspec]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro fspec][fspec]]
 to support spec'ing them.
 
 For example, consider the ~adder~ function:
@@ -19759,14 +19760,14 @@ namespace:
 **** Sampling Generators
 
 The
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/gen][gen]]
+[[spec.alpha:clojure/spec/alpha.clj::292][gen]]
 function can be used to obtain the generator for any spec.
 
 Once you have obtained a generator with ~gen~, there are several ways to
 use it. You can generate a single sample value with
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/generate][generate]]
+[[spec.alpha:clojure/spec/gen/alpha.clj::(defn generate][generate]]
 or a series of samples with
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/sample][sample]].
+[[spec.alpha:clojure/spec/gen/alpha.clj::(lazy-combinators hash-map list map][sample]].
 Let's see some basic examples:
 
 #+BEGIN_SRC clojure
@@ -19818,7 +19819,7 @@ sample data.
 **** Exercise
 
 For this we have
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise][exercise]],
+[[spec.alpha:clojure/spec/alpha.clj::(defn exercise][exercise]],
 which returns pairs of generated and conformed values for a spec.
 ~exercise~ by default produces 10 samples (like ~sample~) but you can
 pass both functions a number indicating the number of samples to
@@ -19842,7 +19843,7 @@ produce.
 #+END_SRC
 
 For spec'ed functions we also have
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/exercise-fn][exercise-fn]],
+[[spec.alpha:clojure/spec/alpha.clj::(defn exercise-fn][exercise-fn]],
 which generates sample args, invokes the spec'ed function and returns
 the args and the return value.
 
@@ -19971,7 +19972,7 @@ predicate spec so we can create one and ask for it's generator:
 #+END_SRC
 
 To redefine our spec using this custom generator, use
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/with-gen][with-gen]]
+[[spec.alpha:clojure/spec/alpha.clj::(defn with-gen][with-gen]]
 which takes a spec and a replacement generator:
 
 #+BEGIN_SRC clojure
@@ -20007,7 +20008,7 @@ on how all of the clojure.spec.gen.alpha generator functions work.
 In this case we want our keyword to have open names but fixed
 namespaces. There are many ways to accomplish this but one of the
 simplest is to use
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/fmap][fmap]]
+[[spec.alpha:clojure/spec/gen/alpha.clj::(lazy-combinators hash-map list map][fmap]]
 to build up a keyword based on generated strings:
 
 #+BEGIN_SRC clojure
@@ -20025,7 +20026,7 @@ often designed to return "simpler" values first and any string-oriented
 generator will often return an empty string which is not a valid
 keyword. We can make a slight adjustment to omit that particular value
 using
-[[https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html#clojure.spec.gen.alpha/such-that][such-that]]
+[[spec.alpha:clojure/spec/gen/alpha.clj::(lazy-combinators hash-map list map][such-that]]
 which lets us specify a filtering condition:
 
 #+BEGIN_SRC clojure
@@ -20058,7 +20059,7 @@ in a range and spec provides helpers for these cases.
 
 For example, in the case of a range of integer values (for example, a
 bowling roll), use
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/int-in][int-in]]
+[[spec.alpha:clojure/spec/alpha.clj::1916][int-in]]
 to spec a range (end is exclusive):
 
 #+BEGIN_SRC clojure
@@ -20068,7 +20069,7 @@ to spec a range (end is exclusive):
 #+END_SRC
 
 spec also includes
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/inst-in][inst-in]]
+[[spec.alpha:clojure/spec/alpha.clj::1898][inst-in]]
 for a range of instants:
 
 #+BEGIN_SRC clojure
@@ -20085,7 +20086,7 @@ Due to the generator implementation, it takes a few samples to get
 "interesting" so I skipped ahead a bit.
 
 Finally,
-[[https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/double-in][double-in]]
+[[spec.alpha:clojure/spec/alpha.clj::(defmacro double-in][double-in]]
 has support for double ranges and special options for checking special
 double values like ~NaN~ (not a number), ~Infinity~, and ~-Infinity~.
 
@@ -20151,7 +20152,7 @@ involved with checking args specs.
 
 We mentioned earlier that ~clojure.spec.test.alpha~ provides tools for
 automatically testing functions. When functions have specs, we can use
-[[https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/check][check]],
+[[spec.alpha:clojure/spec/test/alpha.clj::373][check]],
 to automatically generate tests that check the function using the specs.
 
 ~check~ will generate arguments based on the ~:args~ spec for a
@@ -20221,7 +20222,7 @@ of the expected range.
 
 To test all of the spec'ed functions in a namespace (or multiple
 namespaces), use
-[[https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html#clojure.spec.test.alpha/enumerate-namespace][enumerate-namespace]]
+[[spec.alpha:clojure/spec/test/alpha.clj::(defn enumerate-namespace][enumerate-namespace]]
 to generate the set of symbols naming vars in the namespace:
 
 #+BEGIN_SRC clojure
@@ -22386,14 +22387,14 @@ support Clojure 1.5+.
 **** Creating channels
 
 You can create a channel with the
-[[http://clojure.github.io/core.async/#clojure.core.async/chan][chan]]
+[[core.async:clojure/core/async.clj::(defn chan][chan]]
 function. This will return a channel that supports multiple writers and
 readers. By default, the channel is unbuffered, but you can supply a
 number to indicate a buffer size, or supply a buffer object created via
-[[http://clojure.github.io/core.async/#clojure.core.async/buffer][buffer]],
-[[http://clojure.github.io/core.async/#clojure.core.async/dropping-buffer][dropping-buffer]]
+[[core.async:clojure/core/async.clj::(defn buffer][buffer]],
+[[core.async:clojure/core/async.clj::(defn dropping-buffer][dropping-buffer]]
 or
-[[http://clojure.github.io/core.async/#clojure.core.async/sliding-buffer][sliding-buffer]].
+[[core.async:clojure/core/async.clj::(defn sliding-buffer][sliding-buffer]].
 
 The fundamental operations on channels are putting and taking values.
 Both of those operations potentially block, but the nature of the
@@ -22402,7 +22403,7 @@ operation is performed. core.async supports two kinds of threads of
 control - ordinary threads and IOC (inversion of control) 'threads'.
 Ordinary threads can be created in any manner, but IOC threads are
 created via
-[[http://clojure.github.io/core.async/#clojure.core.async/go][go
+[[core.async:clojure/core/async.clj::(defmacro go][go
 blocks]]. Because JS does not have threads, only ~go~ blocks and IOC
 threads are supported in ClojureScript.
 
@@ -22423,9 +22424,9 @@ illusion of threads, and more important, separable sequential
 subsystems, to ClojureScript.
 
 The primary channel operations within go blocks are
-[[http://clojure.github.io/core.async/#clojure.core.async/%3E!][>!]]
+[[core.async:clojure/core/async.clj::(defn >!][>!]]
 (/put/) and
-[[http://clojure.github.io/core.async/#clojure.core.async/<!][<!]]
+[[core.async:clojure/core/async.clj::(defn <!][<!]]
 (/take/). The go block itself immediately returns a channel, on which it
 will eventually put the value of the last expression of the body (if
 non-nil), and then close.
@@ -22433,13 +22434,13 @@ non-nil), and then close.
 **** Channel on ordinary threads
 
 There are analogous operations for use on ordinary threads -
-[[http://clojure.github.io/core.async/#clojure.core.async/%3E!!][>!!]]
+[[core.async:clojure/core/async.clj::(defblockingop >!!][>!!]]
 (/put blocking/) and
-[[http://clojure.github.io/core.async/#clojure.core.async/<!!][<!!]]
+[[core.async:clojure/core/async.clj::(defblockingop <!!][<!!]]
 (/take blocking/), which will block the thread on which they are called,
 until complete. While you can use these operations on threads created
 with e.g. future, there is also a macro,
-[[http://clojure.github.io/core.async/#clojure.core.async/thread][thread]],
+[[core.async:clojure/core/async.clj::(defmacro thread][thread]],
 analogous to ~go~, that will launch a first-class thread and similarly
 return a channel, and should be preferred over ~future~ for channel
 work.
@@ -22455,15 +22456,15 @@ oblivious to the nature of the threads which use it.
 It is often desirable to be able to wait for any one (and only one) of a
 set of channel operations to complete. This powerful facility is made
 available through the
-[[http://clojure.github.io/core.async/#clojure.core.async/alts!][alts!]]
+[[core.async:clojure/core/async.clj::(defn alts!][alts!]]
 function (for use in ~go~ blocks), and the analogous
-[[http://clojure.github.io/core.async/#clojure.core.async/alts!!][alts!!]]
+[[core.async:clojure/core/async.clj::(defblockingop alts!!][alts!!]]
 (/alts blocking/). If more than one operation is available to complete,
 one can be chosen at random or by priority (i.e. in the order they are
 supplied). There are corresponding
-[[http://clojure.github.io/core.async/#clojure.core.async/alt!][alt!]]
+[[core.async:clojure/core/async.clj::385][alt!]]
 and
-[[http://clojure.github.io/core.async/#clojure.core.async/alt!!][alt!!]]
+[[core.async:clojure/core/async.clj::(defmacro alt!!][alt!!]]
 macros that combine the choice with conditional evaluation of
 expressions.
 
@@ -22471,7 +22472,7 @@ expressions.
 
 Timeouts are just channels that automatically close after a period of
 time. You can create one with the
-[[http://clojure.github.io/core.async/#clojure.core.async/timeout][timeout]]
+[[core.async:clojure/core/async.clj::(defn timeout][timeout]]
 function, then just include the timeout in an ~alt~ variant. A nice
 aspect of this is that timeouts can be shared between threads of
 control, e.g. in order to have a set of activities share a bound.
