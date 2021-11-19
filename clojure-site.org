@@ -1,6 +1,7 @@
 #+TITLE: Clojure website in org-mode
 #+AUTHOR: Tony aldon
-#+DATE: <2021-11-14 Sun>
+#+DATE: <2021-11-19 Fri>
+#+VERSION: 0.1
 
 #+LINK: clojure    ./clojure/src/clj/clojure/
 #+LINK: spec.alpha ./spec.alpha/src/main/clojure/
