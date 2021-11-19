@@ -2723,15 +2723,15 @@ two lines are necessary boilerplate metadata attributes.
 
 *** Text markup
 
-| markup                  | effect            |
-|-------------------------+-------------------|
-| \_italic\_              | /italic/            |
-| *bold*                    | *bold*              |
-| \_**italic and bold**\_ | /*italic and bold*/ |
-| `inline code`           | ~inline code~       |
-| (C) (R) (TM)            | © ® ™             |
-| -- ...                  |  --- ...​          |
-| -> simpara>             | → ← ⇒ ⇐           |
+| markup                | effect          |
+|-----------------------+-----------------|
+| ~_italic_~              | /italic/          |
+| ~*bold*~                | *bold*            |
+| ~_**italic and bold**_~ | italic and bold |
+| ~`inline code`~         | ~inline code~     |
+| ~(C) (R) (TM)~          | © ® ™           |
+| ~-- ...~                | — ...​           |
+| ~-> <- => <=~           | → ← ⇒ ⇐         |
 
 To get a line break without a paragraph change, append + to the end of
 the line:
@@ -20224,7 +20224,7 @@ user=> (gen/generate
 
 *** Properties
 
-A property is an actual test --- it combines a generator with a function
+A property is an actual test — it combines a generator with a function
 you want to test, and checks that the function behaves as expected given
 the generated values.
 
@@ -22538,7 +22538,7 @@ moves ahead.
 [[./assets/images/content/news/2017-01-31/large-industry.jpg]]
 
 "Enterprise software" is the #1 industry regardless of company size.
-However, #2 is quite distinctly different across sizes --- in smaller
+However, #2 is quite distinctly different across sizes — in smaller
 companies (< 100 employees), "consumer software" is the strong #2,
 whereas for companies > 100 employees, financial services is the
 dominant #2.
@@ -22550,7 +22550,7 @@ most respondents coming from the middle two categories, 11-100 and
 [[./assets/images/content/news/2017-01-31/size-per-industry.jpg]]
 
 Only two industries show the inverted bell curve, with the most
-respondents at the edges --- Academia, and Government/Military.
+respondents at the edges — Academia, and Government/Military.
 
 [[./assets/images/content/news/2017-01-31/size-per-industry-invert.jpg]]
 
