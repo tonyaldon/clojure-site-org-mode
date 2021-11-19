@@ -31,6 +31,7 @@
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojureclr.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/clojureclr
+:PREVPAGE_CUSTOM_ID: content/about/clojurescript
 :CUSTOM_ID: content/about/clojureclr
 :END:
 
@@ -48,6 +49,8 @@ Microsoft's Dynamic Language Runtime (DLR).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojurescript.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/clojurescript
+:PREVPAGE_CUSTOM_ID: content/about/jvm_hosted
+:NEXTPAGE_CUSTOM_ID: content/about/clojureclr
 :CUSTOM_ID: content/about/clojurescript
 :END:
 
@@ -61,6 +64,8 @@ compilation mode of the [[https://developers.google.com/closure/][Google Closure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/concurrent_programming.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/concurrent_programming
+:PREVPAGE_CUSTOM_ID: content/about/runtime_polymorphism
+:NEXTPAGE_CUSTOM_ID: content/about/jvm_hosted
 :CUSTOM_ID: content/about/concurrent_programming
 :END:
 
@@ -196,6 +201,8 @@ fred loves ethel
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/dynamic.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/dynamic
+:PREVPAGE_CUSTOM_ID: content/about/spec
+:NEXTPAGE_CUSTOM_ID: content/about/functional_programming
 :CUSTOM_ID: content/about/dynamic
 :END:
 
@@ -293,6 +300,8 @@ Consult the [[#content/reference/documentation][reference]] for more details.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/functional_programming.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/functional_programming
+:PREVPAGE_CUSTOM_ID: content/about/dynamic
+:NEXTPAGE_CUSTOM_ID: content/about/lisp
 :CUSTOM_ID: content/about/functional_programming
 :END:
 
@@ -501,6 +510,8 @@ used. Instead, [[clojure:core.clj::(defn trampoline][trampoline]] may be a good 
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/history.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/history
+:PREVPAGE_CUSTOM_ID: content/about/rationale
+:NEXTPAGE_CUSTOM_ID: content/about/state
 :CUSTOM_ID: content/about/history
 :END:
 
@@ -532,6 +543,8 @@ From HOPL IV in June 2021:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/jvm_hosted.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/jvm_hosted
+:PREVPAGE_CUSTOM_ID: content/about/concurrent_programming
+:NEXTPAGE_CUSTOM_ID: content/about/clojurescript
 :CUSTOM_ID: content/about/jvm_hosted
 :END:
 
@@ -598,6 +611,8 @@ Here's a small Swing app as a more involved example:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/lisp.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/lisp
+:PREVPAGE_CUSTOM_ID: content/about/functional_programming
+:NEXTPAGE_CUSTOM_ID: content/about/runtime_polymorphism
 :CUSTOM_ID: content/about/lisp
 :END:
 
@@ -640,6 +655,7 @@ whose forms mimic the forms they generate.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/rationale.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/rationale
+:NEXTPAGE_CUSTOM_ID: content/about/history
 :CUSTOM_ID: content/about/rationale
 :END:
 
@@ -794,6 +810,8 @@ for the JVM with strong concurrency support. Check out some of the
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/runtime_polymorphism.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/runtime_polymorphism
+:PREVPAGE_CUSTOM_ID: content/about/lisp
+:NEXTPAGE_CUSTOM_ID: content/about/concurrent_programming
 :CUSTOM_ID: content/about/runtime_polymorphism
 :END:
 
@@ -861,6 +879,8 @@ calls. For more details, see the [[#content/reference/protocols][protocols]] pag
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/spec.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/spec
+:PREVPAGE_CUSTOM_ID: content/about/state
+:NEXTPAGE_CUSTOM_ID: content/about/dynamic
 :CUSTOM_ID: content/about/spec
 :END:
 *** Problems
@@ -1376,6 +1396,8 @@ Rich Hickey
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/state.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/state
+:PREVPAGE_CUSTOM_ID: content/about/history
+:NEXTPAGE_CUSTOM_ID: content/about/spec
 :CUSTOM_ID: content/about/state
 :END:
 
@@ -12873,6 +12895,8 @@ the [[#content/guides/learn/syntax][Learn Clojure]] guide.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/flow.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/flow
+:PREVPAGE_CUSTOM_ID: content/guides/learn/hashed_colls
+:NEXTPAGE_CUSTOM_ID: content/guides/learn/namespaces
 :CUSTOM_ID: content/guides/learn/flow
 :END:
 **** Statements vs. Expressions
@@ -13200,6 +13224,8 @@ user=> (for [letter [:a :b]
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/functions.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/functions
+:PREVPAGE_CUSTOM_ID: content/guides/learn/syntax
+:NEXTPAGE_CUSTOM_ID: content/guides/learn/sequential_colls
 :CUSTOM_ID: content/guides/learn/functions
 :END:
 **** Creating Functions
@@ -13689,6 +13715,8 @@ function in Clojure does logical negation.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/hashed_colls.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/hashed_colls
+:PREVPAGE_CUSTOM_ID: content/guides/learn/sequential_colls
+:NEXTPAGE_CUSTOM_ID: content/guides/learn/flow
 :CUSTOM_ID: content/guides/learn/hashed_colls
 :END:
 
@@ -14106,6 +14134,7 @@ user=> (:occupation kelly)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/namespaces.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/namespaces
+:PREVPAGE_CUSTOM_ID: content/guides/learn/flow
 :CUSTOM_ID: content/guides/learn/namespaces
 :END:
 **** Namespaces and names
@@ -14261,6 +14290,8 @@ package and the ~File~ class from the ~java.io~ package.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/sequential_colls.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/sequential_colls
+:PREVPAGE_CUSTOM_ID: content/guides/learn/functions
+:NEXTPAGE_CUSTOM_ID: content/guides/learn/hashed_colls
 :CUSTOM_ID: content/guides/learn/sequential_colls
 :END:
 
@@ -14405,6 +14436,7 @@ user=> (pop stack)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/syntax.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/syntax
+:NEXTPAGE_CUSTOM_ID: content/guides/learn/functions
 :CUSTOM_ID: content/guides/learn/syntax
 :END:
 **** Literals
@@ -16075,6 +16107,8 @@ who have specifically asked for things. Sorry if I've missed you.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/annex_community_resources.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/annex_community_resources
+:PREVPAGE_CUSTOM_ID: content/guides/repl/guidelines_for_repl_aided_development
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/annex_troubleshooting
 :CUSTOM_ID: content/guides/repl/annex_community_resources
 :END:
 
@@ -16112,6 +16146,7 @@ community:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/annex_troubleshooting.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/annex_troubleshooting
+:PREVPAGE_CUSTOM_ID: content/guides/repl/annex_community_resources
 :CUSTOM_ID: content/guides/repl/annex_troubleshooting
 :END:
 
@@ -16208,6 +16243,8 @@ eventualling failing with the above Exception. The cause may vary:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/basic_usage.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/basic_usage
+:PREVPAGE_CUSTOM_ID: content/guides/repl/launching_a_basic_repl
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/data_visualization_at_the_repl
 :CUSTOM_ID: content/guides/repl/basic_usage
 :END:
 **** Evaluating Clojure expressions
@@ -16521,6 +16558,8 @@ This is illustrated by this example REPL session:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/data_visualization_at_the_repl.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/data_visualization_at_the_repl
+:PREVPAGE_CUSTOM_ID: content/guides/repl/basic_usage
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/navigating_namespaces
 :CUSTOM_ID: content/guides/repl/data_visualization_at_the_repl
 :END:
 
@@ -17098,6 +17137,8 @@ InputStream, and read bytes from it.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/enhancing_your_repl_workflow.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/enhancing_your_repl_workflow
+:PREVPAGE_CUSTOM_ID: content/guides/repl/navigating_namespaces
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/guidelines_for_repl_aided_development
 :CUSTOM_ID: content/guides/repl/enhancing_your_repl_workflow
 :END:
 
@@ -17584,6 +17625,8 @@ Clojure community regarding the relative merits of both approaches.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/guidelines_for_repl_aided_development.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/guidelines_for_repl_aided_development
+:PREVPAGE_CUSTOM_ID: content/guides/repl/enhancing_your_repl_workflow
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/annex_community_resources
 :CUSTOM_ID: content/guides/repl/guidelines_for_repl_aided_development
 :END:
 
@@ -17658,6 +17701,7 @@ a poor tool for detecting breakage.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/introduction.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/introduction
+:NEXTPAGE_CUSTOM_ID: guides/repl/launching_a_basic_repl
 :CUSTOM_ID: content/guides/repl/introduction
 :END:
 
@@ -17741,6 +17785,8 @@ First, we'll learn how to [[#content/guides/repl/launching_a_basic_repl][launch 
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/launching_a_basic_repl.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/launching_a_basic_repl
+:PREVPAGE_CUSTOM_ID: content/guides/repl/introduction
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/basic_usage
 :CUSTOM_ID: content/guides/repl/launching_a_basic_repl
 :END:
 
@@ -17846,6 +17892,8 @@ user=>
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/navigating_namespaces.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/navigating_namespaces
+:PREVPAGE_CUSTOM_ID: content/guides/repl/data_visualization_at_the_repl
+:NEXTPAGE_CUSTOM_ID: content/guides/repl/enhancing_your_repl_workflow
 :CUSTOM_ID: content/guides/repl/navigating_namespaces
 :END:
 
@@ -26541,6 +26589,8 @@ USA
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/agents.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/agents
+:PREVPAGE_CUSTOM_ID: content/reference/refs
+:NEXTPAGE_CUSTOM_ID: content/reference/atoms
 :CUSTOM_ID: content/reference/agents
 :END:
 
@@ -26662,6 +26712,8 @@ set-error-handler!][set-error-handler!]], [[clojure:core.clj::(defn error-handle
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/atoms.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/atoms
+:PREVPAGE_CUSTOM_ID: content/reference/agents
+:NEXTPAGE_CUSTOM_ID: content/reference/reducers
 :CUSTOM_ID: content/reference/atoms
 :END:
 
@@ -26721,6 +26773,8 @@ user=> "Elapsed time: 0.044 msecs"
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/compilation.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/compilation
+:PREVPAGE_CUSTOM_ID: content/reference/java_interop
+:NEXTPAGE_CUSTOM_ID: content/reference/other_libraries
 :CUSTOM_ID: content/reference/compilation
 :END:
 
@@ -27036,6 +27090,8 @@ I am an IBar
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/data_structures.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/data_structures
+:PREVPAGE_CUSTOM_ID: content/reference/other_functions
+:NEXTPAGE_CUSTOM_ID: content/reference/datatypes
 :CUSTOM_ID: content/reference/data_structures
 :END:
 
@@ -27464,6 +27520,8 @@ join][join]].
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/datatypes.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/datatypes
+:PREVPAGE_CUSTOM_ID: content/reference/data_structures
+:NEXTPAGE_CUSTOM_ID: content/reference/sequences
 :CUSTOM_ID: content/reference/datatypes
 :END:
 *** Motivation
@@ -29411,6 +29469,8 @@ for project creation, packaging, and much more.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/evaluation.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/evaluation
+:PREVPAGE_CUSTOM_ID: content/reference/repl_and_main
+:NEXTPAGE_CUSTOM_ID: content/reference/special_forms
 :CUSTOM_ID: content/reference/evaluation
 :END:
 
@@ -29535,6 +29595,8 @@ Evaluates the form /data structure/ (not text!) and returns the result.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/java_interop.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/java_interop
+:PREVPAGE_CUSTOM_ID: content/reference/reducers
+:NEXTPAGE_CUSTOM_ID: content/reference/compilation
 :CUSTOM_ID: content/reference/java_interop
 :END:
 *** Class access
@@ -30405,6 +30467,8 @@ functions.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/libs.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/libs
+:PREVPAGE_CUSTOM_ID: content/reference/namespaces
+:NEXTPAGE_CUSTOM_ID: content/reference/vars
 :CUSTOM_ID: content/reference/libs
 :END:
 
@@ -30506,6 +30570,8 @@ platform.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/lisps.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/lisps
+:PREVPAGE_CUSTOM_ID: content/reference/other_libraries
+:NEXTPAGE_CUSTOM_ID: content/reference/deps_and_cli
 :CUSTOM_ID: content/reference/lisps
 :END:
 
@@ -30607,6 +30673,8 @@ or Scheme.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/macros.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/macros
+:PREVPAGE_CUSTOM_ID: content/reference/special_forms
+:NEXTPAGE_CUSTOM_ID: content/reference/other_functions
 :CUSTOM_ID: content/reference/macros
 :END:
 
@@ -30685,6 +30753,8 @@ provide destructuring: fn let loop.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/metadata.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/metadata
+:PREVPAGE_CUSTOM_ID: content/reference/protocols
+:NEXTPAGE_CUSTOM_ID: content/reference/namespaces
 :CUSTOM_ID: content/reference/metadata
 :END:
 
@@ -30796,6 +30866,8 @@ implement clojure.lang.IMeta).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/multimethods.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/multimethods
+:PREVPAGE_CUSTOM_ID: content/reference/transducers
+:NEXTPAGE_CUSTOM_ID: content/reference/protocols
 :CUSTOM_ID: content/reference/multimethods
 :END:
 
@@ -31004,6 +31076,8 @@ function, as keywords are functions of maps, as described in the
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/namespaces.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/namespaces
+:PREVPAGE_CUSTOM_ID: content/reference/metadata
+:NEXTPAGE_CUSTOM_ID: content/reference/libs
 :CUSTOM_ID: content/reference/namespaces
 :END:
 
@@ -31062,6 +31136,8 @@ Also see:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_functions.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/other_functions
+:PREVPAGE_CUSTOM_ID: content/reference/macros
+:NEXTPAGE_CUSTOM_ID: content/reference/data_structures
 :CUSTOM_ID: content/reference/other_functions
 :END:
 
@@ -31141,6 +31217,8 @@ user=> (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_libraries.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/other_libraries
+:PREVPAGE_CUSTOM_ID: content/reference/compilation
+:NEXTPAGE_CUSTOM_ID: content/reference/lisps
 :CUSTOM_ID: content/reference/other_libraries
 :END:
 *** Java Utilities (clojure.java.*)
@@ -31298,6 +31376,8 @@ function to support other data structures.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/protocols.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/protocols
+:PREVPAGE_CUSTOM_ID: content/reference/multimethods
+:NEXTPAGE_CUSTOM_ID: content/reference/metadata
 :CUSTOM_ID: content/reference/protocols
 :END:
 *** Motivation
@@ -31507,6 +31587,7 @@ extend-protocol).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/reader.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/reader
+:NEXTPAGE_CUSTOM_ID: content/reference/repl_and_main
 :CUSTOM_ID: content/reference/reader
 :END:
 
@@ -32009,6 +32090,8 @@ for these types:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/reducers.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/reducers
+:PREVPAGE_CUSTOM_ID: content/reference/atoms
+:NEXTPAGE_CUSTOM_ID: content/reference/java_interop
 :CUSTOM_ID: content/reference/reducers
 :END:
 
@@ -32142,6 +32225,8 @@ Use ~fold~ when:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/refs.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/refs
+:PREVPAGE_CUSTOM_ID: content/reference/vars
+:NEXTPAGE_CUSTOM_ID: content/reference/agents
 :CUSTOM_ID: content/reference/refs
 :END:
 
@@ -32264,6 +32349,8 @@ Ref validators: [[clojure:core.clj::(defn set-validator!][set-validator!]], [[cl
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/repl_and_main.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/repl_and_main
+:PREVPAGE_CUSTOM_ID: content/reference/reader
+:NEXTPAGE_CUSTOM_ID: content/reference/evaluation
 :CUSTOM_ID: content/reference/repl_and_main
 :END:
 *** The clojure.main namespace
@@ -32542,6 +32629,8 @@ Socket repl: ~clojure.core.server/repl~
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/sequences.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/sequences
+:PREVPAGE_CUSTOM_ID: content/reference/datatypes
+:NEXTPAGE_CUSTOM_ID: content/reference/transients
 :CUSTOM_ID: content/reference/sequences
 :END:
 
@@ -32677,6 +32766,8 @@ tree-seq][tree-seq]], [[clojure:core.clj::(defn file-seq][file-seq]], [[clojure:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/special_forms.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/special_forms
+:PREVPAGE_CUSTOM_ID: content/reference/evaluation
+:NEXTPAGE_CUSTOM_ID: content/reference/macros
 :CUSTOM_ID: content/reference/special_forms
 :END:
 
@@ -33205,6 +33296,8 @@ can pull apart just about anything:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/transducers.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/transducers
+:PREVPAGE_CUSTOM_ID: content/reference/transients
+:NEXTPAGE_CUSTOM_ID: content/reference/multimethods
 :CUSTOM_ID: content/reference/transducers
 :END:
 
@@ -33477,6 +33570,8 @@ general rules to be aware of:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/transients.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/transients
+:PREVPAGE_CUSTOM_ID: content/reference/sequences
+:NEXTPAGE_CUSTOM_ID: content/reference/transducers
 :CUSTOM_ID: content/reference/transients
 :END:
 *** Rationale
@@ -33626,6 +33721,8 @@ Clojure 1.1.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/vars.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/vars
+:PREVPAGE_CUSTOM_ID: content/reference/libs
+:NEXTPAGE_CUSTOM_ID: content/reference/refs
 :CUSTOM_ID: content/reference/vars
 :END:
 
