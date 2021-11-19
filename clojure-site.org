@@ -2,6 +2,15 @@
 #+AUTHOR: Tony aldon
 #+DATE: <2021-11-14 Sun>
 
+# REPOSITORY_CLOJURE_SITE         https://github.com/clojure/clojure-site
+# REPOSITORY_CLOJURE              https://github.com/clojure/clojure
+# REPOSITORY_CLOJURE_SPEC_ALPHA   https://github.com/clojure/spec.alpha
+# REPOSITORY_CLOJURE_CORE_ASYNC   https://github.com/clojure/core.async
+# COMMIT_CLOJURE                  b8132f92
+# COMMIT_CLOJURE_SITE             4a084a8
+# COMMIT_CLOJURE_SPEC_ALPHA       23a6070
+# COMMIT_CLOJURE_CORE_ASYNC       b7ddeaf
+
 # Regarding the link to the files of clojure-site, in the this
 # document, we assume that you have cloned it under the directory
 # ./clojure-site/
