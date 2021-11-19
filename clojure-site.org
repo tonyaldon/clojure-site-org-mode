@@ -2774,7 +2774,7 @@ is required in our generator!):
 
 There is a bug in the parser used in the current version of JBake for
 links to a page in a parent directory. For example, to link to a page at
-../reference/java\_interop.adoc, you can use a link like this:
+~../reference/java_interop.adoc~, you can use a link like this:
 
 #+BEGIN_EXAMPLE
 <<xref/../../reference/java_interop#,Java Interop>>
@@ -3855,7 +3855,7 @@ against the [[https://github.com/clojure/clojure-site][clojure-site]] github rep
   - [[https://www.meetup.com/fr-FR/Paris-Clojure-User-Group/][Paris Clojure Meetup]]
   - [[http://clojure-lyon.eventbrite.fr/][Clojure Lyon EventBrite (France)]]- local meetups registration
   - [[https://www.meetup.com/riviera-scala-clojure][Riviera Clojure]] (Join with Riviera Scala, (Twitter:
-    [[https://twitter.com/riviera_func][@riviera\_func]])
+    [[https://twitter.com/riviera_func][@riviera_func]])
 - Germany
   - [[https://www.meetup.com/Clojure-Berlin/][Berlin Clojure User Group]] and [[https://groups.google.com/forum/#!forum/clojure-user-group-berlin][mailing list]]
   - [[http://www.cugb.de][Bonn Clojure User Group]]
@@ -4223,7 +4223,7 @@ Setting up a new contrib project:
     project lead"
 - Setting up builds (requires Jenkins admin privileges, except step 2):
   - Create Jenkins user account for authors
-  - Edit ci\_data.clj in the [[https://github.com/clojure/build.ci][build.ci]] repo add the new project /
+  - Edit ~ci_data.clj~ in the [[https://github.com/clojure/build.ci][build.ci]] repo add the new project /
     update authors (so they can run builds / cut releases)
   - Request on clojure-dev mailing list to run build.ci Jenkins job -
     this will recreate all Jenkins job definition files!
@@ -4320,7 +4320,7 @@ The Standards:
 - Provide a library-level docstring.
 - Provide automated tests.
 - Use '?' suffix for predicates, and return booleans.
-- Use '\_' for destructuring targets and formal arguments names whose
+- Use '_' for destructuring targets and formal arguments names whose
   value will be ignored by the code at hand.
 - Include a docstring.
 - When in doubt, expose the performant version. Clojure goes to great
@@ -5289,7 +5289,7 @@ Below is a list of all signers of the Clojure [[#content/dev/contributor_agreeme
 | Petr Gladkikh                             | PetrGlad                      |
 | Michael Glaesemann                        | grzm                          |
 | Daniel Glauser                            | danielglauser                 |
-| Joergen Gmeiner                           | spamless\_j                   |
+| Joergen Gmeiner                           | spamless_j                    |
 | Oliver Peter George                       | olivergeorge                  |
 | Nikolas Göbel                             | comnik                        |
 | G. Goet                                   | eval                          |
@@ -6855,7 +6855,7 @@ patching, run "git am --abort"'. You should do the "git am --abort" to
 get rid of state of the failed patch attempt left behind by the command
 above.
 
-"git am" is very "fragile", meaning that if the patch\_file was created
+"git am" is very "fragile", meaning that if the ~patch_file~ was created
 with one version of the source code, all it takes for the command to
 fail is a change in any of the lines of context present in the patch
 file, even if it is not one of the lines being changed by the patch.
@@ -6928,9 +6928,9 @@ $ mvn clean test
 
 To reduce the duration of the pseudo-randomly generated generative tests
 from 60 sec down to 1 sec (for example), edit the file
-src/script/run\_test\_generative.clj and change the 60000 number. Just
+~src/script/run_test_generative.clj~ and change the 60000 number. Just
 be careful not to include such changes in any patches you submit. (The
-file was called src/scripts/run\_tests.clj in Clojure 1.6.0 and earlier)
+file was called ~src/scripts/run_tests.clj~ in Clojure 1.6.0 and earlier)
 
 *** Run An Individual Test
 
@@ -11564,10 +11564,10 @@ that is still extensible.
 Also see the [[#content/about/history][History of Clojure]] paper section about this (search for
 "reader macros").
 
-**** What does an \_ mean in a let binding or parameter?
+**** What does an _ mean in a let binding or parameter?
 
-\_ has no special meaning in Clojure as a symbol. However, it is a
-convention to use \_ (or a leading \_) to denote a binding that will
+~_~ has no special meaning in Clojure as a symbol. However, it is a
+convention to use ~_~ (or a leading ~_~) to denote a binding that will
 not be used in the expression. A common case for this is skipping
 unneeded values in [[#content/guides/destructuring#sequential-destructuring][sequential destructuring]]:
 
@@ -16063,7 +16063,7 @@ user=>(def m {:a 1, :b 2, :c 3}
 
 Many thanks to everyone who has contributed ideas and [the copious
 amounts of] spelling corrections (crikey I'm bad at speelingz - so
-thanks Michael R. Mayne, lobsang\_ludd). I've tried to call out people
+thanks Michael R. Mayne, lobsang_ludd). I've tried to call out people
 who have specifically asked for things. Sorry if I've missed you.
 
 #+BEGIN_HTML
@@ -24321,7 +24321,7 @@ Clojure and Flutter) are now supporting both!
 - [[https://dawranliou.com/blog/better-performance-with-java-arrays-in-clojure/][Better performance with Java arrays in Clojure]] - Daw-Ran Liou on
   using Java arrays in Clojure
 - [[https://tilton.medium.com/backpressure-99501f23881f][Backpressure]] - Kenny Tilton talks about core.async and ETL
-- [[https://sidesteps.github.io/posts/fun-of-clojure.html][Fun of clojure - wrap some code around data]] - [[https://twitter.com/Sharas_][@Sharas\_]] on the data
+- [[https://sidesteps.github.io/posts/fun-of-clojure.html][Fun of clojure - wrap some code around data]] - [[https://twitter.com/Sharas_][@Sharas_]] on the data
   ethos of Clojure
 - [[https://lambdaisland.com/blog/2021-06-17-lambdaisland-is-changing][Lambda Island is Changing]] - Arne Brasseur and his merry band of
   Clojurists at Gaiwan are changing directions a bit
@@ -25783,7 +25783,7 @@ Lots of people using Clojure to make art these days, here's a few I
 saw go by on Twitter this week:
 
 - [[https://twitter.com/sakalli/status/1439926455249539075][@sakalli]]
-- [[https://twitter.com/generateme_blog/status/1440578677574569986][@generateme\_blog]]
+- [[https://twitter.com/generateme_blog/status/1440578677574569986][@generateme_blog]]
 - [[https://twitter.com/RustyVermeer/status/1441182689957085184][@RustyVermeer]]
 
 ** [2021-10-08] Clojure Deref (Oct 8, 2021)
@@ -26740,7 +26740,7 @@ nature of Clojure, in spite of the code-reloading limitations of Java.
 - Source and classfile pathing follows Java classpath conventions.
 - The target of compile is a namespace
 - Each file, fn and gen-class will produce a .class file
-- Each file generates a loader class of the same name with "\_\_init"
+- Each file generates a loader class of the same name with "__init"
   appended.
 - The static initializer for a loader class produces the same effects
   as does loading its source file
@@ -28429,7 +28429,7 @@ Classpath and basis files are cached in a directory computed as follows:
   - If ~$XDG_CACHE_HOME~ is set, then use ~$XDG_CACHE_HOME/clojure~
     (Freedesktop conventions)
   - Else use ~config_dir/.cpcache~ (see deps.edn sources for
-    config\_dir logic, usually ~~/.clojure~)
+    ~config_dir~ logic, usually ~~/.clojure~)
 
 A hash is computed based on the config file paths, the resolve-aliases,
 and the classpath aliases.
@@ -30449,7 +30449,7 @@ A simple lib:
 - The ~ns~ form names the lib's namespace and declares its
   dependencies. Based on its name, this lib is typically defined in a
   source file at the classpath-relative path:
-  com/my\_company/clojure/examples/my\_utils.clj (note the translations
+  ~com/my_company/clojure/examples/my_utils.clj~ (note the translations
   from period to slash and hyphen to underscore).
 - The ~:import~ clause declares this lib's use of ~java.util.Date~ and
   makes it available to code in this lib using its unqualified name.
@@ -31541,7 +31541,7 @@ compiler, will follow.
 **** Symbols
 
 - Symbols begin with a non-numeric character and can contain
-  alphanumeric characters and *, +, !, -, \_, ', ?, <, > and = (other
+  alphanumeric characters and *, +, !, -, _, ', ?, <, > and = (other
   characters may be allowed eventually).
 - '/' has special meaning, it can be used once in the middle of a
   symbol to separate the namespace from the name, e.g.
@@ -31777,8 +31777,8 @@ For Symbols, syntax-quote /resolves/ the symbol in the current context,
 yielding a fully-qualified symbol (i.e. namespace/name or
 fully.qualified.Classname). If a symbol is non-namespace-qualified and
 ends with '#', it is resolved to a generated symbol with the same name
-to which '\_' and a unique id have been appended. e.g. x# will resolve
-to x\_123. All references to that symbol within a syntax-quoted
+to which '_' and a unique id have been appended. e.g. x# will resolve
+to x_123. All references to that symbol within a syntax-quoted
 expression resolve to the same generated symbol.
 
 For Lists/Vectors/Sets/Maps, syntax-quote establishes a template of the
@@ -33035,7 +33035,7 @@ associative structure, etc) bind to ~nil~.
 
 **** Sequential destructuring
 
-Vector /binding\_form/s sequentially bind values in collections like
+Vector /binding_form/s sequentially bind values in collections like
 vectors, lists, seqs, strings, arrays, and anything that supports [[clojure:core.clj::(defn nth][nth]].
 The sequential destructuring form is a vector of /binding-form/s, which
 will be bound to successive elements from the /init-expr/, looked up via
@@ -34079,7 +34079,7 @@ Changes in 1.10.0-beta5:
 - [[https://clojure.atlassian.net/browse/CLJ-2297][CLJ-2297]] - PersistentHashMap leaks memory when keys are removed with
   ~without~
 - [[https://clojure.atlassian.net/browse/CLJ-1587][CLJ-1587]] - PersistentArrayMap's assoc doesn't respect
-  HASHTABLE\_THRESHOLD
+  HASHTABLE_THRESHOLD
 - [[https://clojure.atlassian.net/browse/CLJ-2050][CLJ-2050]] - Remove redundant key comparisons in HashCollisionNode
 - [[https://clojure.atlassian.net/browse/CLJ-2349][CLJ-2349]] - report correct line number for uncaught ExceptionInfo in
   clojure.test
@@ -35145,7 +35145,7 @@ Read more at [[#content/news/2021/07/09/source-libs-builds][Source Libs and Buil
 
 - Add -version and --version options
 - [[https://clojure.atlassian.net/browse/TDEPS-56][TDEPS-56]] - Fix main-opts and jvm-opts word splitting on spaces
-- [[https://clojure.atlassian.net/browse/TDEPS-125][TDEPS-125]] - Use JAVA\_CMD if set (thanks Gregor Middell!)
+- [[https://clojure.atlassian.net/browse/TDEPS-125][TDEPS-125]] - Use JAVA_CMD if set (thanks Gregor Middell!)
 - Add warning if ~:paths~ or ~:extra-paths~ refers to a directory
   outside the project root (in the future will become an error)
 - Use [[https://github.com/clojure/tools.deps.alpha/blob/master/CHANGELOG.md][tools.deps.alpha]] 0.9.871
