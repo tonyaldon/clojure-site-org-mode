@@ -16296,10 +16296,12 @@ our expression are very different in nature:
 So far, we have only called code that we had defined manually at the
 REPL (for instance our ~factorial~ function defined above). But the REPL
 also lets you use pre-existing Clojure code, i.e Clojure
-[[#content/reference/libs][libs]].[fn:1] Given a Clojure
-lib with namespace ~my.name.space~, you can evaluate
-~(require '[my.name.space])~ to make that lib's code loaded and
-available in the REPL.
+[[#content/reference/libs][libs]].[fn:lib] Given a Clojure lib with namespace ~my.name.space~, you
+can evaluate ~(require '[my.name.space])~ to make that lib's code loaded
+and available in the REPL.
+
+[fn:lib] Note that what we call a Clojure [[#content/reference/libs][lib]] is not necessarily a
+[[https://en.wikipedia.org/wiki/Library_(computing)][library]]: it can also be a source code file in your current project.
 
 ***** Example: using clojure.string
 
@@ -16514,9 +16516,6 @@ This is illustrated by this example REPL session:
     user=>
 #+END_EXAMPLE
 #+END_QUOTE
-
-[fn:1] Note that what we call a Clojure [[#content/reference/libs][lib]] is not necessarily a
-[[https://en.wikipedia.org/wiki/Library_(computing)][library]]: it can also be a source code file in your current project.
 
 *** Programming at the REPL
 :PROPERTIES:
@@ -16987,8 +16986,8 @@ your REPL workflow]].
 
 Sometimes, the printed representation of a value in the REPL is not very
 informative; sometimes, it can even be misleading as to the nature of
-that value.[fn:1] This often happens with values which are obtained via
-Java interop.
+that value.[fn:value_repl] This often happens with values which are
+obtained via Java interop.
 
 As an example, we'll create an InputStream object using the
 [[https://clojuredocs.org/clojure.java.io][clojure.java.io]] lib. If you don't know what an InputStream is, all the
@@ -17008,6 +17007,10 @@ The above code sample defined an InputStream named ~v~.
 
 Now imagine you don't know where ~v~ comes from, and let's try to
 interact with it at the REPL so as to gain more understanding of it.
+
+[fn:value_repl] For instance, [[https://docs.datomic.com/on-prem/entities.html][Datomic]] and [[https://github.com/tonsky/datascript][DataScript]] Entity objects
+are printed like Clojure maps, even though they are significantly
+different from ordinary maps.
 
 ***** Viewing the type hierarchy using ~type~ and ~ancestors~
 
@@ -17090,10 +17093,6 @@ user=> (.read v)
 
 Without any prior knowledge, we have managed to learn that ~v~ is an
 InputStream, and read bytes from it.
-
-[fn:1] For instance, [[https://docs.datomic.com/on-prem/entities.html][Datomic]] and [[https://github.com/tonsky/datascript][DataScript]] Entity objects are printed
-like Clojure maps, even though they are significantly different from
-ordinary maps.
 
 *** Programming at the REPL
 :PROPERTIES:
@@ -17199,7 +17198,8 @@ the method to do it depends on your toolchain. For instance:
 - when using a REPL started from [[#content/reference/repl_and_main][clojure.main]] (as is the case when
   using the ~clj~ tool) you can customize the REPL by launching a
   'sub-REPL': see [[clojure:main.clj::368][clojure.main/repl]].
-- when using [[https://nrepl.org][nREPL]].[fn:1], this can be done by writing custom [[https://nrepl.org/nrepl/design/middleware.html][middleware]].
+- when using [[https://nrepl.org][nREPL]].[fn:nrepl_2018], this can be done by writing custom
+  [[https://nrepl.org/nrepl/design/middleware.html][middleware]].
 
 #+BEGIN_QUOTE
 *I want to use the REPL to connect to a live production system.* #+END_QUOTE
@@ -17435,7 +17435,7 @@ of an expression.
 While interactive development at the REPL gives a lot of power to
 programmers, it also adds new challenges: programs must be designed so
 that they lend themselves well to REPL interaction, which is a new
-constraint to be vigilant of when writing code.[fn:2]
+constraint to be vigilant of when writing code.[fn:automated_testing]
 
 Covering this topic extensively would take us too far for the scope of
 this guide, so we will merely provide some tips and resources to guide
@@ -17564,21 +17564,21 @@ This has motivated the creation of *state management libraries:*
   ready-made components.
 - *[[https://github.com/tolitius/mount][Mount]]* takes a radically different approach as Component, choosing to
   use Vars and namespaces as the supporting infrastructure for
-  state.[fn:3]
+  state.[fn:controversy]
 - *[[https://github.com/weavejester/integrant][Integrant]]* is a more recent library which shares Component's approach
   while addressing some of its perceived limitations.
 
-[fn:1] At the time of writing (March 2018), [[https://nrepl.org][nREPL]] is the most popular
-toolchain for REPL-editor integration
+[fn:nrepl_2018] At the time of writing (March 2018), [[https://nrepl.org][nREPL]] is the most
+popular toolchain for REPL-editor integration
 
-[fn:2] A similar phenomenon happens with the well-known technique of
-[[https://en.wikipedia.org/wiki/Software_testing][automated testing]]: while testing can bring a lot of value to
-programmers, it requires extra care to write code that is
-'testable'. Just like tests, the REPL should not be an afterthought
+[fn:automated_testing] A similar phenomenon happens with the
+well-known technique of [[https://en.wikipedia.org/wiki/Software_testing][automated testing]]: while testing can bring a
+lot of value to programmers, it requires extra care to write code that
+is 'testable'. Just like tests, the REPL should not be an afterthought
 when writing Clojure code.
 
-[fn:3] At the time of writing, there is controversy in the Clojure
-community regarding the relative merits of both approaches.
+[fn:controversy] At the time of writing, there is controversy in the
+Clojure community regarding the relative merits of both approaches.
 
 *** Programming at the REPL
 :PROPERTIES:
