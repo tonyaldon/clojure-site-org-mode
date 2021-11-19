@@ -4369,7 +4369,7 @@ The Standards:
 - Don't support operations on the wrong collection type. If your
   algorithm is only performant with random access, then require an arg
   that has random access.
-- Use *earmuffs* only for things intended for rebinding. Don't use a
+- Use ~*earmuffs*~ only for things intended for rebinding. Don't use a
   special notation for constants; everything is assumed a constant
   unless specified otherwise.
 - Use the bang! only for things not safe in an STM transaction.
@@ -8860,7 +8860,7 @@ them in one particular way:
 
 - numbers are sorted in increasing numeric order, returning 0 if two
   numbers are numerically equal by ~==~, even if ~=~ returns false.
-  Exception: Even though ~(=~ ##NaN x)= is false for all numbers ~x~,
+  Exception: Even though ~( ##NaN x)~ is false for all numbers ~x~,
   even ~##NaN~, ~(compare ##NaN x)~ is 0 for all numbers ~x~, including
   ~##NaN~.
 - strings are sorted in [[http://en.wikipedia.org/wiki/Lexicographical_order][lexicographic order]] (aka dictionary order) by
@@ -11157,7 +11157,7 @@ user> (disj s1 ##NaN)
 
 In many cases, collections that contain ~##NaN~ will not be ~=~ to
 another collection, even if they look like they should be, because
-~(~ ##NaN ##NaN)= is ~false~:
+~(= ##NaN ##NaN)~ is ~false~:
 
 #+BEGIN_SRC clojure
 user> (= [1 ##NaN] [1 ##NaN])
@@ -29663,8 +29663,7 @@ expands to:
 ~(. (. System (getProperties)) (get "os.name"))~
 
 but is easier to write, read, and understand. See also the
-[[clojure:core.clj::(defmacro ->][->]]
-macro which can be used similarly:
+[[clojure:core.clj::(defmacro ->][->]] macro which can be used similarly:
 
 ~(-> (System/getProperties) (.get "os.name"))~
 
@@ -31031,7 +31030,7 @@ to access the names from the ~clojure.core~ namespace you must execute
 (clojure.core/refer 'clojure.core). The ~user~ namespace at the Repl has
 already done this.
 
-The current namespace, /*ns*/ can and should be set only with a call to
+The current namespace, ~*ns*~ can and should be set only with a call to
 [[clojure:core.clj::(alter-meta!
 #'in-ns][in-ns]] or the [[clojure:core.clj::(defmacro ns][ns macro]], both of which create the namespace if it
 doesn't exist.
@@ -31756,20 +31755,23 @@ table, indexed by the character following
   need to be escaped with an additional backslash). For example,
   ~(re-pattern "\\s*\\d+")~ can be written more concisely as
   ~#"\s*\d+"~.
-- Var-quote (~#'~): ~#'x~ ⇒ ~(var x)~
-- Anonymous function literal (#()): ~#(…​)~ ⇒ ~(fn [args] (…​))~ where args
-  are determined by the presence of argument literals taking the form
-  ~%~, ~%n~ or ~%&~. ~%~ is a synonym for ~%1~, ~%n~ designates the nth arg
-  (1-based), and ~%&~ designates a rest arg. This is not a replacement
-  for [[clojure:core.clj::fn (fn* fn ][fn]] - idiomatic use would be for very short one-off
-  mapping/filter fns and the like. ~#()~ forms cannot be nested.
+- Var-quote (#'):
+  ~#'x~ ⇒ ~(var x)~
+- Anonymous function literal (#()):
+  ~#(…​)~ ⇒ ~(fn [args] (…​))~ where args are determined by the presence of
+  argument literals taking the form ~%~, ~%n~ or ~%&~. ~%~ is a synonym for
+  ~%1~, ~%n~ designates the nth arg (1-based), and ~%&~ designates a rest
+  arg. This is not a replacement for [[clojure:core.clj::fn (fn* fn ][fn]] - idiomatic use would be for
+  very short one-off mapping/filter fns and the like. ~#()~ forms cannot
+  be nested.
 - Ignore next form (~#_~) The form following ~#_~ is completely skipped by
   the reader. (This is a more complete removal than the [[clojure:core.clj::(defmacro comment][comment]] macro
   which yields nil).
 
 **** Syntax-quote (`, note, the "backquote" character), Unquote (~) and Unquote-splicing (~@)
 
-For all forms other than Symbols, Lists, Vectors, Sets and Maps, ~`x~ is the same as ~'x~.
+For all forms other than Symbols, Lists, Vectors, Sets and Maps, ~`x~ is
+the same as ~'x~.
 
 For Symbols, syntax-quote /resolves/ the symbol in the current context,
 yielding a fully-qualified symbol (i.e. namespace/name or
@@ -32316,7 +32318,7 @@ Clojure 1.10.0
 user=>
 #+END_EXAMPLE
 
-The REPL prompt shows the name of the current namespace (*ns*), which
+The REPL prompt shows the name of the current namespace (~*ns*~), which
 defaults to /user/.
 
 Several special vars are available when using the REPL:
@@ -33271,7 +33273,7 @@ transformer runs right-to-left but builds a transformation stack that
 runs left-to-right (filtering happens before mapping in this example).
 
 As a mnemonic, remember that the ordering of transducer functions in
-~comp~ is the same order as sequence transformations in *->>*. The
+~comp~ is the same order as sequence transformations in ~->>~. The
 transformation above is equivalent to the sequence transformation:
 
 #+BEGIN_SRC clojure
@@ -34023,7 +34025,7 @@ Changes in 1.10.0-beta5:
 - datafy - add :name to datafied classes and namespaces, :class to
   meta of all if datafied
 - [[https://clojure.atlassian.net/browse/CLJ-1079][CLJ-1079]] - Reader should retain rather than overwrite :line :column
-  meta on lists and seqs. Also make clojure.main bind *file* based on
+  meta on lists and seqs. Also make clojure.main bind ~*file*~ based on
   :file meta.
 
 **** 1.10.0-RC1 (Oct 11, 2018)
@@ -35383,7 +35385,7 @@ goes miles beyond the limits of what traditional type systems provide.
 
 We absolutely love the power that comes with passing around maps and
 letting them flow through the system. When we can implement an endpoint
-by simply using the -> function and a chain of functions we are always
+by simply using the ~->~ function and a chain of functions we are always
 pleasantly surprised at how elegant programming can really be with
 Clojure.
 
