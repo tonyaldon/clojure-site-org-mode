@@ -9612,7 +9612,7 @@ user=> (str (t/instant))
 
 You will see messages about a library being downloaded the first time
 you use a dependency. Once the file is downloaded (usually to ~~/.m2~ or
-~/.gitlibs~), it will be reused in the future. You can use the same
+~~/.gitlibs~), it will be reused in the future. You can use the same
 process to add other libraries to your ~deps.edn~ file and explore
 Clojure or Java libraries.
 
@@ -10790,7 +10790,7 @@ For all other types:
 
 - Both arguments are the same type defined with ~deftype~. The type's
   ~equiv~ method is called and its return value becomes the value of
-  ~(~ x y)=.
+  ~(= x y)~.
 - For other types, Java's ~x.equals(y)~ is true.
 
 Clojure's ~==~ is intended specifically for numerical values:
@@ -10820,7 +10820,7 @@ Exceptions, or possible surprises:
 - Clojure regex's, e.g. ~#"a.*bc"~, are implemented using Java
   ~java.util.regex.Pattern~ objects, and Java's ~equals~ on two
   ~Pattern~ objects returns ~(identical? re1 re2)~, even though they
-  are documented as immutable objects. Thus ~(~ #"abc" #"abc")= returns
+  are documented as immutable objects. Thus ~(= #"abc" #"abc")~ returns
   false, and ~=~ only returns true if two regex's happen to be the same
   identical object in memory. /Recommendation:/ Avoid using regex
   instances inside of Clojure data structures where you want to compare
@@ -10836,8 +10836,8 @@ Exceptions, or possible surprises:
   they have different types (e.g. keywords vs. numbers), will in some
   cases throw an exception (see [[https://clojure.atlassian.net/browse/CLJ-2325][CLJ-2325]])
 
-In most cases, ~hash~ is consistent with ~=~, meaning: if ~(~ x y)=,
-then ~(~ (hash x) (hash y))=. For any values or objects where this does
+In most cases, ~hash~ is consistent with ~=~, meaning: if ~(= x y)~,
+then ~(= (hash x) (hash y))~. For any values or objects where this does
 not hold, Clojure hash-based collections will not be able to find or
 remove those items correctly, i.e. for hash-based sets with those items
 as elements, or hash-based maps with those items as keys.
@@ -11055,8 +11055,8 @@ Category is one of:
 - floating point: ~Float~ and ~Double~
 - decimal: ~BigDecimal~
 
-So ~(~ (int 1) (long 1))= is true because they are in the same integer
-category, but ~(~ 1 1.0)= is false because they are in different
+So ~(= (int 1) (long 1))~ is true because they are in the same integer
+category, but ~(= 1 1.0)~ is false because they are in different
 categories (integer vs. floating). While integers and ratios are
 separate types in the Clojure implementation, for the purposes of ~=~
 they are effectively in the same category. The results of arithmetic
@@ -11068,7 +11068,7 @@ comparing a ratio to an integer.
 Clojure also has ~==~ that is only useful for comparing numbers. It
 returns true whenever ~=~ does. It also returns true for numbers that
 are numerically equal, even if they are in different categories. Thus
-~(~ 1 1.0)= is false, but ~(=~ 1 1.0)= is true.
+~(= 1 1.0)~ is false, but ~(= 1 1.0)~ is true.
 
 Why does ~=~ have different categories for numbers, you might wonder? It
 would be difficult (if it is even possible) to make ~hash~ consistent
@@ -18786,7 +18786,7 @@ Additionally, ~coll-of~ can be passed a number of keyword arg options:
   as ~vector?~
 - ~:count~ - specifies exact expected count
 - ~:min-count~, ~:max-count~ - checks that collection has
-  ~(<~ min-count count max-count)=
+  ~(< min-count count max-count)~
 - ~:distinct~ - checks that all elements are distinct
 - ~:into~ - one of [], (), {}, or #{} for output conformed value. If
   ~:into~ is not specified, the input collection type will be used.
@@ -19932,7 +19932,7 @@ trial passes or fails.
 
 The ~tc/quick-check~ call "runs the property" 100 times, meaning it
 generates one hundred vectors of integers and evaluates
-~(~ (sort v) (sort (sort v)))= for each of them; it reports success only
+~(= (sort v) (sort (sort v)))~ for each of them; it reports success only
 if each of those trials passes.
 
 If any of the trials fails, then test.check attempts to "shrink" the
@@ -27104,7 +27104,7 @@ N and M respectively.
 
 | Example expression               | Return value         |
 |----------------------------------+----------------------|
-| ~(=~ 1 1.0 1M)=                     | ~true~                 |
+| ~(= 1 1.0 1M)~                     | ~true~                 |
 | ~(/ 2 3)~                          | ~2/3~                  |
 | ~(/ 2.0 3)~                        | ~0.6666666666666666~   |
 | ~(map #(Math/abs %) (range -3 3))~ | ~(3 2 1 0 1 2)~        |
@@ -29152,7 +29152,7 @@ Tools can provide these instructions for users:
   ~clj -X:deps find-versions :lib io.github.USER/TOOL~
 - Install tool with
   ~clj -Ttools install io.github.USER/TOOL '{:git/tag "VERSION"}' :as NAME~
-- Invoke tool with =clj -TNAME f args…​=
+- Invoke tool with ~clj -TNAME f args…​~
 
 *** Command line reference
 **** Arg map keys
