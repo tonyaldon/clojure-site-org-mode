@@ -2,6 +2,10 @@
 #+AUTHOR: Tony aldon
 #+DATE: <2021-11-14 Sun>
 
+#+LINK: clojure    ./clojure/src/clj/clojure/
+#+LINK: spec.alpha ./spec.alpha/src/main/clojure/
+#+LINK: core.async ./core.async/src/main/clojure/
+
 # REPOSITORY_CLOJURE_SITE         https://github.com/clojure/clojure-site
 # REPOSITORY_CLOJURE              https://github.com/clojure/clojure
 # REPOSITORY_CLOJURE_SPEC_ALPHA   https://github.com/clojure/spec.alpha
@@ -11,20 +15,8 @@
 # COMMIT_CLOJURE_SPEC_ALPHA       23a6070
 # COMMIT_CLOJURE_CORE_ASYNC       b7ddeaf
 
-# Regarding the link to the files of clojure-site, in the this
-# document, we assume that you have cloned it under the directory
-# ./clojure-site/
-# git clone https://github.com/clojure/clojure-site.git
-# We could have use a link abbreviation but they doesn't work in org
-# properties.
-
-#+LINK: clojure    ./clojure/src/clj/clojure/
-#+LINK: spec.alpha ./spec.alpha/src/main/clojure/
-#+LINK: core.async ./core.async/src/main/clojure/
-
-# we can replace ~[[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]~
-# link by ~[[clojure:core.clj::(defmacro dosync][dosync]]~
-
+# Regarding the link to the files of clojure-site used in the property
+# drawers, we assume that you have cloned it under the directory ./clojure-site/
 
 * About
 ** Rationale
