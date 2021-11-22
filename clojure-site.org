@@ -1,6 +1,6 @@
 #+TITLE: Clojure website in org-mode
 #+AUTHOR: Tony aldon
-#+DATE: <2021-11-19 Fri>
+#+DATE: <2021-11-23 Tue>
 #+VERSION: 0.1
 
 #+LINK: clojure    ./clojure/src/clj/clojure/
@@ -18,6 +18,31 @@
 
 # Regarding the link to the files of clojure-site used in the property
 # drawers, we assume that you have cloned it under the directory ./clojure-site/
+
+# Following links are used in the cheatsheet section only
+
+#+LINK: core.rrb-vector   ./core.rrb-vector/src/main/clojure/
+#+LINK: data.avl          ./data.avl/src/main/clojure/
+#+LINK: data.int-map      ./data.int-map/src/main/clojure/
+#+LINK: data.priority-map ./data.priority-map/src/main/clojure/
+#+LINK: tools.reader      ./tools.reader/src/main/clojure/
+#+LINK: ordered           ./ordered/src/
+#+LINK: useful            ./useful/src/
+
+# REPOSITORY_CLOJURE_TOOLS_READER       https://github.com/clojure/tools.reader
+# REPOSITORY_CLOJURE_CORE_RRB-VECTOR    https://github.com/clojure/core.rrb-vector
+# REPOSITORY_CLOJURE_DATA_AVL           https://github.com/clojure/data.avl
+# REPOSITORY_CLOJURE_DATA_INT_MAP       https://github.com/clojure/data.int-map
+# REPOSITORY_CLOJURE_DATA_PRIORITY_MAP  https://github.com/clojure/data.priority-map
+# REPOSITORY_CLJ_COMMONS_ORDERED        https://github.com/clj-commons/ordered
+# REPOSITORY_CLJ_COMMONS_USEFUL         https://github.com/clj-commons/useful
+# COMMIT_CLOJURE_TOOLS_READER           6918abc
+# COMMIT_CLOJURE_CORE_RRB-VECTOR        88c2f81
+# COMMIT_CLOJURE_DATA_AVL               e5a3985
+# COMMIT_CLOJURE_DATA_INT_MAP           84a2cb8
+# COMMIT_CLOJURE_DATA_PRIORITY_MAP      603d69e
+# COMMIT_CLJ_COMMONS_ORDERED            cdf54bb
+# COMMIT_CLJ_COMMONS_USEFUL             dc5cdeb
 
 * About
 ** Rationale
@@ -1623,8 +1648,739 @@ Consult the [[#content/reference/documentation][reference]] for more details.
 ** Cheatsheet
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/api/cheatsheet.html]]
+:CLOJURE_SITE_PAGE: https://clojure.org/api/cheatsheet
 :CUSTOM_ID: content/api/cheatsheet
+:CHEATSHEET_VERSION: v52
+:CHEATSHEET_REPOSITORY: http://github.com/jafingerhut/clojure-cheatsheets
+:CHEATSHEET_REPOSITORY_COMMIT: 5019a17
 :END:
+
+Clojure 1.10 Cheat Sheet (v52)
+
+[[https://github.com/jafingerhut/clojure-cheatsheets/blob/master/pdf/cheatsheet-usletter-color.pdf?raw=true][Download PDF version]] / [[https://jafingerhut.github.io/][Source repo]]
+
+Many thanks to Steve Tayon for creating it and Andy Fingerhut for
+ongoing maintenance.
+
+*** Documentation
+
+| clojure.repl/         | [[clojure:repl.clj::(defmacro doc][doc]], [[clojure:repl.clj::(defn find-doc][find-doc]], [[clojure:repl.clj::(defn apropos][apropos]], [[clojure:repl.clj::(defmacro dir][dir]], [[clojure:repl.clj::(defmacro source][source]], [[clojure:repl.clj::(defn pst][pst]] |
+|-----------------------+------------------------------------------|
+| clojure.java.javadoc/ | [[clojure:java/javadoc.clj::(defn javadoc][javadoc]]                                  |
+
+*** Primitives
+**** Numbers
+| Literals   | [[https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html][Long]]: 7, hex 0xff, oct 017, base 22 r1011,               |
+|            | base 36 36rCRAZY, BigInt: 7N,                            |
+|            | Ratio: -22/7, 2.78, -1.2e-5, [[https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html][BigDecimal]]: 4.2M            |
+|------------+----------------------------------------------------------|
+| Arithmetic | [[clojure:core.clj::986][+]], [[clojure:core.clj::1045][-]], [[clojure:core.clj::1010][*]], [[clojure:core.clj::(defn /][ /]], [[clojure:core.clj::(defn quot][quot]], [[clojure:core.clj::(defn rem][rem]], [[clojure:core.clj::(defn mod][mod]], [[clojure:core.clj::924][inc]], [[clojure:core.clj::1144][dec]], [[clojure:core.clj::(defn max][max]], [[clojure:core.clj::(defn min][min]],         |
+|            | [[clojure:core.clj::(defn +'][+']], [[clojure:core.clj::(defn -'][-']], [[clojure:core.clj::(defn *'][*']], [[clojure:core.clj::(defn inc'][inc']], [[clojure:core.clj::(defn dec'][dec']]                                     |
+|------------+----------------------------------------------------------|
+| Compare    | [[clojure:core.clj::(defn ==][==]], [[clojure:core.clj::(defn <][<]], [[clojure:core.clj::(defn >][>]], [[clojure:core.clj::(defn <=][<=]], [[clojure:core.clj::(defn >=][>=]], [[clojure:core.clj::(defn compare][compare]]                                |
+|------------+----------------------------------------------------------|
+| Bitwise    | [[clojure:core.clj::(defn bit-and][bit-and]], [[clojure:core.clj::(defn bit-or][bit-or]], [[clojure:core.clj::(defn bit-xor][bit-xor]], [[clojure:core.clj::(defn bit-not][bit-not]], [[clojure:core.clj::(defn bit-flip][bit-flip]], [[clojure:core.clj::(defn bit-set][bit-set]],    |
+|            | [[clojure:core.clj::(defn bit-shift-right][bit-shift-right]], [[clojure:core.clj::(defn bit-shift-left][bit-shift-left]], [[clojure:core.clj::(defn bit-and-not][bit-and-not]], [[clojure:core.clj::(defn bit-clear][bit-clear]], |
+|            | [[clojure:core.clj::(defn bit-test][bit-test]], [[clojure:core.clj::(defn unsigned-bit-shift-right][unsigned-bit-shift-right]]                       |
+|            | (see [[https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html][BigInteger]] for integers larger than Long)           |
+|------------+----------------------------------------------------------|
+| Cast       | [[clojure:core.clj::(defn byte][byte]], [[clojure:core.clj::(defn short][short]], [[clojure:core.clj::(defn int][int]], [[clojure:core.clj::(defn long][long]], [[clojure:core.clj::(defn float][float]], [[clojure:core.clj::3480][double]], [[clojure:core.clj::(defn bigdec][bigdec]], [[clojure:core.clj::(defn bigint][bigint]],   |
+|            | [[clojure:core.clj::(defn num][num]], [[clojure:core.clj::(defn rationalize][rationalize]], [[clojure:core.clj::(defn biginteger][biginteger]]                             |
+|------------+----------------------------------------------------------|
+| Test       | [[clojure:core.clj::(defn zero?][zero?]], [[clojure:core.clj::(defn pos?][pos?]], [[clojure:core.clj::(defn neg?][neg?]], [[clojure:core.clj::(defn even?][even?]], [[clojure:core.clj::(defn odd?][odd?]], [[clojure:core.clj::(defn number?][number?]], [[clojure:core.clj::(defn rational?][rational?]],      |
+|            | [[clojure:core.clj::(defn integer?][integer?]], [[clojure:core.clj::(defn ratio?][ratio?]], [[clojure:core.clj::(defn decimal?][decimal?]], [[clojure:core.clj::(defn float?][float?]], (1.9) [[clojure:core.clj::(defn double?][double?]],       |
+|            | [[clojure:core.clj::(defn int?][int?]], [[clojure:core.clj::(defn nat-int?][nat-int?]], [[clojure:core.clj::(defn neg-int?][neg-int?]], [[clojure:core.clj::(defn pos-int?][pos-int?]]                       |
+|------------+----------------------------------------------------------|
+| Random     | [[clojure:core.clj::(defn rand][rand]], [[clojure:core.clj::(defn rand-int][rand-int]]                                           |
+|------------+----------------------------------------------------------|
+| BigDecimal | [[clojure:core.clj::(defmacro with-precision][with-precision]]                                           |
+|------------+----------------------------------------------------------|
+| Unchecked  | [[clojure:core.clj::(add-doc-and-meta *unchecked-math*][*unchecked-math*]], [[clojure:core.clj::1200][unchecked-add]], [[clojure:core.clj::1172][unchecked-dec]],          |
+|            | [[clojure:core.clj::1158][unchecked-inc]], [[clojure:core.clj::1228][unchecked-multiply]],                       |
+|            | [[clojure:core.clj::1186][unchecked-negate]], [[clojure:core.clj::1214][unchecked-subtract]]                     |
+
+**** Strings
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#strings
+:END:
+
+| Create  | [[clojure:core.clj::(defn str][str]], [[clojure:core.clj::(defn format][format]], [[#content/reference/reader#literals][a string]]:                                         |
+|         | ~"escapes \b\f\n\t\r\" octal \377 hex \ucafe"~                   |
+|         | See also [[#content/api/cheatsheet#io][IO/to string section]]                                  |
+|---------+----------------------------------------------------------------|
+| Use     | [[clojure:core.clj::(defn count][count]], [[clojure:core.clj::(defn get][get]], [[clojure:core.clj::(defn subs][subs]], [[clojure:core.clj::(defn compare][compare]]                                      |
+|         | (~clojure.string/~) [[clojure:string.clj::(defn ^String join][join]], [[clojure:string.clj::(defn ^String escape][escape]], [[clojure:string.clj::(defn split][split]], [[clojure:string.clj::(defn split-lines][split-lines]], [[clojure:string.clj::(defn ^String replace][replace]],   |
+|         | [[clojure:string.clj::(defn ^String replace-first][replace-first]], [[clojure:string.clj::(defn ^String reverse][reverse]] (1.8) [[clojure:string.clj::(defn index-of][index-of]], [[clojure:string.clj::(defn last-index-of][last-index-of]]           |
+|---------+----------------------------------------------------------------|
+| [[http://www.regular-expressions.info][Regex]]   | [[https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html][#"pattern"]], [[clojure:core.clj::(defn re-find][re-find]], [[clojure:core.clj::(defn re-seq][re-seq]], [[clojure:core.clj::(defn re-matches][re-matches]], [[clojure:core.clj::(defn re-pattern][re-pattern]],           |
+|         | [[clojure:core.clj::(defn re-matcher][re-matcher]], [[clojure:core.clj::(defn re-groups][re-groups]]                                          |
+|         | (~clojure.string/~) [[clojure:string.clj::(defn ^String replace][replace]], [[clojure:string.clj::(defn ^string replace-first][replace-first]], [[clojure:string.clj::(defn ^string re-quote-replacement][re-quote-replacement]] |
+|         | Note: ~\~ in ~#""~ is not escape char.                             |
+|         | ~(re-pattern "\\s*\\d+")~ can be written ~#"\s*\d+"~               |
+|---------+----------------------------------------------------------------|
+| Letters | (~clojure.string/~) [[clojure:string.clj::(defn ^String capitalize][capitalize]], [[clojure:string.clj::(defn ^String lower-case][lower-case]], [[clojure:string.clj::(defn ^String upper-case][upper-case]]           |
+|---------+----------------------------------------------------------------|
+| Trim    | (~clojure.string/~) [[clojure:string.clj::(defn ^String trim][trim]], [[clojure:string.clj::(defn ^String trim-newline][trim-newline]], [[clojure:string.clj::(defn ^String triml][triml]], [[clojure:string.clj::(defn ^String trimr][trimr]]             |
+|---------+----------------------------------------------------------------|
+| Test    | [[clojure:core.clj::string? (fn ^:static string?][string?]], (~clojure.string/~) [[clojure:string.clj::(defn blank?][blank?]],                             |
+|         | (1.8) [[clojure:string.clj::(defn starts-with?][starts-with?]], [[clojure:string.clj::(defn ends-with?][ends-with?]], [[clojure:string.clj::(defn includes?][includes?]]                      |
+
+**** Other
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#primitives-other
+:END:
+
+| Characters | [[clojure:core.clj::(defn char][char]], [[clojure:core.clj::char? (fn ^:static char?][char?]], [[clojure:core_print.clj::char-name-string][char-name-string]], [[clojure:core_print.clj::char-escape-string][char-escape-string]]    |
+|            | [[#content/reference/reader#literals][literals]]: ~\a \newline~                                |
+|------------+------------------------------------------------------|
+| Keywords   | [[clojure:core.clj::616][keyword]], [[clojure:core.clj::(defn keyword?][keyword?]], [[clojure:core.clj::(defn find-keyword][find-keyword]]                      |
+|            | [[#content/reference/reader#literals][literals]]: ~:kw~, ~:my.name.space/kw~,                    |
+|            | ~::in-cur-namespace~, ~::namespace-alias/kw~             |
+|------------+------------------------------------------------------|
+| Symbols    | [[clojure:core.clj::591][symbol]], [[clojure:core.clj::(defn symbol?][symbol?]], [[clojure:core.clj::(defn gensym][gensym]], [[#content/reference/reader#literals][literals]]: ~my-sym~, ~my.ns/foo~ |
+|------------+------------------------------------------------------|
+| Misc       | [[#content/reference/reader#literals][literals]]: ~true~, ~false~, ~nil~                           |
+
+*** Collections
+**** Collections
+
+| Generic ops   | [[clojure:core.clj::(defn count][count]], [[clojure:core.clj::(defn empty][empty]], [[clojure:core.clj::(defn not-empty][not-empty]], [[clojure:core.clj::6928][into]], [[clojure:core.clj::conj (fn ^:static][conj]],                        |
+|               | (~clojure.walk/~) [[clojure:walk.clj::(defn walk][walk]], [[clojure:walk.clj::(defn prewalk][prewalk]], [[clojure:walk.clj::(defn prewalk-demo][prewalk-demo]],                |
+|               | [[clojure:walk.clj::(defn prewalk-replace][prewalk-replace]], [[clojure:walk.clj::(defn postwalk][postwalk]], [[clojure:walk.clj::(defn postwalk-demo][postwalk-demo]], [[clojure:walk.clj::(defn postwalk-replace][postwalk-replace]], |
+|               | (1.9) [[clojure:core.clj::(defn bounded-count][bounded-count]]                                         |
+|---------------+-------------------------------------------------------------|
+| Content tests | [[clojure:core.clj::(defn distinct?][distinct?]], [[clojure:core.clj::(defn empty?][empty?]], [[clojure:core.clj::(defn every?][every?]], [[clojure:core.clj::not-every? (comp not][not-every?]], [[clojure:core.clj::2696][some]], [[clojure:core.clj::not-any? (comp not][not-any?]]       |
+|---------------+-------------------------------------------------------------|
+| Capabilities  | [[clojure:core.clj::(defn sequential?][sequential?]], [[clojure:core.clj::(defn associative?][associative?]], [[clojure:core.clj::(defn sorted?][sorted?]], [[clojure:core.clj::(defn counted?][counted?]], [[clojure:core.clj::(defn reversible?][reversible?]]   |
+|---------------+-------------------------------------------------------------|
+| Type tests    | [[clojure:core.clj::(defn coll?][coll?]], [[clojure:core.clj::(defn list?][list?]], [[clojure:core.clj::vector? (fn ^:static vector?][vector?]], [[clojure:core.clj::(defn set?][set?]], [[clojure:core.clj::map? (fn ^:static map?][map?]], [[clojure:core.clj::seq? (fn ^:static seq?][seq?]], [[clojure:core_deftype.clj::(defn record?][record?]]            |
+|               | (1.8) [[clojure:core.clj::(defn map-entry?][map-entry?]]                                            |
+
+**** Lists (conj, pop, & peek at beginning)
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#lists
+:END:
+
+| Create   | ~()~ [[clojure:core.clj::list (. clojure.lang.PersistentList][list]], [[clojure:core.clj::(defn list*][list*]]                           |
+|----------+------------------------------------------|
+| Examine  | [[clojure:core.clj::first (fn ^:static first][first]], [[clojure:core.clj::(defn nth][nth]], [[clojure:core.clj::(defn peek][peek]], [[https://docs.oracle.com/javase/8/docs/api/java/util/List.html#indexOf-java.lang.Object-][.indexOf]], [[https://docs.oracle.com/javase/8/docs/api/java/util/List.html#lastIndexOf-java.lang.Object-][.lastIndexOf]] |
+|----------+------------------------------------------|
+| 'Change' | [[clojure:core.clj::cons (fn* ^:static cons][cons]], [[clojure:core.clj::conj (fn ^:static conj][conj]], [[clojure:core.clj::rest (fn ^:static rest][rest]], [[clojure:core.clj::(defn pop][pop]]                    |
+
+**** Vectors (conj, pop, & peek at end)
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#vectors
+:END:
+
+| Create   | ~[]~ [[clojure:core.clj::(defn vector][vector]], [[clojure:core.clj::369][vec]], [[clojure:gvec.clj::(defn vector-of][vector-of]], [[clojure:core.clj::(defn mapv][mapv]], [[clojure:core.clj::(defn filterv][filterv]],          |
+|          | (~clojure.core.rrb-vector/~) [[core.rrb-vector:clojure/core/rrb_vector.clj::(defn vector][vector]], [[core.rrb-vector:clojure/core/rrb_vector.clj::114][vec]], [[core.rrb-vector:clojure/core/rrb_vector.clj::(defn vector-of][vector-of]]  |
+|----------+----------------------------------------------------|
+| Examine  | ~(my-vec idx)~ → ~(nth my-vec idx)~                    |
+|          | [[clojure:core.clj::(defn get][get]], [[clojure:core.clj::(defn peek][peek]], [[https://docs.oracle.com/javase/8/docs/api/java/util/List.html#indexOf-java.lang.Object-][.indexOf]], [[https://docs.oracle.com/javase/8/docs/api/java/util/List.html#lastIndexOf-java.lang.Object-][.lastIndexOf]]                  |
+|----------+----------------------------------------------------|
+| 'Change' | [[clojure:core.clj::(fn ^:static assoc][assoc]], [[clojure:core.clj::(defn assoc-in][assoc-in]], [[clojure:core.clj::(defn pop][pop]], [[clojure:core.clj::(defn subvec][subvec]], [[clojure:core.clj::(defn replace][replace]], [[clojure:core.clj::conj (fn ^:static conj][conj]], [[clojure:core.clj::(defn rseq][rseq]], |
+|          | [[clojure:core.clj::6211][update]], [[clojure:core.clj::(defn update-in][update-in]]                                  |
+|----------+----------------------------------------------------|
+| Ops      | [[clojure:core.clj::(defn reduce-kv][reduce-kv]]                                          |
+
+**** Sets
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#sets
+:END:
+
+| Create unsorted | ~{}~, [[clojure:core.clj::4093][set]], [[clojure:core.clj::(defn hash-set][hash-set]]                                       |
+|-----------------+---------------------------------------------------------|
+| Create sorted   | [[clojure:core.clj::(defn sorted-set][sorted-set]], [[clojure:core.clj::(defn sorted-set-by][sorted-set-by]],                              |
+|                 | (~clojure.data.avl/~) [[data.avl:clojure/data/avl.clj::(defn sorted-set][sorted-set]], [[data.avl:clojure/data/avl.clj::(defn sorted-set-by][sorted-set-by]],          |
+|                 | (~flatland.ordered.set/~) [[ordered:flatland/ordered/set.clj::(defn ordered-set][ordered-set]],                    |
+|                 | (~clojure.data.int-map/~) [[data.int-map:clojure/data/int_map.clj::(defn int-set][int-set]], [[data.int-map:clojure/data/int_map.clj::(defn dense-int-set][dense-int-set]]          |
+|-----------------+---------------------------------------------------------|
+| Examine         | ~(my-set item)~ → ~(get my-set item)~                       |
+|                 | [[clojure:core.clj::(defn contains?][contains?]]                                               |
+|-----------------+---------------------------------------------------------|
+| 'Change'        | [[clojure:core.clj::conj (fn ^:static conj][conj]], [[clojure:core.clj::(defn disj][disj]]                                              |
+|-----------------+---------------------------------------------------------|
+| Set ops         | (~clojure.set/~) [[clojure:set.clj::(defn union][union]], [[clojure:set.clj::(defn difference][difference]], [[clojure:set.clj::(defn intersection][intersection]], [[clojure:set.clj::(defn select][select]], |
+|                 | See also [[#content/api/cheatsheet#relations][Relations section]]                              |
+|-----------------+---------------------------------------------------------|
+| "Test"          | (~clojure.set/~) [[clojure:set.clj::(defn subset?][subset?]], [[clojure:set.clj::(defn superset?][superset?]]                       |
+|-----------------+---------------------------------------------------------|
+| Sorted sets     | [[clojure:core.clj::(defn rseq][rseq]], [[clojure:core.clj::(defn subseq][subseq]], [[clojure:core.clj::(defn rsubseq][rsubseq]]                                   |
+
+**** Maps
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#maps
+:END:
+
+| Create unsorted | ~{}~, [[clojure:core.clj::(defn hash-map][hash-map]], [[clojure:core.clj::(defn array-map][array-map]], [[clojure:core.clj::(defn zipmap][zipmap]], [[clojure:core_proxy.clj::(defn bean][bean]], [[clojure:core.clj::(defn frequencies][frequencies]], |
+|                 | [[clojure:core.clj::(defn group-by][group-by]], [[clojure:set.clj::(defn index][clojure.set/index]]                         |
+|-----------------+-----------------------------------------------------|
+| Create sorted   | [[clojure:core.clj::(defn sorted-map][sorted-map]], [[clojure:core.clj::(defn sorted-map-by][sorted-map-by]],                          |
+|                 | (~clojure.data.avl/~) [[data.avl:clojure/data/avl.clj::(defn sorted-map][sorted-map]], [[data.avl:clojure/data/avl.clj::(defn sorted-map-by][sorted-map-by]],      |
+|                 | (~flatland.ordered.set/~) [[ordered:flatland/ordered/map.clj::(defn ordered-map][ordered-map]]                 |
+|                 | (~clojure.data.priority-map/~) [[data.priority-map:clojure/data/priority_map.clj::(defn priority-map][priority-map]]           |
+|                 | (~flatland.useful.map/~) [[useful:flatland/useful/map.clj::(defn ordering-map][ordering-map]]                 |
+|                 | (~clojure.data.int-map/~) [[data.int-map:clojure/data/int_map.clj::(defn int-map][int-map]]                     |
+|-----------------+-----------------------------------------------------|
+| Examine         | ~(my-map k)~ → ~(get my-app k)~,                        |
+|                 | also: ~(:key my-map)~ → ~(get my-map :key)~             |
+|                 | [[clojure:core.clj::(defn get-in][get-in]], [[clojure:core.clj::(defn contains?][contains?]], [[clojure:core.clj::1536][find]], [[clojure:core.clj::(defn keys][keys]], [[clojure:core.clj::(defn vals][vals]]                 |
+|-----------------+-----------------------------------------------------|
+| 'Change'        | [[clojure:core.clj::(fn ^:static assoc][assoc]], [[clojure:core.clj::(defn assoc-in][assoc-in]], [[clojure:core.clj::(defn dissoc][dissoc]], [[clojure:core.clj::(defn merge][merge]], [[clojure:core.clj::(defn merge-with][merge-with]],         |
+|                 | [[clojure:core.clj::(defn select-keys][select-keys]], [[clojure:core.clj::6211][update]], [[clojure:core.clj::(defn update-in][update-in]],                     |
+|                 | (~clojure.set/~) [[clojure:set.clj::(defn rename-keys][rename-keys]], [[clojure:set.clj::(defn map-invert][map-invert]],             |
+|                 | GitHub: [[https://github.com/weavejester/medley][Medley]]                                      |
+|-----------------+-----------------------------------------------------|
+| Ops             | [[clojure:core.clj::(defn reduce-kv][reduce-kv]]                                           |
+|-----------------+-----------------------------------------------------|
+| Entry           | [[clojure:core.clj::1569][key]], [[clojure:core.clj::1576][val]]                                            |
+|-----------------+-----------------------------------------------------|
+| Sorted maps     | [[clojure:core.clj::(defn rseq][rseq]], [[clojure:core.clj::(defn subseq][subseq]], [[clojure:core.clj::(defn rsubseq][rsubseq]]                               |
+
+**** Queues (conj at end, peek & pop from beginning)
+
+| Create   | ~clojure.lang.PersistentQueue/EMPTY~    |
+|          | (no literal syntax or constructor fn) |
+|----------+---------------------------------------|
+| Examine  | [[clojure:core.clj::(defn peek][peek]]                                  |
+|----------+---------------------------------------|
+| 'Change' | [[clojure:core.clj::conj (fn ^:static][conj]], [[clojure:core.clj::(defn pop][pop]]                             |
+
+**** Relations (set of maps, each with same keys, aka rels)
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#relations
+:END:
+
+| Rel algebra | (~clojure.set/~) [[clojure:set.clj::(defn join][join]], [[clojure:set.clj::(defn select][select]], [[clojure:set.clj::(defn project][project]], [[clojure:set.clj::(defn union][union]], |
+|             | [[clojure:set.clj::(defn difference][difference]], [[clojure:set.clj::(defn intersection][intersection]], [[clojure:set.clj::(defn index][index]], [[clojure:set.clj::89][rename]]      |
+
+**** Transients ([[#content/reference/transients][reference/transients]])
+
+| Create | [[clojure:core.clj::(defn transient][transient]], [[clojure:core.clj::(defn persistent!][persistent!]]                  |
+|--------+-----------------------------------------|
+| Change | [[clojure:core.clj::(defn conj!][conj!]], [[clojure:core.clj::(defn pop!][pop!]], [[clojure:core.clj::(defn assoc!][assoc!]], [[clojure:core.clj::(defn dissoc!][dissoc!]], [[clojure:core.clj::(defn disj!][disj!]]     |
+|        | Note: always use return value for later |
+|        | changes, never original!"               |
+
+**** Misc
+
+| Compare | [[clojure:core.clj::(defn =][=]], [[clojure:core.clj::(defn identical?][identical?]], [[clojure:core.clj::(defn not=][not=]], [[clojure:core.clj::(defn not][not]], [[clojure:core.clj::(defn compare][compare]] [[clojure:data.clj::(defn diff][clojure.data/diff]] |
+|---------+-----------------------------------------------------|
+| Test    | [[clojure:core.clj::(defn true?][true?]], [[clojure:core.clj::(defn false?][false?]], [[clojure:core.clj::(defn instance?][instance?]], [[clojure:core.clj::(defn nil?][nil?]], [[clojure:core.clj::(defn some?][some?]]               |
+
+*** Sequences
+**** Creating a Lazy Seq
+
+| From collection  | [[clojure:core.clj::seq (fn ^:static seq][seq]], [[clojure:core.clj::(defn vals][vals]], [[clojure:core.clj::(defn keys][keys]], [[clojure:core.clj::(defn rseq][rseq]], [[clojure:core.clj::(defn subseq][subseq]], [[clojure:core.clj::(defn rsubseq][rsubseq]], [[clojure:core.clj::(defn sequence][sequence]]     |
+|------------------+------------------------------------------------------|
+| From producer fn | [[clojure:core.clj::(defmacro lazy-seq][lazy-seq]], [[clojure:core.clj::(defn repeatedly][repeatedly]], [[clojure:core.clj::(defn iterate][iterate]]                        |
+|------------------+------------------------------------------------------|
+| From constant    | [[clojure:core.clj::(defn repeat][repeat]], [[clojure:core.clj::(defn range][range]]                                        |
+|------------------+------------------------------------------------------|
+| From other       | [[clojure:core.clj::(defn file-seq][file-seq]], [[clojure:core.clj::(defn line-seq][line-seq]], [[clojure:core.clj::(defn resultset-seq][resultset-seq]], [[clojure:core.clj::(defn re-seq][re-seq]], [[clojure:core.clj::(defn tree-seq][tree-seq]], |
+|                  | [[clojure:core.clj::(defn xml-seq][xml-seq]], [[clojure:core.clj::(defn iterator-seq][iterator-seq]], [[clojure:core.clj::(defn enumeration-seq][enumeration-seq]]               |
+|------------------+------------------------------------------------------|
+| From seq         | [[clojure:core.clj::(defn keep][keep]], [[clojure:core.clj::(defn keep-indexed][keep-indexed]]                                   |
+
+**** Seq in, Seq out
+
+| Get shorter   | [[clojure:core.clj::(defn distinct][distinct]], [[clojure:core.clj::(defn filter][filter]], [[clojure:core.clj::2830 ][remove]], [[clojure:core.clj::(defn take-nth][take-nth]], [[clojure:core.clj::(defmacro for][for]],              |
+|               | [[clojure:core.clj::(defn dedupe][dedupe]], [[clojure:core.clj::(defn random-sample][random-sample]]                                 |
+|---------------+-------------------------------------------------------|
+| Get longer    | [[clojure:core.clj::cons (fn* ^:static cons][cons]], [[clojure:core.clj::conj (fn ^:static][conj]], [[clojure:core.clj::(defn concat][concat]], [[clojure:core.clj::(defmacro lazy-cat][lazy-cat]], [[clojure:core.clj::(defn mapcat][mapcat]], [[clojure:core.clj::(defn cycle][cycle]],          |
+|               | [[clojure:core.clj::(defn interleave][interleave]], [[clojure:core.clj::(defn interpose][interpose]]                                 |
+|---------------+-------------------------------------------------------|
+| Tail-items    | [[clojure:core.clj::rest (fn ^:static rest][rest]], [[clojure:core.clj::(defn nthrest][nthrest]], [[clojure:core.clj::next (fn ^:static next][next]], [[clojure:core.clj::fnext (fn ^:static fnext][fnext]], [[clojure:core.clj::nnext (fn ^:static nnext][nnext]], [[clojure:core.clj::(defn drop][drop]],              |
+|               | [[clojure:core.clj::(defn drop-while][drop-while]], [[clojure:core.clj::(defn take-last][take-last]], [[clojure:core.clj::(defmacro for][for]]                            |
+|---------------+-------------------------------------------------------|
+| Head-items    | [[clojure:core.clj::(defn take][take]], [[clojure:core.clj::(defn take-while][take-while]], [[clojure:core.clj::(defn butlast][butlast]], [[clojure:core.clj::(defn drop-last][drop-last]], [[clojure:core.clj::(defmacro for][for]]             |
+|---------------+-------------------------------------------------------|
+| 'Change'      | [[clojure:core.clj::conj (fn ^:static][conj]], [[clojure:core.clj::(defn concat][concat]], [[clojure:core.clj::(defn distinct][distinct]], [[clojure:core.clj::(defn flatten][flatten]], [[clojure:core.clj::(defn group-by][group-by]], [[clojure:core.clj::(defn partition][partition]], |
+|               | [[clojure:core.clj::(defn partition-all][partition-all]], [[clojure:core.clj::(defn partition-by][partition-by]], [[clojure:core.clj::(defn split-at][split-at]], [[clojure:core.clj::(defn split-with][split-with]],    |
+|               | [[clojure:core.clj::(defn filter][filter]], [[clojure:core.clj::2830 ][remove]], [[clojure:core.clj::(defn replace][replace]], [[clojure:core.clj::(defn shuffle][shuffle]]                      |
+|---------------+-------------------------------------------------------|
+| Rearrange     | [[clojure:core.clj::(defn reverse][reverse]], [[clojure:core.clj::3090][sort]], [[clojure:core.clj::(defn sort-by][sort-by]], [[clojure:core.clj::(defn compare][compare]]                       |
+|---------------+-------------------------------------------------------|
+| Process items | [[clojure:core.clj::2731][map]], [[clojure:core.clj::(defn pmap][pmap]], [[clojure:core.clj::(defn map-indexed][map-indexed]], [[clojure:core.clj::(defn mapcat][mapcat]], [[clojure:core.clj::(defmacro for][for]], [[clojure:core.clj::(defn replace][replace]], [[clojure:core.clj::5409][seque]]   |
+
+**** Using a Seq
+
+| Extract item     | [[clojure:core.clj::first (fn ^:static first][first]], [[clojure:core.clj::second (fn ^:static second][second]], [[clojure:core.clj::last (fn ^:static last][last]], [[clojure:core.clj::rest (fn ^:static rest][rest]], [[clojure:core.clj::next (fn ^:static next][next]], [[clojure:core.clj::ffirst (fn ^:static ffirst][ffirst]], [[clojure:core.clj::nfirst (fn ^:static nfirst][nfirst]],  |
+|                  | [[clojure:core.clj::fnext (fn ^:static fnext][fnext]], [[clojure:core.clj::nnext (fn ^:static nnext][nnext]], [[clojure:core.clj::(defn nth][nth]], [[clojure:core.clj::(defn nthnext][nthnext]], [[clojure:core.clj::(defn rand-nth][rand-nth]], [[clojure:core.clj::(defmacro when-first][when-first]], |
+|                  | [[clojure:core.clj::(defn max-key][max-key]], [[clojure:core.clj::(defn min-key][min-key]]                                  |
+|------------------+---------------------------------------------------|
+| Construct coll   | [[clojure:core.clj::(defn zipmap][zipmap]], [[clojure:core.clj::6928][into]], [[clojure:core.clj::6846][reduce]], [[clojure:core.clj::(defn reductions][reductions]], [[clojure:core.clj::4093][set]], [[clojure:core.clj::369][vec]],       |
+|                  | [[clojure:core.clj::(defn into-array][into-array]], [[clojure:core.clj::(defn to-array-2d][to-array-2d]], [[clojure:core.clj::(defn mapv][mapv]], [[clojure:core.clj::(defn filterv][filterv]]            |
+|------------------+---------------------------------------------------|
+| Pass to fn       | [[clojure:core.clj::(defn apply][apply]]                                             |
+|------------------+---------------------------------------------------|
+| Search           | [[clojure:core.clj::2696][some]], [[clojure:core.clj::(defn filter][filter]]                                      |
+|------------------+---------------------------------------------------|
+| Force evaluation | [[clojure:core.clj::(defmacro doseq][doseq]], [[clojure:core.clj::(defn dorun][dorun]], [[clojure:core.clj::(defn doall][doall]], [[clojure:core.clj::(defn run!][run!]]                         |
+|------------------+---------------------------------------------------|
+| Check for forced | [[clojure:core.clj::(defn realized?][realized?]]                                         |
+
+*** Transducers
+
+| Off the shelf     | [[clojure:core.clj::2731][map]], [[clojure:core.clj::(defn mapcat][mapcat]], [[clojure:core.clj::(defn filter][filter]], [[clojure:core.clj::2830][remove]], [[clojure:core.clj::(defn take][take]], [[clojure:core.clj::(defn take-while][take-while]],     |
+|                   | [[clojure:core.clj::(defn take-nth][take-nth]], [[clojure:core.clj::(defn drop][drop]], [[clojure:core.clj::(defn drop-while][drop-while]], [[clojure:core.clj::(defn replace][replace]], [[clojure:core.clj::(defn partition-by][partition-by]], |
+|                   | [[clojure:core.clj::(defn partition-all][partition-all]], [[clojure:core.clj::(defn keep][keep]], [[clojure:core.clj::(defn keep-indexed][keep-indexed]], [[clojure:core.clj::(defn map-indexed][map-indexed]],    |
+|                   | [[clojure:core.clj::(defn distinct][distinct]], [[clojure:core.clj::(defn interpose][interpose]], [[clojure:core.clj::(defn cat][cat]], [[clojure:core.clj::(defn dedupe][dedupe]], [[clojure:core.clj::(defn random-sample][random-sample]],   |
+|                   | (1.9) [[clojure:core.clj::(defn halt-when][halt-when]]                                    |
+|-------------------+----------------------------------------------------|
+| Create your own   | [[clojure:core.clj::(defn completing][completing]], [[clojure:core.clj::(defn ensure-reduced][ensure-reduced]], [[clojure:core.clj::(defn unreduced][unreduced]],             |
+|                   | See also [[#content/api/cheatsheet#concurrency][Concurrency/Volatiles section]]             |
+|-------------------+----------------------------------------------------|
+| Use               | [[clojure:core.clj::6928][into]], [[clojure:core.clj::(defn sequence][sequence]], [[clojure:core.clj::(defn transduce][transduce]], [[clojure:core.clj::(defn eduction][eduction]]                |
+|-------------------+----------------------------------------------------|
+| Early termination | [[clojure:core.clj::(defn reduced][reduced]], [[clojure:core.clj::(defn reduced?][reduced?]], [[clojure:core.clj::(defn deref][deref]]                           |
+
+*** Spec ([[#content/about/spec][rationale]], [[#content/guides/spec][guide]])
+**** Spec (~clojure.spec.alpha/~)
+
+| Operations       | [[spec.alpha:clojure/spec/alpha.clj::(defn valid?][valid?]], [[spec.alpha:clojure/spec/alpha.clj::(defn conform][conform]], [[spec.alpha:clojure/spec/alpha.clj::(defn unform][unform]], [[spec.alpha:clojure/spec/alpha.clj::267][explain]], [[spec.alpha:clojure/spec/alpha.clj::(defn explain-data][explain-data]], |
+|                  | [[spec.alpha:clojure/spec/alpha.clj::(defn explain-str][explain-str]], [[spec.alpha:clojure/spec/alpha.clj::(defn explain-out][explain-out]], [[spec.alpha:clojure/spec/alpha.clj::(defn form][form]], [[spec.alpha:clojure/spec/alpha.clj::(defn describe][describe]],       |
+|                  | [[spec.alpha:clojure/spec/alpha.clj::(defmacro assert][assert]], [[spec.alpha:clojure/spec/alpha.clj::(defn check-asserts][check-asserts]], [[spec.alpha:clojure/spec/alpha.clj::(defn check-asserts?][check-asserts?]]           |
+|------------------+-------------------------------------------------|
+| Generator ops    | [[spec.alpha:clojure/spec/alpha.clj::(defn gen][gen]], [[spec.alpha:clojure/spec/alpha.clj::(defn exercise][exercise]], [[spec.alpha:clojure/spec/alpha.clj::(defn exercise-fn][exercise-fn]]                      |
+|------------------+-------------------------------------------------|
+| Defn. & registry | [[spec.alpha:clojure/spec/alpha.clj::(defmacro def][def]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro fdef][fdef]], [[spec.alpha:clojure/spec/alpha.clj::(defn registry][registry]], [[spec.alpha:clojure/spec/alpha.clj::(defn get-spec][get-spec]], [[spec.alpha:clojure/spec/alpha.clj::(defn spec?][spec?]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro spec][spec]],     |
+|                  | [[spec.alpha:clojure/spec/alpha.clj::(defn with-gen][with-gen]]                                        |
+|------------------+-------------------------------------------------|
+| Logical          | [[spec.alpha:clojure/spec/alpha.clj::(defmacro and][and]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro or][or]]                                         |
+|------------------+-------------------------------------------------|
+| Collection       | [[spec.alpha:clojure/spec/alpha.clj::(defmacro coll-of][coll-of]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro map-of][map-of]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro every][every]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro every-kv][every-kv]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro keys][keys]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro merge][merge]]   |
+|------------------+-------------------------------------------------|
+| Regex            | [[spec.alpha:clojure/spec/alpha.clj::(defmacro cat][cat]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro alt][alt]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro *][*]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro +][+]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro ?][?]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro &][&]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro keys*][keys*]]                     |
+|------------------+-------------------------------------------------|
+| Range            | [[spec.alpha:clojure/spec/alpha.clj::(defmacro int-in][int-in]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro inst-in][inst-in]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro double-in][double-in]], [[spec.alpha:clojure/spec/alpha.clj::(defn int-in-range?][int-in-range?]],      |
+|                  | [[spec.alpha:clojure/spec/alpha.clj::(defn inst-in-range?][inst-in-range?]]                                  |
+|------------------+-------------------------------------------------|
+| Other            | [[spec.alpha:clojure/spec/alpha.clj::(defmacro nilable][nilable]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro multi-spec][multi-spec]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro fspec][fspec]], [[spec.alpha:clojure/spec/alpha.clj::(defmacro conformer][conformer]]           |
+|------------------+-------------------------------------------------|
+| Custom explain   | [[spec.alpha:clojure/spec/alpha.clj::(defn explain-printer][explain-printer]], [[spec.alpha:clojure/spec/alpha.clj::(def ^:dynamic *explain-out* explain-printer][*explain-out*]]                  |
+
+**** Predicates with test.check generators
+
+| Numbers           | [[clojure:core.clj::(defn number?][number?]], [[clojure:core.clj::(defn rational?][rational?]], [[clojure:core.clj::(defn integer?][integer?]], [[clojure:core.clj::(defn ratio?][ratio?]], [[clojure:core.clj::(defn decimal?][decimal?]],       |
+|                   | [[clojure:core.clj::(defn float?][float?]], [[clojure:core.clj::(defn zero?][zero?]], (1.9) [[clojure:core.clj::(defn double?][double?]], [[clojure:core.clj::(defn int?][int?]], [[clojure:core.clj::(defn nat-int?][nat-int?]],         |
+|                   | [[clojure:core.clj::(defn neg-int?][neg-int?]], [[clojure:core.clj::(defn pos-int?][pos-int?]]                                    |
+|-------------------+-------------------------------------------------------|
+| Symbols, keywords | [[clojure:core.clj::(defn keyword?][keyword?]], [[clojure:core.clj::(defn symbol?][symbol?]], (1.9) [[clojure:core.clj::(defn ident?][ident?]], [[clojure:core.clj::(defn qualified-ident?][qualified-ident?]],    |
+|                   | [[clojure:core.clj::(defn qualified-keyword?][qualified-keyword?]], [[clojure:core.clj::(defn qualified-symbol?][qualified-symbol?]], [[clojure:core.clj::(defn simple-ident?][simple-ident?]], |
+|                   | [[clojure:core.clj::(defn simple-keyword?][simple-keyword?]], [[clojure:core.clj::(defn simple-symbol?][simple-symbol?]]                       |
+|-------------------+-------------------------------------------------------|
+| Other scalars     | [[clojure:core.clj::string? (fn ^:static string?][string?]], [[clojure:core.clj::(defn true?][true?]], [[clojure:core.clj::(defn false?][false?]], [[clojure:core.clj::(defn nil?][nil?]], [[clojure:core.clj::(defn some?][some?]], (1.9) [[clojure:core.clj::(defn boolean?][boolean?]],  |
+|                   | [[clojure:core.clj::(defn bytes?][bytes?]], [[clojure:core.clj::(defn inst?][inst?]], [[clojure:core.clj::(defn uri?][uri?]], [[clojure:core.clj::(defn uuid?][uuid?]]                            |
+|-------------------+-------------------------------------------------------|
+| Collections       | [[clojure:core.clj::(defn list?][list?]], [[clojure:core.clj::map? (fn ^:static map?][map?]], [[clojure:core.clj::(defn set?][set?]], [[clojure:core.clj::vector? (fn ^:static vector?][vector?]], [[clojure:core.clj::(defn associative?][associative?]], [[clojure:core.clj::(defn coll?][coll?]],      |
+|                   | [[clojure:core.clj::(defn sequential?][sequential?]], [[clojure:core.clj::seq? (fn ^:static seq?][seq?]], [[clojure:core.clj::(defn empty?][empty?]], (1.9) [[clojure:core.clj::(defn indexed?][indexed?]], [[clojure:core.clj::(defn seqable?][seqable?]]   |
+|-------------------+-------------------------------------------------------|
+| Other             | (1.9) [[clojure:core.clj::(defn any?][any?]]                                            |
+
+*** IO
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#io
+:END:
+
+| to/from ...  | [[clojure:core.clj::(defn spit][spit]], [[clojure:core.clj::(defn slurp][slurp]] (to writer/from reader, Socket, |
+|              | string with file name, URI, etc.)           |
+|--------------+---------------------------------------------|
+| to ~*out*~     | [[clojure:core.clj::7965][pr]], [[clojure:core.clj::(defn prn][prn]], [[clojure:core.clj::(defn print][print]], [[clojure:core.clj::(defn printf][printf]], [[clojure:core.clj::(defn println][println]], [[clojure:core.clj::(defn newline][newline]],   |
+|              | [[clojure:pprint/print_table.clj::(defn print-table][clojure.pprint/print-table]]                  |
+|--------------+---------------------------------------------|
+| to writer    | (~clojure.pprint/~) [[clojure:pprint/pprint_base.clj::(defn pprint][pprint]], [[clojure:pprint/cl_format.clj::(defn cl-format][cl-format]]         |
+|              | also: ~(binding [*out* writer] ...)~          |
+|--------------+---------------------------------------------|
+| to string    | [[clojure:core.clj::(defn format][format]], [[clojure:core.clj::(defmacro with-out-str][with-out-str]], [[clojure:core.clj::(defn pr-str][pr-str]], [[clojure:core.clj::(defn prn-str][prn-str]],      |
+|              | [[clojure:core.clj::(defn print-str][print-str]], [[clojure:core.clj::(defn println-str][println-str]]                      |
+|--------------+---------------------------------------------|
+| from ~*in*~    | [[clojure:core.clj::(defn read-line][read-line]], [[clojure:edn.clj::(defn read][clojure.edn/read]],                |
+|              | [[tools.reader:clojure/tools/reader/edn.clj::(defn read][clojure.tools.reader.edn/read]]               |
+|--------------+---------------------------------------------|
+| from reader  | [[clojure:core.clj::(defn line-seq][line-seq]], [[clojure:edn.clj::(defn read][clojure.edn/read]],                 |
+|              | [[tools.reader:clojure/tools/reader/edn.clj::(defn read][clojure.tools.reader.edn/read]]               |
+|              | also: ~(binding [*in* reader] ...)~,          |
+|              | [[https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html][java.io.Reader]]                              |
+|--------------+---------------------------------------------|
+| from string  | [[clojure:core.clj::(defmacro with-in-str][with-in-str]], [[clojure:edn.clj::(defn read-string][clojure.edn/read-string]],       |
+|              | [[tools.reader:clojure/tools/reader/edn.clj::(defn read-string][clojure.tools.reader.edn/read-string]]        |
+|--------------+---------------------------------------------|
+| Open         | [[clojure:core.clj::(defmacro with-open][with-open]], (~clojure.java.io/~)               |
+|              | text: [[clojure:java/io.clj::(defn ^Reader reader][reader]], [[clojure:java/io.clj::(defn ^Writer writer][writer]]                        |
+|              | binary: [[clojure:java/io.clj::(defn ^InputStream input-stream][input-stream]], [[clojure:java/io.clj::(defn ^OutputStream output-stream][output-stream]]         |
+|--------------+---------------------------------------------|
+| Binary       | ~(.write ostream byte-arr)~,                  |
+|              | ~(.read istream byte-arr)~                    |
+|              | [[https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html][java.io.OutputStream]], [[https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html][java.io.InputStream]],  |
+|              | GitHub: [[https://github.com/ztellman/gloss][gloss]], [[https://github.com/rosejn/byte-spec][byte-spec]]                    |
+|--------------+---------------------------------------------|
+| Misc         | [[clojure:core.clj::(defn flush][flush]], ~(.close s)~, [[clojure:core.clj::(defn file-seq][file-seq]], [[clojure:core.clj::(add-doc-and-meta *in*][*in*]], [[clojure:core.clj::(add-doc-and-meta *out*][*out*]],   |
+|              | [[clojure:core.clj::(add-doc-and-meta *err*][*err*]], (~clojure.java.io/~) [[clojure:java/io.clj::(defn ^File file][file]], [[clojure:java/io.clj::(defn copy][copy]],       |
+|              | [[clojure:java/io.clj::(defn delete-file][delete-file]], [[clojure:java/io.clj::(defn ^URL resource][resource]], [[clojure:java/io.clj::(defprotocol ^{:added "1.2"} Coercions][as-file]], [[clojure:java/io.clj::(defprotocol ^{:added "1.2"} Coercions][as-url]],     |
+|              | [[clojure:java/io.clj::(defn ^String as-relative-path][as-relative-path]], GitHub: [[https://github.com/funcool/fs][fs]]                |
+|--------------+---------------------------------------------|
+| Data readers | [[clojure:core.clj::(def ^{:added "1.4" :dynamic true} *data-readers*][*data-readers*]], [[clojure:core.clj::(def ^{:added "1.4"} default-data-readers][default-data-readers]],       |
+|              | [[clojure:core.clj::(def ^{:added "1.5" :dynamic true} *default-data-reader-fn*][*default-data-reader-fn*]]                    |
+|--------------+---------------------------------------------|
+| tap          | (1.10) [[clojure:core.clj::(defn tap>][tap>]], [[clojure:core.clj::(defn add-tap][add-tap]], [[clojure:core.clj::(defn remove-tap][remove-tap]]            |
+
+*** Functions
+
+| Create | [[clojure:core.clj::fn (fn* fn][fn]], ~defn~, [[clojure:core.clj::(defmacro defn-][defn-]], [[clojure:core.clj::(defmacro definline][definline]], [[clojure:core.clj::(defn identity][identity]], [[clojure:core.clj::(defn constantly][constantly]],      |
+|        | [[clojure:core.clj::(defmacro memfn][memfn]], [[clojure:core.clj::2561][comp]], [[clojure:core.clj::(defn complement][complement]], [[clojure:core.clj::(defn partial][partial]], [[clojure:core.clj::(defn juxt][juxt]], [[clojure:core.clj::(defn memoize][memoize]], [[clojure:core.clj::(defn fnil][fnil]], |
+|        | [[clojure:core.clj::(defn every-pred][every-pred]], [[clojure:core.clj::(defn some-fn][some-fn]]                                    |
+|--------+--------------------------------------------------------|
+| Call   | [[clojure:core.clj::(defn apply][apply]], [[clojure:core.clj::(defmacro ->][->]], [[clojure:core.clj::(defmacro ->>][->>]], [[clojure:core.clj::(defn trampoline][trampoline]], [[clojure:core.clj::(defmacro as->][as->]], [[clojure:core.clj::(defmacro cond->][cond->]], [[clojure:core.clj::(defmacro cond->>][cond->>]],     |
+|        | [[clojure:core.clj::(defmacro some->][some->]], [[clojure:core.clj::(defmacro some->>][some->>]]                                        |
+|--------+--------------------------------------------------------|
+| Test   | [[clojure:core.clj::(defn fn?][fn?]], [[clojure:core.clj::(defn ifn?][ifn?]]                                              |
+
+*** Abstractions ([[https://github.com/cemerick/clojure-type-selection-flowchart][Clojure type selection flowchart]])
+**** Protocols ([[#content/reference/protocols][reference/protocols]])
+
+| Define      | [[clojure:core_deftype.clj::(defmacro defprotocol][defprotocol]], ~(defprotocol Slicey (slice [at]))~            |
+|-------------+-----------------------------------------------------------|
+| Extend      | [[clojure:core_deftype.clj::(defmacro extend-type][extend-type]], ~(extend-type String Slicey (slice [at] ...))~ |
+|-------------+-----------------------------------------------------------|
+| Extend null | [[clojure:core_deftype.clj::(defmacro extend-type][extend-type]], ~(extend-type nil Slicey (slice [_] nil))~     |
+|-------------+-----------------------------------------------------------|
+| Reify       | [[clojure:core_deftype.clj::(defmacro reify][reify]], ~(reify Slicey (slice [at] ...))~                    |
+|-------------+-----------------------------------------------------------|
+| Test        | [[clojure:core_deftype.clj::(defn satisfies?][satisfies?]], [[clojure:core_deftype.clj::(defn extends?][extends?]]                                      |
+|-------------+-----------------------------------------------------------|
+| Other       | [[clojure:core_deftype.clj::768][extend]], [[clojure:core_deftype.clj::(defmacro extend-protocol][extend-protocol]], [[clojure:core_deftype.clj::(defn extenders][extenders]]                        |
+
+**** Records ([[#content/reference/datatypes][reference/datatypes]])
+
+| Define | [[clojure:core_deftype.clj::(defmacro defrecord][defrecord]], ~(defrecord Pair [h t])~ |
+|--------+-----------------------------------|
+| Access | ~(:h (Pair. 1 2))~ → ~1~              |
+|--------+-----------------------------------|
+| Create | ~Pair.~, ~->Pair~, ~map->Pair~          |
+|--------+-----------------------------------|
+| Test   | [[clojure:core_deftype.clj::(defn record?][record?]]                           |
+
+**** Types ([[#content/reference/datatypes][reference/datatypes]])
+
+| Define       | [[clojure:core_deftype.clj::(defmacro deftype][deftype]], ~(deftype Pair [h t])~                                       |
+|--------------+---------------------------------------------------------------------|
+| Access       | ~(.h (Pair. 1 2))~ → ~1~                                                |
+|--------------+---------------------------------------------------------------------|
+| Create       | ~Pair.~, ~->Pair~                                                       |
+|--------------+---------------------------------------------------------------------|
+| With methods | [[clojure:core_deftype.clj::(defmacro deftype][deftype]],                                                            |
+|              | ~(deftype Pair [h t] Object (toString [this] (str "<" h "," t ">")))~ |
+
+**** Multimethods ([[#content/reference/multimethods][reference/multimethods]])
+
+| Define        | [[clojure:core.clj::(defmacro defmulti][defmulti]], ~(defmulti my-mm dispatch-fn)~                   |
+|---------------+----------------------------------------------------------|
+| Method define | [[clojure:core.clj::(defmacro defmethod][defmethod]], ~(defmethod my-mm :dispatch-value [args] ...)~  |
+|---------------+----------------------------------------------------------|
+| Dispatch      | [[clojure:core.clj::(defn get-method][get-method]], [[clojure:core.clj::(defn methods][methods]]                                      |
+|---------------+----------------------------------------------------------|
+| Remove        | [[clojure:core.clj::(defn remove-method][remove-method]], [[clojure:core.clj::(defn remove-all-methods][remove-all-methods]]                        |
+|---------------+----------------------------------------------------------|
+| Prefer        | [[clojure:core.clj::(defn prefer-method][prefer-method]], [[clojure:core.clj::(defn prefers][prefers]]                                   |
+|---------------+----------------------------------------------------------|
+| Relation      | [[clojure:core.clj::(defn derive][derive]], [[clojure:core.clj::(defn underive][underive]], [[clojure:core.clj::(defn isa?][isa?]], [[clojure:core.clj::(defn parents][parents]], [[clojure:core.clj::(defn ancestors][ancestors]], [[clojure:core.clj::(defn descendants][descendants]], |
+|               | [[clojure:core.clj::(defn make-hierarchy][make-hierarchy]]                                           |
+
+*** Datafy ([[https://corfield.org/blog/2018/12/03/datafy-nav][article]])
+
+| Datafy | (~clojure.datafy/~) [[clojure:datafy.clj::(defn datafy][datafy]], [[clojure:datafy.clj::(defn nav][nav]] |
+
+*** Macros
+
+| Create  | [[clojure:core.clj::defmacro (fn][defmacro]], [[clojure:core.clj::(defmacro definline][definline]]                                       |
+|---------+-----------------------------------------------------------|
+| Debug   | [[clojure:core.clj::(defn macroexpand-1][macroexpand-1]], [[clojure:core.clj::4014][macroexpand]], [[clojure:walk.clj::(defn macroexpand-all][clojure.walk/macroexpand-all]]  |
+|---------+-----------------------------------------------------------|
+| Branch  | [[clojure:core.clj::(defmacro and][and]], [[clojure:core.clj::(defmacro or][or]], [[clojure:core.clj::(defmacro when][when]], [[clojure:core.clj::(defmacro when-not][when-not]], [[clojure:core.clj::(defmacro when-let][when-let]], [[clojure:core.clj::(defmacro when-first][when-first]], [[clojure:core.clj::(defmacro if-not][if-not]],    |
+|         | [[clojure:core.clj::(defmacro if-let][if-let]], [[clojure:core.clj::(defmacro cond][cond]], [[clojure:core.clj::(defmacro condp][condp]], [[clojure:core.clj::(defmacro case][case]], [[clojure:core.clj::(defmacro when-some][when-some]], [[clojure:core.clj::(defmacro if-some][if-some]]             |
+|---------+-----------------------------------------------------------|
+| Loop    | [[clojure:core.clj::(defmacro for][for]], [[clojure:core.clj::(defmacro doseq][doseq]], [[clojure:core.clj::(defmacro dotimes][dotimes]], [[clojure:core.clj::(defmacro while][while]]                                |
+|---------+-----------------------------------------------------------|
+| Arrange | [[clojure:core.clj::(defmacro ..][..]], [[clojure:core.clj::(defmacro doto][doto]], [[clojure:core.clj::(defmacro ->][->]], [[clojure:core.clj::(defmacro ->>][->>]], [[clojure:core.clj::(defmacro as->][as->]], [[clojure:core.clj::(defmacro cond->][cond->]], [[clojure:core.clj::(defmacro cond->>][cond->>]], [[clojure:core.clj::(defmacro some->][some->]], [[clojure:core.clj::(defmacro some->>][some->>]] |
+|---------+-----------------------------------------------------------|
+| Scope   | [[clojure:core.clj::(defmacro binding][binding]], [[clojure:core.clj::(defmacro locking][locking]], [[clojure:core.clj::(defmacro time][time]], [[clojure:core.clj::(defmacro with-in-str][with-in-str]], [[clojure:core.clj::(defmacro with-local-vars][with-local-vars]],     |
+|         | [[clojure:core.clj::(defmacro with-open][with-open]], [[clojure:core.clj::(defmacro with-out-str][with-out-str]], [[clojure:core.clj::(defmacro with-precision][with-precision]], [[clojure:core.clj::(defmacro with-redefs][with-redefs]],     |
+|         | [[clojure:core.clj::(defn with-redefs-fn][with-redefs-fn]]                                            |
+|---------+-----------------------------------------------------------|
+| Lazy    | [[clojure:core.clj::(defmacro lazy-cat][lazy-cat]], [[clojure:core.clj::(defmacro lazy-seq][lazy-seq]], [[clojure:core.clj::(defmacro delay][delay]]                                 |
+|---------+-----------------------------------------------------------|
+| Doc.    | [[clojure:core.clj::(defmacro assert][assert]], [[clojure:core.clj::(defmacro comment][comment]], [[clojure:repl.clj::(defmacro doc][clojure.repl/doc]]                         |
+
+*** Special Characters ([[#content/reference/reader#macro-characters][reference/reader]], [[content/guides/weird_characters][guide]])
+
+| ~,~             | Comma reads as white space.  Often used between        |
+|               | map key/value pairs for readability.                   |
+|---------------+--------------------------------------------------------|
+| ~'~             | [[#content/reference/reader#quote][quote]]: ~'form~ → ~(quote form)~                            |
+|---------------+--------------------------------------------------------|
+| ~/~             | Namespace separator (see [[#content/api/cheatsheet#primitives-other][Primitives/Other section]])     |
+|---------------+--------------------------------------------------------|
+| ~\\~            | Character literal (see [[#content/api/cheatsheet#primitives-other][Primitives/Other section]])       |
+|---------------+--------------------------------------------------------|
+| ~:~             | Keyword (see [[#content/api/cheatsheet#primitives-other][Primitives/Other section]])                 |
+|---------------+--------------------------------------------------------|
+| ~;~             | Single line comment                                    |
+|---------------+--------------------------------------------------------|
+| ~^~             | Metadata (see [[#content/api/cheatsheet#metadata][Metadata section]])                        |
+|---------------+--------------------------------------------------------|
+| ~*foo*~         | 'earmuffs' - convention to indicate [[#content/reference/vars][dynamic vars]],      |
+|               | compiler warns if not dynamic                          |
+|---------------+--------------------------------------------------------|
+| ~@~             | Deref: ~@form~ → ~(deref form)~                            |
+|---------------+--------------------------------------------------------|
+| ~`~             | [[#content/reference/reader#syntax-quote][Syntax-quote]]                                           |
+|---------------+--------------------------------------------------------|
+| ~foo#~          | [[#content/reference/reader#syntax-quote]['auto-gensym']], consistently replaced with same         |
+|               | auto-generated symbol everywhere inside same ~`( ... )~  |
+|---------------+--------------------------------------------------------|
+| ~~~             | [[#content/reference/reader#syntax-quote][Unquote]]                                                |
+|---------------+--------------------------------------------------------|
+| ~~@~            | [[#content/reference/reader#syntax-quote][Unquote-splicing]]                                       |
+|---------------+--------------------------------------------------------|
+| ~->~            | 'thread first' macro [[clojure:core.clj::(defmacro ->][->]]                                |
+|---------------+--------------------------------------------------------|
+| ~->>~           | 'thread last' macro [[clojure:core.clj::(defmacro ->>][-->]]                                |
+|---------------+--------------------------------------------------------|
+| ~>!! <!! >! <!~ | [[#content/guides/weird_characters#core.async-channel-macros][core.async channel macros]]: [[core.async:clojure/core/async.clj::(defblockingop >!!][>!!]] [[core.async:clojure/core/async.clj::(defblockingop <!!][<!!]] [[core.async:clojure/core/async.clj::(defn >!][>!]] [[core.async:clojure/core/async.clj::(defn <!][<!]]               |
+|---------------+--------------------------------------------------------|
+| ~(~             | List literal (see [[#content/api/cheatsheet#lists][Collections/Lists section]])           |
+|---------------+--------------------------------------------------------|
+| ~[~             | Vector literal (see [[#content/api/cheatsheet#vectors][Collections/Vectors section]])       |
+|---------------+--------------------------------------------------------|
+| ~{~             | Map literal (see [[#content/api/cheatsheet#maps][Collections/Maps section]])             |
+|---------------+--------------------------------------------------------|
+| ~#'~            | Var-quote: ~#'x~ → ~(var x)~                               |
+|---------------+--------------------------------------------------------|
+| ~#"~            | ~#"p"~ reads as regex pattern ~p~                          |
+|               | (see [[#content/api/cheatsheet#strings][Strings/Regex section]])                            |
+|---------------+--------------------------------------------------------|
+| ~#{~            | Set literal (see [[#content/api/cheatsheet#sets][Collections/Sets section]])             |
+|---------------+--------------------------------------------------------|
+| ~#(~            | [[#content/reference/reader#dispatch][Anonymous function literal]]: ~#(...)~ → ~(fn [args] (...))~ |
+|---------------+--------------------------------------------------------|
+| ~%~             | [[#content/reference/reader#dispatch][Anonymous function argument]]: ~%N~ is value of            |
+|               | anonymous function arg ~N~. ~%~ short for ~%1~.              |
+|               | ~%&~ for rest args.                                      |
+|---------------+--------------------------------------------------------|
+| ~#?~            | [[#content/reference/reader#reader-conditionals][Reader conditional]]: ~#?(:clj x :cljs y)~ reads           |
+|               | as ~x~ on JVM, ~y~ in ClojureScript, nothing elsewhere.    |
+|               | Other keys: ~:cljr :default~                             |
+|---------------+--------------------------------------------------------|
+| ~#?@~           | [[#content/reference/reader#reader-conditionals][Splicing reader conditional]]:                           |
+|               | ~[1 #?@(:clj [x y] :cljs [w z]) 3]~                      |
+|               | reads as ~[1 x y 3]~ on JVM, ~[1 w z 3]~ in ClojureScript, |
+|               | ~[1 3]~ elsewhere.                                       |
+|---------------+--------------------------------------------------------|
+| ~#foo~          | [[#content/reference/reader#tagged-literals][tagged literal]] e.g. ~#inst~ ~#uuid~                      |
+|---------------+--------------------------------------------------------|
+| ~#:~            | [[#content/reference/reader#map-namespace-syntax][map namespace syntax]] e.g. ~#:foo{:a 1}~ is               |
+|               | equal to ~{:foo/a 1}~                                    |
+|---------------+--------------------------------------------------------|
+| ~##~            | (1.9) symbolic values: ~##Inf ##-Inf ##NaN~              |
+|---------------+--------------------------------------------------------|
+| ~$~             | ~JavaContainerClass$InnerClass~                          |
+|---------------+--------------------------------------------------------|
+| ~foo?~          | conventional ending for a predicate, e.g.:             |
+|               | [[clojure:core.clj::(defn zero?][zero?]] [[clojure:core.clj::vector? (fn ^:static vector?][vector?]] [[clojure:test.clj::(defmethod assert-expr 'instance?][instance?]] (unenforced)                   |
+|---------------+--------------------------------------------------------|
+| ~foo!~          | conventional ending for an unsafe operation, e.g.:     |
+|               | ~set!~ [[clojure:core.clj::(defn swap!][swap!]] [[clojure:core.clj::(defn alter-meta!][alter-meta!]] (unenforced)                    |
+|---------------+--------------------------------------------------------|
+| ~_~             | conventional name for an unused value (unenforced)     |
+|---------------+--------------------------------------------------------|
+| ~#_~            | Ignore next form                                       |
+
+*** Metadata ([[#content/reference/reader#metadata][reference/reader]], [[#content/reference/special_forms][reference/special_forms]])
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#metadata
+:END:
+
+| General  | ~^{:key1 val1 :key2 val2 ...}~                     |
+|----------+--------------------------------------------------|
+| Abbrevs  | ~^Type → ^{:tag Type}~,                            |
+|          | ~^:key → ^{:key true}~                             |
+|----------+--------------------------------------------------|
+| Common   | ~^:dynamic ^:private ^:doc ^:const~                |
+|----------+--------------------------------------------------|
+| Examples | ~(defn ^:private ^String my-fn ...)~,              |
+|          | ~(def ^:dynamic *dyn-var* val)~                    |
+|----------+--------------------------------------------------|
+| On Vars  | [[clojure:core.clj::meta (fn ^:static meta][meta]] [[clojure:core.clj::with-meta (fn ^:static with-meta][with-meta]] [[clojure:core.clj::(defn vary-meta][vary-meta]] [[clojure:core.clj::(defn alter-meta!][alter-meta!]] [[clojure:core.clj::(defn reset-meta!][reset-meta!]] |
+|          | [[clojure:repl.clj::(defmacro doc][clojure.repl/doc]] [[clojure:repl.clj::(defn find-doc][clojure.repl/find-doc]] [[clojure:core.clj::(defn test][test]]      |
+
+*** Special Forms ([[#content/reference/special_forms][reference/special_forms]])
+
+~def~, ~if~, ~do~, ~let~, ~letfn~, ~quote~, ~var~, ~fn~, ~loop~,
+~recur~, ~set!~, ~throw~, ~try~, ~monitor-enter~, ~monitor-exit~.
+
+| Binding Forms / Destructuring | ([[#content/reference/special_forms#binding-forms][examples]]) ~let~ [[clojure:core.clj::fn (fn* fn][fn]], [[clojure:core.clj::defn (fn defn][defn]], [[clojure:core.clj::defmacro (fn][defmacro]], |
+|                               | [[clojure:core.clj::(defmacro loop][loop]], [[clojure:core.clj::(defmacro for][for]], [[clojure:core.clj::(defmacro doseq][doseq]], [[clojure:core.clj::(defmacro if-let][if-let]],          |
+|                               | [[clojure:core.clj::(defmacro when-let][when-let]], [[clojure:core.clj::(defmacro if-some][if-some]], [[clojure:core.clj::(defmacro when-some][when-some]]       |
+
+*** Vars and global environment ([[#content/reference/vars][reference/vars]])
+
+| Def variants   | ~def~, [[clojure:core.clj::defn (fn defn][defn]], [[clojure:core.clj::(defmacro defn-][defn-]], [[clojure:core.clj::(defmacro definline][definline]], [[clojure:core.clj::defmacro (fn][defmacro]], [[clojure:core.clj::(defmacro defmethod][defmethod]],  |
+|                | [[clojure:core.clj::(defmacro defmulti][defmulti]], [[clojure:core.clj::(defmacro defonce][defonce]], [[clojure:core_deftype.clj::(defmacro defrecord][defrecord]]                       |
+|----------------+----------------------------------------------------|
+| Interned vars  | [[clojure:core.clj::(defmacro declare][declare]], [[clojure:core.clj::(defn intern][intern]], [[clojure:core.clj::(defmacro binding][binding]], [[clojure:core.clj::(defn find-var][find-var]], ~var~            |
+|----------------+----------------------------------------------------|
+| Var objects    | [[clojure:core.clj::(defmacro with-local-vars][with-local-vars]], [[clojure:core.clj::(defn var-get][var-get]], [[clojure:core.clj::(defn var-set][var-set]], [[clojure:core.clj::(defn alter-var-root][alter-var-root]], |
+|                | [[clojure:core.clj::(defn var?][var?]], [[clojure:core.clj::(defn bound?][bound?]], [[clojure:core.clj::(defn thread-bound?][thread-bound?]]                        |
+|----------------+----------------------------------------------------|
+| Var validators | [[clojure:core.clj::(defn set-validator!][set-validator!]], [[clojure:core.clj::(defn get-validator][get-validator]]                      |
+
+*** Namespace
+
+| Current       | ~*ns*~                                                 |
+|---------------+------------------------------------------------------|
+| Create/Switch | ([[https://blog.8thlight.com/colin-jones/2010/12/05/clojure-libs-and-namespaces-require-use-import-and-ns.html][tutorial]]) [[clojure:core.clj::(defmacro ns][ns]], [[clojure:core.clj::alter-meta! #'in-ns assoc][in-ns]], [[clojure:core.clj::(defn create-ns][create-ns]]                      |
+|---------------+------------------------------------------------------|
+| Add           | [[clojure:core.clj::(defn alias][alias]], ~def~, [[clojure:core.clj::(defmacro import][import]], [[clojure:core.clj::(defn intern][intern]], [[clojure:core.clj::(defn refer][refer]]                    |
+|---------------+------------------------------------------------------|
+| Find          | [[clojure:core.clj::(defn all-ns][all-ns]], [[clojure:core.clj::(defn find-ns][find-ns]]                                      |
+|---------------+------------------------------------------------------|
+| Examine       | [[clojure:core.clj::(defn ns-name][ns-name]], [[clojure:core.clj::(defn ns-aliases][ns-aliases]], [[clojure:core.clj::(defn ns-map][ns-map]], [[clojure:core.clj::(defn ns-interns][ns-interns]], [[clojure:core.clj::(defn ns-publics][ns-publics]], |
+|               | [[clojure:core.clj::(defn ns-refers][ns-refers]], [[clojure:core.clj::(defn ns-imports][ns-imports]]                                |
+|---------------+------------------------------------------------------|
+| From symbol   | [[clojure:core.clj::(defn resolve][resolve]], [[clojure:core.clj::(defn ns-resolve][ns-resolve]], [[clojure:core.clj::(defn namespace][namespace]], [[clojure:core.clj::(defn the-ns][the-ns]],              |
+|               | (1.10) [[clojure:core.clj::(defn requiring-resolve][requiring-resolve]]                             |
+|---------------+------------------------------------------------------|
+| Remove        | [[clojure:core.clj::(defn ns-unalias][ns-unalias]], [[clojure:core.clj::(defn ns-unmap][ns-unmap]], [[clojure:core.clj::(defn remove-ns][remove-ns]]                      |
+
+*** Loading
+
+| Load libs   | ([[https://blog.8thlight.com/colin-jones/2010/12/05/clojure-libs-and-namespaces-require-use-import-and-ns.html][tutorial]]) [[clojure:core.clj::(defn require][require]], [[clojure:core.clj::(defn use][use]], [[clojure:core.clj::(defmacro import][import]], [[clojure:core.clj::(defn refer][refer]]    |
+|-------------+-------------------------------------------|
+| List loaded | [[clojure:core.clj::(defn loaded-libs][loaded-libs]]                               |
+|-------------+-------------------------------------------|
+| Load misc   | [[clojure:core.clj::6132][load]], [[clojure:core.clj::alter-meta! #'load-file assoc][load-file]], [[clojure:core.clj::(defn load-reader][load-reader]], [[clojure:core.clj::(defn load-string][load-string]] |
+
+*** Concurrency
+:PROPERTIES:
+:CUSTOM_ID: content/api/cheatsheet#concurrency
+:END:
+**** Concurrency
+
+| Atoms     | [[clojure:core.clj::(defn atom][atom]], [[clojure:core.clj::(defn swap!][swap!]], [[clojure:core.clj::(defn reset!][reset!]], [[clojure:core.clj::(defn compare-and-set!][compare-and-set!]],                   |
+|           | (1.9) [[clojure:core.clj::(defn swap-vals!][swap-vals!]], [[clojure:core.clj::(defn reset-vals!][reset-vals!]]                            |
+|-----------+----------------------------------------------------------|
+| Futures   | [[clojure:core.clj::(defmacro future][future]], [[clojure:core.clj::(defn future-call][future-call]], [[clojure:core.clj::(defn future-done?][future-done?]], [[clojure:core.clj::(defn future-cancel][future-cancel]],        |
+|           | [[clojure:core.clj::(defn future-cancelled?][future-cancelled?]], [[clojure:core.clj::(defn future?][future?]]                               |
+|-----------+----------------------------------------------------------|
+| Threads   | [[clojure:core.clj::(defmacro bound-fn][bound-fn]], [[clojure:core.clj::(defn bound-fn*][bound-fn*]], [[clojure:core.clj::(defn get-thread-bindings][get-thread-bindings]],                |
+|           | [[clojure:core.clj::(defn push-thread-bindings][push-thread-bindings]], [[clojure:core.clj::(defn pop-thread-bindings][pop-thread-bindings]], [[clojure:core.clj::(defn thread-bound?][thread-bound?]] |
+|-----------+----------------------------------------------------------|
+| Volatiles | [[clojure:core.clj::(defn volatile!][volatile!]], [[clojure:core.clj::(defn vreset!][vreset!]], [[clojure:core.clj::(defmacro vswap!][vswap!]], [[clojure:core.clj::(defn volatile?][volatile?]]                    |
+|-----------+----------------------------------------------------------|
+| Misc      | [[clojure:core.clj::(defmacro locking][locking]], [[clojure:core.clj::(defn pcalls][pcalls]], [[clojure:core.clj::(defmacro pvalues][pvalues]], [[clojure:core.clj::(defn pmap][pmap]], [[clojure:core.clj::5409][seque]], [[clojure:core.clj::(defn promise][promise]], [[clojure:core.clj::(defn deliver][deliver]]  |
+
+**** Refs and Transactions ([[#content/reference/refs][reference/refs]])
+
+| Create         | [[clojure:core.clj::(defn ref][ref]]                                                 |
+|----------------+-----------------------------------------------------|
+| Examine        | [[clojure:core.clj::(defn deref][deref]], ~@~, (~@form~ → ~(deref form)~)                    |
+|----------------+-----------------------------------------------------|
+| Transaction    | [[clojure:core.clj::(defmacro sync][sync]], [[clojure:core.clj::(defmacro dosync][dosync]], [[clojure:core.clj::(defmacro io!][io!]]                                   |
+|----------------+-----------------------------------------------------|
+| In transaction | [[clojure:core.clj::(defn ensure][ensure]], [[clojure:core.clj::(defn ref-set][ref-set]], [[clojure:core.clj::2447][alter]], [[clojure:core.clj::(defn commute][commute]]                     |
+|----------------+-----------------------------------------------------|
+| Validators     | [[clojure:core.clj::(defn set-validator!][set-validator!]], [[clojure:core.clj::(defn get-validator][get-validator]]                       |
+|----------------+-----------------------------------------------------|
+| History        | [[clojure:core.clj::(defn ref-history-count][ref-history-count]], [[clojure:core.clj::(defn ref-min-history][ref-min-history]], [[clojure:core.clj::(defn ref-max-history][ref-max-history]] |
+
+**** Agents and Asynchronous Actions ([[#content/reference/agents][reference/agents]])
+
+| Create          | [[clojure:core.clj::(defn agent][agent]]                                          |
+|-----------------+------------------------------------------------|
+| Examine         | [[clojure:core.clj::(defn agent-error][agent-error]]                                    |
+|-----------------+------------------------------------------------|
+| Change state    | [[clojure:core.clj::2115][send]], [[clojure:core.clj::(defn send-off][send-off]], [[clojure:core.clj::(defn restart-agent][restart-agent]], [[clojure:core.clj::(defn send-via][send-via]],       |
+|                 | [[clojure:core.clj::(defn set-agent-send-executor!][set-agent-send-executor!]],                      |
+|                 | [[clojure:core.clj::(defn set-agent-send-off-executor!][set-agent-send-off-executor!]]                   |
+|-----------------+------------------------------------------------|
+| Block waiting   | [[clojure:core.clj::(defn await][await]], [[clojure:core.clj::(defn await-for][await-for]]                               |
+|-----------------+------------------------------------------------|
+| Ref validators  | [[clojure:core.clj::(defn set-validator!][set-validator!]], [[clojure:core.clj::(defn get-validator][get-validator]]                  |
+|-----------------+------------------------------------------------|
+| Watchers        | [[clojure:core.clj::(defn add-watch][add-watch]], [[clojure:core.clj::(defn remove-watch][remove-watch]]                        |
+| Thread handling | [[clojure:core.clj::(defn shutdown-agents][shutdown-agents]]                                |
+|-----------------+------------------------------------------------|
+| Error           | [[clojure:core.clj::(defn error-handler][error-handler]], [[clojure:core.clj::(defn set-error-handler!][set-error-handler!]], [[clojure:core.clj::(defn error-mode][error-mode]], |
+|                 | [[clojure:core.clj::(defn set-error-mode!][set-error-mode!]]                                |
+|-----------------+------------------------------------------------|
+| Misc            | [[clojure:core.clj::alter-meta! #'*agent* assoc][*agent*]], [[clojure:core.clj::(defn release-pending-sends][release-pending-sends]]                 |
+
+*** Java Interoperation ([[#content/reference/java_interop][reference/java_interop]])
+**** General, Cast, Exceptions
+
+| General    | [[clojure:core.clj::(defmacro ..][..]], [[clojure:core.clj::(defmacro doto][doto]], ~Classname/~, ~Classname.~, ~new~, [[clojure:core_proxy.clj::(defn bean][bean]],               |
+|            | [[clojure:core.clj::(defn comparator][comparator]], [[clojure:core.clj::(defn enumeration-seq][enumeration-seq]], [[clojure:core.clj::(defmacro import][import]], [[clojure:core.clj::(defn iterator-seq][iterator-seq]],         |
+|            | [[clojure:core.clj::(defmacro memfn][memfn]], ~set!~, [[clojure:core.clj::(defn class][class]], [[clojure:core.clj::(defn class?][class?]], [[clojure:core.clj::(defn bases][bases]], [[clojure:core.clj::(defn supers][supers]], [[clojure:core.clj::(defn type][type]],           |
+|            | [[clojure:genclass.clj::(defmacro gen-class][gen-class]], [[clojure:genclass.clj::(defmacro gen-interface][gen-interface]], [[clojure:core_deftype.clj::(defmacro definterface][definterface]]                     |
+|------------+------------------------------------------------------------|
+| Cast       | [[clojure:core.clj::1607][boolean]], [[clojure:core.clj::3492][byte]], [[clojure:core.clj::(defn short][short]], [[clojure:core.clj::(defn char][char]], [[clojure:core.clj::(defn int][int]], [[clojure:core.clj::(defn long][long]], [[clojure:core.clj::(defn float][float]], [[clojure:core.clj::(defn double][double]],      |
+|            | [[clojure:core.clj::(defn bigdec][bigdec]], [[clojure:core.clj::(defn bigint][bigint]], [[clojure:core.clj::(defn num][num]], [[clojure:core.clj::(defn cast][cast]], [[clojure:core.clj::(defn biginteger][biginteger]]                      |
+|------------+------------------------------------------------------------|
+| Exceptions | ~throw~, ~try~, ~catch~, ~finally~, [[clojure:repl.clj::(defn pst][clojure.repl/pst]],              |
+|            | [[clojure:core.clj::(defn ex-info][ex-info]], [[clojure:core.clj::(defn ex-data][ex-data]], [[clojure:core_print.clj::(defn Throwable->map][Throwable->map]],                          |
+|            | (1.9) [[clojure:core_print.clj::(defn StackTraceElement->vec][StackTraceElement->vec]], (1.10) [[clojure:core.clj::(defn ex-cause][ex-cause]], [[clojure:core.clj::(defn ex-message][ex-message]], |
+|            | (~clojure.main/~) [[clojure:main.clj::(defn ex-triage][ex-triage]], [[clojure:main.clj::(defn ex-str][ex-str]], [[clojure:main.clj::(defn err->msg][err->msg]], [[clojure:main.clj::(defn report-error][report-error]]  |
+
+**** Arrays
+
+| Create | [[clojure:core.clj::(defn make-array][make-array]], [[clojure:core.clj::(defn object-array][object-array]], [[clojure:core.clj::(defn boolean-array][boolean-array]], [[clojure:core.clj::(defn byte-array][byte-array]],         |
+|        | [[clojure:core.clj::(defn short-array][short-array]], [[clojure:core.clj::(defn char-array][char-array]], [[clojure:core.clj::(defn int-array][int-array]], [[clojure:core.clj::(defn long-array][long-array]], [[clojure:core.clj::(defn float-array][float-array]], |
+|        | [[clojure:core.clj::(defn double-array][double-array]], [[clojure:core.clj::(defn aclone][aclone]], [[clojure:core.clj::(defn to-array][to-array]], [[clojure:core.clj::(defn to-array-2d][to-array-2d]], [[clojure:core.clj::(defn into-array][into-array]]      |
+|--------+--------------------------------------------------------------|
+| Use    | [[clojure:core.clj::(defn aget][aget]], [[clojure:core.clj::(defn aset][aset]], [[clojure:core.clj::aset-boolean setBoolean][aset-boolean]], [[clojure:core.clj::aset-byte setByte][aset-byte]], [[clojure:core.clj::aset-short setShort][aset-short]],             |
+|        | [[clojure:core.clj::aset-char setChar][aset-char]], [[clojure:core.clj::aset-int setInt][aset-int]], [[clojure:core.clj::aset-long setLong][aset-long]], [[clojure:core.clj::aset-float setFloat][aset-float]], [[clojure:core.clj::aset-double setDouble][aset-double]],     |
+|        | [[clojure:core.clj::(defn alength][alength]], [[clojure:core.clj::(defmacro amap][amap]], [[clojure:core.clj::(defmacro areduce][areduce]]                                       |
+|--------+--------------------------------------------------------------|
+| Cast   | [[clojure:core.clj::(definline booleans][booleans]], [[clojure:core.clj::(definline bytes][bytes]], [[clojure:core.clj::(definline shorts][shorts]], [[clojure:core.clj::(definline chars][chars]], [[clojure:core.clj::(definline ints][ints]], [[clojure:core.clj::(definline longs][longs]], [[clojure:core.clj::(definline floats][floats]], [[clojure:core.clj::(definline doubles][doubles]] |
+
+**** Proxy ([[https://github.com/cemerick/clojure-type-selection-flowchart][Clojure type selection flowchart]])
+
+| Create | [[clojure:core_proxy.clj::(defmacro proxy][proxy]], [[clojure:core_proxy.clj::(defn get-proxy-class][get-proxy-class]], [[clojure:core_proxy.clj::(defn construct-proxy][construct-proxy]], [[clojure:core_proxy.clj::(defn init-proxy][init-proxy]] |
+|--------+-----------------------------------------------------|
+| Misc   | [[clojure:core_proxy.clj::(defn proxy-mappings][proxy-mappings]], [[clojure:core_proxy.clj::(defmacro proxy-super][proxy-super]], [[clojure:core_proxy.clj::(defn update-proxy][update-proxy]]           |
+
+*** Zippers (~clojure.zip/~)
+
+| Create   | [[clojure:zip.clj::(defn zipper][zipper]], [[clojure:zip.clj::(defn seq-zip][seq-zip]], [[clojure:zip.clj::(defn vector-zip][vector-zip]], [[clojure:zip.clj::(defn xml-zip][xml-zip]]                 |
+|----------+------------------------------------------------------|
+| Get loc  | [[clojure:zip.clj::(defn up][up]], [[clojure:zip.clj::(defn down][down]], [[clojure:zip.clj::(defn left][left]], [[clojure:zip.clj::(defn right][right]], [[clojure:zip.clj::(defn leftmost][leftmost]], [[clojure:zip.clj::(defn rightmost][rightmost]]           |
+|----------+------------------------------------------------------|
+| Get seq  | [[clojure:zip.clj::(defn lefts][lefts]], [[clojure:zip.clj::(defn rights][rights]], [[clojure:zip.clj::(defn path][path]], [[clojure:zip.clj::(defn children][children]]                        |
+|----------+------------------------------------------------------|
+| 'Change' | [[clojure:zip.clj::(defn make-node][make-node]], [[clojure:zip.clj::(defn replace][replace]], [[clojure:zip.clj::(defn edit][edit]], [[clojure:zip.clj::(defn insert-child][insert-child]], [[clojure:zip.clj::(defn insert-left][insert-left]], |
+|          | [[clojure:zip.clj::(defn insert-right][insert-right]], [[clojure:zip.clj::(defn append-child][append-child]], [[clojure:zip.clj::(defn remove][remove]]                   |
+|----------+------------------------------------------------------|
+| Move     | [[clojure:zip.clj::(defn next][next]], [[clojure:zip.clj::(defn prev][prev]]                                           |
+|----------+------------------------------------------------------|
+| Misc     | [[clojure:zip.clj::(defn root][root]], [[clojure:zip.clj::(defn node][node]], [[clojure:zip.clj::(defn branch?][branch?]], [[clojure:zip.clj::(defn end?][end?]]                            |
+
+*** Other
+
+| XML             | [[clojure:xml.clj::(defn parse][clojure.xml/parse]], [[clojure:core.clj::(defn xml-seq][xml-seq]]                         |
+|-----------------+----------------------------------------------------|
+| REPL            | [[clojure:core.clj::6302][*1]], [[clojure:core.clj::6307][*2]], [[clojure:core.clj::6312][*3]], [[clojure:core.clj::6317][*e]], [[clojure:core.clj::(add-doc-and-meta *print-dup*][*print-dup*]], [[clojure:core_print.clj::^{:doc "*print-length*][*print-length*]],       |
+|                 | [[clojure:core_print.clj::^{:doc "*print-level*][*print-level*]], [[clojure:core.clj::(add-doc-and-meta *print-meta*][*print-meta*]], [[clojure:core.clj::(add-doc-and-meta *print-readably*][*print-readably*]]      |
+|-----------------+----------------------------------------------------|
+| Code            | [[clojure:core.clj::(add-doc-and-meta *compile-files*][*compile-files*]], [[clojure:core.clj::(add-doc-and-meta *compile-path*][*compile-path*]], [[clojure:core.clj::(add-doc-and-meta *file*][*file*]],           |
+|                 | [[clojure:core.clj::(add-doc-and-meta *warn-on-reflection*][*warn-on-reflection*]], [[clojure:core.clj::(defn compile][compile]], [[clojure:core.clj::(defn loaded-libs][loaded-libs]], [[clojure:core.clj::(defn test][test]]   |
+|-----------------+----------------------------------------------------|
+| Misc            | [[clojure:core.clj::(defn eval][eval]], [[clojure:core.clj::(defn force][force]], [[clojure:core.clj::5177][hash]], [[clojure:core.clj::(defn name][name]], [[clojure:core.clj::(add-doc-and-meta *clojure-version*][*clojure-version*]],        |
+|                 | [[clojure:core.clj::(defn clojure-version][clojure-version]], [[clojure:core.clj::(defn add-doc-and-meta *command-line-args*][*command-line-args*]]               |
+|-----------------+----------------------------------------------------|
+| Browser / Shell | (~clojure.java.browse/~) [[clojure:java/browse.clj::(defn browse-url][browse-url]],                 |
+|                 | (~clojure.java.shell/~) [[clojure:java/shell.clj::(defn sh][sh]], [[clojure:java/shell.clj::(defmacro with-sh-dir][with-sh-dir]], [[clojure:java/shell.clj::(defmacro with-sh-env][with-sh-env]] |
+
 ** API Documentation
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/api/api.adoc]]

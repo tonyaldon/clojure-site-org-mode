@@ -1,5 +1,12 @@
 clojure/
 clojure-site/
-core.async/
 spec.alpha/
-test.check/
+core.async/
+
+core.rrb-vector/
+data.avl/
+data.int-map/
+data.priority-map/
+tools.reader/
+ordered/
+useful/
