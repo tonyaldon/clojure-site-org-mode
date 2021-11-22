@@ -15940,6 +15940,9 @@ standard in and out streams for Clojure.
 - [[http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/*out*][Clojure API Docs]]
 
 *** ~>!!~, ~<!!~, ~>!~, and ~<!~ - core.async channel macros
+:PROPERTIES:
+:CUSTOM_ID: content/guides/weird_characters#core.async-channel-macros
+:END:
 
 These symbols are channel operations in [[https://github.com/clojure/core.async][core.async]] - a
 Clojure/ClojureScript library for channel based asynchronous
@@ -26636,6 +26639,9 @@ compiler, will follow.
   symbol can contain one or more non-repeating ':'s.
 
 **** Literals
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#literals
+:END:
 
 - Strings - Enclosed in "double quotes". May span multiple lines.
   Standard Java escape characters are supported.
@@ -26768,6 +26774,9 @@ characters, to specific reading behavior, called reader macros. Unless
 indicated otherwise, macro characters cannot be used in user symbols.
 
 **** Quote (')
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#quote
+:END:
 
 ~'form~ ⇒ ~(quote form)~
 
@@ -26794,6 +26803,9 @@ semicolon to the end-of-line.
 ~@form ⇒ (deref form)~
 
 **** Metadata (\^)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#metadata
+:END:
 
 Metadata is a map associated with some kinds of objects: Symbols, Lists,
 Vector, Sets, Maps, tagged literals returning an IMeta, and record,
@@ -26823,6 +26835,9 @@ Metadata can be chained in which case they are merged from right to
 left.
 
 **** Dispatch (#)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#dispatch
+:END:
 
 The dispatch macro causes the reader to use a reader macro from another
 table, indexed by the character following
@@ -26850,6 +26865,9 @@ table, indexed by the character following
   which yields nil).
 
 **** Syntax-quote (`, note, the "backquote" character), Unquote (~) and Unquote-splicing (~@)
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#syntax-quote
+:END:
 
 For all forms other than Symbols, Lists, Vectors, Sets and Maps, ~`x~ is
 the same as ~'x~.
@@ -26889,6 +26907,9 @@ complements this document by defining a subset of Clojure data syntax
 in a language-neutral way.
 
 *** Tagged Literals
+:PROPERTIES:
+:CUSTOM_ID: content/reference/reader#tagged-literals
+:END:
 
 Tagged literals are Clojure's implementation of edn [[https://github.com/edn-format/edn#tagged-elements][tagged elements]].
 
