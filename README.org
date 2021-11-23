@@ -1,20 +1,96 @@
 #+TITLE: Clojure website in org-mode
 #+AUTHOR: Tony aldon
-#+DATE: <2021-11-12 Fri>
+#+DATE: <2021-11-24 Wed>
 
-* Goal
+* About
 
-Read https://clojure.org/ inside Emacs in an Org buffer, the whole
-site represented as an Org tree.
+This repository contains the documentation of https://clojure.org/
+converted in a single org-mode file [[./clojure-site.org]].
 
-The development of https://clojure.org/ happens in the Github
-repository https://github.com/clojure/clojure-site.
+It's just a single file, so you can download it and read it right
+away.  But if you want to have the (local) links to work correctly you
+have to clone some other repositories.  See [[* Installation][Installation]] section.
+
+Note that the development of https://clojure.org/ happens in the
+Github repository https://github.com/clojure/clojure-site.
 
 * Why?
 
-Whoever enjoys Emacs UI knows why.
+I like to have documentations close to the code I am working with.
 
-* Observations
+I means in my text editor or in my terminal.
+
+The benefits:
+1) No context switching,
+2) It's fast (no internet connection needed and links to code snippet
+   can be done locally directly to the source code of the project),
+3) No need to learn a new UI (website) for each project,
+4) Code highlighting with the theme I am used to,
+5) Copy/past/evaluating code snippet seamlessly,
+6) Navigate the documentation with the tools I use every day to
+   navigate source codes (at the end of the day, the documentation is
+   just organized text with code snippets and sometimes some images).
+
+As I am using emacs as text editor, It seems natural to want
+the documentation written with org-mode syntax to be used in an Org
+buffer.
+
+* Installation
+
+The documentation is in the file [[./clojure-site.org]].
+
+The core of the Clojure documentation describes functions/macros from
+[[https://github.com/clojure/clojure][clojure]], [[https://github.com/clojure/spec.alpha][spec.alpha]] and [[https://github.com/clojure/core.async][core.async]].  In ~clojure-site.org~, I link
+those functions/macros to the source code locally.  So you need to
+clone those repositories.
+
+Each section in ~clojure-site.org~ corresponding to an asciidoc file in
+[[https://github.com/clojure/clojure-site][clojure-site]] has a (local) link to this file.  So if you want to refer
+to the original file, you need to clone this repository.
+
+The Clojure cheatsheet refers to the following libraries
+[[https://github.com/clojure/core.rrb-vector][core.rrb-vector]], [[https://github.com/clojure/data.avl][data.avl]], [[https://github.com/clojure/data.int-map][data.int-map]], [[https://github.com/clojure/data.priority-map][data.priority-map]],
+[[https://github.com/clojure/tools.reader][tools.reader]], [[https://github.com/clj-commons/ordered][ordered]], [[https://github.com/clj-commons/useful][useful]].  If you want the (local) links to
+the source code of those libraries to work correctly you need to clone
+those repositories.
+
+To install everything run these following commands:
+
+#+BEGIN_SRC bash
+git clone https://github.com/tonyaldon/clojure-site-org-mode.git
+cd clojure-site-org-mode
+git clone https://github.com/clojure/clojure-site.git
+git clone https://github.com/clojure/clojure.git
+git clone https://github.com/clojure/spec.alpha.git
+git clone https://github.com/clojure/core.async.git
+git clone https://github.com/clojure/core.rrb-vector.git
+git clone https://github.com/clojure/data.avl.git
+git clone https://github.com/clojure/data.int-map.git
+git clone https://github.com/clojure/data.priority-map.git
+git clone https://github.com/clojure/tools.reader.git
+git clone https://github.com/clj-commons/ordered.git
+git clone https://github.com/clj-commons/useful.git
+#+END_SRC
+
+* Cheatsheet
+
+The cheatsheet used in Clojure documentation has been created by Steve
+Tayon and is maintained by Andy Fingerhut:
+
+- http://jafingerhut.github.io
+- http://github.com/jafingerhut/clojure-cheatsheets
+
+In the cheatsheet (Clojure documentation), the links point to pages on
+[[https://clojuredocs.org/][clojuredocs.org]] website.  In [[./clojure-site.org]], the links
+points to the function/macro definition locally (on your machine)
+directly in the source code.
+
+To make it work, you must clone some repositories.  See the section
+[[*
+Installation][Installation]].
+
+* Converting clojure-site to one org file
+** Observations
 
 The content of ~clojure-site~ is written in ~asciidoc~ format (see
 [[https://asciidoc-py.github.io/index.html][Asciidoc home page]] and [[https://docs.asciidoctor.org/home/][assiidoctor documentation]]).
@@ -23,7 +99,8 @@ As of the commit ~4a084a8~ ([2021-11-11 Thu]), the directory ~content~ of
 ~clojure-site~ contains 248 ~asciidoc~ files with a total of 21128 lines
 as we can see running the following commands:
 
-#+BEGIN_SRC bash :dir ./clojure-site/content/ :results output
+#+BEGIN_SRC bash :results output
+cd ./clojure-site/content/
 printf "commit: 4a084a8\n\n"
 cloc 4a084a8
 #+END_SRC
@@ -54,7 +131,8 @@ in mind, not what I expect to do.
 As of the commit ~4a084a8~ ([2021-11-11 Thu]) , ~clojure-site~ has
 ~2249~ commits.
 
-#+BEGIN_SRC bash :dir ./clojure-site/content/ :results output
+#+BEGIN_SRC bash :results output
+cd ./clojure-site/
 git log 4a084a8 --oneline | wc -l
 #+END_SRC
 
@@ -64,11 +142,11 @@ git log 4a084a8 --oneline | wc -l
 The big part of ~clojure-site~ content has been added on the first
 commit (~5911272~, [2015-11-09 Mon]).
 
-The only recurrent change on ~clojure-site~ seems to be the *Clojure
+The only recurrent changes on ~clojure-site~ seem to be the *Clojure
 Deref* news.  This is a weekly link/news roundup for the Clojure
 ecosystem.
 
-* Hypothese
+** Hypothese
 
 Clojure is a stable language with an *accretion* model that try to avoid
 /breaking changes/ and the commit logs of ~clojure-site~ shows this is
@@ -76,60 +154,608 @@ true.
 
 Hypothese: ~clojure-site~ won't change much in the future.
 
-* Design
-** No general solution, prefer quick little scripts
+** Design
+*** No general solution, prefer quick little scripts
 
 Following our hypothese that ~clojure-site~ won't change much, it is
 absolutely not necessary to try to build a general solution capable to
 convert ~clojure-site~ content from ~asciidoc~ to ~org~ content each time a
 change is made in ~clojure-site~ repository.
 
-We prefer:
+I prefer:
 1) to write quick little scripts to convert once ~clojure-site~ content
-   from ~asciidoc~ to ~org~ the better we can.
+   from ~asciidoc~ to ~org~ the better I can.
 2) then proofread those generated ~org~ documents, and,
 3) to manually add new changes when they appears in ~clojure-site~.
 
-** One "big" org file
+*** One "big" org file
 
 ~clojure-site~ content contains around 20000 lines of ~asciidoc~ reparted
-in 248 files.  This something that can be handle by Emacs and Org mode
-in a unique "big" Org file.  So we do.
+in 248 files.  This is something that can be handle by Emacs and Org
+mode in a single "big" Org file.  I don't want to deal with multiple
+files.  So I'll convert ~clojure-site~ into a single file.
 
-* "scripts"
+*** Links to source code
 
-First we convert from ~asciidoc~ to ~docbook~.
+In the Clojure documentation, the links to the clojure API point to
+pages on [[https://clojure.github.io/][clojure.github.io]] website.  In [[./clojure-site.org]], the links
+points to the function/macro definition locally (on your machine)
+directly in the source code.
 
-#+BEGIN_SRC bash :dir ./clojure-site/content/ :results output
-fd --no-ignore .adoc -x asciidoctor -b docbook {}
-fd -a --no-ignore .xml
+To make it work, you must clone some repositories.  See the section
+[[* Installation][Installation]].
+
+** Steps I followed to convert 248 asciidoc files into a single org file
+
+I describe here the steps I followed to convert the 248 asciidoc files
+constituing the Clojure documentation into a single org file.
+
+If I had to do it again I would maybe do it differently.
+
+Anyway here the description.
+
+To do the conversion I've used:
+- ~assciidoctor~, ~pandoc~, ~fd~, ~sed~,
+- ~bash~ "scripts",
+- ~emacs-lisp~ code,
+- interactive modification via ~emacs~ with ~rg.el~, ~isearch~,
+  ~query-replace-regexp~, ~iedit~, ~multiple-cursors~, keyboard macros,
+- manual proofreading and adjustment.
+
+First I cloned ~clojure-site~ repository:
+
+#+BEGIN_SRC bash
+git clone https://github.com/clojure/clojure-site.git
 #+END_SRC
 
-We copy files into ~./tmp/~ directory.
+*** 01) asciidoc -> docbook -> org
 
-Then convert from ~docbook~ to ~org~.
+Then I converted from ~asciidoc~ to ~docbook~ the ~asciidoc~ files of the
+Clojure documentation using ~asciidoctor~:
 
-#+BEGIN_SRC bash :dir ./tmp/ :results output
+#+BEGIN_SRC bash :results output
+cd ./clojure-site/content/
+fd --no-ignore .adoc -x asciidoctor -b docbook {}
+#+END_SRC
+
+Then I copied those ~docbook~ files into a new created ~./tmp/~
+directory.
+
+When copying those files I changed the filenames in order to keep
+the tree structure of the documentation.  For instance, the file
+~./clojure-site/content/about/clojurescript.xml~ has been copied as
+~./tmp/about--clojurescript.xml~.  I did it running the following
+commands:
+
+#+BEGIN_SRC bash :results output
+files=`fd --no-ignore .xml` # we assume that we are still in the directory ./clojure-site/content/
+cd ../.. # go back to the root of this project
+mkdir tmp
+for f in $files; do cp ./clojure-site/content/$f tmp/`echo $f | sed 's:/:--:g'`; done
+#+END_SRC
+
+Then I converted the file in ~./tmp/~ from ~docbook~ to ~org~ using ~pandoc~:
+
+#+BEGIN_SRC bash :results output
+cd ./tmp/
 for f in *; do pandoc -f docbook -t org -o ${f/%xml/org} $f; done
 #+END_SRC
 
-Now we add a ~*~ to every headlines of the ~org~ files in ~./tmp/~.
+Then I added a ~*~ to every headlines of the ~org~ files in ~./tmp/~.  We
+did it because each files in ~./tmp/~ would correspond to a section in
+the final org file:
 
-#+BEGIN_SRC bash :dir ./tmp/ :results output
+#+BEGIN_SRC bash :results output
+# still in ./tmp/ directory
 for f in *.org; do sed -i -r 's/^[*]+ /*&/g' $f; done
 #+END_SRC
 
-Now we add a new top headline with the name of each file and an ~org~
+Then I added a new top headline with the name of each file and an ~org~
 properties to all ~org~ files in ~./tmp/~.
 
-#+BEGIN_SRC bash :dir ./tmp/ :results output
+#+BEGIN_SRC bash :results output
+# still in ./tmp/ directory
 for f in *.org; do sed -i -r "1s/^/* $f\n:PROPERTIES:\n:CLOJURE_SITE_FILE: CLJ_FILE_$f\n:END:\n\n/g" $f; done
 #+END_SRC
 
-Now we concatenate all the ~org~ files in ~./tmp/~ to the file
+Then I concatenated all the ~org~ files in ~./tmp/~ into the single file
 ~clojure-site.org~.
 
-#+BEGIN_SRC bash :dir ./tmp/ :results output
+#+BEGIN_SRC bash :results output
+# still in ./tmp/ directory
 for f in *.org; do cat $f >> ../clojure-site.org; done
 #+END_SRC
 
+*** 02) Cleaning
+
+In ~clojure-site.org~, I removed the left padding in every blocks that
+has been added by ~pandoc~ when converting from ~docbook~ to ~org~:
+
+#+BEGIN_SRC emacs-lisp
+;; remove left padding in org blocks
+;; Warning: this loop doesn't take care of line starting by a *
+;; after removing the left padding lp which make the line become
+;; a headline in org.
+(while (re-search-forward org-block-regexp nil t)
+  (let ((beg (match-beginning 0))
+        (end-line (save-excursion (goto-char (match-end 0)) (line-number-at-pos))))
+    (goto-char beg)
+    (if-let* ((lp (progn (forward-line) (current-indentation)))
+              ((not (zerop lp))))
+        (while (< (line-number-at-pos) end-line)
+          (unless (= (point-at-bol) (point-at-eol))
+            (delete-char lp))
+          (forward-line)))))
+#+END_SRC
+
+Then, I interactively removed the org property ~CUSTOM_ID~ that has
+been automatically added by ~pandoc~ to every node (we don't need a
+~CUSTOM_ID~ to every node).
+
+Then, I interactively added the org property ~CUSTOM_ID~ to the main
+node (corresponding to a file in ~clojure-site~).
+
+Then, I interactively updated the links of main nodes to their
+corresponding file in ~clojure-site~ locally.
+
+Then, in ~clojure-site.org~, I removed empty lines in list that was
+added by ~pandoc~:
+
+#+BEGIN_SRC emacs-lisp
+;; remove empty lines in list
+(while (re-search-forward "^ *-  " nil t)
+  (when (org-match-line (org-item-re))
+    (save-excursion
+      (forward-line -1)
+      (when (and (org-in-item-p) (= (point-at-bol) (point-at-eol)))
+        (delete-char 1)))))
+#+END_SRC
+
+Then in ~clojure-site.org~, I replaced list items with 2 spaces after
+the dash ~-~ (added by ~pandoc~), with only one space:
+
+#+BEGIN_SRC emacs-lisp
+;; replace list with "-  " (2 spaces) with "- " (1 space)
+;; warning: this loop doesn't take into account the wall
+;; indentation of the lists modified (I had to updated the
+;; indentation latter)
+(while (re-search-forward "^\\( *- \\) " nil t)
+  (when (save-match-data (org-match-line (org-item-re)))
+    (replace-match "\\1" nil nil)))
+#+END_SRC
+
+Then, I interactively renamed second top headlines with the title from
+the orginal files in ~clojure-site~ (I haven't seen it before, but
+~pandoc~ didn't do it).
+
+Then, I replaced inline verbatim markers ~=~ by code markers ~~~ in
+~clojure-site.org~.
+
+#+BEGIN_SRC emacs-lisp
+;; replace inline code markers = by ~
+(while (re-search-forward "=" nil t)
+  (backward-char 1)
+  (if-let ((inline-code (cadr (org-element-code-parser))))
+      (progn
+        (goto-char (plist-get inline-code :begin))
+        (delete-char 1)
+        (insert "~")
+        (goto-char (- (plist-get inline-code :end)
+                      (plist-get inline-code :post-blank)))
+        (delete-char -1)
+        (insert "~"))
+    (forward-char 1)))
+#+END_SRC
+
+Then, I interactively removed ~=~ verbatim markers when inside links
+(like this ~[[link][=verbatim=]]~).  Org markers don't nest inside org
+links.  We keep the links because they are more meaningful than the
+markers.
+
+Then, I interactively replaced nested emphasis markers like this
+~/*set!*/~ by ~*set!*~ as Org emphasis markers don't nest.
+
+As I let ~pandoc~ (hard) wrap lines at ~72~ characters, headlines were
+wrapped too.  So I (un)wrapped those cut headlines.
+
+Then, for readability inside ~emacs~ I added some empty lines before
+headlines:
+
+#+BEGIN_SRC emacs-lisp
+;; add an empty line before headlines for readings
+(while (not (eobp))
+  (org-next-visible-heading 1)
+  (forward-line -1)
+  (unless (or (org-at-heading-p)
+              (= (point-at-bol) (point-at-eol)))
+    (forward-line 1)
+    (insert "\n"))
+  (forward-line 2))
+#+END_SRC
+
+As I did it the wrong way before (when replacing double spaces by one
+space in list after ~-~ character), I corrected the indentation in list
+partially with the following code and manually:
+
+#+BEGIN_SRC emacs-lisp
+;; correct wrong indentation in list
+(while (not (eobp))
+  (when (and (org-in-item-p)
+             (= 1 (mod (current-indentation) 2)))
+    (beginning-of-line 1)
+    (delete-char 1))
+  (forward-line 1))
+#+END_SRC
+
+Then, I interactively replace ~\\~ breaklines with empty lines.
+
+*** 03) Update CUSTOM_ID
+
+I interactively prefixed the ~CUSTOM_ID~ ids with the string ~content/~
+to make them correspond to the path to the corresponding file in
+Clojure documentation.
+
+*** 04) Faq
+
+I converted faq's questions into headlines.
+
+*** 05) Internal links
+
+I interactively set the internal links using ~CUSTOM_ID~ org
+property of nodes to be sure to have unicity of links (which might
+not be the case using headlines content) and anchors in a few cases.
+
+There were 4 cases to distinguish:
+
+1) link to a file (internal page) in Clojure documentation that becomes
+   a link to specific section in ~clojure-site.org~ using ~CUSTOM_ID~
+   property.
+
+   For instance, the link ~<<dynamic#,Dynamic Development>>~ in the file
+   ~content/about/features.adoc~ that links to the file (internal page)
+   ~content/about/dynamic.adoc~ became (after applying ~asciidoctor~ and
+   ~pandoc~) the org link ~[[file:dynamic.xml][Dynamic Development]]~ in
+   the section with ~CUSTOM_ID~ equal to ~content/about/features~.
+
+   I converted it to the link ~[[#content/about/dynamic][Dynamic
+   Development]~ that links to the unique org section with ~CUSTOM_ID~
+   ~content/about/dynamic~.
+
+2) link to a section in a file in Clojure documentation that becomes a
+   link to specific subsection in ~clojure-site.org~ using ~CUSTOM_ID~
+   property.
+
+   For instance, the link ~<<dep_expansion#_tree_printing,tree
+   printing>>~ in the file ~content/reference/deps_and_cli.adoc~ that
+   links to the section ~Tree printing~ of the file
+   ~content/reference/dep_expansion.adoc~ became (after applying
+   ~asciidoctor~ and ~pandoc~) the org link
+   ~[[file:dep_expansion.xml#_tree_printing][tree printing]]~ in the
+   section with the ~CUSTOM_ID~ equal to
+   ~content/reference/deps_and_cli~.
+
+   I added the ~CUSTOM_ID~ property
+   ~content/reference/dep_expansion#tree-printing~ to the subsection
+   ~Tree printing~ of the section with ~CUSTOM_ID~ equal to
+   ~content/reference/dep_expansion~.  And I converted the previous link
+   to the link ~[[#content/reference/dep_expansion#tree-printing][tree
+   printing]]~.
+
+3) As we can read in the Clojure documentation about using JBake and
+   asciidoc  ("There is a bug in the parser used in the current
+   version of JBake for links to a page in a parent directory.  For
+   example, to link to a page at ~../reference/java_interop.adoc~, you
+   can use a link like this: ~<<xref/../../reference/java_interop#,Java
+   Interop>>~"), some internal links use the syntax ~<<xref/...>>~.
+   I've converted those links using ~CUSTOM_ID~ property.
+
+   For instance, the link ~<<xref/../../reference/agents#,agent>>~ in
+   the file ~content/about/concurrent_programming.adoc~ that links to
+   the file ~content/reference/agents.adoc~ became (after applying
+   ~asciidoctor~ and ~pandoc~) the org link
+   ~[[file:xref/../../reference/agents.xml][agent]]~ in
+   the section with ~CUSTOM_ID~ equal to ~content/reference/agent~.
+
+   I converted it to the link ~[[#content/reference/agents][agent]]~
+   that links to the unique org section with ~CUSTOM_ID~
+   ~content/reference/agents~.
+
+4) link to an anchor in an internal page in Clojure documentation that
+   became a link to a "gobal" anchor in ~clojure-site.org~.
+
+   For instance, the link ~<<java_interop#new,new>>~ in the file
+   ~content/reference/special_forms.adoc~ that links to the anchor
+   ~[[new]]~ in the file ~content/reference/java_interop.adoc~ became
+   (after applying ~asciidoctor~ and ~pandoc~) the org link
+   ~[[file:java_interop.xml#new][new]]~ in the section with the
+   ~CUSTOM_ID~ equal to ~content/reference/special_forms~.
+
+   In the section with ~CUSTOM_ID~ equal to
+   ~content/reference/java_interop~ I added the org anchor
+   ~<<java_interop#new>>~ corresponding to the anchor ~[[new]]~ in the
+   Clojure documentation (in the file
+   ~content/reference/java_interop.adoc~).
+
+   I converted the previous link to the anchor to the org link
+   ~[[java_interop#new][new]]~.
+
+*** 06) Links to images
+
+Then I added the ~assets~ directory of Clojure documentation (containing
+the images) in the project and modified the link to the images.
+
+For instance, the image "link"
+~image::/images/content/community/process.png[JIRA Workflow]~ in the
+file ~content/dev/workflow.adoc~ became (after applying ~asciidoctor~ and
+~pandoc~) the org link ~[[/images/content/about/preview.png]]~.  (Note
+that we've lost the ~alt~ attribute ~JIRA Worklow~ in the process.)
+
+I converted the link to ~[[./assets/images/content/about/preview.png]]~.
+
+*** 07) Links to source code in local
+
+Then I replaced external links to clojure api at
+https://clojure.github.io by local links to function/macro definition
+in the source code directly.  (To make it works you have to clone
+some repositories in your computer.)
+
+For instance, I replaced the link
+
+: [[https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dosync][dosync]]
+
+by the link
+
+: [[clojure:core.clj::(defmacro dosync][dosync]]
+
+where ~[[clojure]]~ is an org abbreviation link declared a the top of the
+org file with the line:
+
+: #+LINK: clojure ./clojure/src/clj/clojure/
+
+Now, inside ~emacs~, when you follow a link (with ~org-open-at-point~
+bound to ~C-c C-o~ by default) in a function/macro name, you'll jump
+into the source code locally.
+
+Sometimes, It wasn't possible to use the fuzzy search option
+~::(defmacro dosync~ in the link because there were conflicting regexp
+matching in the source code.  In those cases I used line option in the
+link.  Those lines are dependent on the version of the clones of the
+repositories you are using (thought they might not change often).  The
+commits of the repositories I used when I put the line option are at
+the top of ~clojure-site.org~.
+
+For instance, when you follow the link ~[[clojure:core.clj::(defn
+send]]~ with ~org-open-at-point~, you jump to the definition of the
+function ~send-via~ that is defined before the function ~send~ in the file
+~[[clojure:core.clj]]~.  So to link to the function ~send~ I used the line
+option of org links and so used the link
+~[[clojure:core.clj::2115][send]]~ (valid for the commit ~b8132f92~).
+
+*** 08) Cheatsheet
+
+Then I added the cheatsheet with the last data from the repository
+[[http://github.com/jafingerhut/clojure-cheatsheets][clojure-cheatsheets]].  In the cheatsheet (Clojure documentation), the
+links point to pages on [[https://clojuredocs.org/][clojuredocs.org]] website.  In
+[[./clojure-site.org]], the links points to the function/macro definition
+locally (on your machine) directly in the source code.
+
+*** 09) Cleaning
+
+I made some proofreading and I interactively updated line wrapping on
+paragraphs and prettified tables.
+
+*** 10) Links to pages on clojure.org website
+
+Then I added links to pages on https://clojure.org to the
+corresponding sections.  I did it with the command
+~query-replace-regexp~ like this (with point at the beginning of the
+buffer and ~^J~ meaning a newline entered typing ~C-q C-j~):
+
+- ~M-x query-replace-regexp~
+- ~RET~
+- ~:clo.*:.*content\(.*\)\.adoc]]~
+- ~RET~
+- ~\&^J:CLOJURE_SITE_PAGE: https://clojure.org\1~
+- ~RET~
+
+*** 11) Footnotes
+
+I made footnotes unique.  As they came from different files in the
+Clojure documentation they were conflicting in ~clojure-site.org~ org
+file.  For instance, the footnotes ~[fn:1]~ used to refer to two
+different footnotes have been renamed uniquely as ~[fn:value_repl]~ and
+~[fn:nrepl_2018]~.
+
+*** 12) Cleaning
+
+Then I made some proofreading.  I fixed some "typos" related to
+emphasis markers and escaped characters.
+
+*** 13) Pagination
+
+Then I added the pagination as org properties (~PREVPAGE_CUSTOM_ID~,
+~NEXTPAGE_CUSTOM_ID~)  for the corresponding sections.
+
+For instance, the file ~content/about/clojurescript.adoc~ has the
+following previous and next pages:
+
+#+BEGIN_SRC text
+:prevpagehref: jvm_hosted
+:prevpagetitle: JVM Hosted
+:nextpagehref: clojureclr
+:nextpagetitle: ClojureCLR
+#+END_SRC
+
+And we've added those to the section ~ClojureScript~ as follow:
+
+#+BEGIN_SRC org
+,** ClojureScript
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojurescript.adoc]]
+:CLOJURE_SITE_PAGE: https://clojure.org/about/clojurescript
+:PREVPAGE_CUSTOM_ID: content/about/jvm_hosted
+:NEXTPAGE_CUSTOM_ID: content/about/clojureclr
+:CUSTOM_ID: content/about/clojurescript
+:END:
+#+END_SRC
+
+I also reordered the sections in ~clojure-site.org~ to follow the order
+of the pagination.
+
+*** 14) Author and date
+
+Then I added the author and date of the file in Clojure documentation
+as org properties (~:CLOJURE_SITE_AUTHOR:~ and ~:CLOJURE_SITE_DATE:~) in
+the corresponding sections.
+
+For instance, the file ~content/about/clojurescript.adoc~ has the
+following author and date:
+
+#+BEGIN_SRC text
+= ClojureScript
+Rich Hickey
+2015-01-01
+#+END_SRC
+
+And we've added those to the section ~Rational~ as follow:
+
+#+BEGIN_SRC org
+,** ClojureScript
+:PROPERTIES:
+:CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojurescript.adoc]]
+:CLOJURE_SITE_PAGE: https://clojure.org/about/clojurescript
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
+:PREVPAGE_CUSTOM_ID: content/about/jvm_hosted
+:NEXTPAGE_CUSTOM_ID: content/about/clojureclr
+:CUSTOM_ID: content/about/clojurescript
+:END:
+#+END_SRC
+
+To add the properties (~:CLOJURE_SITE_AUTHOR:~ and ~:CLOJURE_SITE_DATE:~)
+to ~clojure-site.org~, I broke the process in two parts:
+
+1) first I produced the needed data from the ~.adoc~ files in the
+   Clojure documentation running the following commands:
+
+   #+BEGIN_SRC bash :results output
+   cd ./clojure-site/content/
+   for f in `fd --no-ignore .adoc`; do printf "\n"; echo ID content/${f%.adoc}; head -n 3 $f ; done
+   #+END_SRC
+
+   This produced the following output (we just show the first few
+   lines):
+
+   #+BEGIN_SRC text
+
+   ID content/404
+   = Page Not Found
+   Rich Hickey
+   2015-01-01
+
+   ID content/about/clojureclr
+   = Clojure CLR
+   Rich Hickey
+   2015-01-01
+
+   ID content/about/clojurescript
+   = ClojureScript
+   Rich Hickey
+   2015-01-01
+
+   ID content/about/concurrent_programming
+   = Concurrent Programming
+   Rich Hickey
+   2015-01-01
+   #+END_SRC
+
+2) Then I put the previous output into an emacs buffer, and I ran the
+   following ~emacs-lisp~ code in that buffer assuming point is at the
+   beginning of buffer and ~clojure-site.org~ file open in ~emacs~:
+
+   #+BEGIN_SRC emacs-lisp
+   (while (search-forward "ID " nil t)
+     (let ((id (buffer-substring-no-properties (point) (point-at-eol)))
+           (author (progn
+                     (beginning-of-line 3)
+                     (buffer-substring-no-properties (point) (point-at-eol))))
+           (date (progn
+                   (beginning-of-line 2)
+                   (buffer-substring-no-properties (point) (point-at-eol)))))
+       (format "%s\n%s\n%s" id author date)
+       (with-current-buffer "clojure-site.org"
+         (when-let ((node (org-find-property "CUSTOM_ID" id)))
+           (goto-char node)
+           (search-forward ":CLOJURE_SITE_PAGE:")
+           (beginning-of-line 2)
+           (insert (format ":CLOJURE_SITE_AUTHOR: %s\n:CLOJURE_SITE_DATE: %s\n" author date))))))
+   #+END_SRC
+
+*** Note on the step from docbook format into org-mode format using pandoc
+
+I don't know why ~pandoc~ didn't convert the data (Title, Author, Date,
+...) from the heading of the ~docbook~ files into ~org-mode~ data.
+
+I realized this only at the very end of the conversion process.
+
+For instance, the ~asciidoc~ file ~content/about/clojurescript.adoc~
+
+#+BEGIN_SRC text
+= ClojureScript
+Rich Hickey
+2015-01-01
+:type: about
+:toc: macro
+:icons: font
+:prevpagehref: jvm_hosted
+:prevpagetitle: JVM Hosted
+:nextpagehref: clojureclr
+:nextpagetitle: ClojureCLR
+
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+https://clojurescript.org[ClojureScript] is a compiler for Clojure that targets JavaScript. It is designed to emit JavaScript code which is compatible with the advanced compilation mode of the https://developers.google.com/closure/[Google Closure] optimizing compiler.
+
+,* https://github.com/clojure/clojurescript[ClojureScript Home]
+
+#+END_SRC
+
+has been converted into the following ~docbook~ file (using ~asciidoctor~)
+
+#+BEGIN_SRC nxml
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>ClojureScript</title>
+<date>2015-01-01</date>
+<author>
+<personname>
+<firstname>Rich</firstname>
+<surname>Hickey</surname>
+</personname>
+</author>
+<authorinitials>RH</authorinitials>
+</info>
+<simpara><link xl:href="https://clojurescript.org">ClojureScript</link> is a compiler for Clojure that targets JavaScript. It is designed to emit JavaScript code which is compatible with the advanced compilation mode of the <link xl:href="https://developers.google.com/closure/">Google Closure</link> optimizing compiler.</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xl:href="https://github.com/clojure/clojurescript">ClojureScript Home</link></simpara>
+</listitem>
+</itemizedlist>
+</article>
+#+END_SRC
+
+and then converted into the following ~org~ file (using ~pandoc~)
+
+#+BEGIN_SRC org
+[[https://clojurescript.org][ClojureScript]] is a compiler for Clojure
+that targets JavaScript. It is designed to emit JavaScript code which is
+compatible with the advanced compilation mode of the
+[[https://developers.google.com/closure/][Google Closure]] optimizing
+compiler.
+
+-  [[https://github.com/clojure/clojurescript][ClojureScript Home]]
+
+#+END_SRC
