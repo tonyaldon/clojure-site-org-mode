@@ -49,6 +49,8 @@
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/rationale.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/rationale
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :NEXTPAGE_CUSTOM_ID: content/about/history
 :CUSTOM_ID: content/about/rationale
 :END:
@@ -204,6 +206,8 @@ for the JVM with strong concurrency support. Check out some of the
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/history.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/history
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2020-06-04
 :PREVPAGE_CUSTOM_ID: content/about/rationale
 :NEXTPAGE_CUSTOM_ID: content/about/state
 :CUSTOM_ID: content/about/history
@@ -237,6 +241,8 @@ From HOPL IV in June 2021:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/state.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/state
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/history
 :NEXTPAGE_CUSTOM_ID: content/about/spec
 :CUSTOM_ID: content/about/state
@@ -471,6 +477,8 @@ instead do it functionally with [[#content/reference/special_forms#recur][recur]
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/spec.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/spec
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/state
 :NEXTPAGE_CUSTOM_ID: content/about/dynamic
 :CUSTOM_ID: content/about/spec
@@ -988,6 +996,8 @@ Rich Hickey
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/dynamic.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/dynamic
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/spec
 :NEXTPAGE_CUSTOM_ID: content/about/functional_programming
 :CUSTOM_ID: content/about/dynamic
@@ -1066,6 +1076,8 @@ Compiling ahead-of-time is also possible, but not required.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/functional_programming.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/functional_programming
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/dynamic
 :NEXTPAGE_CUSTOM_ID: content/about/lisp
 :CUSTOM_ID: content/about/functional_programming
@@ -1276,6 +1288,8 @@ used. Instead, [[clojure:core.clj::(defn trampoline][trampoline]] may be a good 
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/lisp.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/lisp
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/functional_programming
 :NEXTPAGE_CUSTOM_ID: content/about/runtime_polymorphism
 :CUSTOM_ID: content/about/lisp
@@ -1320,6 +1334,8 @@ whose forms mimic the forms they generate.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/runtime_polymorphism.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/runtime_polymorphism
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/lisp
 :NEXTPAGE_CUSTOM_ID: content/about/concurrent_programming
 :CUSTOM_ID: content/about/runtime_polymorphism
@@ -1389,6 +1405,8 @@ calls. For more details, see the [[#content/reference/protocols][protocols]] pag
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/concurrent_programming.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/concurrent_programming
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/runtime_polymorphism
 :NEXTPAGE_CUSTOM_ID: content/about/jvm_hosted
 :CUSTOM_ID: content/about/concurrent_programming
@@ -1526,6 +1544,8 @@ fred loves ethel
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/jvm_hosted.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/jvm_hosted
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/concurrent_programming
 :NEXTPAGE_CUSTOM_ID: content/about/clojurescript
 :CUSTOM_ID: content/about/jvm_hosted
@@ -1594,6 +1614,8 @@ Here's a small Swing app as a more involved example:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojurescript.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/clojurescript
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/jvm_hosted
 :NEXTPAGE_CUSTOM_ID: content/about/clojureclr
 :CUSTOM_ID: content/about/clojurescript
@@ -1609,6 +1631,8 @@ compilation mode of the [[https://developers.google.com/closure/][Google Closure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/clojureclr.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/clojureclr
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/about/clojurescript
 :CUSTOM_ID: content/about/clojureclr
 :END:
@@ -1628,6 +1652,8 @@ Microsoft's Dynamic Language Runtime (DLR).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/about/features.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/about/features
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/about/features
 :END:
 
@@ -2385,6 +2411,8 @@ ongoing maintenance.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/api/api.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/api/api
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-01-15
 :CUSTOM_ID: content/api/api
 :END:
 *** Clojure API
@@ -2417,6 +2445,8 @@ Documentation for Clojure [[#content/dev/contrib_libs][contrib libraries]]:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/ask.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/ask
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-07-24
 :CUSTOM_ID: content/community/ask
 :END:
 
@@ -2462,6 +2492,8 @@ libraries, etc.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/books.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/books
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-02-15
 :CUSTOM_ID: content/community/books
 :END:
 
@@ -2638,6 +2670,8 @@ Please support these fine books about Clojure.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/community_stories.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/community_stories
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-04
 :CUSTOM_ID: content/community/community_stories
 :END:
 
@@ -2647,6 +2681,8 @@ If you'd like to share your Clojure story, please [[https://docs.google.com/form
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/companies.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/companies
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-03-15
 :CUSTOM_ID: content/community/companies
 :END:
 
@@ -3164,6 +3200,8 @@ pages!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/contributing.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/contributing
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-05-01
 :CUSTOM_ID: content/community/contributing
 :END:
 *** Ways to Contribute
@@ -3236,6 +3274,8 @@ tracker, please follow the [[#content/dev/dev][process]] to become a contributor
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/contributing_site.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/contributing_site
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2015-10-15
 :CUSTOM_ID: content/community/contributing_site
 :END:
 
@@ -3451,6 +3491,8 @@ Hickey under the [[http://www.eclipse.org/legal/epl-v10.html][Eclipse Public Lic
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/editing.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/editing
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2015-09-29
 :CUSTOM_ID: content/community/editing
 :END:
 
@@ -3678,6 +3720,8 @@ answer more advanced questions.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/etiquette.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/etiquette
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2011-10-15
 :CUSTOM_ID: content/community/etiquette
 :END:
 
@@ -3727,12 +3771,16 @@ who make things, which you should care about if you intend to be one.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/events.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/events
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-01-15
 :CUSTOM_ID: content/community/events
 :END:
 ** Clojure Libraries
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/libraries.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/libraries
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/community/libraries
 :END:
 
@@ -3760,6 +3808,8 @@ infrastructure, people, or goals:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/license.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/license
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/community/license
 :END:
 
@@ -3774,6 +3824,8 @@ software.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/resources.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/resources
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-02-15
 :CUSTOM_ID: content/community/resources
 :END:
 *** Clojure Discussion
@@ -3907,6 +3959,8 @@ Video training (commercial):
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/start_group.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/start_group
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/community/start_group
 :END:
 *** Tips on Starting a Clojure User Group
@@ -4010,6 +4064,8 @@ group? A programmer's club?
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/success_stories.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/success_stories
+:CLOJURE_SITE_AUTHOR: Justin Gehtland
+:CLOJURE_SITE_DATE: 2017-03-22
 :CUSTOM_ID: content/community/success_stories
 :END:
 
@@ -4360,6 +4416,8 @@ Free Software Officer at the French digital administration
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/swag.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/swag
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/community/swag
 :END:
 *** Official Clojure Gear
@@ -4393,6 +4451,8 @@ Clojure T, Small Logo
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/tools.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/tools
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-01-11
 :CUSTOM_ID: content/community/tools
 :END:
 
@@ -4455,6 +4515,8 @@ used tools include:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/training.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/training
+:CLOJURE_SITE_AUTHOR: Timothy Pratley
+:CLOJURE_SITE_DATE: 2018-03-06
 :CUSTOM_ID: content/community/training
 :END:
 *** For teams
@@ -4536,6 +4598,8 @@ If you would like to be added or removed from this list, please contact
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/community/user_groups.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/community/user_groups
+:CLOJURE_SITE_AUTHOR: Erik Assum
+:CLOJURE_SITE_DATE: 2018-04-06
 :CUSTOM_ID: content/community/user_groups
 :END:
 
@@ -4694,6 +4758,8 @@ against the [[https://github.com/clojure/clojure-site][clojure-site]] github rep
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contrib_history.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/contrib_history
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-04-24
 :CUSTOM_ID: content/dev/contrib_history
 :END:
 
@@ -4903,6 +4969,8 @@ This section lists new contrib namespaces that do not correspond to old contrib 
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contrib_howto.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/contrib_howto
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-04-23
 :CUSTOM_ID: content/dev/contrib_howto
 :END:
 *** Readmes
@@ -5181,6 +5249,8 @@ The Standards:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contrib_libs.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/contrib_libs
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-02-04
 :CUSTOM_ID: content/dev/contrib_libs
 :END:
 
@@ -5325,6 +5395,8 @@ found at [[#content/dev/contrib_howto][Contrib How-To]].
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contributor_agreement.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/contributor_agreement
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-01-15
 :CUSTOM_ID: content/dev/contributor_agreement
 :END:
 
@@ -5534,6 +5606,8 @@ Contributor Agreement.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/contributors.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/contributors
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-02-25
 :CUSTOM_ID: content/dev/contributors
 :END:
 
@@ -7304,6 +7378,8 @@ Below is a list of all signers of the Clojure [[#content/dev/contributor_agreeme
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/creating_tickets.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/creating_tickets
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-12-05
 :CUSTOM_ID: content/dev/creating_tickets
 :END:
 
@@ -7441,6 +7517,8 @@ DO NOT use these tags:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/developing_patches.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/developing_patches
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-12-05
 :CUSTOM_ID: content/dev/developing_patches
 :END:
 
@@ -7802,6 +7880,8 @@ $ mvn -Dmaven.test.skip=true clean install
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/dev.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/dev
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-06-03
 :CUSTOM_ID: content/dev/dev
 :END:
 
@@ -7890,6 +7970,8 @@ tools.deps, clj, etc. This is still considered part of the broader
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/screening_tickets.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/screening_tickets
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-04-24
 :CUSTOM_ID: content/dev/screening_tickets
 :END:
 
@@ -8050,6 +8132,8 @@ If you aren't sure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/dev/workflow.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/dev/workflow
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-12-06
 :CUSTOM_ID: content/dev/workflow
 :END:
 *** How a Ticket Becomes a Commit
@@ -8306,6 +8390,8 @@ an activity. Activities are described in more detail below the diagram.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2015/clojurex.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2015/clojurex
+:CLOJURE_SITE_AUTHOR: Skills Matter
+:CLOJURE_SITE_DATE: 2015-12-03
 :CUSTOM_ID: content/events/2015/clojurex
 :END:
 
@@ -8323,6 +8409,8 @@ London with hundreds of fellow Clojurians? Well, we thought so too.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_austin.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_austin
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-11-06
 :CUSTOM_ID: content/events/2016/clojurebridge_austin
 :END:
 
@@ -8339,6 +8427,8 @@ laptop able to run Java 1.8.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_berlin_2.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_berlin_2
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-11-25
 :CUSTOM_ID: content/events/2016/clojurebridge_berlin_2
 :END:
 
@@ -8357,6 +8447,8 @@ and practice in small groups of 2 to 4 attendees each.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_berlin.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_berlin
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-01-22
 :CUSTOM_ID: content/events/2016/clojurebridge_berlin
 :END:
 
@@ -8373,6 +8465,8 @@ welcome. We'll have different classes separated by experience level.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_boston.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_boston
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-10-14
 :CUSTOM_ID: content/events/2016/clojurebridge_boston
 :END:
 
@@ -8408,6 +8502,8 @@ guest's information in the 2nd ticket.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_krakow.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_krakow
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-12-02
 :CUSTOM_ID: content/events/2016/clojurebridge_krakow
 :END:
 
@@ -8422,6 +8518,8 @@ we need. On Saturday, we will learn to code Clojure.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_london_2.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_london_2
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-09-30
 :CUSTOM_ID: content/events/2016/clojurebridge_london_2
 :END:
 
@@ -8439,6 +8537,8 @@ attendees into small groups with at least one teacher and one assistant.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_london_3.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_london_3
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-11-15
 :CUSTOM_ID: content/events/2016/clojurebridge_london_3
 :END:
 
@@ -8460,6 +8560,8 @@ know if you have any special requirements when you register.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_london.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_london
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-02-19
 :CUSTOM_ID: content/events/2016/clojurebridge_london
 :END:
 
@@ -8475,6 +8577,8 @@ experience.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_minneapolis.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_minneapolis
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-11-04
 :CUSTOM_ID: content/events/2016/clojurebridge_minneapolis
 :END:
 
@@ -8492,6 +8596,8 @@ your laptop, and then spend Saturday learning and writing code:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_nyc.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_nyc
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-07-22
 :CUSTOM_ID: content/events/2016/clojurebridge_nyc
 :END:
 
@@ -8507,6 +8613,8 @@ software you need, and then spend Saturday learning and writing code.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_pittsburgh.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_pittsburgh
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-09-09
 :CUSTOM_ID: content/events/2016/clojurebridge_pittsburgh
 :END:
 
@@ -8522,6 +8630,8 @@ software you need, and then spend Saturday learning and writing code.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_sanfrancisco.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_sanfrancisco
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-10-21
 :CUSTOM_ID: content/events/2016/clojurebridge_sanfrancisco
 :END:
 
@@ -8541,6 +8651,8 @@ programming experience.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurebridge_seattle.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurebridge_seattle
+:CLOJURE_SITE_AUTHOR: ClojureBridge
+:CLOJURE_SITE_DATE: 2016-04-08
 :CUSTOM_ID: content/events/2016/clojurebridge_seattle
 :END:
 
@@ -8556,6 +8668,8 @@ in Seattle.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojureconj.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojureconj
+:CLOJURE_SITE_AUTHOR: Cognitect
+:CLOJURE_SITE_DATE: 2016-12-01
 :CUSTOM_ID: content/events/2016/clojureconj
 :END:
 
@@ -8577,6 +8691,8 @@ everyone can find something to suit their need.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojured.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojured
+:CLOJURE_SITE_AUTHOR: clojureD
+:CLOJURE_SITE_DATE: 2016-02-20
 :CUSTOM_ID: content/events/2016/clojured
 :END:
 
@@ -8594,6 +8710,8 @@ The conference will be held in English.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojureexchange.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojureexchange
+:CLOJURE_SITE_AUTHOR: Skills Matter
+:CLOJURE_SITE_DATE: 2016-12-01
 :CUSTOM_ID: content/events/2016/clojureexchange
 :END:
 
@@ -8607,6 +8725,8 @@ discuss war stories with your peers.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojureremote.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojureremote
+:CLOJURE_SITE_AUTHOR: Homegrown Labs
+:CLOJURE_SITE_DATE: 2016-02-11
 :CUSTOM_ID: content/events/2016/clojureremote
 :END:
 
@@ -8622,6 +8742,8 @@ Clojure talks.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojurewest.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojurewest
+:CLOJURE_SITE_AUTHOR: Cognitect
+:CLOJURE_SITE_DATE: 2016-04-15
 :CUSTOM_ID: content/events/2016/clojurewest
 :END:
 
@@ -8635,6 +8757,8 @@ tracks of sessions.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/clojutre.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/clojutre
+:CLOJURE_SITE_AUTHOR: clojuTRE
+:CLOJURE_SITE_DATE: 2016-09-10
 :CUSTOM_ID: content/events/2016/clojutre
 :END:
 
@@ -8647,6 +8771,8 @@ beer. We welcome both newbies and seasoned Clojurists.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/dutch_clojure_days.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/dutch_clojure_days
+:CLOJURE_SITE_AUTHOR: Dutch Clojure Days
+:CLOJURE_SITE_DATE: 2016-03-19
 :CUSTOM_ID: content/events/2016/dutch_clojure_days
 :END:
 
@@ -8657,6 +8783,8 @@ Netherlands!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/euroclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/euroclojure
+:CLOJURE_SITE_AUTHOR: EuroClojure
+:CLOJURE_SITE_DATE: 2016-10-25
 :CUSTOM_ID: content/events/2016/euroclojure
 :END:
 
@@ -8674,6 +8802,8 @@ EuroClojure is a Cognitect event.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/inclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/inclojure
+:CLOJURE_SITE_AUTHOR: InClojure
+:CLOJURE_SITE_DATE: 2016-11-26
 :CUSTOM_ID: content/events/2016/inclojure
 :END:
 
@@ -8690,6 +8820,8 @@ Clojure programmers and enthusiasts.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2016/thing-sept.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2016/thing-sept
+:CLOJURE_SITE_AUTHOR: Clojure and thi.ng for 3D Printing
+:CLOJURE_SITE_DATE: 2016-09-10
 :CUSTOM_ID: content/events/2016/thing-sept
 :END:
 
@@ -8709,6 +8841,8 @@ your future practice with these technologies.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-ba.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurebridge-ba
+:CLOJURE_SITE_AUTHOR: ClojureBridge Buenos Aires
+:CLOJURE_SITE_DATE: 2017-03-10
 :CUSTOM_ID: content/events/2017/clojurebridge-ba
 :END:
 
@@ -8719,6 +8853,8 @@ America)!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-boston.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurebridge-boston
+:CLOJURE_SITE_AUTHOR: ClojureBridge Boston
+:CLOJURE_SITE_DATE: 2017-03-17
 :CUSTOM_ID: content/events/2017/clojurebridge-boston
 :END:
 
@@ -8734,6 +8870,8 @@ experience.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-sanfrancisco.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurebridge-sanfrancisco
+:CLOJURE_SITE_AUTHOR: ClojureBridge San Francisco
+:CLOJURE_SITE_DATE: 2017-09-15
 :CUSTOM_ID: content/events/2017/clojurebridge-sanfrancisco
 :END:
 
@@ -8751,6 +8889,8 @@ concepts and approaches.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-seoul.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurebridge-seoul
+:CLOJURE_SITE_AUTHOR: ClojureBridge Seoul
+:CLOJURE_SITE_DATE: 2017-03-18
 :CUSTOM_ID: content/events/2017/clojurebridge-seoul
 :END:
 
@@ -8766,6 +8906,8 @@ functional programming language.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-tampere.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurebridge-tampere
+:CLOJURE_SITE_AUTHOR: ClojureBridge Tampere
+:CLOJURE_SITE_DATE: 2017-05-06
 :CUSTOM_ID: content/events/2017/clojurebridge-tampere
 :END:
 
@@ -8791,6 +8933,8 @@ windows 7.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurebridge-toronto.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurebridge-toronto
+:CLOJURE_SITE_AUTHOR: ClojureBridge Toronto
+:CLOJURE_SITE_DATE: 2017-02-24
 :CUSTOM_ID: content/events/2017/clojurebridge-toronto
 :END:
 
@@ -8806,6 +8950,8 @@ Clojure, a modern functional programming language.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojureconj.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojureconj
+:CLOJURE_SITE_AUTHOR: Cognitect
+:CLOJURE_SITE_DATE: 2017-10-12
 :CUSTOM_ID: content/events/2017/clojureconj
 :END:
 
@@ -8828,6 +8974,8 @@ year for the Conj as Clojure will celebrate it's 10th birthday!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojured.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojured
+:CLOJURE_SITE_AUTHOR: clojureD
+:CLOJURE_SITE_DATE: 2017-02-25
 :CUSTOM_ID: content/events/2017/clojured
 :END:
 
@@ -8845,6 +8993,8 @@ The conference will be held in English.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojureremote.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojureremote
+:CLOJURE_SITE_AUTHOR: Ryan Neufeld & Homegrown Labs
+:CLOJURE_SITE_DATE: 2017-02-09
 :CUSTOM_ID: content/events/2017/clojureremote
 :END:
 
@@ -8879,6 +9029,8 @@ Ryan Neufeld at Clojure Remote
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurewest.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurewest
+:CLOJURE_SITE_AUTHOR: Cognitect
+:CLOJURE_SITE_DATE: 2017-03-30
 :CUSTOM_ID: content/events/2017/clojurewest
 :END:
 
@@ -8892,6 +9044,8 @@ tracks of sessions.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojurex.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojurex
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2017-12-04
 :CUSTOM_ID: content/events/2017/clojurex
 :END:
 
@@ -8921,6 +9075,8 @@ London Clojurians
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/clojutre.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/clojutre
+:CLOJURE_SITE_AUTHOR: clojuTRE
+:CLOJURE_SITE_DATE: 2017-09-02
 :CUSTOM_ID: content/events/2017/clojutre
 :END:
 
@@ -8933,6 +9089,8 @@ welcome both newbies and seasoned Clojurists.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/dutchclojureday.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/dutchclojureday
+:CLOJURE_SITE_AUTHOR: Dutch Clojure Day
+:CLOJURE_SITE_DATE: 2017-03-25
 :CUSTOM_ID: content/events/2017/dutchclojureday
 :END:
 
@@ -8943,6 +9101,8 @@ Netherlands!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2017/euroclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2017/euroclojure
+:CLOJURE_SITE_AUTHOR: EuroClojure
+:CLOJURE_SITE_DATE: 2017-07-20
 :CUSTOM_ID: content/events/2017/euroclojure
 :END:
 
@@ -8960,6 +9120,8 @@ EuroClojure is a Cognitect event.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojureconj.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/clojureconj
+:CLOJURE_SITE_AUTHOR: Cognitect
+:CLOJURE_SITE_DATE: 2018-11-29
 :CUSTOM_ID: content/events/2018/clojureconj
 :END:
 
@@ -8981,6 +9143,8 @@ everyone can find something to suit their need.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojured.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/clojured
+:CLOJURE_SITE_AUTHOR: clojureD
+:CLOJURE_SITE_DATE: 2018-02-24
 :CUSTOM_ID: content/events/2018/clojured
 :END:
 
@@ -9001,6 +9165,8 @@ conference!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojure-sync.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/clojure-sync
+:CLOJURE_SITE_AUTHOR: clojureSYNC
+:CLOJURE_SITE_DATE: 2018-02-15
 :CUSTOM_ID: content/events/2018/clojure-sync
 :END:
 
@@ -9022,6 +9188,8 @@ computing and how it fits into the history of humanity.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojurex.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/clojurex
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2018-12-03
 :CUSTOM_ID: content/events/2018/clojurex
 :END:
 
@@ -9051,6 +9219,8 @@ London Clojurians
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/clojutre.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/clojutre
+:CLOJURE_SITE_AUTHOR: clojuTRE
+:CLOJURE_SITE_DATE: 2018-09-14
 :CUSTOM_ID: content/events/2018/clojutre
 :END:
 
@@ -9063,6 +9233,8 @@ welcome both newbies and seasoned Clojurists.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/dutchclojureday.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/dutchclojureday
+:CLOJURE_SITE_AUTHOR: Dutch Clojure Day
+:CLOJURE_SITE_DATE: 2018-04-21
 :CUSTOM_ID: content/events/2018/dutchclojureday
 :END:
 
@@ -9076,6 +9248,8 @@ Netherlands!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2018/inclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2018/inclojure
+:CLOJURE_SITE_AUTHOR: IN/Clojure
+:CLOJURE_SITE_DATE: 2018-01-12
 :CUSTOM_ID: content/events/2018/inclojure
 :END:
 
@@ -9089,6 +9263,8 @@ experienced Clojure programmers and enthusiasts.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojurebridge-london-may-2019.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojurebridge-london-may-2019
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2019-05-11
 :CUSTOM_ID: content/events/2019/clojurebridge-london-may-2019
 :END:
 
@@ -9184,6 +9360,8 @@ London Clojurians
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojureconj.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojureconj
+:CLOJURE_SITE_AUTHOR: Cognitect
+:CLOJURE_SITE_DATE: 2019-11-21
 :CUSTOM_ID: content/events/2019/clojureconj
 :END:
 
@@ -9205,6 +9383,8 @@ everyone can find something to suit their need.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojured.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojured
+:CLOJURE_SITE_AUTHOR: clojureD
+:CLOJURE_SITE_DATE: 2019-02-23
 :CUSTOM_ID: content/events/2019/clojured
 :END:
 
@@ -9222,6 +9402,8 @@ conference!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojureeua.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojureeua
+:CLOJURE_SITE_AUTHOR: Clojure Day Ukraine
+:CLOJURE_SITE_DATE: 2019-12-07
 :CUSTOM_ID: content/events/2019/clojureeua
 :END:
 
@@ -9232,6 +9414,8 @@ functional programming.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojurenorth.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojurenorth
+:CLOJURE_SITE_AUTHOR: Clojure/north
+:CLOJURE_SITE_DATE: 2019-04-19
 :CUSTOM_ID: content/events/2019/clojurenorth
 :END:
 
@@ -9253,6 +9437,8 @@ We hope to see you there!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojuresouth.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojuresouth
+:CLOJURE_SITE_AUTHOR: Nubank
+:CLOJURE_SITE_DATE: 2019-09-01
 :CUSTOM_ID: content/events/2019/clojuresouth
 :END:
 
@@ -9270,6 +9456,8 @@ minutes and there will be two session rooms.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojurex.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojurex
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2019-12-02
 :CUSTOM_ID: content/events/2019/clojurex
 :END:
 
@@ -9305,6 +9493,8 @@ London Clojurians
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojuru.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojuru
+:CLOJURE_SITE_AUTHOR: Cloju.ru
+:CLOJURE_SITE_DATE: 2019-10-26
 :CUSTOM_ID: content/events/2019/clojuru
 :END:
 
@@ -9318,6 +9508,8 @@ Call for presentations is open at [[mailto:orgs@cloju.ru][orgs@cloju.ru]].
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/clojutre.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/clojutre
+:CLOJURE_SITE_AUTHOR: ClojuTRE
+:CLOJURE_SITE_DATE: 2019-09-26
 :CUSTOM_ID: content/events/2019/clojutre
 :END:
 
@@ -9334,6 +9526,8 @@ September 2019.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/dutchclojureday.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/dutchclojureday
+:CLOJURE_SITE_AUTHOR: Dutch Clojure Day
+:CLOJURE_SITE_DATE: 2019-04-06
 :CUSTOM_ID: content/events/2019/dutchclojureday
 :END:
 
@@ -9346,6 +9540,8 @@ Netherlands!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/heartofclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/heartofclojure
+:CLOJURE_SITE_AUTHOR: Heart of Clojure
+:CLOJURE_SITE_DATE: 2019-08-02
 :CUSTOM_ID: content/events/2019/heartofclojure
 :END:
 
@@ -9357,6 +9553,8 @@ summer fun.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/inclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/inclojure
+:CLOJURE_SITE_AUTHOR: IN/Clojure
+:CLOJURE_SITE_DATE: 2019-01-11
 :CUSTOM_ID: content/events/2019/inclojure
 :END:
 
@@ -9369,6 +9567,8 @@ Clojure programmers and enthusiasts.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2019/reclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2019/reclojure
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2019-12-02
 :CUSTOM_ID: content/events/2019/reclojure
 :END:
 
@@ -9387,6 +9587,8 @@ Please reserve your seat at [[https://reclojure.org]] and join
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojurebridge.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2020/clojurebridge
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2020-02-21
 :CUSTOM_ID: content/events/2020/clojurebridge
 :END:
 
@@ -9422,6 +9624,8 @@ London Clojurians
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojured.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2020/clojured
+:CLOJURE_SITE_AUTHOR: clojureD
+:CLOJURE_SITE_DATE: 2020-02-29
 :CUSTOM_ID: content/events/2020/clojured
 :END:
 
@@ -9439,6 +9643,8 @@ conference!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojurenorth.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2020/clojurenorth
+:CLOJURE_SITE_AUTHOR: Clojure/north
+:CLOJURE_SITE_DATE: 2020-06-25
 :CUSTOM_ID: content/events/2020/clojurenorth
 :END:
 
@@ -9460,6 +9666,8 @@ We hope to see you there!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/clojutre.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2020/clojutre
+:CLOJURE_SITE_AUTHOR: ClojuTRE
+:CLOJURE_SITE_DATE: 2020-10-08
 :CUSTOM_ID: content/events/2020/clojutre
 :END:
 
@@ -9476,6 +9684,8 @@ enthusiasts. Next edition of the event will be held in Tampere Thursday
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/dutchclojureday.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2020/dutchclojureday
+:CLOJURE_SITE_AUTHOR: Dutch Clojure Day
+:CLOJURE_SITE_DATE: 2020-05-16
 :CUSTOM_ID: content/events/2020/dutchclojureday
 :END:
 
@@ -9488,6 +9698,8 @@ Netherlands!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2020/inclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2020/inclojure
+:CLOJURE_SITE_AUTHOR: IN/Clojure
+:CLOJURE_SITE_DATE: 2020-02-14
 :CUSTOM_ID: content/events/2020/inclojure
 :END:
 
@@ -9525,6 +9737,8 @@ And we hope to see you there!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/events/2021/reclojure.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/events/2021/reclojure
+:CLOJURE_SITE_AUTHOR: London Clojurians
+:CLOJURE_SITE_DATE: 2021-12-03
 :CUSTOM_ID: content/events/2021/reclojure
 :END:
 
@@ -9549,6 +9763,8 @@ We look forward to seeing you there!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/comparators.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/comparators
+:CLOJURE_SITE_AUTHOR: Andy Fingerhut
+:CLOJURE_SITE_DATE: 2016-02-22
 :CUSTOM_ID: content/guides/comparators
 :END:
 
@@ -10290,6 +10506,8 @@ nil
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/deps_and_cli.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/deps_and_cli
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-09-08
 :CUSTOM_ID: content/guides/deps_and_cli
 :END:
 
@@ -10848,6 +11066,8 @@ Use Ctrl-D to exit the repl and Ctrl-C to exit the server.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/destructuring.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/destructuring
+:CLOJURE_SITE_AUTHOR: Michael Zavarella
+:CLOJURE_SITE_DATE: 2015-12-09
 :CUSTOM_ID: content/guides/destructuring
 :END:
 *** What is Destructuring?
@@ -11502,6 +11722,8 @@ under the hood.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/equality.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/equality
+:CLOJURE_SITE_AUTHOR: Andy Fingerhut
+:CLOJURE_SITE_DATE: 2018-05-08
 :CUSTOM_ID: content/guides/equality
 :END:
 
@@ -12260,6 +12482,8 @@ false             ; Baker's EGAL would return true here.  Clojure
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/faq.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/faq
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2016-03-08
 :CUSTOM_ID: content/guides/faq
 :END:
 
@@ -12907,6 +13131,8 @@ and we encourage you to go for it!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/getting_started.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/getting_started
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2016-01-14
 :CUSTOM_ID: content/guides/getting_started
 :END:
 
@@ -13037,6 +13263,8 @@ exploration.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/core_async_go.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/core_async_go
+:CLOJURE_SITE_AUTHOR: Timothy Baldridge
+:CLOJURE_SITE_DATE: 2017-05-24
 :CUSTOM_ID: content/guides/core_async_go
 :END:
 *** General advice
@@ -13155,6 +13383,8 @@ the practical compromise, translation stops when it sees a ~(fn [] …​)~.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/guides.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/guides
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2015-11-25
 :CUSTOM_ID: content/guides/guides
 :END:
 
@@ -13187,6 +13417,8 @@ the practical compromise, translation stops when it sees a ~(fn [] …​)~.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/higher_order_functions.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/higher_order_functions
+:CLOJURE_SITE_AUTHOR: Michael Zavarella
+:CLOJURE_SITE_DATE: 2017-09-15
 :CUSTOM_ID: content/guides/higher_order_functions
 :END:
 
@@ -13380,6 +13612,8 @@ pieces by breaking the filtering function out into a separate ~var~.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/dev_startup_time.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/dev_startup_time
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-03-12
 :CUSTOM_ID: content/guides/dev_startup_time
 :END:
 
@@ -13480,6 +13714,8 @@ user=> (binding [*compile-files* true] (require 'user :reload-all))
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/syntax.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/syntax
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-09-02
 :NEXTPAGE_CUSTOM_ID: content/guides/learn/functions
 :CUSTOM_ID: content/guides/learn/syntax
 :END:
@@ -13929,6 +14165,8 @@ form.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/functions.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/functions
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-09-02
 :PREVPAGE_CUSTOM_ID: content/guides/learn/syntax
 :NEXTPAGE_CUSTOM_ID: content/guides/learn/sequential_colls
 :CUSTOM_ID: content/guides/learn/functions
@@ -14420,6 +14658,8 @@ function in Clojure does logical negation.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/sequential_colls.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/sequential_colls
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-09-02
 :PREVPAGE_CUSTOM_ID: content/guides/learn/functions
 :NEXTPAGE_CUSTOM_ID: content/guides/learn/hashed_colls
 :CUSTOM_ID: content/guides/learn/sequential_colls
@@ -14566,6 +14806,8 @@ user=> (pop stack)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/hashed_colls.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/hashed_colls
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-09-02
 :PREVPAGE_CUSTOM_ID: content/guides/learn/sequential_colls
 :NEXTPAGE_CUSTOM_ID: content/guides/learn/flow
 :CUSTOM_ID: content/guides/learn/hashed_colls
@@ -14985,6 +15227,8 @@ user=> (:occupation kelly)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/flow.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/flow
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-09-02
 :PREVPAGE_CUSTOM_ID: content/guides/learn/hashed_colls
 :NEXTPAGE_CUSTOM_ID: content/guides/learn/namespaces
 :CUSTOM_ID: content/guides/learn/flow
@@ -15314,6 +15558,8 @@ user=> (for [letter [:a :b]
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/namespaces.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/namespaces
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-01-25
 :PREVPAGE_CUSTOM_ID: content/guides/learn/flow
 :CUSTOM_ID: content/guides/learn/namespaces
 :END:
@@ -15471,6 +15717,8 @@ package and the ~File~ class from the ~java.io~ package.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/answers.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/learn/answers
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-08-20
 :CUSTOM_ID: content/guides/learn/answers
 :END:
 
@@ -15635,6 +15883,8 @@ the [[#content/guides/learn/syntax][Learn Clojure]] guide.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/reader_conditionals.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/reader_conditionals
+:CLOJURE_SITE_AUTHOR: Daniel Compton
+:CLOJURE_SITE_DATE: 2016-01-14
 :CUSTOM_ID: content/guides/reader_conditionals
 :END:
 *** Introduction
@@ -15873,6 +16123,8 @@ of the requires are duplicated between ~:clj~ and ~:cljs~.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/weird_characters.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/weird_characters
+:CLOJURE_SITE_AUTHOR: James Hughes
+:CLOJURE_SITE_DATE: 2017-05-27
 :CUSTOM_ID: content/guides/weird_characters
 :END:
 
@@ -16859,6 +17111,8 @@ who have specifically asked for things. Sorry if I've missed you.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/introduction.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/introduction
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :NEXTPAGE_CUSTOM_ID: guides/repl/launching_a_basic_repl
 :CUSTOM_ID: content/guides/repl/introduction
 :END:
@@ -16943,6 +17197,8 @@ First, we'll learn how to [[#content/guides/repl/launching_a_basic_repl][launch 
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/launching_a_basic_repl.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/launching_a_basic_repl
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/introduction
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/basic_usage
 :CUSTOM_ID: content/guides/repl/launching_a_basic_repl
@@ -17050,6 +17306,8 @@ user=>
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/basic_usage.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/basic_usage
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/launching_a_basic_repl
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/data_visualization_at_the_repl
 :CUSTOM_ID: content/guides/repl/basic_usage
@@ -17365,6 +17623,8 @@ This is illustrated by this example REPL session:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/data_visualization_at_the_repl.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/data_visualization_at_the_repl
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/basic_usage
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/navigating_namespaces
 :CUSTOM_ID: content/guides/repl/data_visualization_at_the_repl
@@ -17944,6 +18204,8 @@ InputStream, and read bytes from it.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/navigating_namespaces.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/navigating_namespaces
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/data_visualization_at_the_repl
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/enhancing_your_repl_workflow
 :CUSTOM_ID: content/guides/repl/navigating_namespaces
@@ -18334,6 +18596,8 @@ Unable to resolve symbol: nicknames in this context
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/enhancing_your_repl_workflow.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/enhancing_your_repl_workflow
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/navigating_namespaces
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/guidelines_for_repl_aided_development
 :CUSTOM_ID: content/guides/repl/enhancing_your_repl_workflow
@@ -18822,6 +19086,8 @@ Clojure community regarding the relative merits of both approaches.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/guidelines_for_repl_aided_development.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/guidelines_for_repl_aided_development
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-04-14
 :PREVPAGE_CUSTOM_ID: content/guides/repl/enhancing_your_repl_workflow
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/annex_community_resources
 :CUSTOM_ID: content/guides/repl/guidelines_for_repl_aided_development
@@ -18898,6 +19164,8 @@ a poor tool for detecting breakage.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/annex_community_resources.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/annex_community_resources
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/guidelines_for_repl_aided_development
 :NEXTPAGE_CUSTOM_ID: content/guides/repl/annex_troubleshooting
 :CUSTOM_ID: content/guides/repl/annex_community_resources
@@ -18937,6 +19205,8 @@ community:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/repl/annex_troubleshooting.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/repl/annex_troubleshooting
+:CLOJURE_SITE_AUTHOR: Valentin Waeselynck
+:CLOJURE_SITE_DATE: 2018-02-10
 :PREVPAGE_CUSTOM_ID: content/guides/repl/annex_community_resources
 :CUSTOM_ID: content/guides/repl/annex_troubleshooting
 :END:
@@ -19034,6 +19304,8 @@ eventualling failing with the above Exception. The cause may vary:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/spec.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/spec
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2016-05-24
 :CUSTOM_ID: content/guides/spec
 :END:
 *** Getting started
@@ -20668,6 +20940,8 @@ generator techniques and help on testing in a future update.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/test_check_beginner.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/test_check_beginner
+:CLOJURE_SITE_AUTHOR: Gary Fredericks
+:CLOJURE_SITE_DATE: 2019-06-29
 :CUSTOM_ID: content/guides/test_check_beginner
 :END:
 *** Introduction
@@ -21094,6 +21368,8 @@ For additional documentation, see the [[https://github.com/clojure/test.check/bl
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/threading_macros.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/threading_macros
+:CLOJURE_SITE_AUTHOR: Paulus Esterhazy
+:CLOJURE_SITE_DATE: 2016-02-21
 :CUSTOM_ID: content/guides/threading_macros
 :END:
 
@@ -21319,6 +21595,8 @@ but works analogously otherwise.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/tools_build.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/guides/tools_build
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-06-22
 :CUSTOM_ID: content/guides/tools_build
 :END:
 
@@ -21632,6 +21910,8 @@ See the [[https://clojure.github.io/tools.build][API docs]] for detailed task do
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2011/07/22/introducing-clojurescript.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2011/07/22/introducing-clojurescript
+:CLOJURE_SITE_AUTHOR: Stuart Sierra
+:CLOJURE_SITE_DATE: 2011-07-22
 :CUSTOM_ID: content/news/2011/07/22/introducing-clojurescript
 :END:
 
@@ -21794,6 +22074,8 @@ compiler.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2012/02/17/clojure-governance.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2012/02/17/clojure-governance
+:CLOJURE_SITE_AUTHOR: Stuart Sierra
+:CLOJURE_SITE_DATE: 2012-02-17
 :CUSTOM_ID: content/news/2012/02/17/clojure-governance
 :END:
 *** Enter Rich, with Parentheses
@@ -22028,6 +22310,8 @@ go.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2012/05/08/reducers.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2012/05/08/reducers
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2012-05-08
 :CUSTOM_ID: content/news/2012/05/08/reducers
 :END:
 
@@ -22305,6 +22589,8 @@ Rich
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2012/05/15/anatomy-of-reducer.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2012/05/15/anatomy-of-reducer
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2012-05-15
 :CUSTOM_ID: content/news/2012/05/15/anatomy-of-reducer
 :END:
 
@@ -22578,6 +22864,8 @@ Rich
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2013/06/28/clojure-clore-async-channels.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2013/06/28/clojure-clore-async-channels
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2013-06-28
 :CUSTOM_ID: content/news/2013/06/28/clojure-clore-async-channels
 :END:
 
@@ -22807,6 +23095,8 @@ Rich
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2014/08/06/transducers-are-coming.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2014/08/06/transducers-are-coming
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2014-08-06
 :CUSTOM_ID: content/news/2014/08/06/transducers-are-coming
 :END:
 
@@ -22963,6 +23253,8 @@ Rich
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2015/06/30/clojure-17.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2015/06/30/clojure-17
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2015-06-30
 :CUSTOM_ID: content/news/2015/06/30/clojure-17
 :END:
 
@@ -23064,6 +23356,8 @@ releases.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/01/14/clojure-org-live.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2016/01/14/clojure-org-live
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2016-01-14
 :CUSTOM_ID: content/news/2016/01/14/clojure-org-live
 :END:
 
@@ -23093,6 +23387,8 @@ check out the page on [[#content/community/contributing_site][site contributions
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/01/19/clojure18.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2016/01/19/clojure18
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2016-01-19
 :CUSTOM_ID: content/news/2016/01/19/clojure18
 :END:
 
@@ -23156,6 +23452,8 @@ contributors in bold):
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/01/28/state-of-clojure-2015.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2016/01/28/state-of-clojure-2015
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2016-01-28
 :CUSTOM_ID: content/news/2016/01/28/state-of-clojure-2015
 :END:
 
@@ -23170,6 +23468,8 @@ doing great things!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2016/05/23/introducing-clojure-spec.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2016/05/23/introducing-clojure-spec
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-05-23
 :CUSTOM_ID: content/news/2016/05/23/introducing-clojure-spec
 :END:
 
@@ -23230,6 +23530,8 @@ Rich
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2017/01/31/state-of-clojure-2016.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2017/01/31/state-of-clojure-2016
+:CLOJURE_SITE_AUTHOR: Justin Gehtland
+:CLOJURE_SITE_DATE: 2017-01-31
 :CUSTOM_ID: content/news/2017/01/31/state-of-clojure-2016
 :END:
 
@@ -23619,6 +23921,8 @@ our growing community!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2017/12/08/clojure19.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2017/12/08/clojure19
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-12-08
 :CUSTOM_ID: content/news/2017/12/08/clojure19
 :END:
 
@@ -23693,6 +23997,8 @@ Thanks to all of the community members who contributed to Clojure 1.9
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2018/01/05/git-deps.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2018/01/05/git-deps
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2018-01-05
 :CUSTOM_ID: content/news/2018/01/05/git-deps
 :END:
 
@@ -23767,6 +24073,8 @@ For more information see:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2018/03/19/state-of-clojure-2018.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2018/03/19/state-of-clojure-2018
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-03-19
 :CUSTOM_ID: content/news/2018/03/19/state-of-clojure-2018
 :END:
 
@@ -23916,6 +24224,8 @@ Thanks again for being part of the community!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2018/12/17/clojure110.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2018/12/17/clojure110
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-12-17
 :CUSTOM_ID: content/news/2018/12/17/clojure110
 :END:
 
@@ -23967,6 +24277,8 @@ Clojure 1.10 (first time contributors in bold):
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/01/07/clojure-2019-survey.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2019/01/07/clojure-2019-survey
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-01-07
 :CUSTOM_ID: content/news/2019/01/07/clojure-2019-survey
 :END:
 
@@ -23991,6 +24303,8 @@ released with some analysis. We greatly appreciate your input!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/02/04/state-of-clojure-2019.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2019/02/04/state-of-clojure-2019
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-02-04
 :CUSTOM_ID: content/news/2019/02/04/state-of-clojure-2019
 :END:
 
@@ -24157,6 +24471,8 @@ the survey!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/05/16/jira-migration.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2019/05/16/jira-migration
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-05-16
 :CUSTOM_ID: content/news/2019/05/16/jira-migration
 :END:
 
@@ -24210,6 +24526,8 @@ Please be patient as we make the transition. Thanks!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/06/06/clojure1-10-1.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2019/06/06/clojure1-10-1
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-06-06
 :CUSTOM_ID: content/news/2019/06/06/clojure1-10-1
 :END:
 
@@ -24251,6 +24569,8 @@ See the [[https://github.com/clojure/clojure/blob/master/changes.md#changes-to-c
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2019/07/25/clojure-forum.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2019/07/25/clojure-forum
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-07-25
 :CUSTOM_ID: content/news/2019/07/25/clojure-forum
 :END:
 
@@ -24291,6 +24611,8 @@ For more information see the [[#content/community/ask][forum usage details]].
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/01/07/clojure-2020-survey.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2020/01/07/clojure-2020-survey
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-01-07
 :CUSTOM_ID: content/news/2020/01/07/clojure-2020-survey
 :END:
 
@@ -24316,6 +24638,8 @@ released with some analysis. We greatly appreciate your input!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/02/20/state-of-clojure-2020.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2020/02/20/state-of-clojure-2020
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-02-20
 :CUSTOM_ID: content/news/2020/02/20/state-of-clojure-2020
 :END:
 
@@ -24553,6 +24877,8 @@ the survey!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/02/28/clojure-tap.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2020/02/28/clojure-tap
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-02-28
 :CUSTOM_ID: content/news/2020/02/28/clojure-tap
 :END:
 
@@ -24624,6 +24950,8 @@ updating it as of now.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2020/07/23/cognitect-joins-nubank.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2020/07/23/cognitect-joins-nubank
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2020-07-23
 :CUSTOM_ID: content/news/2020/07/23/cognitect-joins-nubank
 :END:
 
@@ -24636,6 +24964,8 @@ story over on the [[https://cognitect.com/blog/2020/07/23/Cognitect-Joins-Nubank
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/01/14/clojure-2021-survey.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/01/14/clojure-2021-survey
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-01-14
 :CUSTOM_ID: content/news/2021/01/14/clojure-2021-survey
 :END:
 
@@ -24664,6 +24994,8 @@ released with some analysis. We greatly appreciate your input!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/01/26/clojure1-10-2.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/01/26/clojure1-10-2
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-01-26
 :CUSTOM_ID: content/news/2021/01/26/clojure1-10-2
 :END:
 
@@ -24698,6 +25030,8 @@ See the [[https://github.com/clojure/clojure/blob/master/changes.md#changes-to-c
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/03/04/clojure1-10-3.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/03/04/clojure1-10-3
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-03-04
 :CUSTOM_ID: content/news/2021/03/04/clojure1-10-3
 :END:
 
@@ -24716,6 +25050,8 @@ See the [[https://github.com/clojure/clojure/blob/master/changes.md#changes-to-c
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/03/18/apis-serving-people-and-programs.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/03/18/apis-serving-people-and-programs
+:CLOJURE_SITE_AUTHOR: Fogus
+:CLOJURE_SITE_DATE: 2021-03-18
 :CUSTOM_ID: content/news/2021/03/18/apis-serving-people-and-programs
 :END:
 
@@ -24753,6 +25089,8 @@ This enhancement is available now in
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/04/06/state-of-clojure-2021.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/04/06/state-of-clojure-2021
+:CLOJURE_SITE_AUTHOR: Fogus
+:CLOJURE_SITE_DATE: 2021-04-06
 :CUSTOM_ID: content/news/2021/04/06/state-of-clojure-2021
 :END:
 
@@ -24928,6 +25266,8 @@ the survey!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/04/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/06/04/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-06-04
 :CUSTOM_ID: content/news/2021/06/04/deref
 :END:
 
@@ -25004,6 +25344,8 @@ Let us know!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/11/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/06/11/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-06-11
 :CUSTOM_ID: content/news/2021/06/11/deref
 :END:
 
@@ -25087,6 +25429,8 @@ Yes.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/18/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/06/18/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-06-18
 :CUSTOM_ID: content/news/2021/06/18/deref
 :END:
 
@@ -25181,6 +25525,8 @@ the lens of Clojure and Alice in Wonderland.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/06/25/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/06/25/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-06-25
 :CUSTOM_ID: content/news/2021/06/25/deref
 :END:
 
@@ -25285,6 +25631,8 @@ yore. This week, we're featuring:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/02/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/07/02/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-07-02
 :CUSTOM_ID: content/news/2021/07/02/deref
 :END:
 
@@ -25367,6 +25715,8 @@ Some interesting library and tool updates and posts this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/09/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/07/09/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-07-09
 :CUSTOM_ID: content/news/2021/07/09/deref
 :END:
 
@@ -25464,6 +25814,8 @@ crafting from a REPL!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/09/source-libs-builds.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/07/09/source-libs-builds
+:CLOJURE_SITE_AUTHOR: Fogus
+:CLOJURE_SITE_DATE: 2021-07-09
 :CUSTOM_ID: content/news/2021/07/09/source-libs-builds
 :END:
 
@@ -25649,6 +26001,8 @@ Clojurians Slack in #tools-deps.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/16/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/07/16/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-07-16
 :CUSTOM_ID: content/news/2021/07/16/deref
 :END:
 
@@ -25719,6 +26073,8 @@ capturing the foibles and curiosities of the Clojure community. Enjoy!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/23/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/07/23/deref
+:CLOJURE_SITE_AUTHOR: Fogus
+:CLOJURE_SITE_DATE: 2021-07-23
 :CUSTOM_ID: content/news/2021/07/23/deref
 :END:
 
@@ -25775,6 +26131,8 @@ another look.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/07/30/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/07/30/deref
+:CLOJURE_SITE_AUTHOR: Fogus
+:CLOJURE_SITE_DATE: 2021-07-30
 :CUSTOM_ID: content/news/2021/07/30/deref
 :END:
 
@@ -25842,6 +26200,8 @@ Languages]]/ from his fascinating and unique perspective.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/08/13/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/08/13/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-08-13
 :CUSTOM_ID: content/news/2021/08/13/deref
 :END:
 
@@ -25958,6 +26318,8 @@ Lots of great media in the last couple week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/08/20/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/08/20/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-08-20
 :CUSTOM_ID: content/news/2021/08/20/deref
 :END:
 
@@ -26053,6 +26415,8 @@ think every programmer will learn some interesting things from it.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/08/27/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/08/27/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-08-27
 :CUSTOM_ID: content/news/2021/08/27/deref
 :END:
 
@@ -26145,6 +26509,8 @@ topic!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/03/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/09/03/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-09-03
 :CUSTOM_ID: content/news/2021/09/03/deref
 :END:
 
@@ -26257,6 +26623,8 @@ it was originally given in the room. Enjoy this classic!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/10/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/09/10/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-09-10
 :CUSTOM_ID: content/news/2021/09/10/deref
 :END:
 
@@ -26329,6 +26697,8 @@ area.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/17/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/09/17/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-09-17
 :CUSTOM_ID: content/news/2021/09/17/deref
 :END:
 
@@ -26527,6 +26897,8 @@ New releases and tools this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/09/24/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/09/24/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-09-24
 :CUSTOM_ID: content/news/2021/09/24/deref
 :END:
 
@@ -26595,6 +26967,8 @@ saw go by on Twitter this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/08/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/10/08/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-10-08
 :CUSTOM_ID: content/news/2021/10/08/deref
 :END:
 
@@ -26721,6 +27095,8 @@ New releases and tools this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/14/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/10/14/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-10-14
 :CUSTOM_ID: content/news/2021/10/14/deref
 :END:
 
@@ -26780,6 +27156,8 @@ are fortunate to have such great tools to work with in Clojure.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/22/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/10/22/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-10-22
 :CUSTOM_ID: content/news/2021/10/22/deref
 :END:
 
@@ -26873,6 +27251,8 @@ New releases and tools this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/10/29/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/10/29/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-10-29
 :CUSTOM_ID: content/news/2021/10/29/deref
 :END:
 
@@ -26977,6 +27357,8 @@ New releases and tools this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/news/2021/11/5/deref.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/news/2021/11/5/deref
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2021-11-05
 :CUSTOM_ID: content/news/2021/11/5/deref
 :END:
 
@@ -27044,6 +27426,8 @@ New releases and tools this week:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/privacy.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/privacy
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2021-08-25
 :CUSTOM_ID: content/privacy
 :END:
 ** PRIVACY POLICY
@@ -27346,6 +27730,8 @@ USA
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/reader.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/reader
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-02-15
 :NEXTPAGE_CUSTOM_ID: content/reference/repl_and_main
 :CUSTOM_ID: content/reference/reader
 :END:
@@ -27867,6 +28253,8 @@ for these types:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/repl_and_main.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/repl_and_main
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/reader
 :NEXTPAGE_CUSTOM_ID: content/reference/evaluation
 :CUSTOM_ID: content/reference/repl_and_main
@@ -28147,6 +28535,8 @@ Socket repl: ~clojure.core.server/repl~
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/evaluation.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/evaluation
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/repl_and_main
 :NEXTPAGE_CUSTOM_ID: content/reference/special_forms
 :CUSTOM_ID: content/reference/evaluation
@@ -28273,6 +28663,8 @@ Evaluates the form /data structure/ (not text!) and returns the result.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/special_forms.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/special_forms
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-02-09
 :PREVPAGE_CUSTOM_ID: content/reference/evaluation
 :NEXTPAGE_CUSTOM_ID: content/reference/macros
 :CUSTOM_ID: content/reference/special_forms
@@ -28803,6 +29195,8 @@ can pull apart just about anything:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/macros.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/macros
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/special_forms
 :NEXTPAGE_CUSTOM_ID: content/reference/other_functions
 :CUSTOM_ID: content/reference/macros
@@ -28883,6 +29277,8 @@ provide destructuring: fn let loop.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_functions.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/other_functions
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/macros
 :NEXTPAGE_CUSTOM_ID: content/reference/data_structures
 :CUSTOM_ID: content/reference/other_functions
@@ -28964,6 +29360,8 @@ user=> (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/data_structures.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/data_structures
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/other_functions
 :NEXTPAGE_CUSTOM_ID: content/reference/datatypes
 :CUSTOM_ID: content/reference/data_structures
@@ -29394,6 +29792,8 @@ join][join]].
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/datatypes.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/datatypes
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/data_structures
 :NEXTPAGE_CUSTOM_ID: content/reference/sequences
 :CUSTOM_ID: content/reference/datatypes
@@ -29629,6 +30029,8 @@ Example:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/sequences.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/sequences
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/datatypes
 :NEXTPAGE_CUSTOM_ID: content/reference/transients
 :CUSTOM_ID: content/reference/sequences
@@ -29766,6 +30168,8 @@ tree-seq][tree-seq]], [[clojure:core.clj::(defn file-seq][file-seq]], [[clojure:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/transients.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/transients
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/sequences
 :NEXTPAGE_CUSTOM_ID: content/reference/transducers
 :CUSTOM_ID: content/reference/transients
@@ -29917,6 +30321,8 @@ Clojure 1.1.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/transducers.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/transducers
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/transients
 :NEXTPAGE_CUSTOM_ID: content/reference/multimethods
 :CUSTOM_ID: content/reference/transducers
@@ -30191,6 +30597,8 @@ general rules to be aware of:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/multimethods.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/multimethods
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/transducers
 :NEXTPAGE_CUSTOM_ID: content/reference/protocols
 :CUSTOM_ID: content/reference/multimethods
@@ -30401,6 +30809,8 @@ function, as keywords are functions of maps, as described in the
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/protocols.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/protocols
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/multimethods
 :NEXTPAGE_CUSTOM_ID: content/reference/metadata
 :CUSTOM_ID: content/reference/protocols
@@ -30612,6 +31022,8 @@ extend-protocol).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/metadata.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/metadata
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/protocols
 :NEXTPAGE_CUSTOM_ID: content/reference/namespaces
 :CUSTOM_ID: content/reference/metadata
@@ -30725,6 +31137,8 @@ implement clojure.lang.IMeta).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/namespaces.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/namespaces
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/metadata
 :NEXTPAGE_CUSTOM_ID: content/reference/libs
 :CUSTOM_ID: content/reference/namespaces
@@ -30785,6 +31199,8 @@ Also see:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/libs.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/libs
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/namespaces
 :NEXTPAGE_CUSTOM_ID: content/reference/vars
 :CUSTOM_ID: content/reference/libs
@@ -30888,6 +31304,8 @@ platform.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/vars.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/vars
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-01-14
 :PREVPAGE_CUSTOM_ID: content/reference/libs
 :NEXTPAGE_CUSTOM_ID: content/reference/refs
 :CUSTOM_ID: content/reference/vars
@@ -31086,6 +31504,8 @@ Using Var metadata: [[clojure:repl.clj::(defmacro doc][doc]], [[clojure:repl.clj
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/refs.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/refs
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/vars
 :NEXTPAGE_CUSTOM_ID: content/reference/agents
 :CUSTOM_ID: content/reference/refs
@@ -31210,6 +31630,8 @@ Ref validators: [[clojure:core.clj::(defn set-validator!][set-validator!]], [[cl
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/agents.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/agents
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/refs
 :NEXTPAGE_CUSTOM_ID: content/reference/atoms
 :CUSTOM_ID: content/reference/agents
@@ -31333,6 +31755,8 @@ set-error-handler!][set-error-handler!]], [[clojure:core.clj::(defn error-handle
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/atoms.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/atoms
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/agents
 :NEXTPAGE_CUSTOM_ID: content/reference/reducers
 :CUSTOM_ID: content/reference/atoms
@@ -31394,6 +31818,8 @@ user=> "Elapsed time: 0.044 msecs"
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/reducers.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/reducers
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/atoms
 :NEXTPAGE_CUSTOM_ID: content/reference/java_interop
 :CUSTOM_ID: content/reference/reducers
@@ -31529,6 +31955,8 @@ Use ~fold~ when:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/java_interop.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/java_interop
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2016-02-25
 :PREVPAGE_CUSTOM_ID: content/reference/reducers
 :NEXTPAGE_CUSTOM_ID: content/reference/compilation
 :CUSTOM_ID: content/reference/java_interop
@@ -32151,6 +32579,8 @@ deref.invoke(printLength);
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/compilation.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/compilation
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/java_interop
 :NEXTPAGE_CUSTOM_ID: content/reference/other_libraries
 :CUSTOM_ID: content/reference/compilation
@@ -32468,6 +32898,8 @@ I am an IBar
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/other_libraries.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/other_libraries
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/compilation
 :NEXTPAGE_CUSTOM_ID: content/reference/lisps
 :CUSTOM_ID: content/reference/other_libraries
@@ -32627,6 +33059,8 @@ function to support other data structures.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/lisps.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/lisps
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :PREVPAGE_CUSTOM_ID: content/reference/other_libraries
 :NEXTPAGE_CUSTOM_ID: content/reference/deps_and_cli
 :CUSTOM_ID: content/reference/lisps
@@ -32730,6 +33164,8 @@ or Scheme.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/deps_and_cli.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/deps_and_cli
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-09-04
 :CUSTOM_ID: content/reference/deps_and_cli
 :END:
 *** Rationale
@@ -34209,6 +34645,8 @@ for project creation, packaging, and much more.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/documentation.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/documentation
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/reference/documentation
 :END:
 *** Reference Documentation
@@ -34247,6 +34685,8 @@ for project creation, packaging, and much more.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/dep_expansion.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/dep_expansion
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-12-22
 :CUSTOM_ID: content/reference/dep_expansion
 :END:
 
@@ -34445,6 +34885,8 @@ suppressed). The current set of reason codes (subject to change) are:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/reference/lazy.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/reference/lazy
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/reference/lazy
 :END:
 
@@ -34696,6 +35138,8 @@ functions.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/devchangelog.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/releases/devchangelog
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-28
 :CUSTOM_ID: content/releases/devchangelog
 :END:
 
@@ -35586,6 +36030,8 @@ A usage guide for spec is now available:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/download_key.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/releases/download_key
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-07-27
 :CUSTOM_ID: content/releases/download_key
 :END:
 *** Signature files
@@ -35650,6 +36096,8 @@ use a DNS server that can find the MIT key server (pgp.mit.edu).
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/downloads_older.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/releases/downloads_older
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/releases/downloads_older
 :END:
 *** Older Clojure Releases
@@ -35687,6 +36135,8 @@ If you are migrating from a pre-1.3 version of Clojure, please see
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/downloads.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/releases/downloads
+:CLOJURE_SITE_AUTHOR: Rich Hickey
+:CLOJURE_SITE_DATE: 2015-01-01
 :CUSTOM_ID: content/releases/downloads
 :END:
 
@@ -35832,6 +36282,8 @@ against the Clojure public key.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/releases/tools.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/releases/tools
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-09-25
 :CUSTOM_ID: content/releases/tools
 :END:
 
@@ -36125,6 +36577,8 @@ Read more at [[#content/news/2021/07/09/source-libs-builds][Source Libs and Buil
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/anychart.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/anychart
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-03-16
 :CUSTOM_ID: content/stories/anychart
 :END:
 
@@ -36218,6 +36672,8 @@ the Clojure community.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/cloudrepo.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/cloudrepo
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-04-27
 :CUSTOM_ID: content/stories/cloudrepo
 :END:
 
@@ -36291,6 +36747,8 @@ code thanks to immutability.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/cognician.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/cognician
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-12-20
 :CUSTOM_ID: content/stories/cognician
 :END:
 
@@ -36437,6 +36895,8 @@ remote REPL. :-)
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/collbox.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/collbox
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-06
 :CUSTOM_ID: content/stories/collbox
 :END:
 
@@ -36501,6 +36961,8 @@ framework is custom-built, but makes heavy use of [[https://github.com/ztellman/
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/cstap.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/cstap
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-07
 :CUSTOM_ID: content/stories/cstap
 :END:
 
@@ -36585,6 +37047,8 @@ month. (FYI: We're hiring in Japan! →
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/empear.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/empear
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-24
 :CUSTOM_ID: content/stories/empear
 :END:
 
@@ -36686,6 +37150,8 @@ virtually a guarantee that things get done.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/freshcode.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/freshcode
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-12-16
 :CUSTOM_ID: content/stories/freshcode
 :END:
 
@@ -36769,6 +37235,8 @@ with your business partners.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/kidblog.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/kidblog
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-07-28
 :CUSTOM_ID: content/stories/kidblog
 :END:
 
@@ -36820,6 +37288,8 @@ read, and easier to review.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/lendup.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/lendup
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-08-07
 :CUSTOM_ID: content/stories/lendup
 :END:
 
@@ -36885,6 +37355,8 @@ Java libraries, and we have a much smaller code base to maintain.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/ona.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/ona
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-13
 :CUSTOM_ID: content/stories/ona
 :END:
 
@@ -36988,6 +37460,8 @@ us please [[https://ona.io/contact.html][get in touch]].
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/pisano.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/pisano
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2019-11-06
 :CUSTOM_ID: content/stories/pisano
 :END:
 
@@ -37064,6 +37538,8 @@ faster. Now enterprise software development a lot more fun with Clojure.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/reify.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/reify
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2020-11-30
 :CUSTOM_ID: content/stories/reify
 :END:
 
@@ -37162,6 +37638,8 @@ work to do.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/rts.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/rts
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-04
 :CUSTOM_ID: content/stories/rts
 :END:
 
@@ -37240,6 +37718,8 @@ seriously considering using it with ClojureScript + Node.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/signal.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/signal
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-06-07
 :CUSTOM_ID: content/stories/signal
 :END:
 
@@ -37304,6 +37784,8 @@ talented people to join our team!
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/stitch.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/stitch
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-04-19
 :CUSTOM_ID: content/stories/stitch
 :END:
 
@@ -37368,6 +37850,8 @@ quickly with a tight iterative TDD loop.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/swing.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/swing
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2018-01-24
 :CUSTOM_ID: content/stories/swing
 :END:
 
@@ -37493,6 +37977,8 @@ Native]] for iOS.
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/uhn.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/uhn
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-04-11
 :CUSTOM_ID: content/stories/uhn
 :END:
 
@@ -37641,6 +38127,8 @@ libraries that I'd like to mention specifically are:
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/stories/zimpler.adoc]]
 :CLOJURE_SITE_PAGE: https://clojure.org/stories/zimpler
+:CLOJURE_SITE_AUTHOR: Alex Miller
+:CLOJURE_SITE_DATE: 2017-11-15
 :CUSTOM_ID: content/stories/zimpler
 :END:
 
