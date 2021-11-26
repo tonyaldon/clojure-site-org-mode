@@ -1,6 +1,6 @@
 #+TITLE: Clojure website in org-mode
 #+AUTHOR: Tony aldon
-#+DATE: <2021-11-24 Wed>
+#+DATE: <2021-11-26 Fri>
 
 * About
 
@@ -46,7 +46,7 @@ clone those repositories.
 
 Each section in ~clojure-site.org~ corresponding to an asciidoc file in
 [[https://github.com/clojure/clojure-site][clojure-site]] has a (local) link to this file.  So if you want to refer
-to the original file, you need to clone this repository.
+to the original files, you need to clone this ~clojure-site~ repository.
 
 The Clojure cheatsheet refers to the following libraries
 [[https://github.com/clojure/core.rrb-vector][core.rrb-vector]], [[https://github.com/clojure/data.avl][data.avl]], [[https://github.com/clojure/data.int-map][data.int-map]], [[https://github.com/clojure/data.priority-map][data.priority-map]],
@@ -185,14 +185,17 @@ directly in the source code.
 To make it work, you must clone some repositories.  See the section
 [[* Installation][Installation]].
 
-** Steps I followed to convert 248 asciidoc files into a single org file
+** Steps I followed to convert the asciidoc files into a single org file
 
 I describe here the steps I followed to convert the 248 asciidoc files
 constituing the Clojure documentation into a single org file.
 
-If I had to do it again I would maybe do it differently.
+If I had to do it again I would maybe do it differently
+([2021-11-24 Wed]).
 
-Anyway here the description.
+Indeed, I did it a second time ([2021-11-26 Fri]) with the
+ClojureScript documentation and the first part of the process was
+"simpler", but not yet simple (see [[https://github.com/tonyaldon/clojurescript-site-org-mode][clojurescript-site-org-mode]]).
 
 To do the conversion I've used:
 - ~assciidoctor~, ~pandoc~, ~fd~, ~sed~,
