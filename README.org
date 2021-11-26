@@ -7,6 +7,8 @@
 This repository contains the documentation of https://clojure.org/
 converted in a single org-mode file [[./clojure-site.org]].
 
+[[./clojure-site-org-mode.png]]
+
 It's just a single file, so you can download it and read it right
 away.  But if you want to have the (local) links to work correctly you
 have to clone some other repositories.  See [[* Installation][Installation]] section.
