@@ -1,11 +1,11 @@
 #+TITLE: Clojure website in org-mode
 #+AUTHOR: Tony aldon
-#+DATE: <2021-11-26 Fri>
+#+DATE: <2021-11-27 Sat>
 
 * About
 
 This repository contains the documentation of https://clojure.org/
-converted in a single org-mode file [[./clojure-site.org]].
+converted into a single org-mode file [[./clojure-site.org]].
 
 [[./clojure-site-org-mode.png]]
 
