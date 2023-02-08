@@ -13759,7 +13759,7 @@ values respectively.
 
 Strings are contained in double quotes and may span multiple lines.
 Individual characters are represented with a leading backslash. There
-are a few special named characters: ~\newline~ ~\spec~ ~\tab~, etc.
+are a few special named characters: ~\newline~, ~\spec~, ~\tab~, etc.
 Unicode characters can be represented with ~\uNNNN~ or in octal with
 ~\oNNN~.
 
@@ -14078,7 +14078,6 @@ reference.
 Now let's consider some Clojure basics to get you going...​.
 
 **** Clojure basics
-
 ***** ~def~
 
 When you are evaluating things at a REPL, it can be useful to save a
@@ -14161,6 +14160,7 @@ form.
    the most recent REPL exception.
 
 [[#content/guides/learn/answers#syntax][Check your answers]]
+
 *** Learn Clojure - Functions
 :PROPERTIES:
 :CLOJURE_SITE_FILE: [[./clojure-site/content/guides/learn/functions.adoc]]
@@ -14354,7 +14354,6 @@ vector
 #+END_SRC
 
 **** Applying Functions
-
 ***** ~apply~
 
 The ~apply~ function invokes a function with 0 or more fixed arguments,
@@ -14569,9 +14568,7 @@ Clojure:
 8) Define a function ~opposite~ which takes a single argument ~f~. It
    should return another function which takes any number of arguments,
    applies ~f~ on them, and then calls ~not~ on the result. The
-   ~not~
-
-function in Clojure does logical negation.
+   ~not~ function in Clojure does logical negation.
 
    #+BEGIN_SRC clojure
    (defn opposite [f]
@@ -14946,7 +14943,7 @@ user=> (get scores "Angela")
 #+END_EXAMPLE
 
 When the map in question is being treated as a constant lookup table,
-its common to invoke the map itself, treating it as a function:
+it's common to invoke the map itself, treating it as a function:
 
 #+BEGIN_EXAMPLE
 user=> (def directions {:north 0
@@ -15508,7 +15505,7 @@ user=> (for [letter [:a :b]
 **** Exceptions
 ***** Exception handling
 
-- ~try=/=catch=/=finally~ as in Java
+- ~try~ / ~catch~ / ~finally~ as in Java
 
 #+BEGIN_SRC clojure
 (try
